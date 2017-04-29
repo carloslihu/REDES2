@@ -27,7 +27,7 @@ OBJ2 = $(patsubst %,$(ODIR)/G-2301-05-P2-%,$(_OBJ2))
 OBJ3 = $(patsubst %,$(ODIR)/G-2301-05-P3-%,$(_OBJ3))
 
 
-all: G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	
+all: G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS) $(DEPS2) $(DEPS3)
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -48,6 +48,14 @@ servidor_echo: $(OBJ) $(OBJ3) $(ODIR)/servidor_echo.o
 cliente_echo: $(OBJ) $(OBJ3) $(ODIR)/cliente_echo.o
 	$(CC) -o $@ $^ $(CFLAGS2) $(LIBS2)
 	mv cliente_echo echo/
+
+servidor_IRC: $(OBJ) $(OBJ3) $(ODIR)/servidor_IRC.o
+	$(CC) -o $@ $^ $(CFLAGS2) $(LIBS2)
+	mv servidor_IRC cliente_servidor/
+
+cliente_IRC: $(OBJ) $(OBJ3) $(ODIR)/cliente_IRC.o
+	$(CC) -o $@ $^ $(CFLAGS2) $(LIBS2)
+	mv cliente_IRC cliente_servidor/
 #getCommandList: src/G-2301-05-P1-getCommandList.c
 #	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 #G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
