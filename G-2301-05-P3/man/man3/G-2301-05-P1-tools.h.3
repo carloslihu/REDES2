@@ -1,0 +1,197 @@
+.TH "includes/G-2301-05-P1-tools.h" 3 "Sun Mar 12 2017" "REDES2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2301-05-P1-tools.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G-2301-05-P1-types\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdaemonizar\fP ()"
+.br
+.RI "\fIdaemoniza el proceso el proceso queda en segundo plano como proceso de init \fP"
+.ti -1c
+.RI "char * \fBgetIP\fP (struct sockaddr_in *client, char **ip)"
+.br
+.RI "\fIreserva memoria para una String que contiene le dirección IP de un cliente en formato estandar: xxx\&.xxx\&.xxx\&.xxx \fP"
+.ti -1c
+.RI "int \fBgetHostName\fP (struct sockaddr_in *dev, char **\fBhostname\fP)"
+.br
+.RI "\fIguarda en hostname el nombre del dispositivo dev \fP"
+.ti -1c
+.RI "int \fBgetNickFromSocket\fP (int socket, char **nick)"
+.br
+.RI "\fIguarda en nick el nickname del usuario asociado con el socket \fP"
+.ti -1c
+.RI "int \fBgetSocketFromNick\fP (int *socket, char *nick)"
+.br
+.RI "\fIobtiene el socket del nick \fP"
+.ti -1c
+.RI "int \fBgetAwayFromSocket\fP (int socket, char **away)"
+.br
+.RI "\fIobtiene el away del socket \fP"
+.ti -1c
+.RI "long int \fBlogIntError\fP (long int returnValue, char *msg)"
+.br
+.RI "\fIidentifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int \fP"
+.ti -1c
+.RI "void * \fBlogPointerError\fP (void *returnValue, char *msg)"
+.br
+.RI "\fIidentifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero \fP"
+.ti -1c
+.RI "void \fBlogVoidError\fP (char *msg)"
+.br
+.RI "\fIregistra un mensaje de error \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void daemonizar ()"
+
+.PP
+daemoniza el proceso el proceso queda en segundo plano como proceso de init 
+.SS "int getAwayFromSocket (intsocket, char **away)"
+
+.PP
+obtiene el away del socket 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket a obtener 
+.br
+\fIaway\fP cadena away
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.SS "int getHostName (struct sockaddr_in *dev, char **hostname)"
+
+.PP
+guarda en hostname el nombre del dispositivo dev 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev\fP el dispositivo cuyo nombre deseamos encontrar 
+.br
+\fIhostname\fP la dirección de la String donde escribir el nombre del dispositivo
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si todo va bien 
+.RE
+.PP
+
+.SS "char* getIP (struct sockaddr_in *client, char **ip)"
+
+.PP
+reserva memoria para una String que contiene le dirección IP de un cliente en formato estandar: xxx\&.xxx\&.xxx\&.xxx 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP la estructura que contiene la IP a encontrar 
+.br
+\fIip\fP la dirección de una String donde guardaremos el resultado
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el puntero a la String resultado 
+.RE
+.PP
+
+.SS "int getNickFromSocket (intsocket, char **nick)"
+
+.PP
+guarda en nick el nickname del usuario asociado con el socket 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket que identifica la conexión con el usuario 
+.br
+\fInick\fP la dirección de la String donde guardar
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si todo fue bien\&. El error si no 
+.RE
+.PP
+
+.SS "int getSocketFromNick (int *socket, char *nick)"
+
+.PP
+obtiene el socket del nick 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket a obtener 
+.br
+\fInick\fP nick a comprobar
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.SS "long int logIntError (long intreturnValue, char *msg)"
+
+.PP
+identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreturnValue\fP el error a registrar y devolver 
+.br
+\fImsg\fP el mensaje de error previo al nombre del error
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el error registrado en returnValue 
+.RE
+.PP
+
+.SS "void* logPointerError (void *returnValue, char *msg)"
+
+.PP
+identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreturnValue\fP el error a devolver 
+.br
+\fImsg\fP el mensaje de error
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el error registrado en returnValue 
+.RE
+.PP
+
+.SS "void logVoidError (char *msg)"
+
+.PP
+registra un mensaje de error 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP el mensaje de error a registrar 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for REDES2 from the source code\&.
