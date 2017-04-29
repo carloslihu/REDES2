@@ -1,0 +1,42 @@
+#include "../includes/G-2301-05-P2-userTools.h"
+
+/*long reactNick(char *strin){
+	char *prefix, *nick, *msg, *nickold, *userold, *host;
+	long int ret;
+	if((ret = IRCParse_Nick(strin, &prefix, &nick, &msg)) != IRC_OK)
+		return logIntError(ret, "error @ answerNick -> IRCParse_Nick");
+
+	prefixParse(prefix,&nickold, &userold, &host);
+	IRCInterface_ChangeNickThread(nickold, nick);//TODO hacer version thread
+	IRCInterface_PlaneRegisterInMessageThread(strin);//TODO hacer version thread
+	return IRC_OK;
+}
+
+long reactJoin(char *strin){*/
+	/*
+	si cualquier usuario intenta hacer join a un canal en el que ya esta, el servidor no contestara nada. GG EZ
+	Si soy yo quien se unio al canal:
+		creo una nueva entrada en mi lista de canales
+		recibo un names => TODO implementar reactNames
+		mando un mode => TODO implementar reactMode
+		mando un who => TODO implementar reactWho
+	Si es otra persona la que se une, el server solo me envia mensaje si se une a un canal en el que estoy:
+			actualizo mi lista de usuarios en el canal
+	*/
+	/*char *prefix, *channel, *key, *msg, *nick, *myNick, *user, *host;
+	IRCParse_Join(strin, &prefix, &channel, &key, &msg);
+	prefixParse(prefix, &nick, &user, &host);
+	myNick = getMyNick();
+	IRCInterface_AddNickChannelThread (channel, nick, user, NULL, host, 0);//TODO nickstate wtf
+	if(strcmp(myNick, nick) == 0)//quiere decir que yo me uni al canal
+	{*/
+	//TODO actualizar lista de personas en el canal
+	//TODO enviar un comando MODE
+	//TODO enviar un comando WHO
+	/*}
+	else
+	{
+
+	}
+	return IRC_OK;
+}*/

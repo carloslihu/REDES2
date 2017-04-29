@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <netdb.h> 
+#include <sys/types.h> 
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <redes2/irc.h>
+#include <errno.h>
+#define SERVERINFO "servidor de Mambru, DoReMi DoReFa"
+#define SERVERNAME "Mambru@war"
+
+long int logIntError(long int returnValue, char * msg);
+
+void* logPointerError(void* returnValue , char * msg);
+
+void logVoidError(char * msg);
+
+int openSocket_TCP();
+
+int bindSocket_TCP(int sockfd, int portno, struct sockaddr_in* serv_addr);
+
+int acceptConnection(int sockfd, struct sockaddr_in* client_addr);
+
+int connectTo(int sockfd, char* hostname, int portno);
