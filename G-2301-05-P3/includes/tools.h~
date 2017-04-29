@@ -1,3 +1,0 @@
-char* getIP(struct sockaddr_in* client, char** ip);
-int getHostName(struct sockaddr_in *dev, char** hostname);
-int getNickFromSocket(int socket, char** nick);

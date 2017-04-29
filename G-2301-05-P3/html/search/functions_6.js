@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['getawayfromsocket',['getAwayFromSocket',['../G-2301-05-P1-tools_8h.html#a2aa2c8c4d6f3b48dd3c195beff08eb0b',1,'getAwayFromSocket(int socket, char **away):&#160;G-2301-05-P1-tools.c'],['../G-2301-05-P1-tools_8c.html#a2aa2c8c4d6f3b48dd3c195beff08eb0b',1,'getAwayFromSocket(int socket, char **away):&#160;G-2301-05-P1-tools.c']]],
-  ['gethostname',['getHostName',['../G-2301-05-P1-tools_8h.html#a3101bc13b5c20c8b430348441050ae9d',1,'getHostName(struct sockaddr_in *dev, char **hostname):&#160;G-2301-05-P1-tools.c'],['../G-2301-05-P1-tools_8c.html#a3101bc13b5c20c8b430348441050ae9d',1,'getHostName(struct sockaddr_in *dev, char **hostname):&#160;G-2301-05-P1-tools.c']]],
-  ['getip',['getIP',['../G-2301-05-P1-tools_8h.html#a2850885f03b7654d239b361940416bef',1,'getIP(struct sockaddr_in *client, char **ip):&#160;G-2301-05-P1-tools.c'],['../G-2301-05-P1-tools_8c.html#a2850885f03b7654d239b361940416bef',1,'getIP(struct sockaddr_in *client, char **ip):&#160;G-2301-05-P1-tools.c']]],
-  ['getnickfromsocket',['getNickFromSocket',['../G-2301-05-P1-tools_8h.html#af3b23798269ccab05560708cc1a22a92',1,'getNickFromSocket(int socket, char **nick):&#160;G-2301-05-P1-tools.c'],['../G-2301-05-P1-tools_8c.html#af3b23798269ccab05560708cc1a22a92',1,'getNickFromSocket(int socket, char **nick):&#160;G-2301-05-P1-tools.c']]],
-  ['getsocketfromnick',['getSocketFromNick',['../G-2301-05-P1-tools_8h.html#a100eca1a277dd50fc2e289763dad8464',1,'getSocketFromNick(int *socket, char *nick):&#160;G-2301-05-P1-tools.c'],['../G-2301-05-P1-tools_8c.html#a100eca1a277dd50fc2e289763dad8464',1,'getSocketFromNick(int *socket, char *nick):&#160;G-2301-05-P1-tools.c']]]
-];

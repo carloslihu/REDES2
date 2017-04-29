@@ -1,7 +1,0 @@
-
-
-#define -1 ERROR
-#define -2 ERROR_SEND
-#define -3 ERROR_RECV
-#define -4 ERROR_MALLOC
-#define -5 ERROR_CONTINUE
