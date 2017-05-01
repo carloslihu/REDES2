@@ -1,3 +1,5 @@
+#ifndef _ERRORSFROMSERVER_H
+#define _ERRORSFROMSERVER_H
 #include "../includes/G-2301-05-P2-userTools.h"
 
 long reactAlreadyRegistered(char* strin);
@@ -19,3 +21,5 @@ long reactNoChanModes(char* strin);
 long reactNoSuchChannel(char* strin);
 long reactUnknownMode(char* strin);
 long reactNoMotd(char* strin);
+
+#endif

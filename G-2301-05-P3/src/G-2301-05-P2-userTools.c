@@ -9,7 +9,6 @@
  * @param thread T si es la version con threads, false, si no
  * 
  */
-//FIXME revisar, porque en muchos casos se llama a esta funcion pero no imprime nada por la interfaz (p.e. linea 91 de G-3201-05-P2-repliesFromServer)
 void printXchat(char* channel, char* nick, char* msg, boolean thread) {
     char msg2[SIZE], extra[SIZE], write[SIZE];
     //bzero(write,SIZE);
