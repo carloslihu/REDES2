@@ -12,7 +12,7 @@
 #define NFUNCTS 600
 
 struct threadSendArgs {
-    int port;
+    //int port;
     char* filename;
     char* nick;
     //      data: los datos que contiene el archivo a ser enviado
@@ -25,6 +25,7 @@ typedef long int (*pUserFuncs)(int socket, char* strin);
 pFuncs functs[NFUNCTS];
 pUserFuncs userFuncts[10000];
 char* miNick;
+boolean grabandoAudio;
 /** 
  * @defgroup IRCInterface Interface
  *
@@ -969,6 +970,7 @@ boolean IRCInterface_DisconnectServer(char *server, int port) {
  */
 
 boolean IRCInterface_ExitAudioChat(char *nick) {
+    grabandoAudio = FALSE;
     return TRUE;
 }
 
@@ -1226,6 +1228,7 @@ void IRCInterface_NewTopicEnter(char *topicdata) {
 void* threadSend(void* args){
     char *data, buffer[512], *command, *nick, *filename, *myHost;
     int port, socket, newSockfd;
+    socklen_t slen;
     unsigned long length;
     struct threadSendArgs * aux = (struct threadSendArgs *)args;
     struct sockaddr_in serv, client;
@@ -1235,7 +1238,7 @@ void* threadSend(void* args){
     if(aux == NULL)
         return NULL;
     data = aux->data;
-    port = aux->port;
+    //port = aux->port;
     length = aux->length;
     nick = aux->nick;
     filename = aux->filename;
@@ -1246,11 +1249,16 @@ void* threadSend(void* args){
         IRC_MFree(2, &data, &args);
         return NULL;
     }
+    /*
     if(bindSocket_TCP(socket, port, &serv) < 0){
         IRC_MFree(2, &data, &args);
         close(socket);
         return NULL;
-    }
+    }*/
+    listen(socket, 1);
+    slen = sizeof(serv);
+    getsockname(socket, (struct sockaddr*)&serv, &slen);
+    port = ntohs(serv.sin_port);
 
     sprintf(buffer, "\002FSEND \001%s\001 %s %d %lu", filename, myHost, port, length);
     printf("buffer: %s\n", buffer);
@@ -1261,7 +1269,6 @@ void* threadSend(void* args){
         close(socket);
         return NULL;
     }
-    listen(socket, 1);
     newSockfd = acceptConnection(socket, &client);
     if(newSockfd < 0){
         logVoidError("error @ threadSend -> acceptConnection");
@@ -1328,19 +1335,176 @@ void* threadSend(void* args){
 boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length){
     struct threadSendArgs *args;
     pthread_t th;
-    static int port = PORT_RECV;
+    //static int port = PORT_RECV;
 
     args = (struct threadSendArgs*)malloc(sizeof(struct threadSendArgs));
     if(args == NULL) return FALSE;
 
     args->data = data;
     args->length = length;
-    args->port = port;
+    //args->port = port;
     args->filename = filename;
     args->nick = nick;
-    port = PORT_RECV + ((port + 1) % 100); //se van preparando nuevos ports para siguientes llamadas
+    //port = PORT_RECV + ((port + 1) % 100); //se van preparando nuevos ports para siguientes llamadas
     pthread_create(&th, NULL, threadSend, args);
     return TRUE;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * por si tenemos tiempo: la idea de esta funcion en tener un hilo que monitorice la conexion UDP del envio de audio mediante la conexion TCP que se
+ * establece previamente. De manera que si algo falla en el otro lado, se le notifique a este lado y este lado pueda cerrarlo todo bien (?)
+void* threadAdminAudio(void* args){
+    int socketTCP, socketUDP, newSocketTCP, newSocketUDP;
+    int err = -1;
+    socketTCP = socketUDP = newSocketTCP = newSocketUDP = child = -1;
+    //obtenemos los argumentos que necesitemos
+    if(sscanf((char*)args, "%d %d %d %d %d", &socketTCP, &socketUDP, &newSocketTCP, &newSocketUDP, &child) != 5){//si da error, abortamos todo
+        //notificamos a la otra parte
+        send(newSocketTCP, &err, sizeof(int), 0);
+        //cerramos todo aquello que no pudimos abrir
+        if(socketTCP != -1)
+            close(socketTCP);
+        if(socketUDP != -1)
+            close(socketUDP);
+        if(newSocketTCP != -1)
+            close(newSocketTCP);
+        if(newSocketUDP != -1)
+            close(newSocketUDP);
+        return logVoidError("error @ threadAdminTCP -> sscanf");
+    }
+
+    if(recv(newSocketTCP, &err, sizeof(int), 0) >= 0){
+        close(socketTCP);
+        close(socketUDP);
+        close(newSocketTCP);
+        close(newSocketUDP);
+    }
+    return NULL;
+}
+*/
+
+void * threadRecord(void * aux){
+    int socketUDP, socketTCP, portUDP, portTCP, newSocketTCP, newSocketUDP;
+    char* myHost, *nick, buffer[512], *command;//, *adminArgs;
+    struct sockaddr_in serv, client;
+    boolean answer;
+    //socklen_t slen;
+    //pthread_t admin;
+
+    //we need 2 sockets
+    //1 for the TCP handshakingç
+    //1 for the UDP comunication
+
+    //detacheamos el hilo
+    pthread_detach(pthread_self());
+    //si los argumentos son NULL no podemos continuar
+    if(aux == NULL)
+        return NULL;
+    //preparamos el formato de grabacion de audio
+    IRCSound_RecordFormat(PA_SAMPLE_S16BE,2);
+
+    //README en principio no necesitamos mas que el nick (?)
+    nick = (char*) aux;
+    //abrimos el socket para la conexion UDP
+    socketUDP = openSocket_UDP();//si no nos deja, no podremos continuar
+    if(socket < 0){
+        return NULL;
+    }
+    //abrimos el socket para la conexion TCP
+    socketTCP = openSocket_TCP();//si no nos deja, no podremos continuar
+    if(socket < 0){
+        close(socketUDP);
+        return NULL;
+    }
+    //escuchamos en ambos sockets
+    listen(socketUDP, 1);
+    listen(socketTCP, 1);
+    //obtenemos los puertos de ambos sockets
+    portUDP = getSocketPort(socketUDP, &serv);
+    portTCP = getSocketPort(socketTCP, &serv);
+    //escribimos nuestra direccion host README localhost para hacer pruebas
+    //TODO cambiar por nuestro propio hostname para que otros nos contacten
+    myHost = "localhost";
+    //preparamos el privmsg que enviaremos al otro cliente
+    sprintf(buffer, "\001FAUDIO %s %d %d", myHost, portTCP, portUDP);
+    IRCMsg_Privmsg(&command, NULL, nick, buffer);
+    //enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
+    if(send(sockfd, command, strlen(command), 0) < 0){
+        close(socketTCP);
+        close(socketUDP);
+        return NULL;
+    }
+    //COMIENZA EL HANDSHAKING
+    //nos preparamos para aceptar conexion por el puerto TCP
+    newSocketTCP = acceptConnection(socketTCP, &client);//si da error, no podemos continuar
+    if(newSocketTCP < 0){
+        logVoidError("error @ threadSend -> acceptConnection");
+        close(socketTCP);
+        close(socketUDP);
+        return NULL;
+    }
+    //recibimos la respuesta del otro cliente mediante la conexion TCP
+    if(recv(newSocketTCP, &answer, sizeof(answer), 0) <= 0){
+        close(socketTCP);
+        close(socketUDP);
+        close(newSocketTCP);
+        return NULL;
+    }//si la respuesta ha sido que no quiere recibir nuestro audio, se acaba la conexion
+    if(answer == FALSE){
+        close(socketTCP);
+        close(socketUDP);
+        close(newSocketTCP);
+        return NULL;
+    }//de lo contrario, si que quiere recibir nuestro audio
+    //FIN DEL HANDSHAKING
+
+    //ENVIO DE AUDIO
+    //nos preparamos para aceptar la conexion por el puerto UDP
+    newSocketUDP = acceptConnection(socketUDP, &client);//si da error, no podemos continuar
+    if(newSocketUDP < 0){
+        logVoidError("error @ threadSend -> acceptConnection");
+        close(socketTCP);
+        close(socketUDP);
+        close(newSocketTCP);
+        return NULL;
+    }
+    //abrimos la grabacion
+    if(IRCSound_OpenRecord()){//si da error, no podemos continuar
+        close(socketTCP);
+        close(socketUDP);
+        close(newSocketTCP);
+        close(newSocketUDP);
+        return NULL;
+    }
+    grabandoAudio = TRUE;
+    //mientras que nuestra variable global nos diga que estamos grabando iremos enviando por el newSocketUDP lo que grabemos
+    while(grabandoAudio == TRUE){
+        IRCSound_RecordSound(buffer,160);//grabamos 160 bytes de audio
+        send(newSocketUDP, buffer, 160, 0);//los enviamos por el socket
+    }//si algo nos ha cerrado la grabacion de audio
+    //notificamos por la conexion TCP que se acabo (?)
+    //cerramos todos los sockets y tambien la grabacion
+    close(socketTCP);
+    close(socketUDP);
+    close(newSocketTCP);
+    close(newSocketUDP);
+    IRCSound_CloseRecord();
+    //se acabo
+    return NULL;
 }
 /**
  * @ingroup IRCInterfaceCallbacks
@@ -1379,6 +1543,8 @@ boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsig
  */
 
 boolean IRCInterface_StartAudioChat(char *nick) {
+    pthread_t th;
+    pthread_create(&th, NULL, threadRecord, nick);
     return TRUE;
 }
 
@@ -1418,6 +1584,7 @@ boolean IRCInterface_StartAudioChat(char *nick) {
  */
 
 boolean IRCInterface_StopAudioChat(char *nick) {
+    grabandoAudio = FALSE;
     return TRUE;
 }
 
@@ -1605,3 +1772,58 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+
+/*
+THE PLAN:
+
+cuando un cliente (emisor) le da al boton de enviar audiochat con otro cliente (receptor)
+se envia un privmsg a modo de handshaking
+el emisor especifica el puerto desde el que enviará los datos de audio
+Por su parte, el receptor dira si quiere o no recibir datos de audio
+    Si dice que no: se acabo la conexion
+    Si dice que si: se continua
+El emisor ira escribiendo en el socket
+El receptor ira leyendo del socket.
+
+PROBLEMAS
+1.cuando el emisor decide de terminar de transmitir (pulsando el boton stop) como notifica al hilo que esta enviando
+  de que deje de enviar cosas y se muera?
+2.cuando el receptor decida dejar de escuchar, como cierra la conexion de audiochat?
+
+POSIBLES SOLUCIONES
+1.hacer una variable global que sea el pthread que esta emitiendo
+  Problema de esto: solo un audiochat a la vez
+1.no hacer hilos.
+  Problema de esto: solo un audiochat a la vez
+2.cuando el receptor decida empezar el audiochat, que se le abra una ventanita con el audiochat tambien.
+  De ahi, que le de a cerrar y se acabe la conexion
+
+Segun veo, por limitacion de la propia interfaz, solo se permite un audiochat a la vez. Por tanto optare por la opcion sin hilos:
+
+
+
+
+emisor inicia TCP
+emisor >> PRIVMSG peticion inicio audiochat >> receptor
+receptor inicia TCP:
+    -emisor << TCP: no << receptor
+        receptor cierra conexion TCP
+        emisor cierra conexion TCP
+    -emisor << TCP: si << receptor
+        then audiochat.
+
+audiochat:
+useri (i = {1, 2}) inician conexion UDP
+mientras este pulsado el boton play: inicio hilo, grabo y UDP: envio
+mientras este pulsado el boton stop: mato hilo. no grabo ni envio
+si se pulsa el boton exit:
+    user1 >> TCP: quiero cerrar conexion >> user2
+    user1 (si hay hilo cierra hilo) cierra conexion TCP y UDP
+    user2 (si hay hilo cierra hilo) cierra conexion TCP y UDP
+
+por tanto, para el audiochat requiero;
+    -dos sockets: uno para enviar y otro para recibir
+    -un hilo que lea (escuchar audio)
+    -un hilo que escriba (enviar audio)
+*/

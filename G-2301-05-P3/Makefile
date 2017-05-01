@@ -6,7 +6,7 @@ SLDIR=srclib
 CDIR=certs
 CC=gcc
 CFLAGS= -g -Wall -pthread -rdynamic `pkg-config --cflags gtk+-3.0`
-LIBS=-lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -L$(LDIR) -lredes2
+LIBS=-lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -L$(LDIR) -lredes2 -lsoundredes -lpulse -lpulse-simple
 
 #CFLAGS2= -g -Wall -pthread
 #LIBS2= -lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb -L$(LDIR) -lredes2

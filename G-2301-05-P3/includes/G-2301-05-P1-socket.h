@@ -7,14 +7,14 @@
 #define SERVERNAME "Mambru@war"
 
 /**
- * @brief abre un socket
+ * @brief abre un socket TCP
  *
  * @return el socket o -1 en caso de que hubiera un fallo
  */
 int openSocket_TCP();
 
 /**
- * @brief enlaza un socket con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
+ * @brief enlaza un socket TCP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
  *
  * @param sockfd el socket a enlazar
  * @param portno el puerto al que enlazar el socket
@@ -55,4 +55,32 @@ int connectTo(int sockfd, char* hostname, int portno);
  * @return en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo
  */
 int connectToIP(int sockfd, char* IP, int portno);
+
+/**
+ * @brief abre un socket UDP
+ *
+ * @return el socket o -1 en caso de que hubiera un fallo
+ */
+int openSocket_UDP();
+
+/**
+ * @brief enlaza un socket UDP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
+ *
+ * @param sockfd el socket a enlazar
+ * @param portno el puerto al que enlazar el socket
+ * @param serv_addr la dirección de una estructura sockaddr_in en donde se guardarán los valores relativos a esta conexión
+ *
+ * @return -1 en caso de error, un numero positivo en otro caso
+ */
+int bindSocket_UDP(int sockfd, int portno, struct sockaddr_in* serv_addr);
+
+/**
+ * @brief obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv
+ *
+ * @param sockfd el socket (enlazado) del que queremos sacar su puerto
+ * @param serv la estructura sockaddr_in en la que se guardan los datos referentes a nuestro extremo de la conexion
+ *
+ * @return el puerto del socket. Si hubo un error, -1
+ */
+int getSocketPort(int sockfd, struct sockaddr_in* serv_addr);
 #endif

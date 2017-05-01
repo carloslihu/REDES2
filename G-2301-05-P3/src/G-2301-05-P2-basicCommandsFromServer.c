@@ -9,6 +9,13 @@ struct threadRecvArgs{
 	char sender[10];
 };
 
+struct threadAudioArgs{
+    char* hostname;
+    char* sender;
+    int portTCP;
+    int portUDP;
+};
+
 /**
  * @brief rutina por defecto ante un mensaje no reconocido por este cliente
  *
@@ -368,62 +375,149 @@ void* threadRecv(void* args){
 	boolean answer;
 	FILE* fp;
 
+    //primero nos detacheamos, para acabar por nuestra cuenta sin que le tenga que importar al hilo principal
     pthread_detach(pthread_self());
+    //obtenemos de los argumentos todos los datos necesarios
 	aux = (struct threadRecvArgs*) args;
 	filename = aux->filename;
 	hostname = aux->hostname;
 	port = aux->port;
 	length = aux->length;
 	sender = aux->sender;
-
+    //preguntamos al usuario si quiere recibir el archivo o no
 	answer = IRCInterface_ReceiveDialogThread(sender, filename);
+    //abrimos un socket TCP
 	sock = openSocket_TCP();
-	if(sock < 0){
+	if(sock < 0){//si da error, no podemos continuar
 		IRC_MFree(3, &filename, &hostname, &aux);
 		logIntError(-1, "error @ threadRecv -> openSocket_TCP");
 		return NULL;
 	}
-	if(connectTo(sock, hostname, port) < 0){
+    //nos conectamos al puerto que nos ha especificado el emisor
+	if(connectTo(sock, hostname, port) < 0){//si da error, no podemos continuar
 		IRC_MFree(3, &filename, &hostname, &aux);
 		close(sock);
 		logIntError(-1, "error @ threadRecv -> connectTo");
 		return NULL;
 	}
+    //enviamos la respuesta al emisor mediante esta conexion TCP establecida
 	send(sock, &answer, sizeof(answer), 0);
-	if(answer == FALSE){
+	if(answer == FALSE){//si la respuesta es no querer recibir el archivo, se acabo
 		close(sock);
 		IRC_MFree(3, &filename, &hostname, &aux);
 		return NULL;
-	}
+	}//de lo contrario continuamos
+    //abrimos un archivo con el nombre especificado y procederemos a escribir en el todos los datos
 	fp = fopen(filename, "w");
-	if(fp == NULL){
+	if(fp == NULL){//si nos da error, no podemos continuar
 		IRC_MFree(3, &filename, &hostname, &aux);
 		close(sock);
 		logIntError(-1, "error @ threadRecv -> malloc");
 		return NULL;
 	}
+    //TODO fragmentar este proceso para no tener un char* de un tamaño virtualmente infinito. (e.d. para que no nos peten la memoria)
+    //reservamos memoria para todos los datos que nos envian
 	data = (char*)malloc(sizeof(char)*length);
-	if(data == NULL){
+	if(data == NULL){//si da error el malloc, no podemos continuar
 		IRC_MFree(3, &filename, &hostname, &aux);
 		close(sock);
 		fclose(fp);
 		logIntError(-1, "error @ threadRecv -> malloc");
 		return NULL;
 	}
-	if(recv(sock, data, length, 0) <= 0){
+    //recibimos los datos del fichero
+	if(recv(sock, data, length, 0) <= 0){//si da error, no podemos continuar
 		IRC_MFree(4, &filename, &hostname, &aux, &data);
 		close(sock);
 		fclose(fp);
 		logIntError(-1, "error @ threadRecv -> recv");
 		return NULL;
 	}
-	//fprintf(fp, "%s", data);
+	//escribimos en el fichero todos estos datos que hemos recibido
     fwrite(data, sizeof(*data), length, fp);
+    //una vez hemos acabado esto, liberamos memoria, cerramos sockets y se acabo
 	IRC_MFree(4, &filename, &hostname, &aux, &data);
 	fclose(fp);
 	close(sock);
 	return NULL;
 }
+
+
+
+
+
+
+
+
+
+void *threadAudio(void* args){
+    int portTCP, portUDP, socketTCP, socketUDP;
+    char* sender, buffer[512], *hostname;
+    boolean answer;
+    struct threadAudioArgs* aux;
+
+    if(args == NULL)
+        return NULL;
+    aux = (struct threadAudioArgs*)args;
+    hostname = aux->hostname;
+    sender = aux->sender;
+    portTCP = aux->portTCP;
+    portUDP = aux->portUDP;
+
+    //primero preguntamos al usuario si quiere o no recibir la transmision de audio
+    answer = IRCInterface_ReceiveDialogThread(sender, "audio en vivo");
+    socketTCP = openSocket_TCP();//abrimos el socket de conexion TCP
+    if(socketTCP < 0){//si da error, no podemos continuar
+        logIntError(-1, "error @ threadAudio -> openSocket_TCP");
+        return NULL;
+    }
+    //tratamos de conectarnos con el socket TCP al puerto TCP que nos han indicado
+    if(connectTo(socketTCP, hostname, portTCP) < 0){//si da error, no podemos continuar
+        close(socketTCP);
+        logIntError(-1, "error @ threadAudio -> connectTo");
+        return NULL;
+    }
+    //enviamos por este socket TCP nuestra respuesta, para notificar al otro cliente de nuestra decision
+    send(socketTCP, &answer, sizeof(answer), 0);
+    //si hemos decidido no recibir la transmision de audio, se acabo
+    if(answer == FALSE){
+        close(socketTCP);
+        return NULL;
+    }
+    //de lo dontrario continuamos
+    //inicializamos nuestro socket de conexion UDP
+    socketUDP = openSocket_UDP();
+    if(socketUDP < 0){//si da error, no podemos continuar
+        close(socketTCP);
+        return NULL;
+    }
+    //tratamos de conectarnos por el socket UDP
+    if(connectTo(socketTCP, hostname, portUDP) < 0){//si da error, no podemos continuar
+        close(socketTCP);
+        close(socketUDP);
+        logIntError(-1, "error @ threadAudio -> connectTo");
+        return NULL;
+    }
+    //una vez nos hemos conectado con exito, procedemos a la recepcion de audio
+    //preparamos el formato de recepcion de audio
+    IRCSound_PlayFormat(PA_SAMPLE_S16BE,2);
+    //abrimos la reproduccion de audio
+    if(IRCSound_OpenPlay()){
+        close(socketTCP);
+        close(socketUDP);
+        return NULL;
+    }
+    //mientras que recibamos audio, lo iremos reproduciendo
+    while(recv(socketUDP, buffer, 160, 0) <= 0)
+        IRCSound_PlaySound(buffer,160);
+
+    //si ya no recibimos mas audio, se acabo la conexion
+    close(socketTCP);
+    close(socketUDP);
+    IRCSound_ClosePlay();
+    return NULL;
+}
+
 
 /**
  * @brief rutina que maneja la llegada de un comando PRIVMSG. maneja envio de mensajes tanto a canales como a usuarios
@@ -435,12 +529,13 @@ void* threadRecv(void* args){
  * @return IRC_OK
  */
 long reactPrivmsg(char* strin) {
-    char *prefix, *msgtarget, *msg, *nick, *user, *host, *server, *filename, *hostname;
-    int port;
+    char *prefix, *msgtarget, *msg, *nick, *user, *host, *server, *filename, *hostname, aux[512];
+    int portTCP, portUDP;
     long ret;
     unsigned long length;
     pthread_t th;
-    struct threadRecvArgs *args;
+    struct threadAudioArgs *argsAudio;
+    struct threadRecvArgs *argsFile;
 
     prefix = msgtarget = msg = nick = user = host = server = NULL;
 
@@ -450,29 +545,73 @@ long reactPrivmsg(char* strin) {
         IRC_MFree(3, &prefix, &msgtarget, &msg);
         return logIntError(ret, "error @ reactPrivmsg -> IRCParse_ComplexUser");
     }
-    if(msgtarget[0] != '#'){
+    if(msgtarget[0] != '#'){//si no era un mensaje a un canal => era un mensaje privado => escribimos el mensaje en la conversacion de quien lo envia
     	free(msgtarget);
     	msgtarget = nick;
     }
-    printf("\nmsg: \"%s\"\nmsgtarget: %s\n", msg, msgtarget);
-    if(IRCInterface_QueryChannelExist (msgtarget) == FALSE)
+    printf("\nmsg: \"%s\"\nmsgtarget: %s\n", msg, msgtarget);//mensaje de "debuggeo"
+    if(IRCInterface_QueryChannelExist (msgtarget) == FALSE)//si el canal en el que queremos escribir no existe, lo creamos
         	IRCInterface_AddNewChannelThread(msgtarget, 0);
-    if(msg[0] != '\002'){//si es un mensaje normal
-    	IRCInterface_WriteChannelThread(msgtarget, nick, msg);
-    	IRC_MFree(3, &prefix, &msgtarget, &msg);
-    }
-    else {//si es un mensaje para enviar un fichero
-    	printf("\nHe detectado que me quieren enviar un fichero\n");
-    	if(FSend_Parse(msg, &filename, &hostname, &port, &length) != IRC_OK)
+
+    //ahora veremos las distintas posibilidades de tipo de mensaje privado:
+
+    if(*msg == '\002'){//si es un mensaje para enviar un fichero
+    	printf("\nHe detectado que me quieren enviar un fichero\n");//mensaje de "debuggeo"
+    	if(FSend_Parse(msg, &filename, &hostname, &portTCP, &length) != IRC_OK){//parseamos el mensaje. si da error, no podemos continuar
+            IRC_MFree(5, &prefix, &msgtarget, &msg, &filename, &hostname);
     		return logIntError(-1, "error @ reactPrivmsg -> FSend_Parse");
-    	args = (struct threadRecvArgs*)malloc(sizeof(struct threadRecvArgs));
-    	args->hostname = hostname;
-    	args->port = port;
-    	args->filename = filename;
-    	args->length = length;
-    	strcpy(args->sender, nick);
-    	pthread_create(&th, NULL, threadRecv, args);
-    	//IRC_MFree(7, &prefix, &msgtarget, &msg, &nick, &user, &host, &server);
+        }
+        //reservamos memoria para la estructura de argumentos que le vamos a pasar al hilo
+    	argsFile = (struct threadRecvArgs*)malloc(sizeof(struct threadRecvArgs));
+        if(argsFile == NULL){//si da error, no podemos continuar
+            IRC_MFree(5, &prefix, &msgtarget, &msg, &filename, &hostname);
+            return logIntError(-1, "error @ reactPrivmsg -> malloc");
+        }
+        //asignamos cada uno de los campos de esta estructura
+    	argsFile->hostname = hostname;
+    	argsFile->port = portTCP;
+    	argsFile->filename = filename;
+    	argsFile->length = length;
+    	strcpy(argsFile->sender, nick);
+        //lanzamos el hilo
+    	pthread_create(&th, NULL, threadRecv, argsFile);
+    } else if(*msg == '\001'){//si es un mensaje para enviar audio
+        printf("\nHe detectado que me quieren enviar audio\n");//mensaje de "debuggeo"
+        if(sscanf(msg, "\001FAUDIO %s %d %d", aux, &portTCP, &portUDP) < 3){//parseamos el mensaje. Si da error, no podemos continuar
+            IRC_MFree(3, &prefix, &msgtarget, &msg);
+            return logIntError(-1, "error @ reactPrivmsg -> sscanf");
+        }
+        //reservamos memoria para la estructura de argumentos que le vamos a pasar al hilo
+        argsAudio = (struct threadAudioArgs*)malloc(sizeof(struct threadAudioArgs));
+        if(argsAudio == NULL){//si da error, no podemos continuar
+            IRC_MFree(3, &prefix, &msgtarget, &msg);
+            return logIntError(-1, "error @ reactPrivmsg -> malloc(2)");
+        }
+        //reservamos memoria para el campo sender de la estructura de argumentos
+        argsAudio->sender = (char*)malloc(sizeof(char)*(strlen(nick) + 1));
+        if(argsAudio->sender == NULL){//si da error, no podemos continuar
+            IRC_MFree(4, &prefix, &msgtarget, &msg, &argsAudio);
+            return logIntError(-1, "error @ reactPrivmsg -> malloc(3)");
+        }
+        //copiamos en esta memoria el nick del string que contiene el nombre de quien enviaba esta peticion
+        strcpy(argsAudio->hostname, nick);
+        //reservamos memoria para el campo hostname de la estructura de argumentos
+        argsAudio->hostname = (char*)malloc(sizeof(char)*(strlen(aux) + 1));
+        if(argsAudio->hostname == NULL){//si da error, no podemos continuar
+            IRC_MFree(5, &(argsAudio->sender), &prefix, &msgtarget, &msg, &argsAudio);
+            return logIntError(-1, "error @ reactPrivmsg -> malloc(4)");
+        }
+        //copiamos en esta memoria, los datos correspondientes
+        strcpy(argsAudio->hostname, aux);
+        //rellenamos el resto de campos
+        argsAudio->portTCP = portTCP;
+        argsAudio->portUDP = portUDP;
+        //lanzamos el hilo
+        pthread_create(&th, NULL, threadAudio, argsAudio);
+    } else {//si es un mensaje normal
+        //escribimos en el canal que haga falta y se acabo
+        IRCInterface_WriteChannelThread(msgtarget, nick, msg);
+        IRC_MFree(3, &prefix, &msgtarget, &msg);
     }
     return IRC_OK;
 }

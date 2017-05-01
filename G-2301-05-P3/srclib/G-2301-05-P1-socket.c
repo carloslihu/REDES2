@@ -1,7 +1,7 @@
 #include "../includes/G-2301-05-P1-socket.h"
 
 /**
- * @brief abre un socket
+ * @brief abre un socket TCP
  *
  * @return el socket o -1 en caso de que hubiera un fallo
  */
@@ -13,7 +13,7 @@ int openSocket_TCP() {
 }
 
 /**
- * @brief enlaza un socket con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
+ * @brief enlaza un socket TCP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
  *
  * @param sockfd el socket a enlazar
  * @param portno el puerto al que enlazar el socket
@@ -100,4 +100,53 @@ int connectToIP(int sockfd, char* IP, int portno){
     if (connectReturn < 0)
         return logIntError(errno, "error @ connectTo -> connect");
     return connectReturn;
+}
+
+/**
+ * @brief abre un socket UDP
+ *
+ * @return el socket o -1 en caso de que hubiera un fallo
+ */
+int openSocket_UDP(){
+    int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+    if (sockfd < 0)
+        return logIntError(-1, "error @ openSocket_TCP");
+    return sockfd;
+}
+
+/**
+ * @brief enlaza un socket UDP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
+ *
+ * @param sockfd el socket a enlazar
+ * @param portno el puerto al que enlazar el socket
+ * @param serv_addr la dirección de una estructura sockaddr_in en donde se guardarán los valores relativos a esta conexión
+ *
+ * @return -1 en caso de error, un numero positivo en otro caso
+ */
+int bindSocket_UDP(int sockfd, int portno, struct sockaddr_in* serv_addr) {
+    int bindReturn;
+
+    memset((char*) serv_addr, 0, sizeof (*serv_addr));
+    serv_addr->sin_family = AF_INET;
+    serv_addr->sin_addr.s_addr = INADDR_ANY;
+    serv_addr->sin_port = htons(portno);
+    bindReturn = bind(sockfd, (struct sockaddr *) serv_addr, sizeof (*serv_addr));
+    if (bindReturn < 0)
+        return logIntError(-1, "Error @ bindSocket_TCP");
+    return bindReturn;
+}
+
+/**
+ * @brief obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv
+ *
+ * @param sockfd el socket (enlazado) del que queremos sacar su puerto
+ * @param serv la estructura sockaddr_in en la que se guardan los datos referentes a nuestro extremo de la conexion
+ *
+ * @return el puerto del socket. Si hubo un error, -1
+ */
+int getSocketPort(int sockfd, struct sockaddr_in* serv){
+    socklen_t slen = sizeof(*serv);
+    if(getsockname(sockfd, (struct sockaddr*) serv, &slen) < 0)
+        return -1;
+    return ntohs((*serv).sin_port);
 }
