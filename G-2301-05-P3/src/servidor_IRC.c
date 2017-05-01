@@ -202,9 +202,11 @@ void* threadRoutine(void* args) {
 
     connectAndRegister(socket, &client, &server, ssl);
     while (retrieveMsg(socket, &server, &client,ssl) > 0);
-
+    
     freeThreadResources(socket);
-    close(socket);
+    if(cerrar_canal_SSL(ssl, ctx, socket) == -1){
+    	return logPointerError(NULL, "error @ threadRoutine: cerrar_canal_SSL");
+    }
     free(args);
     return NULL;
 }
