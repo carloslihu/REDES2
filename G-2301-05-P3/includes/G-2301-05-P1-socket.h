@@ -2,6 +2,10 @@
 #define _SOCKET_H
 
 #include "G-2301-05-P1-tools.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 
 #define SERVERINFO "servidor de Mambru, DoReMi DoReFa"
 #define SERVERNAME "Mambru@war"
@@ -83,4 +87,6 @@ int bindSocket_UDP(int sockfd, int portno, struct sockaddr_in* serv_addr);
  * @return el puerto del socket. Si hubo un error, -1
  */
 int getSocketPort(int sockfd, struct sockaddr_in* serv_addr);
+
+int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname);
 #endif

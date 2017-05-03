@@ -456,6 +456,8 @@ void *threadAudio(void* args){
     char* sender, buffer[512], *hostname;
     boolean answer;
     struct threadAudioArgs* aux;
+    struct sockaddr_in servUDP;
+    socklen_t slen;
 
     if(args == NULL)
         return NULL;
@@ -492,13 +494,11 @@ void *threadAudio(void* args){
         close(socketTCP);
         return NULL;
     }
+    slen = sizeof(servUDP);
+    iniAddrUDP(&servUDP, PORT_RECORD, hostname);
+    /*if(bind(socketUDP, (struct sockaddr*) &servUDP, slen))
+        return logPointerError(NULL, "error @ threadAudio -> bind");*/
     //tratamos de conectarnos por el socket UDP
-    if(connectTo(socketTCP, hostname, portUDP) < 0){//si da error, no podemos continuar
-        close(socketTCP);
-        close(socketUDP);
-        logIntError(-1, "error @ threadAudio -> connectTo");
-        return NULL;
-    }
     //una vez nos hemos conectado con exito, procedemos a la recepcion de audio
     //preparamos el formato de recepcion de audio
     IRCSound_PlayFormat(PA_SAMPLE_S16BE,2);
@@ -508,9 +508,11 @@ void *threadAudio(void* args){
         close(socketUDP);
         return NULL;
     }
-    //mientras que recibamos audio, lo iremos reproduciendo
-    while(recv(socketUDP, buffer, 160, 0) <= 0)
+    printf("he llegado hasta la parte de recibir audio\n");
+    while(recvfrom(socketUDP, buffer, 160, 0, (struct sockaddr*) &servUDP, &slen) <= 0){
+        printf("he recibido un paquete de audio\n");
         IRCSound_PlaySound(buffer,160);
+    }
 
     //si ya no recibimos mas audio, se acabo la conexion
     close(socketTCP);
@@ -595,7 +597,7 @@ long reactPrivmsg(char* strin) {
             return logIntError(-1, "error @ reactPrivmsg -> malloc(3)");
         }
         //copiamos en esta memoria el nick del string que contiene el nombre de quien enviaba esta peticion
-        strcpy(argsAudio->hostname, nick);
+        strcpy(argsAudio->sender, nick);
         //reservamos memoria para el campo hostname de la estructura de argumentos
         argsAudio->hostname = (char*)malloc(sizeof(char)*(strlen(aux) + 1));
         if(argsAudio->hostname == NULL){//si da error, no podemos continuar

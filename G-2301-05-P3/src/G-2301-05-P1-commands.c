@@ -123,8 +123,8 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
  */
 long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//NICK 2
 {
-    char *prefix, *nick, *msg, *command, * userOr, *nickOr, *realOr;
-    long int id = 0, retVal;
+    char *prefix, *nick, *msg, *command, * userOr, *nickOr, *realOr, **nicklist;
+    long int id = 0, retVal, nelements;
 
     prefix = nick = msg = userOr = nickOr = realOr = command = NULL;
     if ((retVal = IRCParse_Nick(strin, &prefix, &nick, &msg)) != IRC_OK) {
@@ -146,12 +146,23 @@ long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in 
         IRC_MFree(4, &prefix, &nick, &nickOr, &msg);
         return logIntError(retVal, "error @ commandNick -> IRCMsg_Nick");
     }
-
+    if((retVal = IRCTADUser_GetNickList(&nicklist, &nelements)) != IRC_OK){
+        IRC_MFree(5, &command, &prefix, &nick, &nickOr, &msg);
+        return logIntError(retVal, "error @ commandNick -> IRCTADUser_GetNickList");
+    }
+    if(megaSend(command, nicklist, nelements) != IRC_OK){
+        IRCTADUser_FreeList (nicklist, nelements);
+        IRC_MFree(5 &command, &prefix, &nick, &nickOr, &msg);
+        return logIntError(-1, "error @ commandNick -> megaSend");
+    }
+    /*
     if ((retVal = send(socket, command, strlen(command), 0)) == -1) {
         IRC_MFree(4, &prefix, &nick, &nickOr, &msg);
         return logIntError(ERROR_SEND, "error @ commandNick -> send\n");
     }
-    IRC_MFree(5, &command, &msg, &nick, &nickOr, &realOr);
+    */
+    IRCTADUser_FreeList (nicklist, nelements);
+    IRC_MFree(5 &command, &prefix, &nick, &nickOr, &msg);
     return IRC_OK;
 }
 
@@ -168,8 +179,8 @@ long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in 
  */
 long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//TODO MODE 5
 {
-    long int retVal = 0;
-    char* prefix, *channeloruser, *mode, *nick, *command, *user;
+    long int retVal = 0, nelements, nChannels, i;
+    char* prefix, *channeloruser, *mode, *nick, *command, *user, **listnicks, **listchannels;
     prefix = channeloruser = mode = nick = command = user = NULL;
 
     if ((retVal = IRCParse_Mode(strin, &prefix, &channeloruser, &mode, &user)) != IRC_OK)
@@ -199,14 +210,60 @@ long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in 
         IRC_MFree(4, &nick, &channeloruser, &mode, &user);
         return logIntError(retVal, "error @ commandMode -> IRCMsg_Mode\n");
     }
+
+    if(channeloruser[0] == '#'){//si es un mode a un canal
+        if((retVal = IRCTAD_ListNicksOnChannelArray(channeloruser, &listnicks, &nelements)) != IRC_OK){
+            IRC_MFree(5, &command, &nick, &channeloruser, &mode, &user);
+            return logIntError(retVal, "error @ commandMode -> IRCTAD_ListNicksOnChannelArray");
+        }
+        if(megaSend(command, listnicks, nelements) != IRC_OK){
+            IRCTADUser_FreeList (listnicks, nelements);
+            IRC_MFree(5 &command, &prefix, &nick, &nickOr, &msg);
+            return logIntError(-1, "error @ commandNick -> megaSend");
+        }
+        IRCTADUser_FreeList(listnicks, nelements);
+    } else {// si era un mode a un usuario en concreto
+        IRCTAD_ListChannelsOfUserArray(user, channeloruser, &listchannels, &nChannels);
+        for(i = nChannels -1; i>=0; i++){
+            if((retVal = IRCTAD_ListNicksOnChannelArray(listchannels[i], &listnicks, &nelements)) != IRC_OK)
+                continue;
+            if(megaSend(command, listnicks, nelements) != IRC_OK)
+                continue;
+            IRCTADUser_FreeList(listnicks, nelements);
+        }
+        IRCTADUser_FreeList(listchannels, nChannels);
+    }
+
+    /*
     if ((retVal = send(socket, command, strlen(command), 0)) == -1) {
         IRC_MFree(5, &command, &nick, &channeloruser, &mode, &user);
         return logIntError(retVal, "error @ commandNick -> send\n");
     }
+    */
 
     IRC_MFree(5, &command, &nick, &channeloruser, &mode, &user);
     return IRC_OK;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TODO actualizar el servidor desde aqui para abajo
+
+
+
 
 /**
  * @brief commando quit
@@ -1133,5 +1190,76 @@ long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in 
     }
     //TODO free
     IRC_MFree(3, &msg, &nick, &command);
+    return IRC_OK;
+}
+
+
+
+
+
+
+
+
+
+//TODO poner cabeceras en
+
+long int megaSend(char* command, char** nicks, long int num){
+    long int i, id, creationTS, actionTS;
+    int socket;
+    char *user, *real, *host, *IP, *away;
+
+    id = creationTS = actionTS = socket = 0;
+    user = real = host = IP = away = NULL;
+
+    if(command == NULL || nicks == NULL)
+        return logIntError(-1, "error @ megaSend -> invalid arguments");
+
+    for(i=num-1; i>=0; i--){
+        if(IRCTADUser_GetData(&id, &user, nicks + i, &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
+            continue;
+        send(socket, command, strlen(command), 0);
+        IRC_MFree(5, &user, &real, &host, &IP, &away);
+        id = creationTS = actionTS = socket = 0;
+    }
+
+    return IRC_OK;
+}
+
+int nickInList(char* nick, char** list, long int nelements){
+    long int i;
+    if(nick == NULL || list == NULL)
+        return TRUE;
+    if(nelements == 0)
+        return FALSE;
+    for(i=0;i<nelements;i++)
+        if(list[i] == NULL)
+            return FALSE;  
+        else if(strcmp(nick, list[i]) == 0)
+            return TRUE;//encontrado
+    return FALSE;//no encontrado
+}
+
+long int filterUsersInChannels(char** listChannels, long int nChannels, char** listNicks, long int nNicks, char ***filteredNickList){
+    long int nickCounter, channelCounter, filteredCounter, i;
+    if(listChannels == NULL || nChannels <= 0 || listNicks == NULL || nNicks <= 0 || filteredNickList == NULL)
+        return logIntError(-1, "error @ filterUsersInChannels -> invalid arguments");
+    *filteredNickList = (char**)malloc(sizeof(char*)*nNicks);
+    if(*filteredNickList == NULL)
+        return logIntError(-1, "error @ filterUsersInChannels -> malloc (1)");
+    //por el principio del palomar, a lo sumo habra tantos nicks en la lista de filtrados como nicks haya en la lista de todos los nicks
+    //port tanto, si no hay el mismo numero, hay menos. por seguridad (y por como hemos implementado megaSend), pondremos el resto a NULL
+    for(i = 0; i < nNicks; i++)
+        filteredNickList[i] = NULL;
+    //por el principio del palomar, este orden de bucles asegura que no recorreremos listas de forma inutil
+    for(nickCounter = 0, filteredCounter = 0; nickCounter < nNicks; nickCounter++){
+        for(channelCounter = 0; channelCounter < nChannels; channelCounter++){
+            if(IRCTAD_TestUserOnChannel(listChannels[channelCounter], listNicks[nickCounter]) == IRC_OK &&
+                nickInList(listNicks[nickCounter], *filteredNickList, filteredCounter) == FALSE){
+                //OJO apuntamos a la memoria pero no copiamos la memoria: e.d. solo hay que liberar listNicks
+                (*filteredNickList)[filteredCounter] = listNicks[nickCounter];
+                filteredCounter++;
+            }
+        }
+    }
     return IRC_OK;
 }

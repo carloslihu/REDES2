@@ -12,6 +12,50 @@ int openSocket_TCP() {
     return sockfd;
 }
 
+int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname){
+    //struct hostent *addr = NULL;
+    char STRport[20];
+    if(si_other == NULL || hostname == NULL)
+        return logIntError(-1, "error @ iniAddrUDP -> not valid arguments");
+    printf("hostname: %s\n", hostname);
+
+    int status;
+    struct addrinfo hints;
+    struct addrinfo *res;  // will point to the results
+
+    memset(&hints, 0, sizeof hints); // make sure the struct is empty
+    hints.ai_family = AF_UNSPEC;     // don't care IPv4 or IPv6
+    hints.ai_socktype = SOCK_DGRAM; // TCP stream sockets
+    hints.ai_flags = AI_PASSIVE;     // fill in my IP for me
+
+    sprintf(STRport, "%d", port);
+    printf("strport: %s\n", STRport);
+
+    if ((status = getaddrinfo(hostname, STRport, &hints, &res)) != 0)
+        return logIntError(-1, "error @ iniAddrUDP -> getaddrinfo");
+    si_other = (struct sockaddr_in *)res->ai_addr;
+    return IRC_OK;
+//  printf("ip: %s", res->ai_addr->sin_addr);
+    /*
+
+    struct sockaddr_in *addr = (struct sockaddr_in *)res->ai_addr; 
+    printf("inet_ntoa(in_addr)sin = %s\n",inet_ntoa((struct in_addr)addr->sin_addr));
+
+    memset((char *) si_other, 0, sizeof(*si_other));
+    (*si_other).sin_family = AF_INET;
+    (*si_other).sin_port = htons(port);
+    addr = gethostbyname(hostname);
+    if(addr == NULL)
+        return logIntError(-1, "error @ iniAddrUDP -> gethostbyname");
+    printf("addr: %s\n", addr->h_addr);
+    if(addr == NULL)
+        return logIntError(-1, "error @ iniAddrUDP -> gethostbyname");
+    if (inet_aton((char*) addr->h_addr , &(si_other->sin_addr)) == 0) 
+        return logIntError(-1, "error @ iniAddrUDP -> inet_aton");
+    return 1;
+    */
+}
+
 /**
  * @brief enlaza un socket TCP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr
  *
@@ -69,7 +113,7 @@ int connectTo(int sockfd, char* hostname, int portno) {
     struct sockaddr_in serv_addr;
     server = gethostbyname(hostname);
     if (server == NULL)
-        return logIntError(-1, "error @ connectTo->gethostbyname");
+        return logIntError(-1, "error @ connectTo -> gethostbyname");
     memset((char*) &serv_addr, 0, sizeof (serv_addr));
     serv_addr.sin_family = AF_INET;
     memcpy((char*) &serv_addr.sin_addr.s_addr, (char*) server->h_addr, server->h_length);
@@ -110,7 +154,7 @@ int connectToIP(int sockfd, char* IP, int portno){
 int openSocket_UDP(){
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockfd < 0)
-        return logIntError(-1, "error @ openSocket_TCP");
+        return logIntError(-1, "error @ openSocket_UDP");
     return sockfd;
 }
 
@@ -131,8 +175,10 @@ int bindSocket_UDP(int sockfd, int portno, struct sockaddr_in* serv_addr) {
     serv_addr->sin_addr.s_addr = INADDR_ANY;
     serv_addr->sin_port = htons(portno);
     bindReturn = bind(sockfd, (struct sockaddr *) serv_addr, sizeof (*serv_addr));
-    if (bindReturn < 0)
-        return logIntError(-1, "Error @ bindSocket_TCP");
+    if (bindReturn < 0){
+        perror("errno: ");
+        return logIntError(-1, "Error @ bindSocket_UDP");
+    }
     return bindReturn;
 }
 

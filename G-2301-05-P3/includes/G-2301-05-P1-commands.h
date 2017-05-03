@@ -200,4 +200,15 @@ long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in 
  */
 long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //AWAY 37 advanced
 
+/**
+ * @brief send en masa
+ * permite enviar un mismo comando a un conjunto de usuarios del servidor 
+ *
+ * @param command el comando a enviar a todos los usuarios
+ * @param nicks un array con los String que contienen los nicks de los usuarios a los que enviar el comando
+ *
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
+long int megaSend(char* command, char** nicks, long int num);
+
 #endif
