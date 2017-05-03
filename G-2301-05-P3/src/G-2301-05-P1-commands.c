@@ -6,6 +6,16 @@
 
 //TODO poner cabeceras en las siguientes 3 funciones
 
+/**
+ * @brief envia un comando en masa
+ * envia un comando a cada uno de los clientes especificados en la lista de nicks
+ *
+ * @param command el comando a enviar en masa
+ * @param nicks la lista con los nicks a quienes hemos de enviar el comando
+ * @param num la longitud de la lista de nicks
+ *
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
 long int megaSend(char* command, char** nicks, long int num){
     long int i, id, creationTS, actionTS;
     int socket;
@@ -28,7 +38,17 @@ long int megaSend(char* command, char** nicks, long int num){
     return IRC_OK;
 }
 
-int nickInList(char* nick, char** list, long int nelements){
+/**
+ * @brief comprueba si un nick pertenece a una lista de nicks
+ * recorre la lista de manera lineal para determinar si el nick existe o no dentro de dicha lista
+ *
+ * @param nick el nick a comprobar si está o no dentro de la lista
+ * @param nicks la lista que contiene nicks y en la que se buscara el nick
+ * @param nelements la longitud de la lista que contiene los nicks
+ *
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
+boolean nickInList(char* nick, char** list, long int nelements){
     long int i;
     if(nick == NULL || list == NULL)
         return TRUE;
@@ -37,11 +57,25 @@ int nickInList(char* nick, char** list, long int nelements){
     for(i=0;i<nelements;i++)
         if(list[i] == NULL)
             return FALSE;  
-        else if(nick == list[i])//es comparacion referencial porque en el contexto de filterUsersInChannels no vamos a copiar memoria, solo punteros
+        else if(strcmp(nick, list[i]) == 0)
             return TRUE;//encontrado
     return FALSE;//no encontrado
 }
 
+/**
+ * @brief filtra los nicks segun pertenezcan a ciertos canales
+ * esta funcion escogera, de todos los nicks que existen en el servidor, aquellos que pertenezcan a una serie de
+ * canales, sin que estos nicks se repitan en la lista resultante
+ *
+ * @param listChannels la lista de canales que actuaran como filtro para los nicks (usualmente, la lista de canales en los que esta un usuario)
+ * @param nChannels la longitud de la lista de canales
+ * @param listNicks la lista de nicks a filtrar segun pertenezcan o no a los canales (usualmente, la lista de todos los nicks del servidor)
+ * @param nNicks la longitud de la lista de nicks
+ * @param filteredNickList la lista resultante de los nicks que pasan el filtro. Sin repeticiones. importante: no requiere que se liberen sus contenidos, pues son apuntadores a los de la lista de nicks
+ * @param nFiltered la longitud resultante de la lista de nicks filtrados
+ *
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
 long int filterUsersInChannels(char** listChannels, long int nChannels, char** listNicks, long int nNicks, char ***filteredNickList, long int *nFiltered){
     long int nickCounter, channelCounter, i;
     if(listChannels == NULL || nChannels <= 0 || listNicks == NULL || nNicks <= 0 || filteredNickList == NULL)
@@ -66,17 +100,6 @@ long int filterUsersInChannels(char** listChannels, long int nChannels, char** l
     }
     return IRC_OK;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /**
  * @brief a partir de una lista de canales, saca otra lista igual, pero donde 
