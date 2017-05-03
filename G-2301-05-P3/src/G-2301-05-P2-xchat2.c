@@ -1402,6 +1402,7 @@ void * threadRecord(void * aux){
     char* myHost, *nick, buffer[512], *command;//, *adminArgs;
     struct sockaddr_in serv, client;
     boolean answer;
+    //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
     //socklen_t slen;
     //pthread_t admin;
 

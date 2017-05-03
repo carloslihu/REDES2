@@ -374,6 +374,7 @@ void* threadRecv(void* args){
 	unsigned long length;
 	boolean answer;
 	FILE* fp;
+    //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
 
     //primero nos detacheamos, para acabar por nuestra cuenta sin que le tenga que importar al hilo principal
     pthread_detach(pthread_self());
