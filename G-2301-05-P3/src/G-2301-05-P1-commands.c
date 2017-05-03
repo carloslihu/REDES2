@@ -4,8 +4,6 @@
 #include "../includes/G-2301-05-P1-types.h"
 
 
-//TODO poner cabeceras en las siguientes 3 funciones
-
 /**
  * @brief envia un comando en masa
  * envia un comando a cada uno de los clientes especificados en la lista de nicks
