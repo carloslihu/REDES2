@@ -27,4 +27,5 @@
 #define ERROR_RECV -3
 #define ERROR_MALLOC -4
 #define ERROR_CONTINUE -5
+#define MACRO_QUIT -6
 #endif

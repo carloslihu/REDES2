@@ -125,18 +125,20 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *client) {
+long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *client) {
     char buffer[512];
     char *command = NULL;
     char *strPos;
     int byteCount;
-    long int commandNumber;
+    long int commandNumber, retVal;
     while (1) {
         //printf("se ingresa en el bucle de retrieveMsg\n");
         memset(buffer, 0, 512);
         byteCount = recv(sockfd, (char*) buffer, 511, 0);
-        if (byteCount == 0)
+        if (byteCount == 0){
+        	close(sockfd);
             return logIntError(0, "retrieveMsg exited");
+        }
         else if (byteCount == -1)
             return logIntError(-1, "error @ retrieveMsg -> recv");
         //printf("*****************************\n%s\n*****************************\n", buffer);
@@ -148,8 +150,8 @@ int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *clie
                 if (commandNumber < 0) {
                     if (commandDefault(sockfd, server, client, command) != IRC_OK)
                         return logIntError(-1, "error @ retrieveMsg -> commandUnknown");
-                } else if (functs[commandNumber](sockfd, server, client, command) != IRC_OK)
-                    return logIntError(-1, "error @ retrieveMsg -> pFuncs");
+                } else if ((retVal = functs[commandNumber](sockfd, server, client, command)) != IRC_OK)
+                    return logIntError(retVal, "error @ retrieveMsg -> pFuncs");
             }
             IRC_MFree(1, &command);
         }
@@ -165,6 +167,7 @@ int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *clie
  * @return NULL al acabar la sesión del hilo
  */
 void* threadRoutine(void* args) {
+	long int retVal;
 
     pthread_detach(pthread_self());
     if (args == NULL)
@@ -182,9 +185,9 @@ void* threadRoutine(void* args) {
     pthread_mutex_unlock(&mutex);
 
     connectAndRegister(socket, &client, &server);
-    while (retrieveMsg(socket, &server, &client) > 0);
-
-    freeThreadResources(socket);
+    while ((retVal = retrieveMsg(socket, &server, &client)) > 0);
+    if(retVal != MACRO_QUIT)
+    	freeThreadResources(socket);
     close(socket);
     free(args);
     return NULL;
