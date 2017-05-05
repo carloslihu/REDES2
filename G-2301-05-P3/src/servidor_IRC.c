@@ -6,6 +6,7 @@
 #include "../includes/G-2301-05-P3-ssl.h"
 #define THREAD_NUMBER 10
 
+boolean ssl_active=TRUE;
 char* hostname = "JohnTitor";
 pthread_mutex_t mutex;
 
@@ -61,13 +62,14 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
     while (state == 0) {//state 0 implica esperar a recibir un par de comandos NICK USER validos
         while (nickname == NULL) {//en este bucle esperaremos a que nos llegue un NICK bien formado
             memset(buffer, 0, 256);
-            /*if (recv(sockfd, buffer, 255, 0) <= 0)
-                return logIntError(-1, "error @ recv NICK\n");*/
-
-            if (recibir_datos_SSL(ssl, buffer, 255) <= 0) {
-                printf("el dato recibido es mal\n");
+            if (ssl_active == FALSE) {
+                if (recv(sockfd, buffer, 255, 0) <= 0)
+                    return logIntError(-1, "error @ recv NICK\n");
+            } else {
+                if (recibir_datos_SSL(ssl, buffer, 255) <= 0) {
+                    printf("el dato recibido es mal\n");
+                }
             }
-
             //printf("*****************************\n%s\n*****************************\n", buffer);
             strPos = buffer;
             strPos = IRC_UnPipelineCommands(strPos, &command);
@@ -83,11 +85,14 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
         while (username == NULL) {//en este bucle esperaremos a que nos llegue un USER bien formado
             if (strPos == NULL) {//quiere decir que el mensaje anterior no tenia los dos comandos
                 memset(buffer, 0, 256);
-                /*if (recv(sockfd, (char*) buffer, 255, 0) <= 0)//asi que esperamos hasta recibir otro mensaje con otro comando
-                    return logIntError(-1, "error @ recv USER");*/
-                            if (recibir_datos_SSL(ssl, buffer, 255) <= 0) {
-                printf("el dato recibido es mal\n");
-            }
+                if (ssl_active == FALSE) {
+                    if (recv(sockfd, (char*) buffer, 255, 0) <= 0)//asi que esperamos hasta recibir otro mensaje con otro comando
+                        return logIntError(-1, "error @ recv USER");
+                } else {
+                    if (recibir_datos_SSL(ssl, buffer, 255) <= 0) {
+                        printf("el dato recibido es mal\n");
+                    }
+                }
                 //printf("*****************************\n%s\n*****************************\n", buffer);
                 strPos = buffer;
             }
@@ -117,10 +122,13 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
                     return logIntError(retVal, "error @ connectAndRegister -> IRCTADUser_New\n");
             }
             IRCMsg_RplWelcome(&rpl, myIP, nickname, "msg", username, otherIP);
-            //send(sockfd, rpl, strlen(rpl) + 1, 0);
-            if (enviar_datos_SSL(ssl, rpl, strlen(rpl) + 1) <= 0) {
-                printf("el dato recibido es mal\n");
-                break;
+            if (ssl_active == FALSE) {
+                send(sockfd, rpl, strlen(rpl) + 1, 0);
+            } else {
+                if (enviar_datos_SSL(ssl, rpl, strlen(rpl) + 1) <= 0) {
+                    printf("el dato recibido es mal\n");
+                    break;
+                }
             }
             state = 1;
         } else {
@@ -140,7 +148,7 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *client,SSL*ssl) {
+int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *client, SSL*ssl) {
     char buffer[512];
     char *command = NULL;
     char *strPos;
@@ -149,9 +157,11 @@ int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in *clie
     while (1) {
         //printf("se ingresa en el bucle de retrieveMsg\n");
         memset(buffer, 0, 512);
-        //byteCount = recv(sockfd, (char*) buffer, 511, 0);
-        byteCount=recibir_datos_SSL(ssl, buffer, 255);
-            
+        if (ssl_active == FALSE) {
+            byteCount = recv(sockfd, (char*) buffer, 511, 0);
+        } else {
+            byteCount = recibir_datos_SSL(ssl, buffer, 255);
+        }
         if (byteCount == 0)
             return logIntError(0, "retrieveMsg exited");
         else if (byteCount == -1)
@@ -201,11 +211,13 @@ void* threadRoutine(void* args) {
     pthread_mutex_unlock(&mutex);
 
     connectAndRegister(socket, &client, &server, ssl);
-    while (retrieveMsg(socket, &server, &client,ssl) > 0);
-    
+    while (retrieveMsg(socket, &server, &client, ssl) > 0);
+
     freeThreadResources(socket);
-    if(cerrar_canal_SSL(ssl, ctx, socket) == -1){
-    	return logPointerError(NULL, "error @ threadRoutine: cerrar_canal_SSL");
+    if (ssl_active == TRUE) {
+        if (cerrar_canal_SSL(ssl, ctx, socket) == -1) {
+            return logPointerError(NULL, "error @ threadRoutine: cerrar_canal_SSL");
+        }
     }
     free(args);
     return NULL;
@@ -216,7 +228,8 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in serv_addr, cli_addr;
     pthread_t th;
     struct threadArgs* args;
-
+    SSL_CTX* ctx = NULL;
+    SSL* ssl = NULL;
     //daemonizamos. perderemos el rastro del proceso en la terminal. todos los errores se escribiran en el syslog
     //daemonizar();
 
@@ -242,12 +255,14 @@ int main(int argc, char *argv[]) {
     functs[34] = commandPing;
     functs[37] = commandAway;
 
-    if (argc < 2)
+    if (argc < 2) {
         portno = 6667;
-    else
+        ssl_active = FALSE;
+    } else {
         if (strcmp("--port", argv[1]) == 0)
-        portno = atoi(argv[2]);
-
+            portno = atoi(argv[2]);
+        ssl_active = TRUE;
+    }
 
     if (pthread_mutex_init(&mutex, NULL)) {
         logVoidError("error @ main -> pthread_mutex_init");
@@ -260,10 +275,12 @@ int main(int argc, char *argv[]) {
     }
     if (listen(sockfd, 50) != 0)//mark sockfd as a socket that will be used to accept incoming connection requests
         return logIntError(1, "error @ main -> listen");
-    inicializar_nivel_SSL();
-    SSL_CTX* ctx = fijar_contexto_SSL("certs/ca.pem", "certs/servidor.pem", "certs/servidor.pem", NULL);
-    if (ctx == NULL) {
-        return logIntError(-1, "error @ main -> fijar_contexto_SSL");
+    if (ssl_active == TRUE) {
+        inicializar_nivel_SSL();
+        ctx = fijar_contexto_SSL("certs/ca.pem", "certs/servidor.pem", "certs/servidor.pem", NULL);
+        if (ctx == NULL) {
+            return logIntError(-1, "error @ main -> fijar_contexto_SSL");
+        }
     }
     while (1) {
         args = (struct threadArgs*) malloc(sizeof (struct threadArgs));
@@ -273,13 +290,14 @@ int main(int argc, char *argv[]) {
         newsockfd = acceptConnection(sockfd, &cli_addr);
         if (newsockfd == -1)
             logIntError(-1, "error @ main -> acceptConnection");
-        SSL* ssl = aceptar_canal_seguro_SSL(ctx, newsockfd);
-        if (ssl == NULL) {
-            return logIntError(-1, "error @ main -> aceptar_canal_seguro_SSL");
+        if (ssl_active == TRUE) {
+            ssl = aceptar_canal_seguro_SSL(ctx, newsockfd);
+            if (ssl == NULL) {
+                return logIntError(-1, "error @ main -> aceptar_canal_seguro_SSL");
+            }
+            if (evaluar_post_connectar_SSL(ssl) == FALSE)
+                return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
         }
-        if (evaluar_post_connectar_SSL(ssl) == FALSE)
-            return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-
         args->socket = newsockfd;
         args->server = &serv_addr;
         args->client = &cli_addr;

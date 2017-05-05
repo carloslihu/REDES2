@@ -73,8 +73,10 @@ int bindSocket_TCP(int sockfd, int portno, struct sockaddr_in* serv_addr) {
     serv_addr->sin_addr.s_addr = INADDR_ANY;
     serv_addr->sin_port = htons(portno);
     bindReturn = bind(sockfd, (struct sockaddr *) serv_addr, sizeof (*serv_addr));
-    if (bindReturn < 0)
+    if (bindReturn < 0){
+        perror("bind errno: ");
         return logIntError(-1, "Error @ bindSocket_TCP");
+    }
     return bindReturn;
 }
 

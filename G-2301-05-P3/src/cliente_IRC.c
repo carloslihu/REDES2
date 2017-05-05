@@ -6,29 +6,31 @@ int main(int argc, char *argv[]) {
     int sockfd, port;
     int num = 512, i = 0;
     char buf[num];
-    printf("funciona\n");
     if (argc < 2) {
         port = 6667;
     } else {
-    	printf("funciona2\n");
-        if (strcmp(argv[1], "--ssldata") == 0) {
+    	
+        /*if (strcmp(argv[1], "--ssldata") == 0) {
             memset(buf, 0, num);
-            for (i = 2; strcmp(argv[i], "port"); i++) {
-                strncat(buf, argv[i], 20);
+            strncat(buf, argv[2], 20);
+            for (i = 3; strcmp(argv[i], "port"); i++) {
                 strncat(buf, " ", 20);
+                strncat(buf, argv[i], 20);
+                printf("%s ",argv[i]);
+                
             }
-        }
-        printf("funciona3\n");
-        if (strcmp(argv[i], "port") == 0)
-            port = atoi(argv[i + 1]);
+        }*/
+        //if (strcmp(argv[i], "port") == 0)
+        //    port = atoi(argv[i + 1]);
+        strcpy(buf,"NICK yoda\r\nUSER yoda 0 * :miservidor.com");
+        port = 6669;   
+        
     }
-    printf("funciona\n");
     inicializar_nivel_SSL();
     ctx = fijar_contexto_SSL("certs/ca.pem", "certs/cliente.pem", "certs/cliente.pem", NULL);
     if (ctx == NULL)
         return logIntError(-1, "error @ main -> fijar_contexto_SSL");
     sockfd = openSocket_TCP();
-    printf("funciona\n");
     if (connectTo(sockfd, "localhost", port) == -1)
         return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
     ssl = conectar_canal_seguro_SSL(ctx, sockfd);
@@ -37,7 +39,6 @@ int main(int argc, char *argv[]) {
     }
     if (evaluar_post_connectar_SSL(ssl) == FALSE)
         return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-    printf("funciona\n");
     if (enviar_datos_SSL(ssl, buf, num) <= 0) {
         printf("Mecago en todo\n");
     }
