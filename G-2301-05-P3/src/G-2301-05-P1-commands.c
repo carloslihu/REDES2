@@ -174,6 +174,13 @@ long int parseChannelList(int socket, char* listIn, long int nChannels, char** l
     return IRC_OK;
 }
 
+//############################################################################################################################
+//############################################################################################################################
+//													COMANDOS IRC
+//############################################################################################################################
+//############################################################################################################################
+
+
 /**
  * @brief commando por defecto
  * envía un mensaje de error al cliente, indicando que el comando introducido es invalido
@@ -185,6 +192,7 @@ long int parseChannelList(int socket, char* listIn, long int nChannels, char** l
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
+
 long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//DEFAULT 0
 {
     char *command, *prefix, *nick;
@@ -203,6 +211,62 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
     }
     free(command);
     free(nick);
+    return IRC_OK;
+}
+
+/**)
+ * @brief commando who
+ * aporta datos al usuario
+ *
+ * @param socket el socket del usuario a ver
+ * @param client los datos del dispositivo cliente
+ * @param client los datos del dispositivo servidor
+ * @param strin el commando recibido
+ *
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
+long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//DEFAULT 0
+{
+	char *prefix, *mask, *oppar, *command, *user, *real, *host, *IP, *away, *myNick, *channel;
+	int sock;
+	long int retVal, mode, id, creationTS, actionTS;
+
+	channel = NULL;
+	//variables que habra que resetear tras hacer cada userGetData
+	user = real = host = IP = away = NULL;
+	id = socket = creationTS = actionTs = 0;
+	//mask es el nombre por el que preguntan
+	//		puede ser un canal, en cuyo caso mando la repsuesta 352 con los datos de los usuarios en ese canal
+	//		puede ser un nick, en cuyo caso mando la respuesta 352 con los datos de ese usuario en concreto
+	//		puede no ser nada, en cuyo caso mando la respuesta 352 con los datos de todos los usuarios visibles (+i)
+	//oppar es una string "o" que simboliza que solo se pregunta por operadores
+	//al terminar de enviar todas las respuestas 352, enviamos una respuesta 315 que indica el final de la lista del who
+	if((retVal = IRCParse_Who(strin, &prefix, &mask, &oppar)) != IRC_OK)
+		return logIntError(retVal, "error @ commandWho -> IRCParse_Who");
+	free(prefix);
+	prefix = SERVERNAME;//TODO cambiar esto por complexuser
+	myNick = getNickFromSocket(socket);
+	if(myNick == NULL){
+		IRC_MFree(2, &mask, &oppar);
+		return logIntError(-1, "error @ commandWho -> getNickFromSocket");
+	}
+
+	if(mask == NULL)//caso en el que debemos enviar la informacion de todos los usuarios visibles que no comparten canal con el usuario
+	{
+		//TODO code
+	}
+	else if(mask[0] == '#')//caso en el que debemos enviar la informacion de todos los usuarios que pertenezcan a ese canal
+	{
+		//TODO code
+	}
+	else//caso en el que debemos enviar la informacion de un usuario en concreto
+	{
+		if(oppar != NULL && oppar[0] != 'o')//si es true, solo enviaremos datos de quienes sean op
+		{
+			IRCTADUser_GetData(&id, &user, &myNick, &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
+			IRCMsg_RplWhoReply(&command, prefix, myNick, channel, user, host, SERVERNAME, nick, char *type, char *hopcount,  char * realname)
+		}
+	}
     return IRC_OK;
 }
 
