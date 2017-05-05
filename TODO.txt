@@ -25,3 +25,5 @@ CLIENT
 	-poner frees. A practicamente todas las funciones XD es un huevo pero fácil y rápido (si no la cagamos mucho claro)
 
 SSL
+	-conseguir que pase la prueba 3 de c3po (ahora mismo falla, así que está algo aparcado)
+	-finiquitar la memoria
