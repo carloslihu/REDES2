@@ -32,8 +32,8 @@ OBJ2 = $(patsubst %,$(ODIR)/G-2301-05-P2-%,$(_OBJ2))
 
 OBJL= $(patsubst %,$(ODIR)/%,$(_OBJL))
 
-all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC
-
+#all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC
+all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		servidor_echo	cliente_echo	servidor_IRC	cliente_IRC
 $(ODIR)/%.o: $(SLDIR)/%.c $(DEPS) $(DEPS2) $(DEPS3)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
@@ -100,5 +100,5 @@ certificados:
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
 	rm -f *.tar.gz
-	rm G-2301-05-P1-server G-2301-05-P2-xchat2 echo/servidor_echo echo/cliente_echo cliente_servidor/servidor_IRC
+	rm G-2301-05-P1-server G-2301-05-P2-xchat2 echo/* cliente_servidor/*
 	rm $(CDIR)/* $(LDIR)/*

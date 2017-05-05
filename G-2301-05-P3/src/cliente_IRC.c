@@ -4,23 +4,31 @@ int main(int argc, char *argv[]) {
     SSL_CTX*ctx;
     SSL*ssl;
     int sockfd, port;
-    int num = 512;
+    int num = 512, i = 0;
     char buf[num];
+    printf("funciona\n");
     if (argc < 2) {
         port = 6667;
-        strcpy(buf,"NICK yoda");
     } else {
+    	printf("funciona2\n");
         if (strcmp(argv[1], "--ssldata") == 0) {
-            strcpy(buf, argv[2]);
+            memset(buf, 0, num);
+            for (i = 2; strcmp(argv[i], "port"); i++) {
+                strncat(buf, argv[i], 20);
+                strncat(buf, " ", 20);
+            }
         }
-        if (strcmp(argv[3], "port") == 0)
-            port = atoi(argv[4]);
+        printf("funciona3\n");
+        if (strcmp(argv[i], "port") == 0)
+            port = atoi(argv[i + 1]);
     }
+    printf("funciona\n");
     inicializar_nivel_SSL();
     ctx = fijar_contexto_SSL("certs/ca.pem", "certs/cliente.pem", "certs/cliente.pem", NULL);
     if (ctx == NULL)
         return logIntError(-1, "error @ main -> fijar_contexto_SSL");
     sockfd = openSocket_TCP();
+    printf("funciona\n");
     if (connectTo(sockfd, "localhost", port) == -1)
         return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
     ssl = conectar_canal_seguro_SSL(ctx, sockfd);
@@ -29,24 +37,14 @@ int main(int argc, char *argv[]) {
     }
     if (evaluar_post_connectar_SSL(ssl) == FALSE)
         return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-    /*do {
-        scanf("%s[^\n]\n",buf);
-        if (enviar_datos_SSL(ssl, buf, num) <= 0) {
-            break;
-        }
-        bzero(buf, num);
-        if (recibir_datos_SSL(ssl,buf,num) <= 0) {
-            break;
-        }
-        printf("%s\n",buf);
-    }while (strcmp(buf, "exit"));*/
+    printf("funciona\n");
     if (enviar_datos_SSL(ssl, buf, num) <= 0) {
-
+        printf("Mecago en todo\n");
     }
-    if()
     if (recibir_datos_SSL(ssl, buf, num) <= 0) {
+        printf("Mecago en todo otra vez\n");
     }
-    printf("%s",buf);
+    printf("%s", buf);
     cerrar_canal_SSL(ssl, ctx, sockfd);
     return 0;
 }
