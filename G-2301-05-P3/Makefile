@@ -8,9 +8,6 @@ CC=gcc
 CFLAGS= -g -Wall -pthread -rdynamic `pkg-config --cflags gtk+-3.0`
 LIBS=-lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -L$(LDIR) -lredes2 -lsoundredes -lpulse -lpulse-simple
 
-#CFLAGS2= -g -Wall -pthread
-#LIBS2= -lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb -L$(LDIR) -lredes2
-
 _DEPS =commands.h tools.h socket.h
 _DEPS2=userCommands.h userTools.h basicCommandsFromServer.h repliesFromServer.h errorsFromServer.h
 _DEPS3=ssl.h
@@ -32,7 +29,6 @@ OBJ2 = $(patsubst %,$(ODIR)/G-2301-05-P2-%,$(_OBJ2))
 
 OBJL= $(patsubst %,$(ODIR)/%,$(_OBJL))
 
-#all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC
 all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC	#cliente_IRC
 $(ODIR)/%.o: $(SLDIR)/%.c $(DEPS) $(DEPS2) $(DEPS3)
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -44,12 +40,15 @@ $(LDIR)/libredes2.a: $(OBJL)
 	ar rcs $@ $^
 
 #EJECUTABLES
+#P1
 G-2301-05-P1-server: $(OBJ) $(ODIR)/G-2301-05-P1-server.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+#P2
 G-2301-05-P2-xchat2: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-xchat2.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-
+#P3
 servidor_echo: $(OBJ) $(OBJL) $(ODIR)/servidor_echo.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 	mv servidor_echo echo/
@@ -100,5 +99,12 @@ certificados:
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
 	rm -f *.tar.gz
-	rm G-2301-05-P1-server G-2301-05-P2-xchat2 echo/* cliente_servidor/*
-	rm $(CDIR)/* $(LDIR)/*
+	rm $(LDIR)/*
+	#P1
+	rm G-2301-05-P1-server 
+	#P2
+	rm G-2301-05-P2-xchat2 
+	#P3
+	rm echo/* cliente_servidor/*
+	rm $(CDIR)/*
+
