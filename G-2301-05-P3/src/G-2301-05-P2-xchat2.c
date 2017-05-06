@@ -26,7 +26,6 @@ typedef long int (*pUserFuncs)(int socket, char* strin);
 pFuncs functs[IRC_MAX_COMMANDS];
 pUserFuncs userFuncts[IRC_MAX_USER_COMMANDS];
 char* miNick;
-boolean grabandoAudio;
 /** 
  * @defgroup IRCInterface Interface
  *
@@ -971,7 +970,8 @@ boolean IRCInterface_DisconnectServer(char *server, int port) {
  */
 
 boolean IRCInterface_ExitAudioChat(char *nick) {
-    grabandoAudio = FALSE;
+    if(alreadyRecordingQuery() == TRUE)
+        endAudioTransmission();
     return TRUE;
 }
 
@@ -1406,6 +1406,8 @@ void * threadRecord(void * aux){
     pthread_detach(pthread_self());
     if(aux == NULL)
         return NULL;
+    if(alreadyRecordingQuery() == TRUE)
+        return NULL;
 
     //README en principio no necesitamos mas que el nick (?)
     nick = (char*) aux;
@@ -1498,7 +1500,8 @@ boolean IRCInterface_StartAudioChat(char *nick) {
  */
 
 boolean IRCInterface_StopAudioChat(char *nick) {
-    grabandoAudio = FALSE;
+    if(alreadyRecordingQuery())
+        endAudioTransmission();
     return TRUE;
 }
 
