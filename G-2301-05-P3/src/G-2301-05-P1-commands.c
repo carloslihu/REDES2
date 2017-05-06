@@ -23,8 +23,8 @@ long int megaSend(char* command, char** nicks, long int num) {
 
     if (command == NULL)
         return logIntError(-1, "error @ megaSend -> invalid arguments");
-    if(nicks == NULL || num <= 0)
-    	return IRC_OK;
+    if (nicks == NULL || num <= 0)
+        return IRC_OK;
 
     for (i = num - 1; i >= 0; i--) {
         if (IRCTADUser_GetData(&id, &user, nicks + i, &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
@@ -77,14 +77,14 @@ boolean nickInList(char* nick, char** list, long int nelements) {
  */
 long int filterUsersInChannels(char** listChannels, long int nChannels, char** listNicks, long int nNicks, char ***filteredNickList, long int *nFiltered) {
     long int nickCounter, channelCounter, i;
-    if (filteredNickList == NULL || nFiltered == NULL){
+    if (filteredNickList == NULL || nFiltered == NULL) {
 
         return logIntError(-1, "error @ filterUsersInChannels -> invalid arguments");
     }
-    if(listChannels == NULL || nChannels < 0 || listNicks == NULL || nNicks < 0){
-    	*filteredNickList = NULL;
-    	*nFiltered = 0;
-    	return IRC_OK;
+    if (listChannels == NULL || nChannels < 0 || listNicks == NULL || nNicks < 0) {
+        *filteredNickList = NULL;
+        *nFiltered = 0;
+        return IRC_OK;
     }
     *filteredNickList = (char**) malloc(sizeof (char*)*nNicks);
     if (*filteredNickList == NULL)
@@ -188,7 +188,6 @@ long int parseChannelList(int socket, char* listIn, long int nChannels, char** l
 //############################################################################################################################
 //############################################################################################################################
 
-
 /**
  * @brief commando por defecto
  * envía un mensaje de error al cliente, indicando que el comando introducido es invalido
@@ -234,52 +233,90 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
  * @return IRC_OK si fue bien, otra cosa si no
  */
 //TODO terminar de implementar el comandWho (funcion que esta a continuacion)
-/*
+
 long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//DEFAULT 0
 {
-	char *prefix, *mask, *oppar, *command, *user, *real, *host, *IP, *away, *myNick, *channel;
-	int sock;
-	long int retVal, mode, id, creationTS, actionTS;
+    char *prefix, *mask, *oppar, *command, *user, *real, *host, *IP, *away,
+            *myNick, *channel, *name, *realname, *type;
+    char** listnicks;
+    int sock, i;
+    long int retVal, mode, id, creationTS, actionTS, numberOfUsers;
 
-	channel = NULL;
-	//variables que habra que resetear tras hacer cada userGetData
-	user = real = host = IP = away = NULL;
-	id = socket = creationTS = actionTs = 0;
-	//mask es el nombre por el que preguntan
-	//		puede ser un canal, en cuyo caso mando la repsuesta 352 con los datos de los usuarios en ese canal
-	//		puede ser un nick, en cuyo caso mando la respuesta 352 con los datos de ese usuario en concreto
-	//		puede no ser nada, en cuyo caso mando la respuesta 352 con los datos de todos los usuarios visibles (+i)
-	//oppar es una string "o" que simboliza que solo se pregunta por operadores
-	//al terminar de enviar todas las respuestas 352, enviamos una respuesta 315 que indica el final de la lista del who
-	if((retVal = IRCParse_Who(strin, &prefix, &mask, &oppar)) != IRC_OK)
-		return logIntError(retVal, "error @ commandWho -> IRCParse_Who");
-	free(prefix);
-	prefix = SERVERNAME;//TODO cambiar esto por complexuser
-	myNick = getNickFromSocket(socket);
-	if(myNick == NULL){
-		IRC_MFree(2, &mask, &oppar);
-		return logIntError(-1, "error @ commandWho -> getNickFromSocket");
-	}
+    //variables que habra que resetear tras hacer cada userGetData
+    prefix = mask = oppar = myNick = NULL;
+    command = user = real = host = IP = away = channel = name = realname = type = NULL;
+    listnicks = NULL;
+    id = creationTS = actionTS = 0;
+    //mask es el nombre por el que preguntan
+    //		puede ser un canal, en cuyo caso mando la repsuesta 352 con los datos de los usuarios en ese canal
+    //		puede ser un nick, en cuyo caso mando la respuesta 352 con los datos de ese usuario en concreto
+    //		puede no ser nada, en cuyo caso mando la respuesta 352 con los datos de todos los usuarios visibles (+i)
+    //          oppar es una string "o" que simboliza que solo se pregunta por operadores
+    //          al terminar de enviar todas las respuestas 352, enviamos una respuesta 315 que indica el final de la lista del who
 
-	if(mask == NULL)//caso en el que debemos enviar la informacion de todos los usuarios visibles que no comparten canal con el usuario
-	{
-		//TODO code
-	}
-	else if(mask[0] == '#')//caso en el que debemos enviar la informacion de todos los usuarios que pertenezcan a ese canal
-	{
-		//TODO code
-	}
-	else//caso en el que debemos enviar la informacion de un usuario en concreto
-	{
-		if(oppar != NULL && oppar[0] != 'o')//si es true, solo enviaremos datos de quienes sean op
-		{
-			IRCTADUser_GetData(&id, &user, &myNick, &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
-			IRCMsg_RplWhoReply(&command, prefix, myNick, channel, user, host, SERVERNAME, nick, char *type, char *hopcount,  char * realname)
-		}
-	}
+
+    if ((retVal = IRCParse_Who(strin, &prefix, &mask, &oppar)) != IRC_OK)
+        return logIntError(retVal, "error @ commandWho -> IRCParse_Who");
+    free(prefix);
+    prefix = SERVERNAME; //TODO cambiar esto por complexuser
+    getNickFromSocket(socket, &myNick);
+    if (myNick == NULL) {
+        IRC_MFree(2, &mask, &oppar);
+        return logIntError(-1, "error @ commandWho -> getNickFromSocket");
+    }
+
+    if (mask == NULL)//caso en el que debemos enviar la informacion de todos los usuarios visibles que no comparten canal con el usuario
+    {
+        //TODO code
+        IRCTADUser_GetNickList(&listnicks, &numberOfUsers);
+        for (i = 0; i < numberOfUsers; i++) {
+            if (IRCTADUser_GetData(&id, &user, &listnicks[i], &real, &host, &IP, &sock, &creationTS, &actionTS, &away) != IRC_OK) {
+                return logIntError(-1, "error @ commandWho -> IRCTADUser_GetNickList");
+            }
+            if (IRCMsg_RplWhoReply(&command, prefix, myNick, mask, user, host, SERVERNAME, listnicks[i], type, 0, realname) != IRC_OK) {
+                return logIntError(-1, "error @ commandWho -> IRCMsg_RplWhoReply");
+            }
+            if (send(socket, command, strlen(command), 0) == -1) {
+                return logIntError(-1, "error @ commandWho -> send");
+            }
+            id = sock = creationTS = actionTS = 0;
+            IRC_MFree(7, &command, &user, &listnicks[i], &real, &host, &IP, &away);
+        }
+    } else if (mask[0] == '#')//caso en el que debemos enviar la informacion de todos los usuarios que pertenezcan a ese canal
+    {
+        IRCTAD_ListNicksOnChannelArray(mask, &listnicks, &numberOfUsers);
+        for (i = 0; i < numberOfUsers; i++) {
+            IRCTADUser_GetData(&id, &user, &listnicks[i], &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
+            IRCMsg_RplWhoReply(&command, prefix, myNick, mask, user, host, SERVERNAME, listnicks[i], type, 0, realname);
+            if (send(socket, command, strlen(command), 0) == -1) {
+                return logIntError(-1, "error @ commandWho -> send");
+            }
+            id = sock = creationTS = actionTS = 0;
+            IRC_MFree(7, &command, &user, &listnicks[i], &real, &host, &IP, &away);
+        }
+        //TODO code
+    } else//caso en el que debemos enviar la informacion de un usuario en concreto
+    {
+        if (oppar != NULL /*&& oppar[0] != 'o'*/)//si es true, solo enviaremos datos de quienes sean op
+        {
+            IRCTADUser_GetData(&id, &user, &mask, &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
+            IRCMsg_RplWhoReply(&command, prefix, myNick, channel, user, host, SERVERNAME, mask, type, 0, realname);
+            if (send(socket, command, strlen(command), 0) == -1) {
+                return logIntError(-1, "error @ commandWho -> send");
+            }
+        }
+    }
+    free(command);
+    //enviamos el End of Who
+    if (IRCMsg_RplEndOfWho(&command, prefix, myNick, name) != IRC_OK) {
+        return logIntError(-1, "error @ commandWho -> IRCMsg_RplEndOfWho");
+    }
+    if (send(socket, command, strlen(command), 0) == -1) {
+        return logIntError(-1, "error @ commandWho -> send");
+    }
+    IRC_MFree(4, &command, &mask, &oppar, &listnicks);
     return IRC_OK;
 }
-*/
 
 /**
  * @brief commando nick
@@ -336,8 +373,8 @@ long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in 
      */
     IRCTADUser_FreeList(nicklist, nelements);
     IRC_MFree(4, &command, &nick, &nickOr, &msg);
-    
-    
+
+
     return IRC_OK;
 }
 
@@ -477,23 +514,23 @@ long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in 
         free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
         return logIntError(retVal, "error @ commandQuit -> IRCMsg_Quit");
     }
-    if(filteredNickList != NULL && nFiltered > 0){
-	    if ((retVal = megaSend(command, filteredNickList, nFiltered)) != IRC_OK) {
-	        IRC_MFree(3, &command, &msg, &nick);
-	        IRCTADUser_FreeList(listChannels, nChannels);
-	        IRCTADUser_FreeList(listNicks, nNicks);
-	        free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
-	        return logIntError(retVal, "error @ commandQuit -> megaSend");
-	    }
-	} else {
-		if (send(socket, command, strlen(command), 0) == -1) {
-	        IRC_MFree(3, &command, &msg, &nick);
-	        IRCTADUser_FreeList(listChannels, nChannels);
-	        IRCTADUser_FreeList(listNicks, nNicks);
-	        free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
-	        return logIntError(ERROR_SEND, "error @ commandQuit -> send\n");
-	    }
-	}
+    if (filteredNickList != NULL && nFiltered > 0) {
+        if ((retVal = megaSend(command, filteredNickList, nFiltered)) != IRC_OK) {
+            IRC_MFree(3, &command, &msg, &nick);
+            IRCTADUser_FreeList(listChannels, nChannels);
+            IRCTADUser_FreeList(listNicks, nNicks);
+            free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
+            return logIntError(retVal, "error @ commandQuit -> megaSend");
+        }
+    } else {
+        if (send(socket, command, strlen(command), 0) == -1) {
+            IRC_MFree(3, &command, &msg, &nick);
+            IRCTADUser_FreeList(listChannels, nChannels);
+            IRCTADUser_FreeList(listNicks, nNicks);
+            free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
+            return logIntError(ERROR_SEND, "error @ commandQuit -> send\n");
+        }
+    }
 
 
     IRCTADUser_FreeList(listChannels, nChannels);
@@ -558,7 +595,7 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
         IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
         return logIntError(retVal, "INVALID USER\n");
     }
-    IRC_ComplexUser (&prefix, nickOr, userOr, host, NULL);
+    IRC_ComplexUser(&prefix, nickOr, userOr, host, NULL);
     //intentamos unirnos al canal
     retVal = IRCTADChan_GetModeInt(channel);
     //en caso de que el canal no requiera contraseña o que la contraseña sea la correcta
@@ -581,10 +618,10 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
             return logIntError(retVal, "error @ commandJoin -> IRCMsg_ErrBadChannelKey");
         }
         if (send(socket, command, strlen(command), 0) == -1) {
-	        IRC_MFree(11, &command, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
-	        return logIntError(-1, "error @ commandJoin -> send\n");
-	    }
-	    return IRC_OK;
+            IRC_MFree(11, &command, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
+            return logIntError(-1, "error @ commandJoin -> send\n");
+        }
+        return IRC_OK;
     }
 
     //enviamos el mensaje de respuesta
@@ -660,14 +697,14 @@ long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in 
     }
      */
     if ((retVal = IRCTAD_ListNicksOnChannelArray(channel, &listNicks, &nNicks)) != IRC_OK) {
-    	if(retVal == IRCERR_NOVALIDCHANNEL){
-    		if (send(socket, command, strlen(command), 0) == -1){
-    			IRC_MFree(4, &command, &nick, &channel, &msg);
-    			return logIntError(ERROR_SEND, "error @ commandPart -> send\n");
-    		}
-    		IRC_MFree(4, &command, &nick, &channel, &msg);
-    		return IRC_OK;
-    	}
+        if (retVal == IRCERR_NOVALIDCHANNEL) {
+            if (send(socket, command, strlen(command), 0) == -1) {
+                IRC_MFree(4, &command, &nick, &channel, &msg);
+                return logIntError(ERROR_SEND, "error @ commandPart -> send\n");
+            }
+            IRC_MFree(4, &command, &nick, &channel, &msg);
+            return IRC_OK;
+        }
         IRC_MFree(4, &command, &nick, &channel, &msg);
         return logIntError(retVal, "error @ commandPart -> IRCTAD_ListNicksOnChannelArray (1)");
     }
@@ -1446,12 +1483,12 @@ long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in 
             return logIntError(ret, "error @ commandAway -> IRCMsg_RplAway\n");
         }
     }
-    
+
     if ((ret = send(socket, command, strlen(command), 0)) == -1) {
         IRC_MFree(3, &msg, &nick, &command);
         return logIntError(ret, "error @ commandAway -> send\n");
     }
-    
+
     /*
     if ((ret = IRCTAD_ListChannelsOfUserArray(user, nick, &listChannels, &nChannels)) != IRC_OK) {
         IRC_MFree(3, &msg, &nick, &command);
@@ -1481,7 +1518,7 @@ long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in 
     IRCTADUser_FreeList(listChannels, nChannels);
     IRCTADUser_FreeList(listNicks, nNicks);
     free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
-    */
+     */
     IRC_MFree(3, &msg, &nick, &command);
     return IRC_OK;
 }

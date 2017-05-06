@@ -47,7 +47,7 @@ void daemonizar() {
 long int logIntError(long int returnValue, char * msg) {
     //IRC_syslog(msg, returnValue, LOG_INFO | LOG_USER);
     //IRC_perror(msg, returnValue);
-    printf("%s\n",msg);
+    printf("%s\n", msg);
     return returnValue;
 }
 
@@ -61,7 +61,7 @@ long int logIntError(long int returnValue, char * msg) {
  * @return el error registrado en returnValue
  */
 void* logPointerError(void* returnValue, char * msg) {
-    printf("%s\n",msg);
+    printf("%s\n", msg);
     //syslog(LOG_INFO | LOG_USER, "%s", (const char*) msg);
     return returnValue;
 }
