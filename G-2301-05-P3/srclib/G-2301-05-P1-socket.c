@@ -17,7 +17,6 @@ int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname){
     char STRport[20];
     if(si_other == NULL || hostname == NULL)
         return logIntError(-1, "error @ iniAddrUDP -> not valid arguments");
-    printf("hostname: %s\n", hostname);
 
     int status;
     struct addrinfo hints;
@@ -31,40 +30,12 @@ int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname){
     port = htons(port);
 
     sprintf(STRport, "%d", port);
-    printf("strport: %s\n", STRport);
 
     if ((status = getaddrinfo(hostname, STRport, &hints, &res)) != 0)
         return logIntError(-1, "error @ iniAddrUDP -> getaddrinfo");
-    //si_other = (struct sockaddr_in *)res->ai_addr;
     memcpy(si_other, res->ai_addr, sizeof(struct sockaddr_in));
-    printf("iniAddrUdp todo OK\n");
-    /*
-    if (inet_aton(SERVER , &(si_other->sin_addr) == 0)) 
-    {
-        return logIntError(-1, "error @ iniAddrUDP -> inet_aton");
-    }
-    */
-    printf("\nip: %s\nport: %d\n\n", inet_ntoa(si_other->sin_addr), si_other->sin_port);
     si_other->sin_family = AF_INET;
     return IRC_OK;
-    /*
-
-    struct sockaddr_in *addr = (struct sockaddr_in *)res->ai_addr; 
-    printf("inet_ntoa(in_addr)sin = %s\n",inet_ntoa((struct in_addr)addr->sin_addr));
-
-    memset((char *) si_other, 0, sizeof(*si_other));
-    (*si_other).sin_family = AF_INET;
-    (*si_other).sin_port = htons(port);
-    addr = gethostbyname(hostname);
-    if(addr == NULL)
-        return logIntError(-1, "error @ iniAddrUDP -> gethostbyname");
-    printf("addr: %s\n", addr->h_addr);
-    if(addr == NULL)
-        return logIntError(-1, "error @ iniAddrUDP -> gethostbyname");
-    if (inet_aton((char*) addr->h_addr , &(si_other->sin_addr)) == 0) 
-        return logIntError(-1, "error @ iniAddrUDP -> inet_aton");
-    return 1;
-    */
 }
 
 /**
@@ -132,8 +103,10 @@ int connectTo(int sockfd, char* hostname, int portno) {
     memcpy((char*) &serv_addr.sin_addr.s_addr, (char*) server->h_addr, server->h_length);
     serv_addr.sin_port = htons(portno);
     connectReturn = connect(sockfd, (struct sockaddr *) &serv_addr, sizeof (serv_addr));
-    if (connectReturn < 0)
+    if (connectReturn < 0){
+        perror("errno: ");
         return logIntError(errno, "error @ connectTo -> connect");
+    }
     return connectReturn;
 }
 

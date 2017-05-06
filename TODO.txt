@@ -14,8 +14,6 @@ SERVER
 	 ciertas pruebas
 
 CLIENT
-	-tanto en el envio de audio como en el envio de ficheros, comprobar que quien desea enviar un fichero/audio tiene voz en el canal
-	 (no estoy seguro de que esto sea posible en el envio de audio, por diseño de su interfaz y sus callbacks)
 	-crear subhilo que cada cierto tiempo envie un comando who al servidor
 	-poner frees. A practicamente todas las funciones XD es un huevo pero fácil y rápido (si no la cagamos mucho claro)
 
