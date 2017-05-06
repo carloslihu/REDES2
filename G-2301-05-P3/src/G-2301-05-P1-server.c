@@ -158,6 +158,36 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
     return IRC_OK;
 }
 
+void* threadPing(void* args) {
+    char **nicks;
+    char *user, *nick, *real, *host, *IP, *away;
+    char[10]="PING"
+    int socket, i;
+    long num, id, creationTS, actionTS;
+    nicks = NULL;
+    user = nick = real = host = IP = away = NULL;
+    socket = num = id = creationTS = NULL;
+
+    while (1) {
+        if (IRCTADUser_GetNickList(&nicks, &num) != IRC_OK)
+            return logPointerError(NULL, "error @ threadPing: IRCTADUser_GetNickList");
+        for (i = 0; i < num; i++) {
+            if (IRCTADUser_GetData(&id, &user, &nicks[i], &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
+                return logPointerError(NULL, "error @ threadPing: IRCTADUser_GetData");
+            if ((time(NULL) - actionTS) > 30) {
+                //matar cliente
+            }
+            if (send(socket,buf,strlen(buf),0) == -1)
+                return logPointerError(NULL, "error @ threadPing: send");
+            
+            IRC_MFree(6, &user, &nicks[i], &real, &host, &IP, &away);
+            id = socket = creationTS = actionTS = 0;
+        }
+        sleep(20);
+    }
+    megaSend(command, nicks, num);
+}
+
 /**
  * @brief el comportamiento del hilo tras ser creado.
  *
@@ -239,6 +269,7 @@ int main(int argc, char *argv[]) {
     if (listen(sockfd, 50) != 0)//mark sockfd as a socket that will be used to accept incoming connection requests
         return logIntError(1, "error @ main -> listen");
 
+    pthread_create(&th, NULL, &threadPing, args);
     while (1) {
         args = (struct threadArgs*) malloc(sizeof (struct threadArgs));
         if (args == NULL)
