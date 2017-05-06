@@ -3,9 +3,8 @@ GENERAL
 	-revisar todo el codigo para eliminar TODO's, README's y FIXME's residuales
 	-las funciones que veamos mas tochas, comentarlas un poco aunque sea
 	-hacer las memorias
-
-SERVER
 	-rehacer lo del test de empaquetado!! (?)
+SERVER
 	-si al final hay que hacer el commando WHO, implementarlo
 	-si hay que hacer que funcione con xchat, añadir el tema de los complexUser a todos los comandos, para formar bien el prefix
 	-añadir el subhilo que vaya haciendo pings cada cierto tiempo
@@ -25,7 +24,6 @@ CLIENT
 	 en la pestaña de war para volver a ese chat y la lista de usuarios de dicho chat se te jode del todo. Es posible que sea culpa de Eloy tho
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	-el comando /MOTD da fallo en el parseo (?) he probado a escribir solamente "/motd" y en xchat va bien
 	-para ver la lista de todas las macros de comandos de usuario, visitar:
 	 http://metis.ii.uam.es/irc_8h.html#adf764cbdea00d65edcd07bb9953ad2b7abf3301180fc6801518448ea0af772c17
 	 bajando un rato se llegan a los de usuario. Revisar por si hay alguno que habría que implementar
