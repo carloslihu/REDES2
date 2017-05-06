@@ -1,9 +1,9 @@
 #include "../includes/G-2301-05-P2-userCommands.h"
-#define TAM 13
+#define TAM 14
 char*command = NULL;
 char*msg = NULL;
 long ret = 0;
-long nCommands[TAM] = {UAWAY, UJOIN, UMSG, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS};
+long nCommands[TAM] = {UAWAY, UJOIN, UMSG, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS, UWHO};
 
 /**
  * @brief funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente
@@ -18,6 +18,10 @@ boolean isCommand(long ncommand) {
         if (nCommands[i] == ncommand)
             return TRUE;
     return FALSE;
+}
+
+long userDefault(int socket, char*strin){
+    return IRC_OK;
 }
 
 /**
@@ -382,7 +386,29 @@ long userWhois(int socket, char* strin) {
         return logIntError(ret, "error @ userWhois -> IRCMsg_Part");
     IRCInterface_WriteSystem(NULL, command);
     if (send(socket, command, strlen(command), 0) == -1)
-        return logIntError(-1, "error @ userPart -> send");
+        return logIntError(-1, "error @ userWhois -> send");
     IRC_MFree(2, &command, &nick);
+    return IRC_OK;
+}
+
+long userWho(int socket, char* strin){
+    char *mask;
+    if((ret = IRCUserParse_Help(strin, &mask)) != IRC_OK)
+        return logIntError(ret, "error @ userWho -> IRCUserParse_Help");
+    if(strin[strlen(strin)] == 'o'){//si se añadio el flag o
+        if((ret = IRCMsg_Who(&command, NULL, mask, "o")) != IRC_OK){
+            free(mask);
+            return logIntError(ret, "error @ userWho -> IRCMsg_Who");
+        }
+    } else {
+        if((ret = IRCMsg_Who(&command, NULL, mask, NULL)) != IRC_OK){
+            free(mask);
+            return logIntError(ret, "error @ userWho -> IRCMsg_Who (2)");
+        }
+    }
+    if (send(socket, command, strlen(command), 0) == -1){
+        IRC_MFree(2, &command, &mask);
+        return logIntError(-1, "error @ userWho -> send");
+    }
     return IRC_OK;
 }

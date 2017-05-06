@@ -9,7 +9,7 @@
 #include "../includes/G-2301-05-P2-repliesFromServer.h"
 #include "../includes/G-2301-05-P2-errorsFromServer.h"
 
-#define NFUNCTS 600
+//#define NFUNCTS 600
 
 struct threadSendArgs {
     //int port;
@@ -22,8 +22,8 @@ struct threadSendArgs {
 };
 typedef long int (*pFuncs)(char* strin);
 typedef long int (*pUserFuncs)(int socket, char* strin);
-pFuncs functs[NFUNCTS];
-pUserFuncs userFuncts[10000];
+pFuncs functs[IRC_MAX_COMMANDS];
+pUserFuncs userFuncts[IRC_MAX_USER_COMMANDS];
 char* miNick;
 boolean grabandoAudio;
 /** 
@@ -451,7 +451,7 @@ void* clientThread(void* args) {
         strPos = buffer;
         while (strPos != NULL) {
             strPos = IRC_UnPipelineCommands(strPos, &command);
-            //IRCInterface_WriteSystemThread(NULL, command);
+            IRCInterface_WriteSystemThread(NULL, command);
             if (command != NULL) {
                 commandNumber = IRC_CommandQuery(command);
                 printf("<<%s<<%ld\n\n", command, commandNumber);
@@ -1151,7 +1151,7 @@ void IRCInterface_NewCommandText(char *command) {
     } else { //significa que el usuario quería enviar un comando
         IRCInterface_WriteSystem(NULL, command);
         printf(">>%s\n\n", command);
-        if ((ret = IRCUser_CommandQuery(command)) >= 0 && isCommand(ret) == TRUE)
+        if ((ret = IRCUser_CommandQuery(command)) >= 0 /*&& isCommand(ret) == TRUE*/)
             userFuncts[ret](sockfd, command);
     }
 }
@@ -1719,7 +1719,7 @@ int main(int argc, char *argv[]) {
     int i;
     //pthread_t th;
     //por default imprime en el rawlog y ya
-    for (i = 0; i < NFUNCTS; i++)
+    for (i = 0; i < IRC_MAX_COMMANDS; i++)
         functs[i] = reactDefault;
     //basic
     functs[MSG_PASS] = reactPass;
@@ -1767,6 +1767,8 @@ int main(int argc, char *argv[]) {
     functs[RPL_ENDOFNAMES ] = reactPrint;
     functs[RPL_LISTEND] = reactPrint;
     //UAWAY, UJOIN, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS
+    for(i=0; i<IRC_MAX_USER_COMMANDS ;i++)
+        userFuncts[i] = userDefault;
     userFuncts[UJOIN] = userJoin;
     userFuncts[UMSG] = userPriv;
     userFuncts[UAWAY] = userAway;
@@ -1780,6 +1782,7 @@ int main(int argc, char *argv[]) {
     userFuncts[UQUIT] = userQuit;
     userFuncts[UTOPIC] = userTopic;
     userFuncts[UWHOIS] = userWhois;
+    userFuncts[UWHO] = userWho;
 
     //pthread_create(&th, NULL, &fileRecvThread, NULL);
 

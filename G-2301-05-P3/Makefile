@@ -63,10 +63,10 @@ servidor_IRC: $(OBJ) $(OBJL) $(ODIR)/servidor_IRC.o
 cliente_IRC: $(OBJ) $(OBJL) $(ODIR)/cliente_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 	mv cliente_IRC cliente_servidor/
-#getCommandList: src/G-2301-05-P1-getCommandList.c
-#	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-#G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
-#	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+getCommandList: G-2301-05-P1-getCommandList.c
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 tar:
 	tar -czvf G-2301-05-P2.tar.gz ../G-2301-05-P2/
 

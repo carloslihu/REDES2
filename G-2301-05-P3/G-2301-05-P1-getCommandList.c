@@ -7,7 +7,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <redes2/irc.h>
-#include "../includes/G-2301-05-P1-socket.h"
+#include "includes/G-2301-05-P1-socket.h"
 
 int main(int argc, char* argv[]){
 	int i;
@@ -16,6 +16,6 @@ int main(int argc, char* argv[]){
 	if(argc < 1)
 		return 1;
 	for(i = 1; i < argc; i++)
-		printf("%ld\t%s\n",IRC_CommandQuery(argv[i]),argv[i]);
+		printf("%ld\t%s\n",IRCUser_CommandQuery(argv[i]),argv[i]);
 	return 0;
 }
