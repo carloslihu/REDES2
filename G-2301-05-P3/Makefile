@@ -5,8 +5,10 @@ LDIR=lib
 SLDIR=srclib
 CDIR=certs
 CC=gcc
+EDIR=echo
+SSLDIR=cliente_servidor
 CFLAGS= -g -Wall -pthread -rdynamic `pkg-config --cflags gtk+-3.0`
-LIBS=-lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -L$(LDIR) -lredes2 -lsoundredes -lpulse -lpulse-simple
+LIBS=-L$(LDIR) -lredes2 -lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -lpulse -lpulse-simple
 
 _DEPS =commands.h tools.h socket.h
 _DEPS2=userCommands.h userTools.h basicCommandsFromServer.h repliesFromServer.h errorsFromServer.h
@@ -29,7 +31,8 @@ OBJ2 = $(patsubst %,$(ODIR)/G-2301-05-P2-%,$(_OBJ2))
 
 OBJL= $(patsubst %,$(ODIR)/%,$(_OBJL))
 
-all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	servidor_echo	cliente_echo	servidor_IRC	#cliente_IRC
+#all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	$(EDIR)/servidor_echo	$(EDIR)/cliente_echo	$(SSLDIR)/servidor_IRC	$(SSLDIR)/cliente_IRC
+all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		$(EDIR)/servidor_echo	$(EDIR)/cliente_echo	$(SSLDIR)/servidor_IRC	#$(SSLDIR)/cliente_IRC
 $(ODIR)/%.o: $(SLDIR)/%.c $(DEPS) $(DEPS2) $(DEPS3)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
@@ -49,24 +52,22 @@ G-2301-05-P2-xchat2: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-xchat2.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 #P3
-servidor_echo: $(OBJ) $(OBJL) $(ODIR)/servidor_echo.o
+$(EDIR)/servidor_echo: $(OBJ) $(ODIR)/servidor_echo.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-	mv servidor_echo echo/
-cliente_echo: $(OBJ) $(OBJL) $(ODIR)/cliente_echo.o
+$(EDIR)/cliente_echo: $(OBJ) $(ODIR)/cliente_echo.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-	mv cliente_echo echo/
 
-servidor_IRC: $(OBJ) $(OBJL) $(ODIR)/servidor_IRC.o
+$(SSLDIR)/servidor_IRC: $(OBJ) $(ODIR)/servidor_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-	mv servidor_IRC cliente_servidor/
 
-cliente_IRC: $(OBJ) $(OBJL) $(ODIR)/cliente_IRC.o
+$(SSLDIR)/cliente_IRC: $(OBJ) $(ODIR)/cliente_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-	mv cliente_IRC cliente_servidor/
-getCommandList: G-2301-05-P1-getCommandList.c
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+#getCommandList: src/G-2301-05-P1-getCommandList.c
+#	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+#G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
+#	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
 tar:
 	tar -czvf G-2301-05-P2.tar.gz ../G-2301-05-P2/
 
@@ -97,14 +98,14 @@ certificados:
 
 .PHONY: clean
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
-	rm -f *.tar.gz
-	rm $(LDIR)/*
+	-rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	-rm -f *.tar.gz
+	-rm $(LDIR)/*
 	#P1
-	rm G-2301-05-P1-server 
+	-rm G-2301-05-P1-server 
 	#P2
-	rm G-2301-05-P2-xchat2 
+	-rm G-2301-05-P2-xchat2 
 	#P3
-	rm echo/* cliente_servidor/*
-	rm $(CDIR)/*
+	-rm echo/* cliente_servidor/*
+	#-rm $(CDIR)/*
 
