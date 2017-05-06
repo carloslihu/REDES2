@@ -26,9 +26,6 @@ CLIENT
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	-el comando /MOTD da fallo en el parseo (?) he probado a escribir solamente "/motd" y en xchat va bien
-	-el comando /op no esta implementado. No es un drama pero si hay tiempo, no esta de mas. su macro creo que es UOPER
-	-el comando /deop no esta implementado. Tampoco es un drama, pero si hay timepo...  No se cual es su macro, asi que quiza no haya que
-	 implementarlo (?)
 	-para ver la lista de todas las macros de comandos de usuario, visitar:
 	 http://metis.ii.uam.es/irc_8h.html#adf764cbdea00d65edcd07bb9953ad2b7abf3301180fc6801518448ea0af772c17
 	 bajando un rato se llegan a los de usuario. Revisar por si hay alguno que habría que implementar
