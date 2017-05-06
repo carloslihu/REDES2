@@ -26,7 +26,6 @@ void* playThread(void * args){
     stillRunning = (boolean*)args;
     IRCSound_PlayFormat(PA_SAMPLE_ALAW,1);
     IRCSound_OpenPlay();
-    //printf("soy el hilo que reproduce audio\n");
     while(*stillRunning == TRUE){
         if(canIRead(BUFLEN) != 0)
             playBuffer(BUFLEN);
@@ -86,7 +85,6 @@ long int initiateReciever(){
             return logIntError(-1, "error @ initiateReciever -> recvFrom");
         }
     	if(canIWrite(BUFLEN) != 0){
-            //printf("I'm writing shit\n");
             writeBuffer(buf, BUFLEN);
         }
     }
@@ -129,9 +127,7 @@ long int initiateSender(){
     {
         IRCSound_RecordSound(message,BUFLEN);
         if (sendto(s, message, BUFLEN , 0 , (struct sockaddr *) &si_other, slen)==-1)
-        {
             break;
-        }
     }
     IRCSound_CloseRecord();
     close(s);

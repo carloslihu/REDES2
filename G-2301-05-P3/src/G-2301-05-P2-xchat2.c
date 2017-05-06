@@ -444,7 +444,6 @@ void* clientThread(void* args) {
     while (1) {
         bzero(buffer, 10000);
         byteCount = recv(sockfd, buffer, 10000, 0);
-        //printf("%s\n", buffer);
         if (byteCount == 0)
             return logPointerError(NULL, "retrieveMsg exited");
         else if (byteCount == -1)
@@ -456,7 +455,6 @@ void* clientThread(void* args) {
             IRCInterface_WriteSystemThread(NULL, command);
             if (command != NULL) {
                 commandNumber = IRC_CommandQuery(command);
-                printf("<<%s<<%ld\n\n", command, commandNumber);
                 IRCInterface_PlaneRegisterOutMessageThread(command);
                 if (commandNumber >= 0 && functs[commandNumber](command) != IRC_OK)//funcion que actua al mensaje de un servidor
                     logPointerError(NULL, "error @ retrieveMsg -> pFuncs");
@@ -530,10 +528,8 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     if(password != NULL && *password != 0){
         //README al introducir cualquier contraseña, el servidor nos devuelve Bad Password ?
         //README reportar este bug
-        printf("password: %s\nchar: %d", password, *password);
         if ((ret = IRCMsg_Pass(&command, prefix, password)) != IRC_OK)
             return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
-        printf("%s\n", command);
         if (send(sockfd, command, strlen(command), 0) == -1)
             return logIntError(-1, "Error @ IRCInterface_Connect -> send");
         free(command);
@@ -542,7 +538,6 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     //NICK
     if ((ret = IRCMsg_Nick(&command, prefix, nick, NULL)) != IRC_OK)
         return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
-    printf("%s\n", command);
     if (send(sockfd, command, strlen(command), 0) == -1)
         return logIntError(-1, "Error @ IRCInterface_Connect -> send");
     free(command);
@@ -550,16 +545,13 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     //USER
     if ((ret = IRCMsg_User(&command, prefix, user, "o", realname)) != IRC_OK)
         return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_User");
-    printf("%s\n", command);
     if (send(sockfd, command, strlen(command), 0) == -1)
         return logIntError(-1, "Error @ IRCInterface_Connect -> send");
-    printf("%s\n", command);
     free(command);
 
     do{
         if(recv(sockfd, commandIn, 255, 0) <= 0)
             return logIntError(-1, "Error @ IRCInterface_Connect -> recv");
-        printf("%s\n", commandIn);
     }while(IRC_CommandQuery(commandIn) == 17);
 
     if(IRC_CommandQuery(commandIn) != 183){
@@ -1143,9 +1135,7 @@ void IRCInterface_NewCommandText(char *command) {
     Xcom = msg = NULL;
 
     if (command[0] != '/') {//significa que el usuario queria enviar un privmsg
-        printf("quiero enviar: %s\n", command);
         target = IRCInterface_ActiveChannelName();
-        printf("target; %s\n", target);
         if ((ret = IRCMsg_Privmsg(&Xcom, NULL, target, command)) != IRC_OK)
             return logVoidError("error @ IRCInterface_NewCommandText -> IRCMsg_Privmsg");
         send(sockfd, Xcom, strlen(Xcom), 0);
@@ -1153,7 +1143,6 @@ void IRCInterface_NewCommandText(char *command) {
         IRCInterface_WriteChannel(target, myNick, command);
     } else { //significa que el usuario quería enviar un comando
         IRCInterface_WriteSystem(NULL, command);
-        printf(">>%s\n\n", command);
         if ((ret = IRCUser_CommandQuery(command)) >= 0 /*&& isCommand(ret) == TRUE*/)
             userFuncts[ret](sockfd, command);
     }
@@ -1252,21 +1241,13 @@ void* threadSend(void* args){
         IRC_MFree(2, &data, &args);
         return NULL;
     }
-    /*
-    if(bindSocket_TCP(socket, port, &serv) < 0){
-        IRC_MFree(2, &data, &args);
-        close(socket);
-        return NULL;
-    }*/
     listen(socket, 1);
     slen = sizeof(serv);
     getsockname(socket, (struct sockaddr*)&serv, &slen);
     port = ntohs(serv.sin_port);
 
     sprintf(buffer, "\002FSEND \001%s\001 %s %d %lu", filename, myHost, port, length);
-    printf("buffer: %s\n", buffer);
     IRCMsg_Privmsg(&command, NULL, nick, buffer);
-    printf("command: %s\n", command);
     if(send(sockfd, command, strlen(command), 0) < 0){
         IRC_MFree(3, &data, &args, &command);
         close(socket);
@@ -1406,26 +1387,54 @@ void* threadAdminAudio(void* args){
 */
 
 void * threadRecord(void * aux){
-    //int socketUDP, socketTCP, /*portUDP,*/ portTCP, newSocketTCP;//, newSocketUDP;
-    char* myHost, *nick, buffer[512], *command;//, *adminArgs;
-    //struct sockaddr_in serv, client, clientUDP, servUDP;
-    //boolean answer;
+    int socket, port, newSockfd;
+    socklen_t slen;
+    struct sockaddr_in serv, client;
+    boolean answer;
+    char *nick, buffer[512], *command;
+
     pthread_detach(pthread_self());
     if(aux == NULL)
         return NULL;
     if(alreadyRecordingQuery() == TRUE)
         return NULL;
 
-    //README en principio no necesitamos mas que el nick (?)
+    socket = openSocket_TCP();
+    if(socket < 0){
+        IRC_MFree(1, &aux);
+        return NULL;
+    }
+    listen(socket, 1);
+    slen = sizeof(serv);
+    getsockname(socket, (struct sockaddr*)&serv, &slen);
+    port = ntohs(serv.sin_port);
+
     nick = (char*) aux;
-    sprintf(buffer, "\001FAUDIO %s", "localhost");
+    sprintf(buffer, "\001FAUDIO %s %d", "localhost", port);
     IRCMsg_Privmsg(&command, NULL, nick, buffer);
     //enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
     if(send(sockfd, command, strlen(command), 0) < 0){
-        //close(socketTCP);
-        //close(socketUDP);
+        close(socket);
         return NULL;
     }
+    newSockfd = acceptConnection(socket, &client);
+    if(newSockfd < 0){
+        logVoidError("error @ threadRecord -> acceptConnection");
+        close(socket);
+        return NULL;
+    }
+    if(recv(newSockfd, &answer, sizeof(boolean), 0) <= 0){
+        close(socket);
+        close(newSockfd);
+        return NULL;
+    }
+    if(ntohs(answer) == FALSE){
+        close(socket);
+        close(newSockfd);
+        return NULL;
+    }
+    close(socket);
+    close(newSockfd);
     initiateSender();
     return NULL;
 }
