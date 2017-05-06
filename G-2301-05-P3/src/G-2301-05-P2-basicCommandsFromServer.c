@@ -1,15 +1,15 @@
 #include "../includes/G-2301-05-P2-basicCommandsFromServer.h"
 #include "../includes/G-2301-05-P1-socket.h"
 
-struct threadRecvArgs{
-	char* hostname;
-	int port;
-	char* filename;
-	unsigned long length;
-	char sender[10];
+struct threadRecvArgs {
+    char* hostname;
+    int port;
+    char* filename;
+    unsigned long length;
+    char sender[10];
 };
 
-struct threadAudioArgs{
+struct threadAudioArgs {
     char* hostname;
     char* sender;
     int portTCP;
@@ -91,10 +91,10 @@ long reactNick(char *strin) {
  * @return IRC_OK
  */
 long reactMode(char* strin) {
-    char *prefix, *channeluser, *mode, *user, *nick,/* *myNick,*/ *oUser, *host, *server, info[512];
+    char *prefix, *channeluser, *mode, *user, *nick,/* *myNick,*/ *oUser, *host, *server, info[512], *command;
     long ret, iMode;
 
-    prefix = channeluser = mode = user = nick = oUser = host = server = NULL;
+    prefix = channeluser = mode = user = nick = oUser = host = server = command = NULL;
 
     if ((ret = IRCParse_Mode(strin, &prefix, &channeluser, &mode, &user)) != IRC_OK)
         return logIntError(ret, "error @ reactMode -> IRCParse_Mode");
@@ -108,10 +108,10 @@ long reactMode(char* strin) {
     //si los modos se refieren a los modos de un canal
     if (user == NULL) {
 
-    	iMode = IRCInterface_ModeToIntModeThread(mode);
-        if(mode[0] == '-')
+        iMode = IRCInterface_ModeToIntModeThread(mode);
+        if (mode[0] == '-')
             IRCInterface_DeleteModeChannelThread(channeluser, iMode);
-        else if(mode[0] == '+')
+        else if (mode[0] == '+')
             IRCInterface_AddModeChannelThread(channeluser, iMode);
         //IRCInterface_ClearModeChannelThread (channeluser);
         //IRCInterface_RefreshModeButtonsThread();
@@ -119,16 +119,21 @@ long reactMode(char* strin) {
         info[511] = 0;
         IRCInterface_WriteChannelThread(channeluser, NULL, info);
     } else {
-        if(strcmp("+o", mode) == 0)
-        	IRCInterface_ChangeNickStateChannelThread(channeluser, user, OPERATOR);
-        else if(strcmp("-o", mode) == 0)
-        	IRCInterface_ChangeNickStateChannelThread(channeluser, user, NONE);
-        else if(strcmp("+v", mode) == 0)
-        	IRCInterface_ChangeNickStateChannelThread(channeluser, user, VOICE);
-        else if(strcmp("-v", mode) == 0)
-        	IRCInterface_ChangeNickStateChannelThread(channeluser, user, NONE);
+        if (strcmp("+o", mode) == 0)
+            IRCInterface_ChangeNickStateChannelThread(channeluser, user, OPERATOR);
+        else if (strcmp("-o", mode) == 0)
+            IRCInterface_ChangeNickStateChannelThread(channeluser, user, NONE);
+        else if (strcmp("+v", mode) == 0)
+            IRCInterface_ChangeNickStateChannelThread(channeluser, user, VOICE);
+        else if (strcmp("-v", mode) == 0)
+            IRCInterface_ChangeNickStateChannelThread(channeluser, user, NONE);
     }
-
+    //Who tras cambiar el mode para actualizar interfaz
+    IRCMsg_Who(&command, prefix, channeluser, NULL);
+    if (send(sockfd, command, strlen(command), 0) <= 0) {
+        IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
+        return logIntError(-1, "error @ reactMode -> send");
+    }
     //IRC_MFree(8, &prefix, &channeluser, &mode, &user, &nick, &oUser, &host, &server);
     //IRCInterface_RefreshModeButtonsThread();
     return IRC_OK;
@@ -185,7 +190,7 @@ long reactJoin(char *strin) {
         IRCMsg_Mode(&command, prefix, channel, NULL, NULL);
         if (send(sockfd, command, strlen(command), 0) <= 0) {
             IRC_MFree(14, &prefix, &msg, &key, &channel, &nick, &user, &host, &server, &myNick, &myUser, &myRealname,
-                    &myPassword, &myServer, &command);
+                      &myPassword, &myServer, &command);
             return logIntError(-1, "error @ reactJoin -> send");
         }
         IRCInterface_PlaneRegisterInMessageThread(command);
@@ -194,7 +199,7 @@ long reactJoin(char *strin) {
         IRCMsg_Who(&command, prefix, channel, NULL);
         if (send(sockfd, command, strlen(command), 0) <= 0) {
             IRC_MFree(14, &prefix, &msg, &key, &channel, &nick, &user, &host, &server, &myNick, &myUser, &myRealname,
-                    &myPassword, &myServer, &command);
+                      &myPassword, &myServer, &command);
             return logIntError(-1, "error @ reactJoin -> send");
         }
         IRCInterface_PlaneRegisterInMessageThread(command);
@@ -204,7 +209,7 @@ long reactJoin(char *strin) {
         IRCInterface_AddNickChannelThread(channel, nick, user, "", server, NONE);
     }
     IRC_MFree(14, &prefix, &msg, &key, &channel, &nick, &user, &host, &server, &myNick, &myUser, &myRealname,
-            &myPassword, &myServer, &command);
+              &myPassword, &myServer, &command);
     return IRC_OK;
 }
 
@@ -310,26 +315,26 @@ long reactKick(char* strin) {
  *
  * @return IRC_OK en caso de ir todo bien. Otro valor de lo contrario
  */
-int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned long *length){
-	char fn[255], hn[255];
+int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned long *length) {
+    char fn[255], hn[255];
     char* i = strin;
     char* iniFile;
     hn[0] = 0;
     *port = 0;
     *length = 0;
-	if(strin == NULL || strin[0] != '\002' || filename == NULL || hostname == NULL || port == NULL || length == NULL)
-		return logIntError(-1, "error @ FSend_Parse -> arguments not valid");
-	/*if(sscanf(strin, "\002FSEND \001%s\001 %s %d %lu",fn, hn, port, length) <= 0 || fn[0] == 0 || hn[0] == 0 || *port == 0 || *length == 0)
-		return logIntError(-1, "error @ FSend_Parse -> sscanf");*/
-    while(*i != '\001'){
-        if(*i == 0)
+    if (strin == NULL || strin[0] != '\002' || filename == NULL || hostname == NULL || port == NULL || length == NULL)
+        return logIntError(-1, "error @ FSend_Parse -> arguments not valid");
+    /*if(sscanf(strin, "\002FSEND \001%s\001 %s %d %lu",fn, hn, port, length) <= 0 || fn[0] == 0 || hn[0] == 0 || *port == 0 || *length == 0)
+        return logIntError(-1, "error @ FSend_Parse -> sscanf");*/
+    while (*i != '\001') {
+        if (*i == 0)
             return logIntError(-1, "error @ FSend_Parse -> loop while");
         i++;
     }
     i++; //nos colocamos al principio del nombre del fichero
     iniFile = i;
-    while(*i != '\001'){
-        if(*i == 0)
+    while (*i != '\001') {
+        if (*i == 0)
             return logIntError(-1, "error @ FSend_Parse -> loop while");
         i++;
     }//cuando acabemos el bucle estaremos en el \001 del final del nombre del fichero
@@ -337,27 +342,27 @@ int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned l
     memset(fn, 0, 255);
     memcpy(fn, iniFile, i - iniFile);//con esto deberíamos tener en fn el nombre del fichero (aceptando espacios entre medias)
     //i++;//nos colocamos en el \001 que indica el comienzo del resto del mensaje
-    sscanf(i, "\001 %s %d %lu",hn, port, length);//ahora leeremos strin PERO desde i
+    sscanf(i, "\001 %s %d %lu", hn, port, length); //ahora leeremos strin PERO desde i
     //printf("--- %s\n",i);
-    if(hn[0] == 0 || *port == 0 || *length == 0)
+    if (hn[0] == 0 || *port == 0 || *length == 0)
         return logIntError(-1, "error @ FSend_Parse -> sscanf");
-	*filename = (char*)malloc(sizeof(char)*(strlen(fn) + 1));
-	if(*filename == NULL){
-		*port = -1;
-		*length = -1;
-		return logIntError(-1, "error @ FSend_Parse -> malloc (1)");
-	}
-	*hostname = (char*)malloc(sizeof(char)*(strlen(fn) + 1));
-	if(*hostname == NULL){
-		free(*filename);
-		*filename = NULL;
-		*port = -1;
-		*length = -1;
-		return logIntError(-1, "error @ FSend_Parse -> malloc (2)");
-	}
-	strcpy(*filename, fn);
-	strcpy(*hostname, hn);
-	return IRC_OK;
+    *filename = (char*)malloc(sizeof(char) * (strlen(fn) + 1));
+    if (*filename == NULL) {
+        *port = -1;
+        *length = -1;
+        return logIntError(-1, "error @ FSend_Parse -> malloc (1)");
+    }
+    *hostname = (char*)malloc(sizeof(char) * (strlen(fn) + 1));
+    if (*hostname == NULL) {
+        free(*filename);
+        *filename = NULL;
+        *port = -1;
+        *length = -1;
+        return logIntError(-1, "error @ FSend_Parse -> malloc (2)");
+    }
+    strcpy(*filename, fn);
+    strcpy(*hostname, hn);
+    return IRC_OK;
 }
 
 /**
@@ -367,80 +372,80 @@ int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned l
  *
  * @return NULL
  */
-void* threadRecv(void* args){
-	struct threadRecvArgs *aux;
-	char* filename, *hostname, *sender, *data; //sender no se libera por ser memoria estatica en la estructura
-	int port, sock;
-	unsigned long length;
-	boolean answer;
-	FILE* fp;
+void* threadRecv(void* args) {
+    struct threadRecvArgs *aux;
+    char* filename, *hostname, *sender, *data; //sender no se libera por ser memoria estatica en la estructura
+    int port, sock;
+    unsigned long length;
+    boolean answer;
+    FILE* fp;
     //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
 
     //primero nos detacheamos, para acabar por nuestra cuenta sin que le tenga que importar al hilo principal
     pthread_detach(pthread_self());
     //obtenemos de los argumentos todos los datos necesarios
-	aux = (struct threadRecvArgs*) args;
-	filename = aux->filename;
-	hostname = aux->hostname;
-	port = aux->port;
-	length = aux->length;
-	sender = aux->sender;
+    aux = (struct threadRecvArgs*) args;
+    filename = aux->filename;
+    hostname = aux->hostname;
+    port = aux->port;
+    length = aux->length;
+    sender = aux->sender;
     //preguntamos al usuario si quiere recibir el archivo o no
-	answer = IRCInterface_ReceiveDialogThread(sender, filename);
+    answer = IRCInterface_ReceiveDialogThread(sender, filename);
     //abrimos un socket TCP
-	sock = openSocket_TCP();
-	if(sock < 0){//si da error, no podemos continuar
-		IRC_MFree(3, &filename, &hostname, &aux);
-		logIntError(-1, "error @ threadRecv -> openSocket_TCP");
-		return NULL;
-	}
+    sock = openSocket_TCP();
+    if (sock < 0) { //si da error, no podemos continuar
+        IRC_MFree(3, &filename, &hostname, &aux);
+        logIntError(-1, "error @ threadRecv -> openSocket_TCP");
+        return NULL;
+    }
     //nos conectamos al puerto que nos ha especificado el emisor
-	if(connectTo(sock, hostname, port) < 0){//si da error, no podemos continuar
-		IRC_MFree(3, &filename, &hostname, &aux);
-		close(sock);
-		logIntError(-1, "error @ threadRecv -> connectTo");
-		return NULL;
-	}
+    if (connectTo(sock, hostname, port) < 0) { //si da error, no podemos continuar
+        IRC_MFree(3, &filename, &hostname, &aux);
+        close(sock);
+        logIntError(-1, "error @ threadRecv -> connectTo");
+        return NULL;
+    }
     //enviamos la respuesta al emisor mediante esta conexion TCP establecida
-	send(sock, &answer, sizeof(answer), 0);
-	if(answer == FALSE){//si la respuesta es no querer recibir el archivo, se acabo
-		close(sock);
-		IRC_MFree(3, &filename, &hostname, &aux);
-		return NULL;
-	}//de lo contrario continuamos
+    send(sock, &answer, sizeof(answer), 0);
+    if (answer == FALSE) { //si la respuesta es no querer recibir el archivo, se acabo
+        close(sock);
+        IRC_MFree(3, &filename, &hostname, &aux);
+        return NULL;
+    }//de lo contrario continuamos
     //abrimos un archivo con el nombre especificado y procederemos a escribir en el todos los datos
-	fp = fopen(filename, "w");
-	if(fp == NULL){//si nos da error, no podemos continuar
-		IRC_MFree(3, &filename, &hostname, &aux);
-		close(sock);
-		logIntError(-1, "error @ threadRecv -> malloc");
-		return NULL;
-	}
+    fp = fopen(filename, "w");
+    if (fp == NULL) { //si nos da error, no podemos continuar
+        IRC_MFree(3, &filename, &hostname, &aux);
+        close(sock);
+        logIntError(-1, "error @ threadRecv -> malloc");
+        return NULL;
+    }
     //TODO fragmentar este proceso para no tener un char* de un tamaño virtualmente infinito. (e.d. para que no nos peten la memoria)
     //reservamos memoria para todos los datos que nos envian
-	data = (char*)malloc(sizeof(char)*length);
-	if(data == NULL){//si da error el malloc, no podemos continuar
-		IRC_MFree(3, &filename, &hostname, &aux);
-		close(sock);
-		fclose(fp);
-		logIntError(-1, "error @ threadRecv -> malloc");
-		return NULL;
-	}
+    data = (char*)malloc(sizeof(char) * length);
+    if (data == NULL) { //si da error el malloc, no podemos continuar
+        IRC_MFree(3, &filename, &hostname, &aux);
+        close(sock);
+        fclose(fp);
+        logIntError(-1, "error @ threadRecv -> malloc");
+        return NULL;
+    }
     //recibimos los datos del fichero
-	if(recv(sock, data, length, 0) <= 0){//si da error, no podemos continuar
-		IRC_MFree(4, &filename, &hostname, &aux, &data);
-		close(sock);
-		fclose(fp);
-		logIntError(-1, "error @ threadRecv -> recv");
-		return NULL;
-	}
-	//escribimos en el fichero todos estos datos que hemos recibido
+    if (recv(sock, data, length, 0) <= 0) { //si da error, no podemos continuar
+        IRC_MFree(4, &filename, &hostname, &aux, &data);
+        close(sock);
+        fclose(fp);
+        logIntError(-1, "error @ threadRecv -> recv");
+        return NULL;
+    }
+    //escribimos en el fichero todos estos datos que hemos recibido
     fwrite(data, sizeof(*data), length, fp);
     //una vez hemos acabado esto, liberamos memoria, cerramos sockets y se acabo
-	IRC_MFree(4, &filename, &hostname, &aux, &data);
-	fclose(fp);
-	close(sock);
-	return NULL;
+    IRC_MFree(4, &filename, &hostname, &aux, &data);
+    fclose(fp);
+    close(sock);
+    return NULL;
 }
 
 
@@ -451,7 +456,7 @@ void* threadRecv(void* args){
 
 
 
-void *threadAudio(void* args){
+void *threadAudio(void* args) {
     int portTCP, portUDP, socketTCP, socketUDP;
     char* sender, buffer[512], *hostname;
     boolean answer;
@@ -459,7 +464,7 @@ void *threadAudio(void* args){
     struct sockaddr_in servUDP;
     socklen_t slen;
 
-    if(args == NULL)
+    if (args == NULL)
         return NULL;
     aux = (struct threadAudioArgs*)args;
     hostname = aux->hostname;
@@ -470,12 +475,12 @@ void *threadAudio(void* args){
     //primero preguntamos al usuario si quiere o no recibir la transmision de audio
     answer = IRCInterface_ReceiveDialogThread(sender, "audio en vivo");
     socketTCP = openSocket_TCP();//abrimos el socket de conexion TCP
-    if(socketTCP < 0){//si da error, no podemos continuar
+    if (socketTCP < 0) { //si da error, no podemos continuar
         logIntError(-1, "error @ threadAudio -> openSocket_TCP");
         return NULL;
     }
     //tratamos de conectarnos con el socket TCP al puerto TCP que nos han indicado
-    if(connectTo(socketTCP, hostname, portTCP) < 0){//si da error, no podemos continuar
+    if (connectTo(socketTCP, hostname, portTCP) < 0) { //si da error, no podemos continuar
         close(socketTCP);
         logIntError(-1, "error @ threadAudio -> connectTo");
         return NULL;
@@ -483,14 +488,14 @@ void *threadAudio(void* args){
     //enviamos por este socket TCP nuestra respuesta, para notificar al otro cliente de nuestra decision
     send(socketTCP, &answer, sizeof(answer), 0);
     //si hemos decidido no recibir la transmision de audio, se acabo
-    if(answer == FALSE){
+    if (answer == FALSE) {
         close(socketTCP);
         return NULL;
     }
     //de lo dontrario continuamos
     //inicializamos nuestro socket de conexion UDP
     socketUDP = openSocket_UDP();
-    if(socketUDP < 0){//si da error, no podemos continuar
+    if (socketUDP < 0) { //si da error, no podemos continuar
         close(socketTCP);
         return NULL;
     }
@@ -501,17 +506,17 @@ void *threadAudio(void* args){
     //tratamos de conectarnos por el socket UDP
     //una vez nos hemos conectado con exito, procedemos a la recepcion de audio
     //preparamos el formato de recepcion de audio
-    IRCSound_PlayFormat(PA_SAMPLE_S16BE,2);
+    IRCSound_PlayFormat(PA_SAMPLE_S16BE, 2);
     //abrimos la reproduccion de audio
-    if(IRCSound_OpenPlay()){
+    if (IRCSound_OpenPlay()) {
         close(socketTCP);
         close(socketUDP);
         return NULL;
     }
     printf("he llegado hasta la parte de recibir audio\n");
-    while(recvfrom(socketUDP, buffer, 160, 0, (struct sockaddr*) &servUDP, &slen) <= 0){
+    while (recvfrom(socketUDP, buffer, 160, 0, (struct sockaddr*) &servUDP, &slen) <= 0) {
         printf("he recibido un paquete de audio\n");
-        IRCSound_PlaySound(buffer,160);
+        IRCSound_PlaySound(buffer, 160);
     }
 
     //si ya no recibimos mas audio, se acabo la conexion
@@ -548,59 +553,59 @@ long reactPrivmsg(char* strin) {
         IRC_MFree(3, &prefix, &msgtarget, &msg);
         return logIntError(ret, "error @ reactPrivmsg -> IRCParse_ComplexUser");
     }
-    if(msgtarget[0] != '#'){//si no era un mensaje a un canal => era un mensaje privado => escribimos el mensaje en la conversacion de quien lo envia
-    	free(msgtarget);
-    	msgtarget = nick;
+    if (msgtarget[0] != '#') { //si no era un mensaje a un canal => era un mensaje privado => escribimos el mensaje en la conversacion de quien lo envia
+        free(msgtarget);
+        msgtarget = nick;
     }
     printf("\nmsg: \"%s\"\nmsgtarget: %s\n", msg, msgtarget);//mensaje de "debuggeo"
-    if(IRCInterface_QueryChannelExist (msgtarget) == FALSE)//si el canal en el que queremos escribir no existe, lo creamos
-        	IRCInterface_AddNewChannelThread(msgtarget, 0);
+    if (IRCInterface_QueryChannelExist (msgtarget) == FALSE) //si el canal en el que queremos escribir no existe, lo creamos
+        IRCInterface_AddNewChannelThread(msgtarget, 0);
 
     //ahora veremos las distintas posibilidades de tipo de mensaje privado:
 
-    if(*msg == '\002'){//si es un mensaje para enviar un fichero
-    	printf("\nHe detectado que me quieren enviar un fichero\n");//mensaje de "debuggeo"
-    	if(FSend_Parse(msg, &filename, &hostname, &portTCP, &length) != IRC_OK){//parseamos el mensaje. si da error, no podemos continuar
+    if (*msg == '\002') { //si es un mensaje para enviar un fichero
+        printf("\nHe detectado que me quieren enviar un fichero\n");//mensaje de "debuggeo"
+        if (FSend_Parse(msg, &filename, &hostname, &portTCP, &length) != IRC_OK) { //parseamos el mensaje. si da error, no podemos continuar
             IRC_MFree(5, &prefix, &msgtarget, &msg, &filename, &hostname);
-    		return logIntError(-1, "error @ reactPrivmsg -> FSend_Parse");
+            return logIntError(-1, "error @ reactPrivmsg -> FSend_Parse");
         }
         //reservamos memoria para la estructura de argumentos que le vamos a pasar al hilo
-    	argsFile = (struct threadRecvArgs*)malloc(sizeof(struct threadRecvArgs));
-        if(argsFile == NULL){//si da error, no podemos continuar
+        argsFile = (struct threadRecvArgs*)malloc(sizeof(struct threadRecvArgs));
+        if (argsFile == NULL) { //si da error, no podemos continuar
             IRC_MFree(5, &prefix, &msgtarget, &msg, &filename, &hostname);
             return logIntError(-1, "error @ reactPrivmsg -> malloc");
         }
         //asignamos cada uno de los campos de esta estructura
-    	argsFile->hostname = hostname;
-    	argsFile->port = portTCP;
-    	argsFile->filename = filename;
-    	argsFile->length = length;
-    	strcpy(argsFile->sender, nick);
+        argsFile->hostname = hostname;
+        argsFile->port = portTCP;
+        argsFile->filename = filename;
+        argsFile->length = length;
+        strcpy(argsFile->sender, nick);
         //lanzamos el hilo
-    	pthread_create(&th, NULL, threadRecv, argsFile);
-    } else if(*msg == '\001'){//si es un mensaje para enviar audio
+        pthread_create(&th, NULL, threadRecv, argsFile);
+    } else if (*msg == '\001') { //si es un mensaje para enviar audio
         printf("\nHe detectado que me quieren enviar audio\n");//mensaje de "debuggeo"
-        if(sscanf(msg, "\001FAUDIO %s %d %d", aux, &portTCP, &portUDP) < 3){//parseamos el mensaje. Si da error, no podemos continuar
+        if (sscanf(msg, "\001FAUDIO %s %d %d", aux, &portTCP, &portUDP) < 3) { //parseamos el mensaje. Si da error, no podemos continuar
             IRC_MFree(3, &prefix, &msgtarget, &msg);
             return logIntError(-1, "error @ reactPrivmsg -> sscanf");
         }
         //reservamos memoria para la estructura de argumentos que le vamos a pasar al hilo
         argsAudio = (struct threadAudioArgs*)malloc(sizeof(struct threadAudioArgs));
-        if(argsAudio == NULL){//si da error, no podemos continuar
+        if (argsAudio == NULL) { //si da error, no podemos continuar
             IRC_MFree(3, &prefix, &msgtarget, &msg);
             return logIntError(-1, "error @ reactPrivmsg -> malloc(2)");
         }
         //reservamos memoria para el campo sender de la estructura de argumentos
-        argsAudio->sender = (char*)malloc(sizeof(char)*(strlen(nick) + 1));
-        if(argsAudio->sender == NULL){//si da error, no podemos continuar
+        argsAudio->sender = (char*)malloc(sizeof(char) * (strlen(nick) + 1));
+        if (argsAudio->sender == NULL) { //si da error, no podemos continuar
             IRC_MFree(4, &prefix, &msgtarget, &msg, &argsAudio);
             return logIntError(-1, "error @ reactPrivmsg -> malloc(3)");
         }
         //copiamos en esta memoria el nick del string que contiene el nombre de quien enviaba esta peticion
         strcpy(argsAudio->sender, nick);
         //reservamos memoria para el campo hostname de la estructura de argumentos
-        argsAudio->hostname = (char*)malloc(sizeof(char)*(strlen(aux) + 1));
-        if(argsAudio->hostname == NULL){//si da error, no podemos continuar
+        argsAudio->hostname = (char*)malloc(sizeof(char) * (strlen(aux) + 1));
+        if (argsAudio->hostname == NULL) { //si da error, no podemos continuar
             IRC_MFree(5, &(argsAudio->sender), &prefix, &msgtarget, &msg, &argsAudio);
             return logIntError(-1, "error @ reactPrivmsg -> malloc(4)");
         }
@@ -685,30 +690,30 @@ long reactNames(char* strin) {
  *
  * @return IRC_OK
  */
-long reactQuit(char* strin){
-	char *prefix, *msg, *myNick, *nick, *user, *host, *server, **channels;
-	int num, i;
-	long ret;
+long reactQuit(char* strin) {
+    char *prefix, *msg, *myNick, *nick, *user, *host, *server, **channels;
+    int num, i;
+    long ret;
 
-	prefix = msg = myNick = nick = user = host = server = NULL;
-	channels = NULL;
-	num = i = 0;
+    prefix = msg = myNick = nick = user = host = server = NULL;
+    channels = NULL;
+    num = i = 0;
 
-	if((ret = IRCParse_Quit (strin, &prefix, &msg)) != IRC_OK)
-		return logIntError(ret, "error @ reactQuit -> IRCParse_Quit");
-	if ((ret = IRCParse_ComplexUser(prefix, &nick, &user, &host, &server)) != IRC_OK) {
+    if ((ret = IRCParse_Quit (strin, &prefix, &msg)) != IRC_OK)
+        return logIntError(ret, "error @ reactQuit -> IRCParse_Quit");
+    if ((ret = IRCParse_ComplexUser(prefix, &nick, &user, &host, &server)) != IRC_OK) {
         IRC_MFree(2, &prefix, &msg);
         return logIntError(ret, "error @ reactQuit -> IRCParse_ComplexUser");
     }
     myNick = getMyNickThread();
-    if(strcmp(nick, myNick) != 0){
-    	IRCInterface_ListAllChannelsThread(&channels, &num);
-    	for(i = num-1; i >= 0; i--){
-    		IRCInterface_DeleteNickChannelThread(channels[i], nick);
-    		free(channels[i]);
-    		channels[i] = NULL;
-    	}
+    if (strcmp(nick, myNick) != 0) {
+        IRCInterface_ListAllChannelsThread(&channels, &num);
+        for (i = num - 1; i >= 0; i--) {
+            IRCInterface_DeleteNickChannelThread(channels[i], nick);
+            free(channels[i]);
+            channels[i] = NULL;
+        }
     }
     IRC_MFree(8, &prefix, &msg, &nick, &user, &host, &server, &myNick, &channels);
-	return IRC_OK;
+    return IRC_OK;
 }
