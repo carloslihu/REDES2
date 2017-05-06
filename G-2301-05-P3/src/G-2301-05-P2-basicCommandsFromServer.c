@@ -1,4 +1,5 @@
 #include "../includes/G-2301-05-P2-basicCommandsFromServer.h"
+#include "../includes/G-2301-05-P2-audio.h"
 #include "../includes/G-2301-05-P1-socket.h"
 
 struct threadRecvArgs{
@@ -12,8 +13,6 @@ struct threadRecvArgs{
 struct threadAudioArgs{
     char* hostname;
     char* sender;
-    int portTCP;
-    int portUDP;
 };
 
 /**
@@ -452,72 +451,19 @@ void* threadRecv(void* args){
 
 
 void *threadAudio(void* args){
-    int portTCP, portUDP, socketTCP, socketUDP;
-    char* sender, buffer[512], *hostname;
-    boolean answer;
-    struct threadAudioArgs* aux;
-    struct sockaddr_in servUDP;
-    socklen_t slen;
+    //int portTCP, portUDP, socketTCP, socketUDP;
+    //char* sender, buffer[512], *hostname;
+    //boolean answer;
+    //struct threadAudioArgs* aux;
+    //struct sockaddr_in servUDP;
+    //socklen_t slen;
 
     if(args == NULL)
         return NULL;
-    aux = (struct threadAudioArgs*)args;
-    hostname = aux->hostname;
-    sender = aux->sender;
-    portTCP = aux->portTCP;
-    portUDP = aux->portUDP;
-
-    //primero preguntamos al usuario si quiere o no recibir la transmision de audio
-    answer = IRCInterface_ReceiveDialogThread(sender, "audio en vivo");
-    socketTCP = openSocket_TCP();//abrimos el socket de conexion TCP
-    if(socketTCP < 0){//si da error, no podemos continuar
-        logIntError(-1, "error @ threadAudio -> openSocket_TCP");
-        return NULL;
-    }
-    //tratamos de conectarnos con el socket TCP al puerto TCP que nos han indicado
-    if(connectTo(socketTCP, hostname, portTCP) < 0){//si da error, no podemos continuar
-        close(socketTCP);
-        logIntError(-1, "error @ threadAudio -> connectTo");
-        return NULL;
-    }
-    //enviamos por este socket TCP nuestra respuesta, para notificar al otro cliente de nuestra decision
-    send(socketTCP, &answer, sizeof(answer), 0);
-    //si hemos decidido no recibir la transmision de audio, se acabo
-    if(answer == FALSE){
-        close(socketTCP);
-        return NULL;
-    }
-    //de lo dontrario continuamos
-    //inicializamos nuestro socket de conexion UDP
-    socketUDP = openSocket_UDP();
-    if(socketUDP < 0){//si da error, no podemos continuar
-        close(socketTCP);
-        return NULL;
-    }
-    slen = sizeof(servUDP);
-    iniAddrUDP(&servUDP, PORT_RECORD, hostname);
-    /*if(bind(socketUDP, (struct sockaddr*) &servUDP, slen))
-        return logPointerError(NULL, "error @ threadAudio -> bind");*/
-    //tratamos de conectarnos por el socket UDP
-    //una vez nos hemos conectado con exito, procedemos a la recepcion de audio
-    //preparamos el formato de recepcion de audio
-    IRCSound_PlayFormat(PA_SAMPLE_S16BE,2);
-    //abrimos la reproduccion de audio
-    if(IRCSound_OpenPlay()){
-        close(socketTCP);
-        close(socketUDP);
-        return NULL;
-    }
-    printf("he llegado hasta la parte de recibir audio\n");
-    while(recvfrom(socketUDP, buffer, 160, 0, (struct sockaddr*) &servUDP, &slen) <= 0){
-        printf("he recibido un paquete de audio\n");
-        IRCSound_PlaySound(buffer,160);
-    }
-
-    //si ya no recibimos mas audio, se acabo la conexion
-    close(socketTCP);
-    close(socketUDP);
-    IRCSound_ClosePlay();
+    //aux = (struct threadAudioArgs*)args;
+    //hostname = aux->hostname;
+    //sender = aux->sender;
+    initiateReciever();
     return NULL;
 }
 
@@ -533,7 +479,7 @@ void *threadAudio(void* args){
  */
 long reactPrivmsg(char* strin) {
     char *prefix, *msgtarget, *msg, *nick, *user, *host, *server, *filename, *hostname, aux[512];
-    int portTCP, portUDP;
+    int portTCP;//, portUDP;
     long ret;
     unsigned long length;
     pthread_t th;
@@ -580,7 +526,7 @@ long reactPrivmsg(char* strin) {
     	pthread_create(&th, NULL, threadRecv, argsFile);
     } else if(*msg == '\001'){//si es un mensaje para enviar audio
         printf("\nHe detectado que me quieren enviar audio\n");//mensaje de "debuggeo"
-        if(sscanf(msg, "\001FAUDIO %s %d %d", aux, &portTCP, &portUDP) < 3){//parseamos el mensaje. Si da error, no podemos continuar
+        if(sscanf(msg, "\001FAUDIO %s", aux) < 1){//parseamos el mensaje. Si da error, no podemos continuar
             IRC_MFree(3, &prefix, &msgtarget, &msg);
             return logIntError(-1, "error @ reactPrivmsg -> sscanf");
         }
@@ -606,9 +552,6 @@ long reactPrivmsg(char* strin) {
         }
         //copiamos en esta memoria, los datos correspondientes
         strcpy(argsAudio->hostname, aux);
-        //rellenamos el resto de campos
-        argsAudio->portTCP = portTCP;
-        argsAudio->portUDP = portUDP;
         //lanzamos el hilo
         pthread_create(&th, NULL, threadAudio, argsAudio);
     } else {//si es un mensaje normal

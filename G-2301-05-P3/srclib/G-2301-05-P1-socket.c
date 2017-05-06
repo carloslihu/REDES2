@@ -28,14 +28,25 @@ int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname){
     hints.ai_socktype = SOCK_DGRAM; // TCP stream sockets
     hints.ai_flags = AI_PASSIVE;     // fill in my IP for me
 
+    port = htons(port);
+
     sprintf(STRport, "%d", port);
     printf("strport: %s\n", STRport);
 
     if ((status = getaddrinfo(hostname, STRport, &hints, &res)) != 0)
         return logIntError(-1, "error @ iniAddrUDP -> getaddrinfo");
-    si_other = (struct sockaddr_in *)res->ai_addr;
+    //si_other = (struct sockaddr_in *)res->ai_addr;
+    memcpy(si_other, res->ai_addr, sizeof(struct sockaddr_in));
+    printf("iniAddrUdp todo OK\n");
+    /*
+    if (inet_aton(SERVER , &(si_other->sin_addr) == 0)) 
+    {
+        return logIntError(-1, "error @ iniAddrUDP -> inet_aton");
+    }
+    */
+    printf("\nip: %s\nport: %d\n\n", inet_ntoa(si_other->sin_addr), si_other->sin_port);
+    si_other->sin_family = AF_INET;
     return IRC_OK;
-//  printf("ip: %s", res->ai_addr->sin_addr);
     /*
 
     struct sockaddr_in *addr = (struct sockaddr_in *)res->ai_addr; 

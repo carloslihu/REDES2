@@ -1,7 +1,7 @@
 #include "G-2301-05-P1-tools.h"
 
 #define SIZE 10000
-#define PORT_RECORD 6668
+#define PORT_RECORD 8888
 #define PORT_SEND 6669
 int sockfd;
 

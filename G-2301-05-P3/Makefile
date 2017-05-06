@@ -11,12 +11,12 @@ CFLAGS= -g -Wall -pthread -rdynamic `pkg-config --cflags gtk+-3.0`
 LIBS=-L$(LDIR) -lredes2 -lssl -lcrypto -lircinterface -lircredes -lirctad -lsoundredes -ggdb `pkg-config --libs gtk+-3.0` -lpulse -lpulse-simple
 
 _DEPS =commands.h tools.h socket.h
-_DEPS2=userCommands.h userTools.h basicCommandsFromServer.h repliesFromServer.h errorsFromServer.h
+_DEPS2=userCommands.h userTools.h basicCommandsFromServer.h repliesFromServer.h errorsFromServer.h audio.h
 _DEPS3=ssl.h
 
 #_OBJ =socket.o tools.o commands.o
 _OBJ =commands.o
-_OBJ2 =basicCommandsFromServer.o errorsFromServer.o repliesFromServer.o userTools.o userCommands.o
+_OBJ2 =basicCommandsFromServer.o audio.o errorsFromServer.o repliesFromServer.o userTools.o userCommands.o
 #_OBJ3 = ssl.o
 
 _OBJL = G-2301-05-P1-socket.o G-2301-05-P1-tools.o G-2301-05-P3-ssl.o

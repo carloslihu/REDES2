@@ -1,5 +1,6 @@
 #include <redes2/ircxchat.h>
 #include "../includes/G-2301-05-P1-socket.h"
+#include "../includes/G-2301-05-P2-audio.h"
 #include "../includes/G-2301-05-P1-tools.h"
 #include "../includes/G-2301-05-P1-types.h"
 #include "../includes/G-2301-05-P1-commands.h"
@@ -1398,127 +1399,25 @@ void* threadAdminAudio(void* args){
 */
 
 void * threadRecord(void * aux){
-    int socketUDP, socketTCP, /*portUDP,*/ portTCP, newSocketTCP;//, newSocketUDP;
+    //int socketUDP, socketTCP, /*portUDP,*/ portTCP, newSocketTCP;//, newSocketUDP;
     char* myHost, *nick, buffer[512], *command;//, *adminArgs;
-    struct sockaddr_in serv, client, clientUDP, servUDP;
-    boolean answer;
-    //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
-    //socklen_t slen;
-    //pthread_t admin;
-
-    //we need 2 sockets
-    //1 for the TCP handshakingç
-    //1 for the UDP comunication
-
-    //detacheamos el hilo
+    //struct sockaddr_in serv, client, clientUDP, servUDP;
+    //boolean answer;
     pthread_detach(pthread_self());
-    //si los argumentos son NULL no podemos continuar
     if(aux == NULL)
         return NULL;
 
     //README en principio no necesitamos mas que el nick (?)
     nick = (char*) aux;
-    //abrimos el socket para la conexion UDP
-    socketUDP = openSocket_UDP();//si no nos deja, no podremos continuar
-    if(socket < 0){
-        return NULL;
-    }
-    /*
-    if(bindSocket_UDP(socketUDP, PORT_RECORD, &servUDP) != IRC_OK){
-        close(socketUDP);
-        return logPointerError(NULL, "error @ threadRecord -> bindSocket_UDP");
-    }
-    */
-    //abrimos el socket para la conexion TCP
-    socketTCP = openSocket_TCP();//si no nos deja, no podremos continuar
-    if(socket < 0){
-        close(socketUDP);
-        return NULL;
-    }
-    //escuchamos en ambos sockets
-    //listen(socketUDP, 1);
-    listen(socketTCP, 1);
-    //obtenemos los puertos de ambos sockets
-    //portUDP = getSocketPort(socketUDP, &serv);
-    portTCP = getSocketPort(socketTCP, &serv);
-    //escribimos nuestra direccion host README localhost para hacer pruebas
-    //TODO cambiar por nuestro propio hostname para que otros nos contacten
-    myHost = "localhost";
-    //inicializamos la estructura de a quien enviaremos
-    //preparamos el privmsg que enviaremos al otro cliente
-    sprintf(buffer, "\001FAUDIO %s %d %d", myHost, portTCP, PORT_RECORD);
+    sprintf(buffer, "\001FAUDIO %s", "localhost");
     IRCMsg_Privmsg(&command, NULL, nick, buffer);
     //enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
     if(send(sockfd, command, strlen(command), 0) < 0){
-        close(socketTCP);
-        close(socketUDP);
+        //close(socketTCP);
+        //close(socketUDP);
         return NULL;
     }
-    //COMIENZA EL HANDSHAKING
-    //nos preparamos para aceptar conexion por el puerto TCP
-    
-    newSocketTCP = acceptConnection(socketTCP, &client);//si da error, no podemos continuar
-    if(newSocketTCP < 0){
-        logVoidError("error @ threadSend -> acceptConnection");
-        close(socketTCP);
-        close(socketUDP);
-        return NULL;
-    }
-    //recibimos la respuesta del otro cliente mediante la conexion TCP
-    if(recv(newSocketTCP, &answer, sizeof(answer), 0) <= 0){
-        close(socketTCP);
-        close(socketUDP);
-        close(newSocketTCP);
-        return NULL;
-    }//si la respuesta ha sido que no quiere recibir nuestro audio, se acaba la conexion
-    if(answer == FALSE){
-        close(socketTCP);
-        close(socketUDP);
-        close(newSocketTCP);
-        return NULL;
-    }//de lo contrario, si que quiere recibir nuestro audio
-    //FIN DEL HANDSHAKING
-
-    //ENVIO DE AUDIO
-    //nos preparamos para aceptar la conexion por el puerto UDP
-    //bindSocket_UDP(socketUDP, PORT_RECORD, &serv);
-    /*
-    newSocketUDP = acceptConnection(socketUDP, &client);//si da error, no podemos continuar
-    if(newSocketUDP < 0){
-        logVoidError("error @ threadSend -> acceptConnection");
-        close(socketTCP);
-        close(socketUDP);
-        close(newSocketTCP);
-        return NULL;
-    }
-    */
-
-    iniAddrUDP(&clientUDP, PORT_RECORD, myHost);
-    //preparamos el formato de grabacion de audio
-    IRCSound_RecordFormat(PA_SAMPLE_S16BE,2);
-    //abrimos la grabacion
-    if(IRCSound_OpenRecord()){//si da error, no podemos continuar
-        close(socketTCP);
-        close(socketUDP);
-        close(newSocketTCP);
-        //close(newSocketUDP);
-        return NULL;
-    }
-    grabandoAudio = TRUE;
-    //mientras que nuestra variable global nos diga que estamos grabando iremos enviando por el newSocketUDP lo que grabemos
-    while(grabandoAudio == TRUE){
-        printf("he enviado un paquete de audio\n");
-        IRCSound_RecordSound(buffer,160);//grabamos 160 bytes de audio
-        sendto(socketUDP, buffer, 160, 0, (struct sockaddr*) &clientUDP, sizeof(clientUDP));//los enviamos por el socket
-    }//si algo nos ha cerrado la grabacion de audio
-    //notificamos por la conexion TCP que se acabo (?)
-    //cerramos todos los sockets y tambien la grabacion
-    close(socketTCP);
-    close(socketUDP);
-    close(newSocketTCP);
-    //close(newSocketUDP);
-    IRCSound_CloseRecord();
-    //se acabo
+    initiateSender();
     return NULL;
 }
 /**
