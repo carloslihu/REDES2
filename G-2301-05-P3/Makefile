@@ -32,7 +32,7 @@ OBJ2 = $(patsubst %,$(ODIR)/G-2301-05-P2-%,$(_OBJ2))
 OBJL= $(patsubst %,$(ODIR)/%,$(_OBJL))
 
 #all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		certificados	$(EDIR)/servidor_echo	$(EDIR)/cliente_echo	$(SSLDIR)/servidor_IRC	$(SSLDIR)/cliente_IRC
-all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		$(EDIR)/servidor_echo	$(EDIR)/cliente_echo	$(SSLDIR)/servidor_IRC	#$(SSLDIR)/cliente_IRC
+all: $(LDIR)/libredes2.a G-2301-05-P1-server 	G-2301-05-P2-xchat2		$(EDIR)/servidor_echo	$(EDIR)/cliente_echo	$(SSLDIR)/servidor_IRC	$(SSLDIR)/cliente_IRC
 $(ODIR)/%.o: $(SLDIR)/%.c $(DEPS) $(DEPS2) $(DEPS3)
 	$(CC) -c -o $@ $< $(CFLAGS)
 

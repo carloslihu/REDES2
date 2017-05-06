@@ -8,7 +8,7 @@
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -21,7 +21,7 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -34,7 +34,7 @@ long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -47,7 +47,7 @@ long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -62,7 +62,7 @@ long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -76,7 +76,7 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -89,7 +89,7 @@ long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server  los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -102,7 +102,7 @@ long int commandTopic(int socket, struct sockaddr_in *client, struct sockaddr_in
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server  los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -115,7 +115,7 @@ long int commandNames(int socket, struct sockaddr_in *client, struct sockaddr_in
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server  los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -128,7 +128,7 @@ long int commandList(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server  los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -141,7 +141,7 @@ long int commandKick(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -154,7 +154,7 @@ long int commandPrivmsg(int socket, struct sockaddr_in *client, struct sockaddr_
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -167,7 +167,7 @@ long int commandMotd(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
@@ -193,12 +193,20 @@ long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @param socket el socket del usuario a ver
  * @param client los datos del dispositivo cliente
- * @param client los datos del dispositivo servidor
+ * @param server los datos del dispositivo servidor
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
 long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //AWAY 37 advanced
+/**
+ * 
+ * @param socket el socket del usuario a ver
+ * @param client los datos del dispositivo cliente
+ * @param server los datos del dispositivo servidor
+ * @param strin el commando recibido
+ * @return IRC_OK si fue bien, otra cosa si no
+ */
 long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin);
 /**
  * @brief envia un comando en masa

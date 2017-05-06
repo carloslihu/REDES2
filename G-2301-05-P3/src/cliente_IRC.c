@@ -9,22 +9,26 @@ int main(int argc, char *argv[]) {
     if (argc < 2) {
         port = 6667;
     } else {
-    	
-        /*if (strcmp(argv[1], "--ssldata") == 0) {
+        /*FILE*f = fopen("/home/carlos/Escritorio/Redes/prueba.txt", "w+");
+        for (i = 0; i < argc; i++)
+            fprintf(f, "%s\n", argv[i]);
+        fclose(f);
+        if (strcmp(argv[1], "--ssldata") == 0) {
             memset(buf, 0, num);
             strncat(buf, argv[2], 20);
             for (i = 3; strcmp(argv[i], "port"); i++) {
                 strncat(buf, " ", 20);
                 strncat(buf, argv[i], 20);
-                printf("%s ",argv[i]);
-                
+                printf("%s ", argv[i]);
+
             }
-        }*/
-        //if (strcmp(argv[i], "port") == 0)
-        //    port = atoi(argv[i + 1]);
-        strcpy(buf,"NICK yoda\r\nUSER yoda 0 * :miservidor.com");
-        port = 6669;   
-        
+        }
+        if (strcmp(argv[i], "port") == 0)
+            port = atoi(argv[i + 1]);
+*/
+        strcpy(buf,"NICK yoda\r\nUSER yoda 0 * :miservidor.com\r\n");
+        port = 6669;
+
     }
     inicializar_nivel_SSL();
     ctx = fijar_contexto_SSL("certs/ca.pem", "certs/cliente.pem", "certs/cliente.pem", NULL);
@@ -39,7 +43,7 @@ int main(int argc, char *argv[]) {
     }
     if (evaluar_post_connectar_SSL(ssl) == FALSE)
         return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-    if (enviar_datos_SSL(ssl, buf, num) <= 0) {
+    if (enviar_datos_SSL(ssl, buf, strlen(buf)) <= 0) {
         printf("Mecago en todo\n");
     }
     if (recibir_datos_SSL(ssl, buf, num) <= 0) {

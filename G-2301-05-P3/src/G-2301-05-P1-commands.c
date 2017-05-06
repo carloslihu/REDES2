@@ -29,7 +29,9 @@ long int megaSend(char* command, char** nicks, long int num) {
     for (i = num - 1; i >= 0; i--) {
         if (IRCTADUser_GetData(&id, &user, nicks + i, &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
             continue;
-        send(socket, command, strlen(command), 0);
+        if(send(socket, command, strlen(command), 0)==-1){
+            logIntError(-1,"error @ megaSend -> send");
+        }
         IRC_MFree(5, &user, &real, &host, &IP, &away);
         id = creationTS = actionTS = socket = 0;
     }
@@ -236,15 +238,15 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
 
 long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//DEFAULT 0
 {
-    char *prefix, *mask, *oppar, *command, *user, *real, *host, *IP, *away,
-            *myNick, *channel, *name, *realname, *type;
+    char *prefix, *mask, *oppar, *command, *user, *realname, *host, *IP, *away,
+            *myNick, *channel, *name, *type;
     char** listnicks;
     int sock, i;
-    long int retVal, mode, id, creationTS, actionTS, numberOfUsers;
+    long int retVal, id, creationTS, actionTS, numberOfUsers;
 
     //variables que habra que resetear tras hacer cada userGetData
     prefix = mask = oppar = myNick = NULL;
-    command = user = real = host = IP = away = channel = name = realname = type = NULL;
+    command = user = host = IP = away = channel = name = realname = type = NULL;
     listnicks = NULL;
     id = creationTS = actionTS = 0;
     //mask es el nombre por el que preguntan
@@ -270,45 +272,54 @@ long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *
         //TODO code
         IRCTADUser_GetNickList(&listnicks, &numberOfUsers);
         for (i = 0; i < numberOfUsers; i++) {
-            if (IRCTADUser_GetData(&id, &user, &listnicks[i], &real, &host, &IP, &sock, &creationTS, &actionTS, &away) != IRC_OK) {
+            if (IRCTADUser_GetData(&id, &user, &listnicks[i], &realname, &host, &IP, &sock, &creationTS, &actionTS, &away) != IRC_OK) {
                 return logIntError(-1, "error @ commandWho -> IRCTADUser_GetNickList");
             }
-            if (IRCMsg_RplWhoReply(&command, prefix, myNick, mask, user, host, SERVERNAME, listnicks[i], type, 0, realname) != IRC_OK) {
-                return logIntError(-1, "error @ commandWho -> IRCMsg_RplWhoReply");
+            if ((retVal = IRCMsg_RplWhoReply(&command, prefix, myNick, "*", user, host, SERVERNAME, listnicks[i], "H", 0, realname)) != IRC_OK) {
+                return logIntError(retVal, "error @ commandWho -> IRCMsg_RplWhoReply");
             }
             if (send(socket, command, strlen(command), 0) == -1) {
                 return logIntError(-1, "error @ commandWho -> send");
             }
             id = sock = creationTS = actionTS = 0;
-            IRC_MFree(7, &command, &user, &listnicks[i], &real, &host, &IP, &away);
+            IRC_MFree(7, &command, &user, &listnicks[i], &realname, &host, &IP, &away);
         }
     } else if (mask[0] == '#')//caso en el que debemos enviar la informacion de todos los usuarios que pertenezcan a ese canal
     {
         IRCTAD_ListNicksOnChannelArray(mask, &listnicks, &numberOfUsers);
         for (i = 0; i < numberOfUsers; i++) {
-            IRCTADUser_GetData(&id, &user, &listnicks[i], &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
-            IRCMsg_RplWhoReply(&command, prefix, myNick, mask, user, host, SERVERNAME, listnicks[i], type, 0, realname);
+            if (IRCTADUser_GetData(&id, &user, &listnicks[i], &realname, &host, &IP, &sock, &creationTS, &actionTS, &away) != IRC_OK) {
+                return logIntError(-1, "error @ commandWho -> IRCTADUser_GetNickList");
+            }
+            if ((retVal = IRCMsg_RplWhoReply(&command, prefix, myNick, mask, user, host, SERVERNAME, listnicks[i], "H", 0, realname)) != IRC_OK) {
+                return logIntError(retVal, "error @ commandWho -> IRCMsg_RplWhoReply");
+            }
             if (send(socket, command, strlen(command), 0) == -1) {
                 return logIntError(-1, "error @ commandWho -> send");
             }
             id = sock = creationTS = actionTS = 0;
-            IRC_MFree(7, &command, &user, &listnicks[i], &real, &host, &IP, &away);
+            IRC_MFree(7, &command, &user, &listnicks[i], &realname, &host, &IP, &away);
         }
-        //TODO code
     } else//caso en el que debemos enviar la informacion de un usuario en concreto
     {
-        if (oppar != NULL /*&& oppar[0] != 'o'*/)//si es true, solo enviaremos datos de quienes sean op
+        /*if (oppar != NULL /*&& oppar[0] != 'o')
         {
-            IRCTADUser_GetData(&id, &user, &mask, &real, &host, &IP, &sock, &creationTS, &actionTS, &away);
-            IRCMsg_RplWhoReply(&command, prefix, myNick, channel, user, host, SERVERNAME, mask, type, 0, realname);
+            IRCTADUser_GetData(&id, &user, &mask, &realname, &host, &IP, &sock, &creationTS, &actionTS, &away);
+            IRCMsg_RplWhoReply(&command, prefix, myNick, "*", user, host, SERVERNAME, mask, "H", 0, realname);
             if (send(socket, command, strlen(command), 0) == -1) {
                 return logIntError(-1, "error @ commandWho -> send");
             }
+        }*/
+        IRCTADUser_GetData(&id, &user, &mask, &realname, &host, &IP, &sock, &creationTS, &actionTS, &away);
+        IRCMsg_RplWhoReply(&command, prefix, myNick, "*", user, host, SERVERNAME, mask, "H", 0, realname);
+        if (send(socket, command, strlen(command), 0) == -1) {
+            return logIntError(-1, "error @ commandWho -> send");
         }
+        id = sock = creationTS = actionTS = 0;
+        IRC_MFree(6, &command, &user, &realname, &host, &IP, &away);
     }
-    free(command);
     //enviamos el End of Who
-    if (IRCMsg_RplEndOfWho(&command, prefix, myNick, name) != IRC_OK) {
+    if (IRCMsg_RplEndOfWho(&command, prefix, myNick, "*") != IRC_OK) {
         return logIntError(-1, "error @ commandWho -> IRCMsg_RplEndOfWho");
     }
     if (send(socket, command, strlen(command), 0) == -1) {
@@ -410,7 +421,7 @@ long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in 
 
     //nick es la password
     //si es del tipo con password, setea la password
-    if ((strcmp(mode, "\\+k") == 0) && user != NULL) {
+    if (mode && (strcmp(mode, "\\+k") == 0) && user != NULL) {
 
         if ((retVal = IRCTADChan_SetPassword(channeloruser, user)) != IRC_OK) {
             IRC_MFree(4, &nick, &channeloruser, &mode, &user);
