@@ -15,8 +15,6 @@ SERVER
 	 ciertas pruebas
 
 CLIENT
-	-conseguir que funcione el envio de audio
-	-fragmentar el envio de ficheros en sends de no muchos KB (?)
 	-tanto en el envio de audio como en el envio de ficheros, comprobar que quien desea enviar un fichero/audio tiene voz en el canal
 	 (no estoy seguro de que esto sea posible en el envio de audio, por diseño de su interfaz y sus callbacks)
 	-crear subhilo que cada cierto tiempo envie un comando who al servidor

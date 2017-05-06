@@ -19,6 +19,8 @@
 #define MSG_PING 34
 #define MSG_SETNAME 58
 
+#define FILE_BUFLEN 1024
+
 /**
  * @brief rutina por defecto ante un mensaje no reconocido por este cliente
  *

@@ -10,6 +10,8 @@
 #include "../includes/G-2301-05-P2-repliesFromServer.h"
 #include "../includes/G-2301-05-P2-errorsFromServer.h"
 
+
+
 //#define NFUNCTS 600
 
 struct threadSendArgs {
@@ -1230,7 +1232,7 @@ void* threadSend(void* args){
     char *data, buffer[512], *command, *nick, *filename, *myHost;
     int port, socket, newSockfd;
     socklen_t slen;
-    unsigned long length;
+    unsigned long length, index = 0;
     struct threadSendArgs * aux = (struct threadSendArgs *)args;
     struct sockaddr_in serv, client;
     boolean answer;
@@ -1287,7 +1289,12 @@ void* threadSend(void* args){
         close(socket);
         return NULL;
     }
-    send(newSockfd, data, length, 0);
+    while(length - index >= FILE_BUFLEN){
+        send(newSockfd, data + index, FILE_BUFLEN, 0);
+        index += FILE_BUFLEN;
+    }
+    if(length > index)
+        send(newSockfd, data + index, length - index, 0);
     IRC_MFree(3, &data, &args, &command);
     close(socket);
     return NULL;

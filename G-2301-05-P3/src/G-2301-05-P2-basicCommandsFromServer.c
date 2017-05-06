@@ -375,7 +375,7 @@ void* threadRecv(void* args) {
     struct threadRecvArgs *aux;
     char* filename, *hostname, *sender, *data; //sender no se libera por ser memoria estatica en la estructura
     int port, sock;
-    unsigned long length;
+    unsigned long length, index = 0;
     boolean answer;
     FILE* fp;
     //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
@@ -431,15 +431,27 @@ void* threadRecv(void* args) {
         return NULL;
     }
     //recibimos los datos del fichero
-    if (recv(sock, data, length, 0) <= 0) { //si da error, no podemos continuar
-        IRC_MFree(4, &filename, &hostname, &aux, &data);
-        close(sock);
-        fclose(fp);
-        logIntError(-1, "error @ threadRecv -> recv");
-        return NULL;
+    while(length - index >= FILE_BUFLEN){
+        if (recv(sock, data, FILE_BUFLEN, 0) <= 0) { //si da error, no podemos continuar
+            IRC_MFree(4, &filename, &hostname, &aux, &data);
+            close(sock);
+            fclose(fp);
+            logIntError(-1, "error @ threadRecv -> recv");
+            return NULL;
+        }
+        fwrite(data, sizeof(*data), FILE_BUFLEN, fp);
+        index += FILE_BUFLEN;
     }
-    //escribimos en el fichero todos estos datos que hemos recibido
-    fwrite(data, sizeof(*data), length, fp);
+    if(length > index){
+        if (recv(sock, data, length - index, 0) <= 0) { //si da error, no podemos continuar
+            IRC_MFree(4, &filename, &hostname, &aux, &data);
+            close(sock);
+            fclose(fp);
+            logIntError(-1, "error @ threadRecv -> recv");
+            return NULL;
+        }
+        fwrite(data, sizeof(*data), length - index, fp);
+    }
     //una vez hemos acabado esto, liberamos memoria, cerramos sockets y se acabo
     IRC_MFree(4, &filename, &hostname, &aux, &data);
     fclose(fp);

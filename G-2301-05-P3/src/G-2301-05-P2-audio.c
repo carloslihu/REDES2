@@ -1,11 +1,21 @@
 #include "../includes/G-2301-05-P2-audio.h"
 
 boolean grabandoAudio;
-#define AUDIO_BUFLEN 96000
-char audioBuffer[AUDIO_BUFLEN];//almacena hasta 6 trozos de 160 bytes
+#define AUDIO_BUFLEN 4096
+char audioBuffer[AUDIO_BUFLEN];//almacena hasta 600 trozos de 160 bytes
 int writePos;
 int readPos;
 
+/**
+ * @brief rutina que maneja el hilo que reproduce el audio
+ * el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya
+ * algo escrito antes de empezar a intentar a reproducir. de la misma manera, si por algun motivo este hilo
+ * alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante
+ *
+ * @param args los argumentos que el hilo requiere para detectar cuando debe terminar de reproducir audio
+ *
+ * @return NULL
+ */
 void* playThread(void * args){
     boolean *stillRunning;
     //useconds_t time = 20;
@@ -14,7 +24,7 @@ void* playThread(void * args){
         return NULL;
     usleep(20000);
     stillRunning = (boolean*)args;
-    IRCSound_PlayFormat(PA_SAMPLE_S16BE,2);
+    IRCSound_PlayFormat(PA_SAMPLE_ALAW,1);
     IRCSound_OpenPlay();
     //printf("soy el hilo que reproduce audio\n");
     while(*stillRunning == TRUE){
@@ -27,6 +37,12 @@ void* playThread(void * args){
     return NULL;
 }
 
+/**
+ * @brief rutina que se encarga de escribir el audio recibido en el buffer
+ * tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer
+ *
+ * @return NULL
+ */
 long int initiateReciever(){
     struct sockaddr_in si_me, si_other;
     pthread_t player;
@@ -61,6 +77,7 @@ long int initiateReciever(){
     pthread_create(&player, NULL, &playThread, &stillRunning);
     while(1)
     {
+        memset(buf, 0, BUFLEN);
     	if (recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *) &si_other, &slen) == -1)
         {
             close(s);
@@ -78,6 +95,11 @@ long int initiateReciever(){
     return 0;
 }
 
+/**
+ * @brief rutina que se encarga del envio de audio
+ *
+ * @return NULL
+ */
 long int initiateSender(){
     struct sockaddr_in si_other;
     int s, slen=sizeof(si_other);
@@ -100,7 +122,7 @@ long int initiateSender(){
         return logIntError(-1, "error @ initiateSender -> inet_aton");
     }
  
-    IRCSound_RecordFormat(PA_SAMPLE_S16BE,2);
+    IRCSound_RecordFormat(PA_SAMPLE_ALAW,1);
     IRCSound_OpenRecord();
     grabandoAudio = TRUE;
     while(grabandoAudio == TRUE)
@@ -116,6 +138,14 @@ long int initiateSender(){
     return 0;
 }
 
+/**
+ * @brief funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin "pasar" la posicion de escritura
+ * es decir, evalua si, al leer len bytes, leeriamos mas alla de  lo que hay escrito
+ *
+ * @param len el numero de bytes de distancia a comprobar si podemos o no leer
+ *
+ * @return 0 si no es posible leer len bytes del buffer. !0 si lo es
+ */
 int canIRead(int len){//puedo leer si la distancia entre readPos y writePos, es menor que len
     int beforeMoving, afterMoving;
     beforeMoving = readPos;
@@ -125,6 +155,14 @@ int canIRead(int len){//puedo leer si la distancia entre readPos y writePos, es 
         || (writePos <= afterMoving && afterMoving < beforeMoving));
 }
 
+/**
+ * @brief funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin "pasar" la posicion de lectura
+ * es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida
+ *
+ * @param len el numero de bytes de distancia a comprobar si podemos o no escribir
+ *
+ * @return 0 si no es posible escribir len bytes del buffer. !0 si lo es
+ */
 int canIWrite(int len){
     int beforeMoving, afterMoving;
     beforeMoving = writePos;
@@ -134,10 +172,19 @@ int canIWrite(int len){
         || (readPos <= afterMoving && afterMoving < beforeMoving));
 }
 
+/**
+ * @brief escribe, si es posible, en el buffer a partir de la posición de escritura.
+ * Si se logro escribir correctamente, se actualiza la posición de escritura del buffer
+ *
+ * @param buf los bytes a escribir en el buffer
+ * @param len la cantidad de bytes a escribir en el buffer
+ */
 void writeBuffer(char* buf, int len){
     int topper;
+    /*
     if(canIWrite(len) == 0)
         return;
+    */
     //memcpy(audioBuffer, buf, len);
     if(writePos + len < AUDIO_BUFLEN){
         memcpy(audioBuffer + writePos, buf, len);
@@ -145,32 +192,47 @@ void writeBuffer(char* buf, int len){
     } else {
     topper = AUDIO_BUFLEN - writePos;
     memcpy(audioBuffer + writePos, buf, topper);
-    len -= topper;
-    memcpy(audioBuffer, buf, len);
-    writePos = len;
+    memcpy(audioBuffer, buf + topper, len - topper);
+    writePos = (writePos + len + 1) % AUDIO_BUFLEN;
     }
 }
 
+/**
+ * @brief reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura.
+ * Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer.
+ * es necesario que los canales de reproduccion hayan sido abiertos previamente.
+ *
+ * @param len el numero de bytes que queremos reproducir
+ */
 void playBuffer(int len){
     char myBuffer[BUFLEN+1];
     int topper;
+    if(canIRead(len) == 0)
+        return;
     if(readPos + len < AUDIO_BUFLEN){
         memcpy(myBuffer, audioBuffer + readPos, len);
         readPos += len;
     } else {
         topper = AUDIO_BUFLEN - readPos;
         memcpy(myBuffer, audioBuffer + readPos, topper);
-        len -= topper;
-        memcpy(myBuffer + topper, audioBuffer, len);
-        readPos = len;
+        memcpy(myBuffer + topper, audioBuffer, len - topper);
+        readPos = (readPos + len + 1) % AUDIO_BUFLEN;
     }
     IRCSound_PlaySound(myBuffer,BUFLEN);
 }
 
+/**
+ * @brief funcion que devuelve si este cliente ya esta grabando audio o no
+ *
+ * @return TRUE si este cliente ya esta grabando audio. FALSE si no lo esta
+ */
 boolean alreadyRecordingQuery(){
     return grabandoAudio;
 }
 
+/**
+ * @brief funcion que termina la transmision por parte del cliente que envia audio
+ */
 void endAudioTransmission(){
     grabandoAudio = FALSE;
 }
