@@ -68,8 +68,17 @@ $(SSLDIR)/cliente_IRC: $(OBJ) $(ODIR)/cliente_IRC.o
 #G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 
 #	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
+#P1
+#tar:
+#	tar -czvf G-2301-05-P1.tar.gz ../G-2301-05-P1/
+
+#P2
+#tar:
+#	tar -czvf G-2301-05-P2.tar.gz ../G-2301-05-P2/
+
+#P3
 tar:
-	tar -czvf G-2301-05-P2.tar.gz ../G-2301-05-P2/
+	tar -czvf G-2301-05-P3.tar.gz ../G-2301-05-P3/
 
 certificados:
 	#CA

@@ -548,7 +548,8 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
             return logIntError(retVal, "error @ IRCParse_Join\n");
     }
     free(prefix);
-    prefix = SERVERNAME;
+    //prefix = SERVERNAME;
+
     //obtenemos datos del usuario que esta asociado a el socket. e.d. quien ha enviado el comando
     nickOr = NULL;
     retVal = IRCTADUser_GetData(&id, &userOr, &nickOr, &realOr, &host, &IP, &socket, &creationTs, &actionTs, &away);
@@ -557,7 +558,7 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
         IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
         return logIntError(retVal, "INVALID USER\n");
     }
-
+    IRC_ComplexUser (&prefix, nickOr, userOr, host, NULL);
     //intentamos unirnos al canal
     retVal = IRCTADChan_GetModeInt(channel);
     //en caso de que el canal no requiera contraseña o que la contraseña sea la correcta
@@ -569,7 +570,8 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
             return logIntError(retVal, "error @ commandJoin -> IRCTAD_Join");
         }
         //en caso de unirnos correctamente, preparamos un mensaje de respuesta al cliente
-        if ((retVal = IRCMsg_Join(&command, nickOr, NULL, NULL, channel)) != IRC_OK) {
+        //if ((retVal = IRCMsg_Join(&command, nickOr, NULL, NULL, channel)) != IRC_OK) {
+        if ((retVal = IRCMsg_Join(&command, prefix, NULL, NULL, channel)) != IRC_OK) {
             IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
             return logIntError(retVal, "error @ commandJoin -> IRCMsg_Join");
         }
