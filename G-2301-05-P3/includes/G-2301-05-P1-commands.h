@@ -13,7 +13,7 @@
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //DEFAULT 0
+long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //DEFAULT 0
 
 /**
  * @brief commando nick
@@ -26,7 +26,7 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //NICK 2
+long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //NICK 2
 
 /**
  * @brief commando mode
@@ -39,7 +39,7 @@ long int commandNick(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //MODE 5 (?)
+long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //MODE 5 (?)
 
 /**
  * @brief commando quit
@@ -52,7 +52,7 @@ long int commandMode(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //QUIT 7 advanced
+long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //QUIT 7 advanced
 
 /**
  * @brief commando join
@@ -67,7 +67,7 @@ long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //JOIN 9
+long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //JOIN 9
 
 /**
  * @brief commando part
@@ -81,7 +81,7 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //PART 10
+long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //PART 10
 
 /**
  * @brief commando topic
@@ -94,7 +94,7 @@ long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandTopic(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //TOPIC 11
+long int commandTopic(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //TOPIC 11
 
 /**
  * @brief commando mode
@@ -107,7 +107,7 @@ long int commandTopic(int socket, struct sockaddr_in *client, struct sockaddr_in
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandNames(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //NAMES 12
+long int commandNames(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //NAMES 12
 
 /**
  * @brief commando list
@@ -120,7 +120,7 @@ long int commandNames(int socket, struct sockaddr_in *client, struct sockaddr_in
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandList(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //LIST 13
+long int commandList(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //LIST 13
 
 /**
  * @brief commando kick
@@ -133,7 +133,7 @@ long int commandList(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandKick(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //KICK 15
+long int commandKick(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //KICK 15
 
 /**
  * @brief commando Privmsg
@@ -146,7 +146,7 @@ long int commandKick(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandPrivmsg(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //PRIVMSG 16
+long int commandPrivmsg(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //PRIVMSG 16
 
 /**
  * @brief commando Message of the Day
@@ -159,7 +159,7 @@ long int commandPrivmsg(int socket, struct sockaddr_in *client, struct sockaddr_
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandMotd(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //MOTD 18 advanced
+long int commandMotd(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //MOTD 18 advanced
 
 /**
  * @brief commando Whois
@@ -172,7 +172,7 @@ long int commandMotd(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandWhois(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //WHOIS 31
+long int commandWhois(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //WHOIS 31
 
 /**
  * @brief commando Ping
@@ -185,7 +185,7 @@ long int commandWhois(int socket, struct sockaddr_in *client, struct sockaddr_in
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //PING 34
+long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //PING 34
 
 /**
  * @brief commando Away
@@ -198,8 +198,8 @@ long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in 
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
-long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in *server , char* strin); //AWAY 37 advanced
-
+long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin); //AWAY 37 advanced
+long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin);
 /**
  * @brief envia un comando en masa
  * envia un comando a cada uno de los clientes especificados en la lista de nicks

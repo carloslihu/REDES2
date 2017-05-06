@@ -135,11 +135,10 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
         //printf("se ingresa en el bucle de retrieveMsg\n");
         memset(buffer, 0, 512);
         byteCount = recv(sockfd, (char*) buffer, 511, 0);
-        if (byteCount == 0){
-        	close(sockfd);
+        if (byteCount == 0) {
+            close(sockfd);
             return logIntError(0, "retrieveMsg exited");
-        }
-        else if (byteCount == -1)
+        } else if (byteCount == -1)
             return logIntError(-1, "error @ retrieveMsg -> recv");
         //printf("*****************************\n%s\n*****************************\n", buffer);
         strPos = buffer;
@@ -167,7 +166,7 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
  * @return NULL al acabar la sesión del hilo
  */
 void* threadRoutine(void* args) {
-	long int retVal;
+    long int retVal;
 
     pthread_detach(pthread_self());
     if (args == NULL)
@@ -186,8 +185,8 @@ void* threadRoutine(void* args) {
 
     connectAndRegister(socket, &client, &server);
     while ((retVal = retrieveMsg(socket, &server, &client)) > 0);
-    if(retVal != MACRO_QUIT)
-    	freeThreadResources(socket);
+    if (retVal != MACRO_QUIT)
+        freeThreadResources(socket);
     close(socket);
     free(args);
     return NULL;
@@ -223,7 +222,7 @@ int main(int argc, char *argv[]) {
     functs[31] = commandWhois;
     functs[34] = commandPing;
     functs[37] = commandAway;
-
+    functs[WHO] = commandWho;
     if (argc < 2)
         portno = 6667;
     else
