@@ -233,6 +233,7 @@ long int commandDefault(int socket, struct sockaddr_in *client, struct sockaddr_
  *
  * @return IRC_OK si fue bien, otra cosa si no
  */
+//TODO terminar de implementar el comandWho (funcion que esta a continuacion)
 /*
 long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//DEFAULT 0
 {
@@ -476,7 +477,6 @@ long int commandQuit(int socket, struct sockaddr_in *client, struct sockaddr_in 
         free(filteredNickList); //no hace falta liberar los elementos de dentro porque ya son liberados al liberar listNicks
         return logIntError(retVal, "error @ commandQuit -> IRCMsg_Quit");
     }
-    printf("command: %s\n filteredNickList: %p\n",command, filteredNickList);
     if(filteredNickList != NULL && nFiltered > 0){
 	    if ((retVal = megaSend(command, filteredNickList, nFiltered)) != IRC_OK) {
 	        IRC_MFree(3, &command, &msg, &nick);
@@ -657,7 +657,6 @@ long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in 
         return logIntError(ERROR_SEND, "error @ commandPart -> send\n");
     }
      */
-    //FIXME comprobar que el canal sigue existiendo y no se ha borrado porque la ultima persona del canal hizo part
     if ((retVal = IRCTAD_ListNicksOnChannelArray(channel, &listNicks, &nNicks)) != IRC_OK) {
     	if(retVal == IRCERR_NOVALIDCHANNEL){
     		if (send(socket, command, strlen(command), 0) == -1){
@@ -668,7 +667,6 @@ long int commandPart(int socket, struct sockaddr_in *client, struct sockaddr_in 
     		return IRC_OK;
     	}
         IRC_MFree(4, &command, &nick, &channel, &msg);
-        printf("error encontrado: %ld\n", retVal);
         return logIntError(retVal, "error @ commandPart -> IRCTAD_ListNicksOnChannelArray (1)");
     }
     if ((retVal = megaSend(command, listNicks, nNicks)) != IRC_OK) {
@@ -1404,8 +1402,8 @@ long int commandPing(int socket, struct sockaddr_in *client, struct sockaddr_in 
 long int commandAway(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin)//TODO AWAY 37
 {
     int id = 0;
-    long ret = 0, nChannels, nNicks, nFiltered;
-    char *prefix, *msg, *command, *user, *nick, *real, **listChannels, **listNicks, **filteredNickList;
+    long ret = 0;
+    char *prefix, *msg, *command, *user, *nick, *real;
     prefix = msg = command = user = nick = real = NULL;
     if ((ret = IRCParse_Away(strin, &prefix, &msg)) != IRC_OK)
         return logIntError(ret, "error @ commandAway -> IRCParse_Away\n");

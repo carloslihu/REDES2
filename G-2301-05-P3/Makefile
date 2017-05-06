@@ -62,6 +62,7 @@ $(SSLDIR)/servidor_IRC: $(OBJ) $(ODIR)/servidor_IRC.o
 
 $(SSLDIR)/cliente_IRC: $(OBJ) $(ODIR)/cliente_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
 #getCommandList: src/G-2301-05-P1-getCommandList.c
 #	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 #G-2301-05-P2-userCommands: $(OBJ) $(OBJ2) $(ODIR)/G-2301-05-P2-userCommands.o 

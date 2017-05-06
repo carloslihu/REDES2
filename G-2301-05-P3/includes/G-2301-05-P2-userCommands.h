@@ -13,6 +13,16 @@
 boolean isCommand(long ncommand);
 
 /**
+ * @brief funcion por defecto para valores de comandos no implementados
+ *
+ * @param strin el comando escrito por el usuario
+ * @param socket el socket de conexion con el servidor
+ *
+ * @return IRC_OK
+ */
+long userDefault(int socket, char*strin);
+
+/**
  * @brief funcion que envia un comando AWAY bien formado al servidor
  *
  * @param strin el comando escrito por el usuario
@@ -150,4 +160,14 @@ long userTopic(int socket, char* strin);
  * @return IRC_OK
  */
 long userWhois(int socket, char* strin);
+
+/**
+ * @brief funcion que envia un comando WHO bien formado al servidor
+ *
+ * @param strin el comando escrito por el usuario
+ * @param socket el socket de conexion con el servidor
+ *
+ * @return IRC_OK
+ */
+long userWho(int socket, char* strin);
 #endif
