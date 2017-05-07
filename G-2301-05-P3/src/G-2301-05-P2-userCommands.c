@@ -257,7 +257,6 @@ long userPart(int socket, char* strin) {
     boolean chanProvided = TRUE;
     if ((ret = IRCUserParse_Part(strin, &msg)) != IRC_OK)
         return logIntError(ret, "error @ userPart -> IRCUserParse_Part");
-    //long IRCMsg_Part (char **command, char *prefix, char *channel, char *msg)
     if (msg == NULL) {
         chanProvided = FALSE;
         msg = IRCInterface_ActiveChannelName();
@@ -271,7 +270,6 @@ long userPart(int socket, char* strin) {
 
     if(chanProvided == TRUE)
         free(msg);
-    //IRC_MFree(2, &command, &msg);
 
     return IRC_OK;
 }
@@ -349,14 +347,10 @@ long userQuit(int socket, char* strin) {
  * @return IRC_OK
  */
 long userTopic(int socket, char* strin) {
-    //char *prefix, *myUser, *myNick, *myRealname, *myPassword, *myServer;
-    //int myPort, mySsl;
     char* command, *msg, *channel;
     command = msg = channel = NULL;
     if ((ret = IRCUserParse_Topic(strin, &msg)) != IRC_OK)
         return logIntError(ret, "error @ userTopic -> IRCUserParse_Topic");
-    //IRCInterface_GetMyUserInfo (&myNick, &myUser, &myRealname, &myPassword, &myServer, &myPort, &mySsl);
-    //IRC_Prefix(&prefix, myNick, myUser, CLIENTNAME, myServer);
     channel = IRCInterface_ActiveChannelName();
     if ((ret = IRCMsg_Topic(&command, NULL, channel, msg)) != IRC_OK)
         return logIntError(ret, "error @ userTopic -> IRCMsg_Topic");

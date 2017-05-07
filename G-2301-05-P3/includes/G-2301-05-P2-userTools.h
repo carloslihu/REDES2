@@ -29,6 +29,3 @@ char* getMyNick();
  * @return el nick asociado a este cliente
  */
 char* getMyNickThread();
-
-
-//long prefixParse(char* prefix, char** nick, char** user, char** host);

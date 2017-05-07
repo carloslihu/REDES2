@@ -237,7 +237,7 @@ int main(int argc, char *argv[]) {
     struct threadArgs* args;
 
     //daemonizamos. perderemos el rastro del proceso en la terminal. todos los errores se escribiran en el syslog
-    //daemonizar();
+    daemonizar();
 
     for(i = 0; i < IRC_MAX_COMMANDS; i++)
         functs[i] = commandDefault;

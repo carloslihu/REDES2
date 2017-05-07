@@ -166,27 +166,4 @@ long reactNames(char* strin);
  */
 long reactQuit(char* strin);
 
-
-
-
-
-
-
-
-
-
-
-
-/*long reactWho(char* strin);
-long reactWhoIs(char* strin);
-*/
-
-
-
-
-
-
-
-
-
 #endif
