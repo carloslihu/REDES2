@@ -3,171 +3,277 @@
 #include "../includes/G-2301-05-P1-commands.h"
 #include "../includes/G-2301-05-P2-userTools.h"
 
+/** 
+ * @defgroup IRCClient client
+ *
+ */
+
+/** 
+ * @defgroup IRCUserCommands userCommands
+ * @ingroup IRCClient
+ *
+ */
+
+/** 
+ * @addtogroup IRCUserCommands
+ * Funciones que se encargan del envio de Commandos al servidor
+ *
+ * <hr>
+ */
+
 /**
- * @brief funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente
+ * @ingroup IRCUserCommands
  *
- * @param ncommand el entero largo que representa un comando
+ * @page isCommand isCommand
  *
- * @return TRUE si ese comando es soportado por este cliente, FALSE de lo contrario
+ * @brief funcion que comprueba si el entero largo es un Commando de usuario implementado por este cliente
+ *
+ * @param ncommand el entero largo que representa un Commando
+ *
+ * @return TRUE si ese Commando es soportado por este cliente, FALSE de lo contrario
+ *
+ * <hr>
  */
 boolean isCommand(long ncommand);
 
 /**
- * @brief funcion por defecto para valores de comandos no implementados
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userDefault userDefault
+ *
+ * @brief funcion por defecto para valores de Commandos no implementados
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userDefault(int socket, char*strin);
 
 /**
- * @brief funcion que envia un comando AWAY bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userAway userAway
+ *
+ * @brief funcion que envia un Commando AWAY bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userAway (int socket, char* strin);
-//long userCycle(int socket,char* strin);
-//long userHelp(int socket,char* strin);
-//long userInvite(int socket,char* strin);
+
 
 /**
- * @brief funcion que envia un comando JOIN bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userJoin userJoin
+ *
+ * @brief funcion que envia un Commando JOIN bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userJoin(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando KICK bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userKick userKick
+ *
+ * @brief funcion que envia un Commando KICK bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userKick(int socket, char* strin);
-//long userLeave(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando LIST bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userList userList
+ *
+ * @brief funcion que envia un Commando LIST bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userList(int socket, char* strin);
-//long userLusers(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando MODE bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userMode userMode
+ *
+ * @brief funcion que envia un Commando MODE bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userMode(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando MOTD bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userMotd userMotd
+ *
+ * @brief funcion que envia un Commando MOTD bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userMotd(int socket, char* strin);
-//long userMsg(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando NAMES bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userNames userNames
+ *
+ * @brief funcion que envia un Commando NAMES bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userNames(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando NICK bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userNick userNick
+ *
+ * @brief funcion que envia un Commando NICK bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userNick(int socket, char* strin);
-//long userNotice(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando PART bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userPart userPart
+ *
+ * @brief funcion que envia un Commando PART bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userPart(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando PRIVMSG bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userPriv userPriv
+ *
+ * @brief funcion que envia un Commando PRIVMSG bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userPriv(int socket, char* strin);
-//long userQuery(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando QUIT bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userQuit userQuit
+ *
+ * @brief funcion que envia un Commando QUIT bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userQuit(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando TOPIC bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userTopic userTopic
+ *
+ * @brief funcion que envia un Commando TOPIC bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userTopic(int socket, char* strin);
-//long userWho(int socket,char* strin);
 
 /**
- * @brief funcion que envia un comando WHOIS bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userWhois userWhois
+ *
+ * @brief funcion que envia un Commando WHOIS bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userWhois(int socket, char* strin);
 
 /**
- * @brief funcion que envia un comando WHO bien formado al servidor
+ * @ingroup IRCUserCommands
  *
- * @param strin el comando escrito por el usuario
+ * @page userWho userWho
+ *
+ * @brief funcion que envia un Commando WHO bien formado al servidor
+ *
+ * @param strin el Commando escrito por el usuario
  * @param socket el socket de conexion con el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long userWho(int socket, char* strin);
 #endif

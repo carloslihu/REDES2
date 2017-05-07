@@ -1,0 +1,117 @@
+.TH "G-2301-05-P2-userTools.h" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+G-2301-05-P2-userTools.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G-2301-05-P1-tools\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIZE\fP   10000"
+.br
+.ti -1c
+.RI "#define \fBPORT_RECORD\fP   8888"
+.br
+.ti -1c
+.RI "#define \fBPORT_SEND\fP   6669"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprintXchat\fP (char *channel, char *nick, char *msg, boolean thread)"
+.br
+.RI "\fIimprime el mensaje del final del reply por la interfaz \fP"
+.ti -1c
+.RI "char * \fBgetMyNick\fP ()"
+.br
+.RI "\fIfuncion que devuelve el nick asociado a este cliente\&. version para ser llamada en algun callback de la interfaz \fP"
+.ti -1c
+.RI "char * \fBgetMyNickThread\fP ()"
+.br
+.RI "\fIfuncion que devuelve el nick asociado a este cliente\&. version para ser llamada por los hilos del cliente \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBsockfd\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PORT_RECORD   8888"
+
+.PP
+Definition at line 4 of file G-2301-05-P2-userTools\&.h\&.
+.SS "#define PORT_SEND   6669"
+
+.PP
+Definition at line 5 of file G-2301-05-P2-userTools\&.h\&.
+.SS "#define SIZE   10000"
+
+.PP
+Definition at line 3 of file G-2301-05-P2-userTools\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "char* getMyNick ()"
+
+.PP
+funcion que devuelve el nick asociado a este cliente\&. version para ser llamada en algun callback de la interfaz 
+.PP
+\fBReturns:\fP
+.RS 4
+el nick asociado a este cliente 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file G-2301-05-P2-userTools\&.c\&.
+.SS "char* getMyNickThread ()"
+
+.PP
+funcion que devuelve el nick asociado a este cliente\&. version para ser llamada por los hilos del cliente 
+.PP
+\fBReturns:\fP
+.RS 4
+el nick asociado a este cliente 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file G-2301-05-P2-userTools\&.c\&.
+.SS "void printXchat (char *channel, char *nick, char *msg, booleanthread)"
+
+.PP
+imprime el mensaje del final del reply por la interfaz 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchannel\fP canal donde se escribe, o null si es en system 
+.br
+\fInick\fP nick del usuario que lo manda 
+.br
+\fImsg\fP reply de la cual imprimimos el ultimo campo 
+.br
+\fIthread\fP T si es la version con threads, false, si no 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file G-2301-05-P2-userTools\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int sockfd"
+
+.PP
+Definition at line 6 of file G-2301-05-P2-userTools\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

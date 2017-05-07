@@ -21,61 +21,119 @@
 
 #define FILE_BUFLEN 1024
 
+/** 
+ * @defgroup IRCClient client
+ *
+ */
+
+/** 
+ * @defgroup IRCCommandsFromServer commandsFromServer
+ * @ingroup IRCClient
+ *
+ */
+
+/** 
+ * @addtogroup IRCCommandsFromServer
+ * Funciones que manejan los comandos del servidor
+ *
+ * <hr>
+ */
+
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactDefault reactDefault
+ *
  * @brief rutina por defecto ante un mensaje no reconocido por este cliente
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactDefault(char*strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactPrint reactPrint
+ *
  * @brief maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin
  *
  * @param strin el commando recibido
  *
  * @return IRC_OK si fue bien, otra cosa si no
+ *
+ * <hr>
  */
 long reactPrint(char*strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactPass reactPass
+ *
  * @brief rutina que maneja la llegada de un comando PASS
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactPass(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactNick reactNick
+ *
  * @brief rutina que maneja la llegada de un comando NICK. Esta rutina cambia el nick del usuario
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactNick(char *strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactMode reactMode
+ *
  * @brief rutina que maneja la llegada de un comando MODE. Este comando cambia los modos del canal
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactMode(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactService reactService
+ *
  * @brief rutina que maneja la llegada de un comando SERVICE
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactService(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactJoin reactJoin
+ *
  * @brief rutina que maneja la llegada de un comando JOIN.
  * Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal
  * en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who
@@ -85,10 +143,16 @@ long reactService(char* strin);
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactJoin(char *strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactPart reactPart
+ *
  * @brief rutina que maneja la llegada de un comando PART.
  * Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá
  * Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal
@@ -96,19 +160,31 @@ long reactJoin(char *strin);
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactPart(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactTopic reactTopic
+ *
  * @brief rutina que maneja la llegada de un comando TOPIC. Cambia el topico del canal
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactTopic(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactKick reactKick
+ *
  * @brief rutina que maneja la llegada de un comando KICK
  * Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado
  * de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal
@@ -116,10 +192,16 @@ long reactTopic(char* strin);
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactKick(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactPrivmsg reactPrivmsg
+ *
  * @brief rutina que maneja la llegada de un comando PRIVMSG. maneja envio de mensajes tanto a canales como a usuarios
  * si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta.
  * tambien maneja un caso particular de PrivMsg que sirve para identificar una peticion de envio de ficheros
@@ -127,42 +209,68 @@ long reactKick(char* strin);
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactPrivmsg(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactPing reactPing
+ *
  * @brief rutina que maneja la llegada de un comando PING
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactPing(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactSetName reactSetName
+ *
  * @brief rutina que maneja la llegada de un comando SETNAME
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactSetName(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactNames reactNames
+ *
  * @brief rutina que maneja la llegada de un comando NAMES
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactNames(char* strin);
 
 /**
+ * @ingroup IRCCommandsFromServer
+ *
+ * @page reactQuit reactQuit
+ *
  * @brief rutina que maneja la llegada de un comando QUIT. Se asume que solo se recibirá un quit de otro cliente
  *
  * @param strin el mensaje que envia el servidor
  *
  * @return IRC_OK
+ *
+ * <hr>
  */
 long reactQuit(char* strin);
 

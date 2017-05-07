@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d75/group___i_r_c_server_tools_daemonizar" kind="page">
+    <compoundname>daemonizar</compoundname>
+    <title>daemonizar</title>
+    <detaileddescription>
+<para>daemoniza el proceso el proceso queda en segundo plano como proceso de init</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

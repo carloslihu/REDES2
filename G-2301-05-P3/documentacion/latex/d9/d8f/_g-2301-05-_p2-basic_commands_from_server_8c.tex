@@ -1,0 +1,481 @@
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.c File Reference}
+\label{_g-2301-05-_p2-basic_commands_from_server_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/audio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structthread_recv_args}{thread\-Recv\-Args}
+\item 
+struct \hyperlink{structthread_audio_args}{thread\-Audio\-Args}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a4a541fbbe2af9ced94c42bd9035763e0}{react\-Default} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina por defecto ante un mensaje no reconocido por este cliente \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a44650743c7ba1a6a2768d4156028e8d4}{react\-Print} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_ac8c9483ef017ea056ed519d084029cff}{react\-Pass} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando P\-A\-S\-S \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_af4a1c3e0adb16c333386f048f948a174}{react\-Nick} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando N\-I\-C\-K. Esta rutina cambia el nick del usuario \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a4c0608743d68b02dc2edaa0e113293df}{react\-Mode} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando M\-O\-D\-E. Este comando cambia los modos del canal \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a6aac8ec73a892579e8988ee16cee507c}{react\-Service} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando S\-E\-R\-V\-I\-C\-E \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_aac734783cf3067915cdfe1d4968cf8d1}{react\-Join} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando J\-O\-I\-N. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a28c3a9c34508c23d3f81c2326101e8e7}{react\-Part} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando P\-A\-R\-T. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a1d86d105c8fe9b9fc6c55c5bc2406f37}{react\-Topic} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando T\-O\-P\-I\-C. Cambia el topico del canal \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a4f7dc613a25eb6eda89ad289feec5f16}{react\-Kick} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando K\-I\-C\-K Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_ad2ca292b4e5365950f6ea7887abdbc37}{F\-Send\-\_\-\-Parse} (char $\ast$strin, char $\ast$$\ast$filename, char $\ast$$\ast$\hyperlink{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname}, int $\ast$port, unsigned long $\ast$length)
+\begin{DoxyCompactList}\small\item\em Esta rutina se encarga de parsear un comando Priv\-Msg que, segun el \char`\"{}protocolo\char`\"{} que establece nuestro cliente, indica una peticion de envio de fichero. para mas informacion sobre este \char`\"{}protocolo\char`\"{} ver la documentacion de thread\-Send del fichero G-\/2301-\/05-\/\-P2-\/xchat.\-c. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_ae2661acad62b7c8480ba478251b4df77}{thread\-Recv} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em rutina que se encarga de la recepción de ficheros siguiendo el \char`\"{}protocolo\char`\"{} implementado por este cliente \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a143c8c1989387af8849fb5bd1f806584}{thread\-Audio} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em rutina que se encarga de la recepción de audio siguiendo el \char`\"{}protocolo\char`\"{} implementado por este cliente \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_aa0f0ef9fd0a3facea1983061e1648e87}{react\-Privmsg} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando P\-R\-I\-V\-M\-S\-G. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta. tambien maneja un caso particular de Priv\-Msg que sirve para identificar una peticion de envio de ficheros \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a1d15466f16cbf9847a16ac4bf24b34fb}{react\-Ping} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando P\-I\-N\-G \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a7df438a44035b38ab4eacf045bbc131c}{react\-Set\-Name} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando S\-E\-T\-N\-A\-M\-E \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a62ca3a2f7e205eecb85ae220ac5c3c7b}{react\-Names} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando N\-A\-M\-E\-S \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-basic_commands_from_server_8c_a9261ac4f3ef8326c2954ac381b176016}{react\-Quit} (char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em rutina que maneja la llegada de un comando Q\-U\-I\-T. Se asume que solo se recibirá un quit de otro cliente \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_ad2ca292b4e5365950f6ea7887abdbc37}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!F\-Send\-\_\-\-Parse@{F\-Send\-\_\-\-Parse}}
+\index{F\-Send\-\_\-\-Parse@{F\-Send\-\_\-\-Parse}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{F\-Send\-\_\-\-Parse}]{\setlength{\rightskip}{0pt plus 5cm}int F\-Send\-\_\-\-Parse (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin, }
+\item[{char $\ast$$\ast$}]{filename, }
+\item[{char $\ast$$\ast$}]{hostname, }
+\item[{int $\ast$}]{port, }
+\item[{unsigned long $\ast$}]{length}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_ad2ca292b4e5365950f6ea7887abdbc37}
+
+
+Esta rutina se encarga de parsear un comando Priv\-Msg que, segun el \char`\"{}protocolo\char`\"{} que establece nuestro cliente, indica una peticion de envio de fichero. para mas informacion sobre este \char`\"{}protocolo\char`\"{} ver la documentacion de thread\-Send del fichero G-\/2301-\/05-\/\-P2-\/xchat.\-c. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el string que contiene los datos a parsear \\
+\hline
+{\em filename} & un puntero a string en el que se almacenara el nombre del fichero \\
+\hline
+{\em hostname} & un puntero a string en el que se almacenara el hostname de quien envia la peticion \\
+\hline
+{\em port} & un puntero a entero donde se almacenara el puerto con el que establecer la conexion \\
+\hline
+{\em length} & un puntero a entero largo sin signo donde se almacenara la longitud del fichero a enviar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K en caso de ir todo bien. Otro valor de lo contrario 
+\end{DoxyReturn}
+
+
+Definition at line 308 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a4a541fbbe2af9ced94c42bd9035763e0}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Default@{react\-Default}}
+\index{react\-Default@{react\-Default}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Default}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Default (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a4a541fbbe2af9ced94c42bd9035763e0}
+
+
+rutina por defecto ante un mensaje no reconocido por este cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_aac734783cf3067915cdfe1d4968cf8d1}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Join@{react\-Join}}
+\index{react\-Join@{react\-Join}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Join}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Join (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_aac734783cf3067915cdfe1d4968cf8d1}
+
+
+rutina que maneja la llegada de un comando J\-O\-I\-N. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a4f7dc613a25eb6eda89ad289feec5f16}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Kick@{react\-Kick}}
+\index{react\-Kick@{react\-Kick}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Kick}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Kick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a4f7dc613a25eb6eda89ad289feec5f16}
+
+
+rutina que maneja la llegada de un comando K\-I\-C\-K Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a4c0608743d68b02dc2edaa0e113293df}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Mode@{react\-Mode}}
+\index{react\-Mode@{react\-Mode}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Mode (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a4c0608743d68b02dc2edaa0e113293df}
+
+
+rutina que maneja la llegada de un comando M\-O\-D\-E. Este comando cambia los modos del canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a62ca3a2f7e205eecb85ae220ac5c3c7b}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Names@{react\-Names}}
+\index{react\-Names@{react\-Names}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Names}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Names (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a62ca3a2f7e205eecb85ae220ac5c3c7b}
+
+
+rutina que maneja la llegada de un comando N\-A\-M\-E\-S 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 628 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_af4a1c3e0adb16c333386f048f948a174}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Nick@{react\-Nick}}
+\index{react\-Nick@{react\-Nick}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_af4a1c3e0adb16c333386f048f948a174}
+
+
+rutina que maneja la llegada de un comando N\-I\-C\-K. Esta rutina cambia el nick del usuario 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a28c3a9c34508c23d3f81c2326101e8e7}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Part@{react\-Part}}
+\index{react\-Part@{react\-Part}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Part}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Part (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a28c3a9c34508c23d3f81c2326101e8e7}
+
+
+rutina que maneja la llegada de un comando P\-A\-R\-T. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 216 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_ac8c9483ef017ea056ed519d084029cff}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Pass@{react\-Pass}}
+\index{react\-Pass@{react\-Pass}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Pass}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Pass (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_ac8c9483ef017ea056ed519d084029cff}
+
+
+rutina que maneja la llegada de un comando P\-A\-S\-S 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a1d15466f16cbf9847a16ac4bf24b34fb}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Ping@{react\-Ping}}
+\index{react\-Ping@{react\-Ping}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Ping (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a1d15466f16cbf9847a16ac4bf24b34fb}
+
+
+rutina que maneja la llegada de un comando P\-I\-N\-G 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 596 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a44650743c7ba1a6a2768d4156028e8d4}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Print@{react\-Print}}
+\index{react\-Print@{react\-Print}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Print}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Print (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a44650743c7ba1a6a2768d4156028e8d4}
+
+
+maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_aa0f0ef9fd0a3facea1983061e1648e87}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Privmsg@{react\-Privmsg}}
+\index{react\-Privmsg@{react\-Privmsg}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Privmsg}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Privmsg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_aa0f0ef9fd0a3facea1983061e1648e87}
+
+
+rutina que maneja la llegada de un comando P\-R\-I\-V\-M\-S\-G. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta. tambien maneja un caso particular de Priv\-Msg que sirve para identificar una peticion de envio de ficheros 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 506 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a9261ac4f3ef8326c2954ac381b176016}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Quit@{react\-Quit}}
+\index{react\-Quit@{react\-Quit}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Quit}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Quit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a9261ac4f3ef8326c2954ac381b176016}
+
+
+rutina que maneja la llegada de un comando Q\-U\-I\-T. Se asume que solo se recibirá un quit de otro cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 653 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a6aac8ec73a892579e8988ee16cee507c}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Service@{react\-Service}}
+\index{react\-Service@{react\-Service}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Service}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Service (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a6aac8ec73a892579e8988ee16cee507c}
+
+
+rutina que maneja la llegada de un comando S\-E\-R\-V\-I\-C\-E 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a7df438a44035b38ab4eacf045bbc131c}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Set\-Name@{react\-Set\-Name}}
+\index{react\-Set\-Name@{react\-Set\-Name}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Set\-Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a7df438a44035b38ab4eacf045bbc131c}
+
+
+rutina que maneja la llegada de un comando S\-E\-T\-N\-A\-M\-E 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 617 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a1d86d105c8fe9b9fc6c55c5bc2406f37}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!react\-Topic@{react\-Topic}}
+\index{react\-Topic@{react\-Topic}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{react\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}long react\-Topic (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a1d86d105c8fe9b9fc6c55c5bc2406f37}
+
+
+rutina que maneja la llegada de un comando T\-O\-P\-I\-C. Cambia el topico del canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 244 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_a143c8c1989387af8849fb5bd1f806584}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!thread\-Audio@{thread\-Audio}}
+\index{thread\-Audio@{thread\-Audio}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{thread\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Audio (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_a143c8c1989387af8849fb5bd1f806584}
+
+
+rutina que se encarga de la recepción de audio siguiendo el \char`\"{}protocolo\char`\"{} implementado por este cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & los argumentos que el hilo requiere para realizar la recepción y reproduccion de audio. son del tipo \char`\"{}struct thread\-Audio\-Args\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+
+\hypertarget{_g-2301-05-_p2-basic_commands_from_server_8c_ae2661acad62b7c8480ba478251b4df77}{\index{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}!thread\-Recv@{thread\-Recv}}
+\index{thread\-Recv@{thread\-Recv}!G-2301-05-P2-basicCommandsFromServer.c@{G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c}}
+\subsubsection[{thread\-Recv}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Recv (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-basic_commands_from_server_8c_ae2661acad62b7c8480ba478251b4df77}
+
+
+rutina que se encarga de la recepción de ficheros siguiendo el \char`\"{}protocolo\char`\"{} implementado por este cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & los argumentos que el hilo requiere para realizar la recepción del fichero. son del tipo \char`\"{}struct thread\-Recv\-Args\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 360 of file G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-c.
+

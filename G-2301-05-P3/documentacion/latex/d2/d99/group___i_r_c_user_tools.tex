@@ -1,0 +1,40 @@
+\hypertarget{group___i_r_c_user_tools}{\section{user\-Tools}
+\label{group___i_r_c_user_tools}\index{user\-Tools@{user\-Tools}}
+}
+Funciones auxiliares para el cliente
+
+
+
+ \hypertarget{printXchat}{}\subsubsection{print\-Xchat}\label{printXchat}
+imprime el mensaje del final del reply por la interfaz
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & canal donde se escribe, o null si es en system \\
+\hline
+{\em nick} & nick del usuario que lo manda \\
+\hline
+{\em msg} & reply de la cual imprimimos el ultimo campo \\
+\hline
+{\em thread} & T si es la version con threads, false, si no\\
+\hline
+\end{DoxyParams}
+
+
+ \hypertarget{getMyNick}{}\subsubsection{get\-My\-Nick}\label{getMyNick}
+funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente
+\end{DoxyReturn}
+
+
+ \hypertarget{getMyNickThread}{}\subsubsection{get\-My\-Nick\-Thread}\label{getMyNickThread}
+funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente
+\end{DoxyReturn}
+
+
+ 

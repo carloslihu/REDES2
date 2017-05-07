@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets_acceptConnection" kind="page">
+    <compoundname>acceptConnection</compoundname>
+    <title>acceptConnection</title>
+    <detaileddescription>
+<para>prepara un socket para aceptar una conexión entrante</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que está escuchando conexiones entrantes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cli_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una estructura sockaddr_in donde se rellenaran los valores relativos al otro extremo de la conexión</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 en caso de error y un nuevo socket (valor mayor que 0) en el que se mantendrá la comunicación con el otro extremo</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

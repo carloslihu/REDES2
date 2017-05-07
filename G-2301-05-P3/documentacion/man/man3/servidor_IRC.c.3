@@ -1,0 +1,197 @@
+.TH "/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2301-05-P1-socket\&.h'\fP
+.br
+\fC#include '\&.\&./includes/G-2301-05-P1-commands\&.h'\fP
+.br
+\fC#include '\&.\&./includes/G-2301-05-P1-tools\&.h'\fP
+.br
+\fC#include '\&.\&./includes/G-2301-05-P2-userTools\&.h'\fP
+.br
+\fC#include '\&.\&./includes/G-2301-05-P1-types\&.h'\fP
+.br
+\fC#include '\&.\&./includes/G-2301-05-P3-ssl\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBthreadArgs\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTHREAD_NUMBER\fP   10"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef long int(* \fBpFuncs\fP )(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfreeThreadResources\fP (int socket)"
+.br
+.RI "\fIlibera los recursos de usuario asociados al hilo \fP"
+.ti -1c
+.RI "int \fBconnectAndRegister\fP (int \fBsockfd\fP, struct sockaddr_in *client, struct sockaddr_in *server, SSL *ssl)"
+.br
+.RI "\fImaneja el inicio de sesión del cliente \fP"
+.ti -1c
+.RI "int \fBretrieveMsg\fP (int \fBsockfd\fP, struct sockaddr_in *server, struct sockaddr_in *client, SSL *ssl)"
+.br
+.RI "\fIse encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso \fP"
+.ti -1c
+.RI "void * \fBthreadRoutine\fP (void *args)"
+.br
+.RI "\fIel comportamiento del hilo tras ser creado\&. \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "boolean \fBssl_active\fP =TRUE"
+.br
+.ti -1c
+.RI "char * \fBhostname\fP = 'JohnTitor'"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.ti -1c
+.RI "\fBpFuncs\fP \fBfuncts\fP [100]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define THREAD_NUMBER   10"
+
+.PP
+Definition at line 7 of file servidor_IRC\&.c\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef long int(* pFuncs)(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+Definition at line 21 of file servidor_IRC\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "int connectAndRegister (intsockfd, struct sockaddr_in *client, struct sockaddr_in *server, SSL *ssl)"
+
+.PP
+maneja el inicio de sesión del cliente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsockfd\fP el socket a enlazar 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file servidor_IRC\&.c\&.
+.SS "void freeThreadResources (intsocket)"
+
+.PP
+libera los recursos de usuario asociados al hilo 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket que es manejado por el hilo 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file servidor_IRC\&.c\&.
+.SS "int main (intargc, char *argv[])"
+
+.PP
+Definition at line 226 of file servidor_IRC\&.c\&.
+.SS "int retrieveMsg (intsockfd, struct sockaddr_in *server, struct sockaddr_in *client, SSL *ssl)"
+
+.PP
+se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsockfd\fP el socket a enlazar 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 151 of file servidor_IRC\&.c\&.
+.SS "void* threadRoutine (void *args)"
+
+.PP
+el comportamiento del hilo tras ser creado\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargs\fP deberá ser un puntero a la estructura \fBthreadArgs\fP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NULL al acabar la sesión del hilo 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file servidor_IRC\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBpFuncs\fP functs[100]"
+
+.PP
+Definition at line 22 of file servidor_IRC\&.c\&.
+.SS "char* hostname = 'JohnTitor'"
+
+.PP
+Definition at line 10 of file servidor_IRC\&.c\&.
+.SS "pthread_mutex_t mutex"
+
+.PP
+Definition at line 11 of file servidor_IRC\&.c\&.
+.SS "boolean ssl_active =TRUE"
+
+.PP
+Definition at line 9 of file servidor_IRC\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

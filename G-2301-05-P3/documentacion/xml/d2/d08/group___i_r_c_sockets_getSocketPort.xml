@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets_getSocketPort" kind="page">
+    <compoundname>getSocketPort</compoundname>
+    <title>getSocketPort</title>
+    <detaileddescription>
+<para>obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket (enlazado) del que queremos sacar su puerto </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura sockaddr_in en la que se guardan los datos referentes a nuestro extremo de la conexion</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el puerto del socket. Si hubo un error, -1</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

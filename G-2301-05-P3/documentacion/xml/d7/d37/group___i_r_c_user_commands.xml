@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d7/d37/group___i_r_c_user_commands" kind="group">
+    <compoundname>IRCUserCommands</compoundname>
+    <title>userCommands</title>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_isCommand">isCommand</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userDefault">userDefault</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userAway">userAway</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userJoin">userJoin</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userKick">userKick</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userList">userList</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userMode">userMode</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userMotd">userMotd</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userNames">userNames</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userNick">userNick</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userPart">userPart</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userPriv">userPriv</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userQuit">userQuit</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userTopic">userTopic</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userWhois">userWhois</innerpage>
+    <innerpage refid="d7/d37/group___i_r_c_user_commands_userWho">userWho</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que se encargan del envio de Commandos al servidor</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

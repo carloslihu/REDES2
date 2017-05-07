@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/d18/cliente__echo_8c" kind="file">
+    <compoundname>cliente_echo.c</compoundname>
+    <includes refid="d8/d51/_g-2301-05-_p3-ssl_8h" local="yes">../includes/G-2301-05-P3-ssl.h</includes>
+    <incdepgraph>
+      <node id="364">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="366">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="370">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="348">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="d8/dad/_g-2301-05-_p2-user_commands_8h"/>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+      </node>
+      <node id="358">
+        <label>stdint.h</label>
+      </node>
+      <node id="353">
+        <label>stdlib.h</label>
+      </node>
+      <node id="371">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="351" relation="include">
+        </childnode>
+      </node>
+      <node id="360">
+        <label>errno.h</label>
+      </node>
+      <node id="350">
+        <label>G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="351" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="370" relation="include">
+        </childnode>
+      </node>
+      <node id="357">
+        <label>netdb.h</label>
+      </node>
+      <node id="352">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="354" relation="include">
+        </childnode>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="357" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
+        <childnode refid="362" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="364" relation="include">
+        </childnode>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="367" relation="include">
+        </childnode>
+        <childnode refid="368" relation="include">
+        </childnode>
+        <childnode refid="369" relation="include">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>syslog.h</label>
+      </node>
+      <node id="347">
+        <label>openssl/err.h</label>
+      </node>
+      <node id="351">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="352" relation="include">
+        </childnode>
+      </node>
+      <node id="361">
+        <label>pthread.h</label>
+      </node>
+      <node id="362">
+        <label>sys/types.h</label>
+      </node>
+      <node id="355">
+        <label>string.h</label>
+      </node>
+      <node id="367">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="356">
+        <label>unistd.h</label>
+      </node>
+      <node id="368">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="344">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</label>
+        <link refid="cliente_echo.c"/>
+        <childnode refid="345" relation="include">
+        </childnode>
+      </node>
+      <node id="365">
+        <label>sys/time.h</label>
+      </node>
+      <node id="363">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="345">
+        <label>../includes/G-2301-05-P3-ssl.h</label>
+        <link refid="d8/d51/_g-2301-05-_p3-ssl_8h"/>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+      </node>
+      <node id="349">
+        <label>../includes/G-2301-05-P1-commands.h</label>
+        <link refid="d4/db1/_g-2301-05-_p1-commands_8h"/>
+        <childnode refid="350" relation="include">
+        </childnode>
+      </node>
+      <node id="369">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="354">
+        <label>stdio.h</label>
+      </node>
+      <node id="346">
+        <label>openssl/ssl.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d4/d18/cliente__echo_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cliente Echo Se encarga de crear una conexión segura donde se manda al servidor lo escrito por terminal y se dedica a imprimir lo que recibe Si escribes exit acaba su ejecución <simplesect kind="return"><para>0 si es correcto, -1 si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c" line="8" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c" bodystart="8" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P3-ssl.h&quot;</highlight></codeline>
+<codeline lineno="8" refid="d4/d18/cliente__echo_8c_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d18/cliente__echo_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL_CTX*ctx;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL*ssl;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num<sp/>=<sp/>512;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[num];</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a937108af8fd0832377b084e24172ee41" kindref="member">inicializar_nivel_SSL</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx<sp/>=<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a84a295d51a23d2558cbf65f436011dc6" kindref="member">fijar_contexto_SSL</ref>(</highlight><highlight class="stringliteral">&quot;certs/ca.pem&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;certs/cliente.pem&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;certs/cliente.pem&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>fijar_contexto_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>sockfd<sp/>=<sp/><ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1ac0a294efde364937332533e4ecd8d121" kindref="member">openSocket_TCP</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1a688c9a3a3e37e99d810e8ad63984272d" kindref="member">connectTo</ref>(sockfd,<sp/></highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">,<sp/>6667)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>@<sp/>IRCInterface_Connect<sp/>-&gt;<sp/>connectTo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>ssl<sp/>=<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a79add582c01289f85c0a81569ee3b73e" kindref="member">conectar_canal_seguro_SSL</ref>(ctx,<sp/>sockfd);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ssl<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>conectar_canal_seguro_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a8abf144662cb4cfd12428524f425854c" kindref="member">evaluar_post_connectar_SSL</ref>(ssl)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>evaluar_post_connectar_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scanf(</highlight><highlight class="stringliteral">&quot;%s[^\n]\n&quot;</highlight><highlight class="normal">,<sp/>buf);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a71ed04f7f38be4fd5b1abec30a9ee130" kindref="member">enviar_datos_SSL</ref>(ssl,<sp/>buf,<sp/>num)<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bzero(buf,<sp/>num);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kindref="member">recibir_datos_SSL</ref>(ssl,<sp/>buf,<sp/>num)<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>buf);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(strcmp(buf,<sp/></highlight><highlight class="stringliteral">&quot;exit&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1acdbfef38bb502e732928620f71daacd2" kindref="member">cerrar_canal_SSL</ref>(ssl,<sp/>ctx,<sp/>sockfd);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c"/>
+  </compounddef>
+</doxygen>

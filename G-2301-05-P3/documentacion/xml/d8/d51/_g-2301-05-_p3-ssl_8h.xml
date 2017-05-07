@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/d51/_g-2301-05-_p3-ssl_8h" kind="file">
+    <compoundname>G-2301-05-P3-ssl.h</compoundname>
+    <includes local="no">openssl/ssl.h</includes>
+    <includes local="no">openssl/err.h</includes>
+    <includes refid="d8/dad/_g-2301-05-_p2-user_commands_8h" local="yes">G-2301-05-P2-userCommands.h</includes>
+    <includedby refid="d4/d18/cliente__echo_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</includedby>
+    <includedby refid="de/dee/cliente___i_r_c_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_IRC.c</includedby>
+    <includedby refid="d3/dbb/servidor__echo_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_echo.c</includedby>
+    <includedby refid="d6/d48/servidor___i_r_c_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</includedby>
+    <includedby refid="d8/d7e/_g-2301-05-_p3-ssl_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c</includedby>
+    <incdepgraph>
+      <node id="330">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="332">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="336">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="314">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="d8/dad/_g-2301-05-_p2-user_commands_8h"/>
+        <childnode refid="315" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+      </node>
+      <node id="324">
+        <label>stdint.h</label>
+      </node>
+      <node id="319">
+        <label>stdlib.h</label>
+      </node>
+      <node id="337">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="317" relation="include">
+        </childnode>
+      </node>
+      <node id="326">
+        <label>errno.h</label>
+      </node>
+      <node id="316">
+        <label>G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="317" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+        <childnode refid="332" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+      </node>
+      <node id="323">
+        <label>netdb.h</label>
+      </node>
+      <node id="318">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+        <childnode refid="322" relation="include">
+        </childnode>
+        <childnode refid="323" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
+        </childnode>
+        <childnode refid="327" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
+        <childnode refid="329" relation="include">
+        </childnode>
+        <childnode refid="330" relation="include">
+        </childnode>
+        <childnode refid="331" relation="include">
+        </childnode>
+        <childnode refid="332" relation="include">
+        </childnode>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+      <node id="325">
+        <label>syslog.h</label>
+      </node>
+      <node id="313">
+        <label>openssl/err.h</label>
+      </node>
+      <node id="317">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="327">
+        <label>pthread.h</label>
+      </node>
+      <node id="328">
+        <label>sys/types.h</label>
+      </node>
+      <node id="321">
+        <label>string.h</label>
+      </node>
+      <node id="333">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="322">
+        <label>unistd.h</label>
+      </node>
+      <node id="334">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="331">
+        <label>sys/time.h</label>
+      </node>
+      <node id="329">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="311">
+        <label>G-2301-05-P3-ssl.h</label>
+        <link refid="G-2301-05-P3-ssl.h"/>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>../includes/G-2301-05-P1-commands.h</label>
+        <link refid="d4/db1/_g-2301-05-_p1-commands_8h"/>
+        <childnode refid="316" relation="include">
+        </childnode>
+      </node>
+      <node id="335">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="320">
+        <label>stdio.h</label>
+      </node>
+      <node id="312">
+        <label>openssl/ssl.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="341">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_echo.c</label>
+        <link refid="d3/dbb/servidor__echo_8c"/>
+      </node>
+      <node id="340">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_IRC.c</label>
+        <link refid="de/dee/cliente___i_r_c_8c"/>
+      </node>
+      <node id="342">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</label>
+        <link refid="d6/d48/servidor___i_r_c_8c"/>
+      </node>
+      <node id="343">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c</label>
+        <link refid="d8/d7e/_g-2301-05-_p3-ssl_8c"/>
+      </node>
+      <node id="339">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</label>
+        <link refid="d4/d18/cliente__echo_8c"/>
+      </node>
+      <node id="338">
+        <label>G-2301-05-P3-ssl.h</label>
+        <link refid="G-2301-05-P3-ssl.h"/>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a937108af8fd0832377b084e24172ee41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void inicializar_nivel_SSL</definition>
+        <argsstring>()</argsstring>
+        <name>inicializar_nivel_SSL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función se encargará de realizar todas las llamadas necesarias para que la apli- cación pueda usar la capa segura SSL. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="43" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a84a295d51a23d2558cbf65f436011dc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SSL_CTX *</type>
+        <definition>SSL_CTX* fijar_contexto_SSL</definition>
+        <argsstring>(char *CAfile, char *SCfile, char *Pfile, char *CApath)</argsstring>
+        <name>fijar_contexto_SSL</name>
+        <param>
+          <type>char *</type>
+          <declname>CAfile</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>SCfile</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>Pfile</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>CApath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función se encargará de inicializar correctamente el contexto que será utilizado para la creación de canales seguros mediante SSL. Deberá recibir información sobre las rutas a los certificados y claves con los que vaya a trabajar la aplicación. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>CAfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>certificado de la CA </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SCfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>certificado del servidor/cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Pfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>clave privada del servidor/cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CApath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ruta del certificado de la CA </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>contexto de la conexión segura </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="62" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="23" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a79add582c01289f85c0a81569ee3b73e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SSL *</type>
+        <definition>SSL* conectar_canal_seguro_SSL</definition>
+        <argsstring>(SSL_CTX *ctx, int sockfd)</argsstring>
+        <name>conectar_canal_seguro_SSL</name>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dado un contexto SSL y un descriptor de socket esta función se encargará de obtener un canal seguro SSL iniciando el proceso de handshake con el otro extremo. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contexto de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket de la conexión segura </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>estructura SSL de la conexión segura </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="78" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="57" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1aaeb9457077403f2261ca1a86e3802a1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SSL *</type>
+        <definition>SSL* aceptar_canal_seguro_SSL</definition>
+        <argsstring>(SSL_CTX *ctx, int sockfd)</argsstring>
+        <name>aceptar_canal_seguro_SSL</name>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dado un contexto SSL y un descriptor de socket esta función se encargará de bloquear la aplicación, que se quedará esperando hasta recibir un handshake por parte del cliente. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contexto de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket de la conexión segura </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>estructura SSL de la conexión segura </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="94" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="82" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a8abf144662cb4cfd12428524f425854c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean evaluar_post_connectar_SSL</definition>
+        <argsstring>(SSL *ssl)</argsstring>
+        <name>evaluar_post_connectar_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función comprobará una vez realizado el handshake que el canal de co- municación se puede considerar seguro. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true si es seguro, false si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="109" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="106" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a71ed04f7f38be4fd5b1abec30a9ee130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int enviar_datos_SSL</definition>
+        <argsstring>(SSL *ssl, void *buf, int num)</argsstring>
+        <name>enviar_datos_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función será el equivalente a la función de envío de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a enviar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>datos a enviar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tamaño de los datos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>numero &gt;0 si ha ido bien &lt;=0 si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="127" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int recibir_datos_SSL</definition>
+        <argsstring>(SSL *ssl, void *buf, int num)</argsstring>
+        <name>recibir_datos_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función será el equivalente a la función de lectura de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a recibir. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>datos a recibir </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tamaño de los datos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>numero &gt;0 si ha ido bien &lt;=0 si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="145" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d51/_g-2301-05-_p3-ssl_8h_1acdbfef38bb502e732928620f71daacd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cerrar_canal_SSL</definition>
+        <argsstring>(SSL *ssl, SSL_CTX *ctx, int sockfd)</argsstring>
+        <name>cerrar_canal_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Esta función liberará todos los recursos y cerrará el canal de comunicación seguro creado previamente. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contexto de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket de la conexión segura </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 si ha ido bien, -1 si ha habido un fallo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h" line="162" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c" bodystart="155" bodyend="170"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>To<sp/>change<sp/>this<sp/>license<sp/>header,<sp/>choose<sp/>License<sp/>Headers<sp/>in<sp/>Project<sp/>Properties.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>To<sp/>change<sp/>this<sp/>template<sp/>file,<sp/>choose<sp/>Tools<sp/>|<sp/>Templates</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>and<sp/>open<sp/>the<sp/>template<sp/>in<sp/>the<sp/>editor.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>File:<sp/><sp/><sp/>ssl.h</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Author:<sp/>carlos</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Created<sp/>on<sp/>11<sp/>de<sp/>abril<sp/>de<sp/>2017,<sp/>17:27</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SSL_H</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SSL_H</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ssl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/err.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h" kindref="compound">G-2301-05-P2-userCommands.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a937108af8fd0832377b084e24172ee41" kindref="member">inicializar_nivel_SSL</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">SSL_CTX*<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a84a295d51a23d2558cbf65f436011dc6" kindref="member">fijar_contexto_SSL</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CAfile,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>SCfile,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>Pfile,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*CApath);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">SSL*<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a79add582c01289f85c0a81569ee3b73e" kindref="member">conectar_canal_seguro_SSL</ref>(SSL_CTX*<sp/>ctx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">SSL*<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1aaeb9457077403f2261ca1a86e3802a1d" kindref="member">aceptar_canal_seguro_SSL</ref>(SSL_CTX*<sp/>ctx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a8abf144662cb4cfd12428524f425854c" kindref="member">evaluar_post_connectar_SSL</ref>(SSL*ssl);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a71ed04f7f38be4fd5b1abec30a9ee130" kindref="member">enviar_datos_SSL</ref>(SSL*<sp/>ssl,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kindref="member">recibir_datos_SSL</ref>(SSL*<sp/>ssl,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1acdbfef38bb502e732928620f71daacd2" kindref="member">cerrar_canal_SSL</ref>(SSL*<sp/>ssl,<sp/>SSL_CTX*<sp/>ctx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SSL_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P3-ssl.h"/>
+  </compounddef>
+</doxygen>

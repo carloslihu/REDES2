@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_canIWrite" kind="page">
+    <compoundname>canIWrite</compoundname>
+    <title>canIWrite</title>
+    <detaileddescription>
+<para>funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin &quot;pasar&quot; la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el numero de bytes de distancia a comprobar si podemos o no escribir</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si no es posible escribir len bytes del buffer. !0 si lo es</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

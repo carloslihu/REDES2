@@ -1293,6 +1293,7 @@ void* threadSend(void* args) {
 	return NULL;
 }
 
+
 /**
  * @ingroup IRCInterfaceCallbacks
  *
@@ -1331,7 +1332,6 @@ void* threadSend(void* args) {
  *
  *<hr>
  */
-
 boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length) {
 	struct threadSendArgs *args;
 	pthread_t th;
@@ -1406,7 +1406,6 @@ void * threadRecord(void * aux) {
 	initiateSender();
 	return NULL;
 }
-
 /**
  * @ingroup IRCInterfaceCallbacks
  *

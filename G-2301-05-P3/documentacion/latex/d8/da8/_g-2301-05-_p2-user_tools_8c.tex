@@ -1,0 +1,81 @@
+\hypertarget{_g-2301-05-_p2-user_tools_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.c File Reference}
+\label{_g-2301-05-_p2-user_tools_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p2-user_tools_8c_a3e267cdf9839a331d371dd5f980d153e}{print\-Xchat} (char $\ast$channel, char $\ast$nick, char $\ast$msg, boolean thread)
+\begin{DoxyCompactList}\small\item\em imprime el mensaje del final del reply por la interfaz \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_g-2301-05-_p2-user_tools_8c_afc2d4ce661d2f13fbe4b5518d778d071}{get\-My\-Nick} ()
+\begin{DoxyCompactList}\small\item\em funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_g-2301-05-_p2-user_tools_8c_ab409491dfa3ca1ed9713df0eabdb70ed}{get\-My\-Nick\-Thread} ()
+\begin{DoxyCompactList}\small\item\em funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-user_tools_8c_afc2d4ce661d2f13fbe4b5518d778d071}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}!get\-My\-Nick@{get\-My\-Nick}}
+\index{get\-My\-Nick@{get\-My\-Nick}!G-2301-05-P2-userTools.c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}}
+\subsubsection[{get\-My\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-My\-Nick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8c_afc2d4ce661d2f13fbe4b5518d778d071}
+
+
+funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz 
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8c_ab409491dfa3ca1ed9713df0eabdb70ed}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}!get\-My\-Nick\-Thread@{get\-My\-Nick\-Thread}}
+\index{get\-My\-Nick\-Thread@{get\-My\-Nick\-Thread}!G-2301-05-P2-userTools.c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}}
+\subsubsection[{get\-My\-Nick\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-My\-Nick\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8c_ab409491dfa3ca1ed9713df0eabdb70ed}
+
+
+funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente 
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8c_a3e267cdf9839a331d371dd5f980d153e}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}!print\-Xchat@{print\-Xchat}}
+\index{print\-Xchat@{print\-Xchat}!G-2301-05-P2-userTools.c@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c}}
+\subsubsection[{print\-Xchat}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Xchat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick, }
+\item[{char $\ast$}]{msg, }
+\item[{boolean}]{thread}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8c_a3e267cdf9839a331d371dd5f980d153e}
+
+
+imprime el mensaje del final del reply por la interfaz 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & canal donde se escribe, o null si es en system \\
+\hline
+{\em nick} & nick del usuario que lo manda \\
+\hline
+{\em msg} & reply de la cual imprimimos el ultimo campo \\
+\hline
+{\em thread} & T si es la version con threads, false, si no \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+

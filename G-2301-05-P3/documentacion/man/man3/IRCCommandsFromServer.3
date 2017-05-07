@@ -1,0 +1,236 @@
+.TH "commandsFromServer" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+commandsFromServer \- 
+Funciones que manejan los comandos del servidor
+.PP
+.PP
+ reactDefault
+rutina por defecto ante un mensaje no reconocido por este cliente
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactPrint"
+maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no
+.RE
+.PP
+.PP
+ 
+.SS "reactPass"
+rutina que maneja la llegada de un comando PASS
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactNick"
+rutina que maneja la llegada de un comando NICK\&. Esta rutina cambia el nick del usuario
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactMode"
+rutina que maneja la llegada de un comando MODE\&. Este comando cambia los modos del canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactService"
+rutina que maneja la llegada de un comando SERVICE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactJoin"
+rutina que maneja la llegada de un comando JOIN\&. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactPart"
+rutina que maneja la llegada de un comando PART\&. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactTopic"
+rutina que maneja la llegada de un comando TOPIC\&. Cambia el topico del canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactKick"
+rutina que maneja la llegada de un comando KICK Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactPrivmsg"
+rutina que maneja la llegada de un comando PRIVMSG\&. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta\&. tambien maneja un caso particular de PrivMsg que sirve para identificar una peticion de envio de ficheros
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactPing"
+rutina que maneja la llegada de un comando PING
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactSetName"
+rutina que maneja la llegada de un comando SETNAME
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactNames"
+rutina que maneja la llegada de un comando NAMES
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactQuit"
+rutina que maneja la llegada de un comando QUIT\&. Se asume que solo se recibirá un quit de otro cliente
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

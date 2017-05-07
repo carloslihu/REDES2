@@ -1,0 +1,592 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d6/dbc/_g-2301-05-_p2-audio_8c" kind="file">
+    <compoundname>G-2301-05-P2-audio.c</compoundname>
+    <includes refid="d9/dbb/_g-2301-05-_p2-audio_8h" local="yes">../includes/G-2301-05-P2-audio.h</includes>
+    <incdepgraph>
+      <node id="504">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="506">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="511">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="498">
+        <label>stdint.h</label>
+      </node>
+      <node id="493">
+        <label>stdlib.h</label>
+      </node>
+      <node id="490">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="491" relation="include">
+        </childnode>
+      </node>
+      <node id="500">
+        <label>errno.h</label>
+      </node>
+      <node id="488">
+        <label>../includes/G-2301-05-P2-audio.h</label>
+        <link refid="d9/dbb/_g-2301-05-_p2-audio_8h"/>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+        <childnode refid="496" relation="include">
+        </childnode>
+      </node>
+      <node id="510">
+        <label>G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+      <node id="497">
+        <label>netdb.h</label>
+      </node>
+      <node id="492">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="493" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+        <childnode refid="501" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+      </node>
+      <node id="499">
+        <label>syslog.h</label>
+      </node>
+      <node id="487">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c</label>
+        <link refid="G-2301-05-P2-audio.c"/>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+      <node id="491">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+      </node>
+      <node id="501">
+        <label>pthread.h</label>
+      </node>
+      <node id="502">
+        <label>sys/types.h</label>
+      </node>
+      <node id="495">
+        <label>string.h</label>
+      </node>
+      <node id="507">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="496">
+        <label>unistd.h</label>
+      </node>
+      <node id="508">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="505">
+        <label>sys/time.h</label>
+      </node>
+      <node id="503">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="509">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="494">
+        <label>stdio.h</label>
+      </node>
+      <node id="489">
+        <label>G-2301-05-P2-basicCommandsFromServer.h</label>
+        <link refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h"/>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" prot="public" static="no">
+        <name>AUDIO_BUFLEN</name>
+        <initializer>4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="4" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean grabandoAudio</definition>
+        <argsstring></argsstring>
+        <name>grabandoAudio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="3" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char audioBuffer[AUDIO_BUFLEN]</definition>
+        <argsstring>[AUDIO_BUFLEN]</argsstring>
+        <name>audioBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="5" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int writePos</definition>
+        <argsstring></argsstring>
+        <name>writePos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="6" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int readPos</definition>
+        <argsstring></argsstring>
+        <name>readPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="7" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1ab32c5c00416d29c7b60bc91e53cef43a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* playThread</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>playThread</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja el hilo que reproduce el audio el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya algo escrito antes de empezar a intentar a reproducir. de la misma manera, si por algun motivo este hilo alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los argumentos que el hilo requiere para detectar cuando debe terminar de reproducir audio</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="19" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="19" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a4d496518d4597c6f8133d109caaf988a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int initiateReciever</definition>
+        <argsstring>()</argsstring>
+        <name>initiateReciever</name>
+        <briefdescription>
+<para>rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>NULL </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="44" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="44" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1aba2d08b3de022fdec5162252fe5d3dd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int initiateSender</definition>
+        <argsstring>()</argsstring>
+        <name>initiateSender</name>
+        <briefdescription>
+<para>rutina que se encarga del envio de audio </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>NULL </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="104" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="104" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int canIRead</definition>
+        <argsstring>(int len)</argsstring>
+        <name>canIRead</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin &quot;pasar&quot; la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el numero de bytes de distancia a comprobar si podemos o no leer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si no es posible leer len bytes del buffer. !0 si lo es </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="148" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="148" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1acddb1a586a8305d216deca1d3bd07c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int canIWrite</definition>
+        <argsstring>(int len)</argsstring>
+        <name>canIWrite</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin &quot;pasar&quot; la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el numero de bytes de distancia a comprobar si podemos o no escribir</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si no es posible escribir len bytes del buffer. !0 si lo es </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="165" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="165" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a197e00439b5ca776c65aba209872f76a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void writeBuffer</definition>
+        <argsstring>(char *buf, int len)</argsstring>
+        <name>writeBuffer</name>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>escribe, si es posible, en el buffer a partir de la posición de escritura. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los bytes a escribir en el buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la cantidad de bytes a escribir en el buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="181" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="181" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a46e32d8c31f4e0bed7c4a3dd7665ba73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void playBuffer</definition>
+        <argsstring>(int len)</argsstring>
+        <name>playBuffer</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer. es necesario que los canales de reproduccion hayan sido abiertos previamente. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el numero de bytes que queremos reproducir </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="201" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="201" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a23e6ef186ace7452878618e453a12d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean alreadyRecordingQuery</definition>
+        <argsstring>()</argsstring>
+        <name>alreadyRecordingQuery</name>
+        <briefdescription>
+<para>funcion que devuelve si este cliente ya esta grabando audio o no </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TRUE si este cliente ya esta grabando audio. FALSE si no lo esta </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="223" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="223" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dbc/_g-2301-05-_p2-audio_8c_1a2140fd94315d561f0df0972d18f144cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void endAudioTransmission</definition>
+        <argsstring>()</argsstring>
+        <name>endAudioTransmission</name>
+        <briefdescription>
+<para>funcion que termina la transmision por parte del cliente que envia audio </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" line="230" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" bodystart="230" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P2-audio.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kindref="member">grabandoAudio</ref>;</highlight></codeline>
+<codeline lineno="4" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AUDIO_BUFLEN<sp/>4096</highlight></codeline>
+<codeline lineno="5" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" refkind="member"><highlight class="preprocessor"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref>[<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>];</highlight></codeline>
+<codeline lineno="6" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref>;</highlight></codeline>
+<codeline lineno="7" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ab32c5c00416d29c7b60bc91e53cef43a" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ab32c5c00416d29c7b60bc91e53cef43a" kindref="member">playThread</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>args){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>*stillRunning;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(args<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(20000);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>stillRunning<sp/>=<sp/>(</highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal">*)args;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_PlayFormat(PA_SAMPLE_ALAW,1);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_OpenPlay();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(*stillRunning<sp/>==<sp/>TRUE){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" kindref="member">canIRead</ref>(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a46e32d8c31f4e0bed7c4a3dd7665ba73" kindref="member">playBuffer</ref>(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usleep(20000);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_ClosePlay();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a4d496518d4597c6f8133d109caaf988a" refkind="member"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a4d496518d4597c6f8133d109caaf988a" kindref="member">initiateReciever</ref>(){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>si_me,<sp/>si_other;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_t<sp/>player;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*threadReturn;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>*stillRunning<sp/>=<sp/>(</highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stillRunning<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateReciever<sp/>-&gt;<sp/>malloc&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>*stillRunning<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>+1];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref>,<sp/>0,<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>socklen_t<sp/>slen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(si_other);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>a<sp/>UDP<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((s=socket(AF_INET,<sp/>SOCK_DGRAM,<sp/>IPPROTO_UDP))<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateReciever<sp/>-&gt;<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>zero<sp/>out<sp/>the<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>&amp;si_me,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(si_me));</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>si_me.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>si_me.sin_port<sp/>=<sp/>htons(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a614217d263be1fb1a5f76e2ff7be19a2" kindref="member">PORT</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>si_me.sin_addr.s_addr<sp/>=<sp/>htonl(INADDR_ANY);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//bind<sp/>socket<sp/>to<sp/>port</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>bind(s<sp/>,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr*)&amp;si_me,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(si_me)<sp/>)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(s);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateReciever<sp/>-&gt;<sp/>bind&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_create(&amp;player,<sp/>NULL,<sp/>&amp;<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ab32c5c00416d29c7b60bc91e53cef43a" kindref="member">playThread</ref>,<sp/>stillRunning);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(buf,<sp/>0,<sp/><ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(recvfrom(s,<sp/>buf,<sp/><ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>,<sp/>0,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;si_other,<sp/>&amp;slen)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(s);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stillRunning<sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_join(player,<sp/>&amp;threadReturn);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateReciever<sp/>-&gt;<sp/>recvFrom&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1acddb1a586a8305d216deca1d3bd07c29" kindref="member">canIWrite</ref>(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>)<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a197e00439b5ca776c65aba209872f76a" kindref="member">writeBuffer</ref>(buf,<sp/><ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>close(s);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1aba2d08b3de022fdec5162252fe5d3dd8" refkind="member"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1aba2d08b3de022fdec5162252fe5d3dd8" kindref="member">initiateSender</ref>(){</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>si_other;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s,<sp/>slen=</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(si_other);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//char<sp/>buf[BUFLEN];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>message[<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>+1];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref>,<sp/>0,<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(s=socket(AF_INET,<sp/>SOCK_DGRAM,<sp/>IPPROTO_UDP))<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateSender<sp/>-&gt;<sp/>socket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>&amp;si_other,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(si_other));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>si_other.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>si_other.sin_port<sp/>=<sp/>htons(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a614217d263be1fb1a5f76e2ff7be19a2" kindref="member">PORT</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inet_aton(<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a24cd3c37a165a8c4626d9e78df4574ff" kindref="member">SERVER</ref><sp/>,<sp/>&amp;si_other.sin_addr)<sp/>==<sp/>0)<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(s);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>initiateSender<sp/>-&gt;<sp/>inet_aton&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_RecordFormat(PA_SAMPLE_ALAW,1);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_OpenRecord();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kindref="member">grabandoAudio</ref><sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kindref="member">grabandoAudio</ref><sp/>==<sp/>TRUE)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCSound_RecordSound(message,<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sendto(s,<sp/>message,<sp/><ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref><sp/>,<sp/>0<sp/>,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;si_other,<sp/>slen)==-1)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_CloseRecord();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>close(s);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" kindref="member">canIRead</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len){</highlight><highlight class="comment">//puedo<sp/>leer<sp/>si<sp/>la<sp/>distancia<sp/>entre<sp/>readPos<sp/>y<sp/>writePos,<sp/>es<sp/>menor<sp/>que<sp/>len</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>beforeMoving,<sp/>afterMoving;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>beforeMoving<sp/>=<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>afterMoving<sp/>=<sp/>(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>+<sp/>len)%<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//no<sp/>puedo<sp/>leer<sp/>si<sp/>beforeMoving<sp/>&lt;<sp/>writePos<sp/>&lt;<sp/>afterMoving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!((beforeMoving<sp/>&lt;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>&amp;&amp;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>&lt;=<sp/>afterMoving)<sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>(writePos<sp/>&lt;=<sp/>afterMoving<sp/>&amp;&amp;<sp/>afterMoving<sp/>&lt;<sp/>beforeMoving));</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1acddb1a586a8305d216deca1d3bd07c29" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1acddb1a586a8305d216deca1d3bd07c29" kindref="member">canIWrite</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len){</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>beforeMoving,<sp/>afterMoving;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>beforeMoving<sp/>=<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>afterMoving<sp/>=<sp/>(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>+<sp/>len)%<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//no<sp/>puedo<sp/>leer<sp/>si<sp/>beforeMoving<sp/>&lt;<sp/>writePos<sp/>&lt;<sp/>afterMoving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!((beforeMoving<sp/>&lt;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>&amp;&amp;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>&lt;=<sp/>afterMoving)<sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>(readPos<sp/>&lt;=<sp/>afterMoving<sp/>&amp;&amp;<sp/>afterMoving<sp/>&lt;<sp/>beforeMoving));</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a197e00439b5ca776c65aba209872f76a" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a197e00439b5ca776c65aba209872f76a" kindref="member">writeBuffer</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len){</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>topper;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>+<sp/>len<sp/>&lt;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>){</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref><sp/>+<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref>,<sp/>buf,<sp/>len);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref><sp/>+=<sp/>len;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>topper<sp/>=<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref><sp/>-<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kindref="member">writePos</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref><sp/>+<sp/>writePos,<sp/>buf,<sp/>topper);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref>,<sp/>buf<sp/>+<sp/>topper,<sp/>len<sp/>-<sp/>topper);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>writePos<sp/>=<sp/>(writePos<sp/>+<sp/>len<sp/>+<sp/>1)<sp/>%<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a46e32d8c31f4e0bed7c4a3dd7665ba73" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a46e32d8c31f4e0bed7c4a3dd7665ba73" kindref="member">playBuffer</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len){</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>myBuffer[<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>+1];</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>topper;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" kindref="member">canIRead</ref>(len)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>+<sp/>len<sp/>&lt;<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>){</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(myBuffer,<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref><sp/>+<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref>,<sp/>len);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref><sp/>+=<sp/>len;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>topper<sp/>=<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref><sp/>-<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kindref="member">readPos</ref>;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(myBuffer,<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref><sp/>+<sp/>readPos,<sp/>topper);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(myBuffer<sp/>+<sp/>topper,<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kindref="member">audioBuffer</ref>,<sp/>len<sp/>-<sp/>topper);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>readPos<sp/>=<sp/>(readPos<sp/>+<sp/>len<sp/>+<sp/>1)<sp/>%<sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kindref="member">AUDIO_BUFLEN</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCSound_PlaySound(myBuffer,<ref refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kindref="member">BUFLEN</ref>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a23e6ef186ace7452878618e453a12d6f" refkind="member"><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a23e6ef186ace7452878618e453a12d6f" kindref="member">alreadyRecordingQuery</ref>(){</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kindref="member">grabandoAudio</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a2140fd94315d561f0df0972d18f144cc" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a2140fd94315d561f0df0972d18f144cc" kindref="member">endAudioTransmission</ref>(){</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kindref="member">grabandoAudio</ref><sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c"/>
+  </compounddef>
+</doxygen>

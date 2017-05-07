@@ -1,0 +1,540 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dd/d7e/_g-2301-05-_p1-tools_8c" kind="file">
+    <compoundname>G-2301-05-P1-tools.c</compoundname>
+    <includes refid="dd/dce/_g-2301-05-_p1-socket_8h" local="yes">../includes/G-2301-05-P1-socket.h</includes>
+    <includes refid="d5/df9/_g-2301-05-_p1-tools_8h" local="yes">../includes/G-2301-05-P1-tools.h</includes>
+    <incdepgraph>
+      <node id="735">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="737">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="741">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="729">
+        <label>stdint.h</label>
+      </node>
+      <node id="724">
+        <label>stdlib.h</label>
+      </node>
+      <node id="731">
+        <label>errno.h</label>
+      </node>
+      <node id="720">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c</label>
+        <link refid="G-2301-05-P1-tools.c"/>
+        <childnode refid="721" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+      </node>
+      <node id="721">
+        <label>../includes/G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="734" relation="include">
+        </childnode>
+        <childnode refid="737" relation="include">
+        </childnode>
+        <childnode refid="741" relation="include">
+        </childnode>
+      </node>
+      <node id="728">
+        <label>netdb.h</label>
+      </node>
+      <node id="723">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="724" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="727" relation="include">
+        </childnode>
+        <childnode refid="728" relation="include">
+        </childnode>
+        <childnode refid="729" relation="include">
+        </childnode>
+        <childnode refid="730" relation="include">
+        </childnode>
+        <childnode refid="731" relation="include">
+        </childnode>
+        <childnode refid="732" relation="include">
+        </childnode>
+        <childnode refid="733" relation="include">
+        </childnode>
+        <childnode refid="734" relation="include">
+        </childnode>
+        <childnode refid="735" relation="include">
+        </childnode>
+        <childnode refid="736" relation="include">
+        </childnode>
+        <childnode refid="737" relation="include">
+        </childnode>
+        <childnode refid="738" relation="include">
+        </childnode>
+        <childnode refid="739" relation="include">
+        </childnode>
+        <childnode refid="740" relation="include">
+        </childnode>
+      </node>
+      <node id="730">
+        <label>syslog.h</label>
+      </node>
+      <node id="722">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="723" relation="include">
+        </childnode>
+      </node>
+      <node id="732">
+        <label>pthread.h</label>
+      </node>
+      <node id="733">
+        <label>sys/types.h</label>
+      </node>
+      <node id="726">
+        <label>string.h</label>
+      </node>
+      <node id="738">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="727">
+        <label>unistd.h</label>
+      </node>
+      <node id="739">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="736">
+        <label>sys/time.h</label>
+      </node>
+      <node id="734">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="740">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="725">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a79f6ea5350079c571138b0a00af1f5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void daemonizar</definition>
+        <argsstring>()</argsstring>
+        <name>daemonizar</name>
+        <briefdescription>
+<para>daemoniza el proceso el proceso queda en segundo plano como proceso de init </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="9" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="9" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int logIntError</definition>
+        <argsstring>(long int returnValue, char *msg)</argsstring>
+        <name>logIntError</name>
+        <param>
+          <type>long int</type>
+          <declname>returnValue</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>returnValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el error a registrar y devolver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje de error previo al nombre del error</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el error registrado en returnValue </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="47" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a192fd5bf4f47fe63d449f291f92732a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* logPointerError</definition>
+        <argsstring>(void *returnValue, char *msg)</argsstring>
+        <name>logPointerError</name>
+        <param>
+          <type>void *</type>
+          <declname>returnValue</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>returnValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el error a devolver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje de error</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el error registrado en returnValue </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="63" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a5b92fdc34c0427eb5cf8360e68aa9287" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logVoidError</definition>
+        <argsstring>(char *msg)</argsstring>
+        <name>logVoidError</name>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>registra un mensaje de error </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje de error a registrar </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="74" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a2850885f03b7654d239b361940416bef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* getIP</definition>
+        <argsstring>(struct sockaddr_in *client, char **ip)</argsstring>
+        <name>getIP</name>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>reserva memoria para una String que contiene le dirección IP de un cliente en formato estandar: xxx.xxx.xxx.xxx </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura que contiene la IP a encontrar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una String donde guardaremos el resultado</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el puntero a la String resultado </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="86" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="86" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a3101bc13b5c20c8b430348441050ae9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getHostName</definition>
+        <argsstring>(struct sockaddr_in *dev, char **hostname)</argsstring>
+        <name>getHostName</name>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>hostname</declname>
+        </param>
+        <briefdescription>
+<para>guarda en hostname el nombre del dispositivo dev </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el dispositivo cuyo nombre deseamos encontrar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de la String donde escribir el nombre del dispositivo</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si todo va bien </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="109" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1af3b23798269ccab05560708cc1a22a92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getNickFromSocket</definition>
+        <argsstring>(int socket, char **nick)</argsstring>
+        <name>getNickFromSocket</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>nick</declname>
+        </param>
+        <briefdescription>
+<para>guarda en nick el nickname del usuario asociado con el socket </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que identifica la conexión con el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de la String donde guardar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si todo fue bien. El error si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="123" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="123" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a100eca1a277dd50fc2e289763dad8464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getSocketFromNick</definition>
+        <argsstring>(int *socket, char *nick)</argsstring>
+        <name>getSocketFromNick</name>
+        <param>
+          <type>int *</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick</declname>
+        </param>
+        <briefdescription>
+<para>obtiene el socket del nick </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a obtener </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick a comprobar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="144" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="144" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7e/_g-2301-05-_p1-tools_8c_1a2aa2c8c4d6f3b48dd3c195beff08eb0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getAwayFromSocket</definition>
+        <argsstring>(int socket, char **away)</argsstring>
+        <name>getAwayFromSocket</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>away</declname>
+        </param>
+        <briefdescription>
+<para>obtiene el away del socket </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a obtener </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>away</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cadena away</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" line="165" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="165" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-socket.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-tools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="da/de5/daemonizar_8h_1a79f6ea5350079c571138b0a00af1f5a4" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a79f6ea5350079c571138b0a00af1f5a4" kindref="member">daemonizar</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pid;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>child<sp/>process</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>pid<sp/>=<sp/>fork();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indication<sp/>of<sp/>fork()<sp/>failure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PARENT<sp/>PROCESS.<sp/>Need<sp/>to<sp/>kill<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(0);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//child<sp/>process<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//unmask<sp/>the<sp/>file<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>umask(0);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>new<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sid<sp/>=<sp/>setsid();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sid<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Change<sp/>the<sp/>current<sp/>working<sp/>directory<sp/>to<sp/>root.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chdir(</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Close<sp/>stdin.<sp/>stdout<sp/>and<sp/>stderr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(STDIN_FILENO);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(STDOUT_FILENO);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(STDERR_FILENO);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" refkind="member"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>returnValue,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_syslog(msg,<sp/>returnValue,<sp/>LOG_INFO<sp/>|<sp/>LOG_USER);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//IRC_perror(msg,<sp/>returnValue);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;%s\n&quot;,<sp/>msg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>returnValue;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a192fd5bf4f47fe63d449f291f92732a9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a192fd5bf4f47fe63d449f291f92732a9" kindref="member">logPointerError</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>returnValue,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;%s\n&quot;,<sp/>msg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO<sp/>|<sp/>LOG_USER,<sp/></highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>msg);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>returnValue;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a5b92fdc34c0427eb5cf8360e68aa9287" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a5b92fdc34c0427eb5cf8360e68aa9287" kindref="member">logVoidError</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO<sp/>|<sp/>LOG_USER,<sp/></highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>msg);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2850885f03b7654d239b361940416bef" refkind="member"><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2850885f03b7654d239b361940416bef" kindref="member">getIP</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>ip)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>*ip<sp/>=<sp/>malloc(16<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>aux[16]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*ip<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(aux,<sp/></highlight><highlight class="stringliteral">&quot;%d.%d.%d.%d&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>((*client).sin_addr.s_addr<sp/>&amp;<sp/>0xFF),</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>(((*client).sin_addr.s_addr<sp/>&amp;<sp/>0xFF00)<sp/>&gt;&gt;<sp/>8),</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>(((*client).sin_addr.s_addr<sp/>&amp;<sp/>0xFF0000)<sp/>&gt;&gt;<sp/>16),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>(((*client).sin_addr.s_addr<sp/>&amp;<sp/>0xFF000000)<sp/>&gt;&gt;<sp/>24));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>aux[15]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>strcpy(*ip,<sp/>aux);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*ip;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a3101bc13b5c20c8b430348441050ae9d" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a3101bc13b5c20c8b430348441050ae9d" kindref="member">getHostName</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*dev,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/><ref refid="d6/d77/_g-2301-05-_p1-server_8c_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//no<sp/>hace<sp/>falta<sp/>liberar<sp/>lo<sp/>que<sp/>devuelve<sp/>esta<sp/>función</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>*hostname<sp/>=<sp/>gethostbyaddr(dev,<sp/>4,<sp/>AF_INET)-&gt;h_name;<sp/></highlight><highlight class="comment">//ese<sp/>4<sp/>es<sp/>por<sp/>ser<sp/>IPv4<sp/>(creo<sp/>?)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1af3b23798269ccab05560708cc1a22a92" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1af3b23798269ccab05560708cc1a22a92" kindref="member">getNickFromSocket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>nick)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s<sp/>=<sp/>socket;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>user,<sp/>*real,<sp/>*host,<sp/>*IP,<sp/>*away;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>creationTs<sp/>=<sp/>0,<sp/>actionTs<sp/>=<sp/>0,<sp/>retVal;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>*nick<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>user<sp/>=<sp/>real<sp/>=<sp/>host<sp/>=<sp/>IP<sp/>=<sp/>away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/>IRCTADUser_GetData(&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;user,<sp/>nick,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;s,<sp/>&amp;creationTs,<sp/>&amp;actionTs,<sp/>&amp;away))<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>getNickFromSocket<sp/>-&gt;<sp/>IRCTADUser_GetData&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;user,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;away);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a100eca1a277dd50fc2e289763dad8464" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a100eca1a277dd50fc2e289763dad8464" kindref="member">getSocketFromNick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>user,<sp/>*real,<sp/>*host,<sp/>*IP,<sp/>*away;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>creationTs<sp/>=<sp/>0,<sp/>actionTs<sp/>=<sp/>0,<sp/>retVal;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>*socket<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>user<sp/>=<sp/>real<sp/>=<sp/>host<sp/>=<sp/>IP<sp/>=<sp/>away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/>IRCTADUser_GetData(&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;user,<sp/>&amp;nick,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>socket,<sp/>&amp;creationTs,<sp/>&amp;actionTs,<sp/>&amp;away))<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>getSocketFromNick<sp/>-&gt;<sp/>IRCTADUser_GetData&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;retrieved<sp/>socket:<sp/>%d\n&quot;,*socket);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;user,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;away);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2aa2c8c4d6f3b48dd3c195beff08eb0b" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2aa2c8c4d6f3b48dd3c195beff08eb0b" kindref="member">getAwayFromSocket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>away)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>user,<sp/>*real,<sp/>*host,<sp/>*IP,<sp/>*nick;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>creationTs<sp/>=<sp/>0,<sp/>actionTs<sp/>=<sp/>0,<sp/>retVal;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>user<sp/>=<sp/>real<sp/>=<sp/>host<sp/>=<sp/>IP<sp/>=<sp/>nick<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/>IRCTADUser_GetData(&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>&amp;user,<sp/>&amp;nick,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;socket,<sp/>&amp;creationTs,<sp/>&amp;actionTs,<sp/>away))<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>getAwayFromSocket<sp/>-&gt;<sp/>IRCTADUser_GetData&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;user,<sp/>&amp;real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;nick);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c"/>
+  </compounddef>
+</doxygen>
