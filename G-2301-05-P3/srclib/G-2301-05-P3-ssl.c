@@ -1,5 +1,6 @@
 #include "../includes/G-2301-05-P3-ssl.h"
 #include <err.h>
+
 /**
  * Esta función se encargará de realizar todas las llamadas necesarias para que la apli-
 cación pueda usar la capa segura SSL.
@@ -8,6 +9,7 @@ void inicializar_nivel_SSL() {
     SSL_load_error_strings();
     SSL_library_init();
 }
+
 /**
  * Esta función se encargará de inicializar correctamente el contexto que será utilizado para
 la creación de canales seguros mediante SSL. Deberá recibir información sobre las rutas a los certificados y
@@ -44,6 +46,7 @@ SSL_CTX* fijar_contexto_SSL(char* CAfile, char* SCfile, char* Pfile, char*CApath
     SSL_CTX_set_verify(ctx, SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT, NULL);
     return ctx;
 }
+
 /**
  * Dado un contexto SSL y un descriptor de socket esta función se encargará de
 obtener un canal seguro SSL iniciando el proceso de handshake con el otro extremo.
@@ -60,14 +63,15 @@ SSL* conectar_canal_seguro_SSL(SSL_CTX* ctx, int sockfd) {
         return NULL;
     }
     //caso cliente
-    if ((ret=SSL_connect(ssl)) != 1) {
+    if ((ret = SSL_connect(ssl)) != 1) {
         ERR_print_errors_fp(stdout);
-        err(SSL_get_error(ssl,ret),NULL);
+        err(SSL_get_error(ssl, ret), NULL);
         return NULL;
     }
     return ssl;
 
 }
+
 /**
  * Dado un contexto SSL y un descriptor de socket esta función se encargará de
 bloquear la aplicación, que se quedará esperando hasta recibir un handshake por parte del cliente.
@@ -84,14 +88,15 @@ SSL* aceptar_canal_seguro_SSL(SSL_CTX* ctx, int sockfd) {
         return NULL;
     }
     //caso servidor
-    if ((ret=SSL_accept(ssl)) != 1) {
+    if ((ret = SSL_accept(ssl)) != 1) {
         ERR_print_errors_fp(stdout);
-        err(SSL_get_error(ssl,ret),NULL);
+        err(SSL_get_error(ssl, ret), NULL);
         return NULL;
     }
     return ssl;
 
 }
+
 /**
  * Esta función comprobará una vez realizado el handshake que el canal de co-
 municación se puede considerar seguro.
@@ -111,6 +116,7 @@ boolean evaluar_post_connectar_SSL(SSL*ssl) {
     }
     return TRUE;
 }
+
 /**
  * Esta función será el equivalente a la función de envío de mensajes que se realizó en la
 práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y
@@ -123,6 +129,7 @@ pueda ser utilizada independientemente de los datos que se vayan a enviar.
 int enviar_datos_SSL(SSL* ssl, void* buf, int num) {
     return SSL_write(ssl, buf, num);
 }
+
 /**
  * Esta función será el equivalente a la función de lectura de mensajes que se realizó en la
 práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y
@@ -133,8 +140,10 @@ pueda ser utilizada independientemente de los datos que se vayan a recibir.
  * @return     numero >0 si ha ido bien <=0 si no
  */
 int recibir_datos_SSL(SSL* ssl, void* buf, int num) {
-    return SSL_read(ssl, buf, num);;
+    return SSL_read(ssl, buf, num);
+    
 }
+
 /**
  * Esta función liberará todos los recursos y cerrará el canal de comunicación seguro creado
 previamente.
@@ -144,14 +153,18 @@ previamente.
  * @return        1 si ha ido bien, -1 si ha habido un fallo 
  */
 int cerrar_canal_SSL(SSL* ssl, SSL_CTX* ctx, int sockfd) {
-    if (SSL_shutdown(ssl) != 1) {
-        ERR_print_errors_fp(stdout);
-        return -1;
+    if (ssl) {
+        /*if (SSL_shutdown(ssl) != 1) {
+            ERR_print_errors_fp(stdout);
+            return -1;
+        }*/
+        SSL_shutdown(ssl);
+        SSL_free(ssl);
     }
-    SSL_free(ssl);
-    SSL_CTX_free(ctx);
-    if (close(sockfd) == -1)
+    if (ctx)
+        SSL_CTX_free(ctx);
+    /*if (close(sockfd) == -1)
         return -1;
-
+     */
     return 1;
 }
