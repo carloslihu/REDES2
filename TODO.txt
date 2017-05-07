@@ -3,15 +3,13 @@ GENERAL
 	-revisar todo el codigo para eliminar TODO's, README's y FIXME's residuales
 	-las funciones que veamos mas tochas, comentarlas un poco aunque sea
 	-hacer las memorias
-	-rehacer lo del test de empaquetado!! (?)
+	-rehacer lo del test de empaquetado!!
 SERVER
 	-si hay que hacer que funcione con xchat, añadir el tema de los complexUser a todos los comandos, para formar bien el prefix
-			
 		(NOTA:se lo he añadido A JOIN, pero en el hexchat nos da core y no sé comprobar si el prefix está ok)
 		
 	-añadir el subhilo que vaya haciendo pings cada cierto tiempo
-	-corregir la conexion de usuarios para que haga lo mismo que metis (?) en verdad creo que si hacemos lo mismo que metis, r2d2 no pasara
-	 ciertas pruebas
+	-corregir la conexion de usuarios para que haga lo mismo que metis (?) en verdad creo que si hacemos lo mismo que metis, r2d2 no pasara ciertas pruebas
 
 CLIENT
 	-poner frees. A practicamente todas las funciones XD es un huevo pero fácil y rápido (si no la cagamos mucho claro)
