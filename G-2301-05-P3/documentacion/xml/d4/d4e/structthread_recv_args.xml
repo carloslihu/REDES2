@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/d4e/structthread_recv_args" kind="struct" prot="public">
+    <compoundname>threadRecvArgs</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/d4e/structthread_recv_args_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* hostname</definition>
+        <argsstring></argsstring>
+        <name>hostname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="6" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d4e/structthread_recv_args_1a63c89c04d1feae07ca35558055155ffb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="7" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d4e/structthread_recv_args_1aeac90097f29f7529968697163cea5c18" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="8" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d4e/structthread_recv_args_1a9ee64c7b918513891b3834b93ad0e501" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="9" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d4e/structthread_recv_args_1abe5ba910d6dc4c312cb722de3ab377f2" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char sender[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>sender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="10" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="5" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="5" bodyend="11"/>
+    <listofallmembers>
+      <member refid="d4/d4e/structthread_recv_args_1aeac90097f29f7529968697163cea5c18" prot="public" virt="non-virtual"><scope>threadRecvArgs</scope><name>filename</name></member>
+      <member refid="d4/d4e/structthread_recv_args_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" virt="non-virtual"><scope>threadRecvArgs</scope><name>hostname</name></member>
+      <member refid="d4/d4e/structthread_recv_args_1a9ee64c7b918513891b3834b93ad0e501" prot="public" virt="non-virtual"><scope>threadRecvArgs</scope><name>length</name></member>
+      <member refid="d4/d4e/structthread_recv_args_1a63c89c04d1feae07ca35558055155ffb" prot="public" virt="non-virtual"><scope>threadRecvArgs</scope><name>port</name></member>
+      <member refid="d4/d4e/structthread_recv_args_1abe5ba910d6dc4c312cb722de3ab377f2" prot="public" virt="non-virtual"><scope>threadRecvArgs</scope><name>sender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

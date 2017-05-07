@@ -1,0 +1,329 @@
+\hypertarget{group___i_r_c_server_commands}{\section{server\-Commands}
+\label{group___i_r_c_server_commands}\index{server\-Commands@{server\-Commands}}
+}
+Funciones que se encargan del procesado de los comandos que llegan desde el cliente
+
+
+
+ \hypertarget{commandDefault}{}\subsubsection{command\-Default}\label{commandDefault}
+commando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandNick}{}\subsubsection{command\-Nick}\label{commandNick}
+commando nick permite al usuario cambiar de nickname
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandMode}{}\subsubsection{command\-Mode}\label{commandMode}
+commando mode permite al usuario cambiar el modo un canal especificado
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandQuit}{}\subsubsection{command\-Quit}\label{commandQuit}
+commando quit permite al usuario abandonar el servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandJoin}{}\subsubsection{command\-Join}\label{commandJoin}
+commando join permite al usuario unirse a un canal. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el R\-F\-C. Tratar de unirse a un canal inexistente, creará dicho canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandPart}{}\subsubsection{command\-Part}\label{commandPart}
+commando part permite al usuario abandonar el canal indicado. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandTopic}{}\subsubsection{command\-Topic}\label{commandTopic}
+commando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandNames}{}\subsubsection{command\-Names}\label{commandNames}
+commando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandList}{}\subsubsection{command\-List}\label{commandList}
+commando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandKick}{}\subsubsection{command\-Kick}\label{commandKick}
+commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal)
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandPrivmsg}{}\subsubsection{command\-Privmsg}\label{commandPrivmsg}
+commando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandMotd}{}\subsubsection{command\-Motd}\label{commandMotd}
+commando Message of the Day permite al usuario consultar el mensaje del día
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandWhois}{}\subsubsection{command\-Whois}\label{commandWhois}
+commando Whois permite al usuario obtener información de cierto usuario en el servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandPing}{}\subsubsection{command\-Ping}\label{commandPing}
+commando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandAway}{}\subsubsection{command\-Away}\label{commandAway}
+commando Away permite al usuario marcarse como ausente
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{commandWho}{}\subsubsection{command\-Who}\label{commandWho}
+commando W\-H\-O
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em server} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{megaSend}{}\subsubsection{mega\-Send}\label{megaSend}
+envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & el comando a enviar en masa \\
+\hline
+{\em nicks} & la lista con los nicks a quienes hemos de enviar el comando \\
+\hline
+{\em num} & la longitud de la lista de nicks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ 

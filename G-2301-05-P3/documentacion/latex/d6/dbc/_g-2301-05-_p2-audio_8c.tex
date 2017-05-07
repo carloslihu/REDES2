@@ -1,0 +1,266 @@
+\hypertarget{_g-2301-05-_p2-audio_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/audio.c File Reference}
+\label{_g-2301-05-_p2-audio_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/audio.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/audio.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g-2301-05-_p2-audio_8c_a88007cd1caf5537d34251bcc91704402}{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}~4096
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-audio_8c_ab32c5c00416d29c7b60bc91e53cef43a}{play\-Thread} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em rutina que maneja el hilo que reproduce el audio el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya algo escrito antes de empezar a intentar a reproducir. de la misma manera, si por algun motivo este hilo alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p2-audio_8c_a4d496518d4597c6f8133d109caaf988a}{initiate\-Reciever} ()
+\begin{DoxyCompactList}\small\item\em rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p2-audio_8c_aba2d08b3de022fdec5162252fe5d3dd8}{initiate\-Sender} ()
+\begin{DoxyCompactList}\small\item\em rutina que se encarga del envio de audio \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p2-audio_8c_a70e78aa07a05a7d1d6688220b711fe0d}{can\-I\-Read} (int len)
+\begin{DoxyCompactList}\small\item\em funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p2-audio_8c_acddb1a586a8305d216deca1d3bd07c29}{can\-I\-Write} (int len)
+\begin{DoxyCompactList}\small\item\em funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida \end{DoxyCompactList}\item 
+void \hyperlink{_g-2301-05-_p2-audio_8c_a197e00439b5ca776c65aba209872f76a}{write\-Buffer} (char $\ast$buf, int len)
+\begin{DoxyCompactList}\small\item\em escribe, si es posible, en el buffer a partir de la posición de escritura. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer \end{DoxyCompactList}\item 
+void \hyperlink{_g-2301-05-_p2-audio_8c_a46e32d8c31f4e0bed7c4a3dd7665ba73}{play\-Buffer} (int len)
+\begin{DoxyCompactList}\small\item\em reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer. es necesario que los canales de reproduccion hayan sido abiertos previamente. \end{DoxyCompactList}\item 
+boolean \hyperlink{_g-2301-05-_p2-audio_8c_a23e6ef186ace7452878618e453a12d6f}{already\-Recording\-Query} ()
+\begin{DoxyCompactList}\small\item\em funcion que devuelve si este cliente ya esta grabando audio o no \end{DoxyCompactList}\item 
+void \hyperlink{_g-2301-05-_p2-audio_8c_a2140fd94315d561f0df0972d18f144cc}{end\-Audio\-Transmission} ()
+\begin{DoxyCompactList}\small\item\em funcion que termina la transmision por parte del cliente que envia audio \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{_g-2301-05-_p2-audio_8c_a991a654ebc130040f9ca67c7a4c1956d}{grabando\-Audio}
+\item 
+char \hyperlink{_g-2301-05-_p2-audio_8c_a5910b24e625d530fb8ff50b0dcef805a}{audio\-Buffer} \mbox{[}\hyperlink{_g-2301-05-_p2-audio_8c_a88007cd1caf5537d34251bcc91704402}{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}\mbox{]}
+\item 
+int \hyperlink{_g-2301-05-_p2-audio_8c_a8693afd6c4562264a3cb24736198e435}{write\-Pos}
+\item 
+int \hyperlink{_g-2301-05-_p2-audio_8c_ae80c1a9f4c0091ea6d461132b9457a4c}{read\-Pos}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g-2301-05-_p2-audio_8c_a88007cd1caf5537d34251bcc91704402}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N@{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}}
+\index{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N@{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N~4096}}\label{_g-2301-05-_p2-audio_8c_a88007cd1caf5537d34251bcc91704402}
+
+
+Definition at line 4 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-audio_8c_a23e6ef186ace7452878618e453a12d6f}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!already\-Recording\-Query@{already\-Recording\-Query}}
+\index{already\-Recording\-Query@{already\-Recording\-Query}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{already\-Recording\-Query}]{\setlength{\rightskip}{0pt plus 5cm}boolean already\-Recording\-Query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a23e6ef186ace7452878618e453a12d6f}
+
+
+funcion que devuelve si este cliente ya esta grabando audio o no 
+
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E si este cliente ya esta grabando audio. F\-A\-L\-S\-E si no lo esta 
+\end{DoxyReturn}
+
+
+Definition at line 223 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a70e78aa07a05a7d1d6688220b711fe0d}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!can\-I\-Read@{can\-I\-Read}}
+\index{can\-I\-Read@{can\-I\-Read}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{can\-I\-Read}]{\setlength{\rightskip}{0pt plus 5cm}int can\-I\-Read (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a70e78aa07a05a7d1d6688220b711fe0d}
+
+
+funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito 
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes de distancia a comprobar si podemos o no leer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si no es posible leer len bytes del buffer. !0 si lo es 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_acddb1a586a8305d216deca1d3bd07c29}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!can\-I\-Write@{can\-I\-Write}}
+\index{can\-I\-Write@{can\-I\-Write}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{can\-I\-Write}]{\setlength{\rightskip}{0pt plus 5cm}int can\-I\-Write (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_acddb1a586a8305d216deca1d3bd07c29}
+
+
+funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida 
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes de distancia a comprobar si podemos o no escribir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si no es posible escribir len bytes del buffer. !0 si lo es 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a2140fd94315d561f0df0972d18f144cc}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!end\-Audio\-Transmission@{end\-Audio\-Transmission}}
+\index{end\-Audio\-Transmission@{end\-Audio\-Transmission}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{end\-Audio\-Transmission}]{\setlength{\rightskip}{0pt plus 5cm}void end\-Audio\-Transmission (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a2140fd94315d561f0df0972d18f144cc}
+
+
+funcion que termina la transmision por parte del cliente que envia audio 
+
+
+
+Definition at line 230 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a4d496518d4597c6f8133d109caaf988a}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!initiate\-Reciever@{initiate\-Reciever}}
+\index{initiate\-Reciever@{initiate\-Reciever}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{initiate\-Reciever}]{\setlength{\rightskip}{0pt plus 5cm}long int initiate\-Reciever (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a4d496518d4597c6f8133d109caaf988a}
+
+
+rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer 
+
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_aba2d08b3de022fdec5162252fe5d3dd8}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!initiate\-Sender@{initiate\-Sender}}
+\index{initiate\-Sender@{initiate\-Sender}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{initiate\-Sender}]{\setlength{\rightskip}{0pt plus 5cm}long int initiate\-Sender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_aba2d08b3de022fdec5162252fe5d3dd8}
+
+
+rutina que se encarga del envio de audio 
+
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a46e32d8c31f4e0bed7c4a3dd7665ba73}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!play\-Buffer@{play\-Buffer}}
+\index{play\-Buffer@{play\-Buffer}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{play\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void play\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a46e32d8c31f4e0bed7c4a3dd7665ba73}
+
+
+reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer. es necesario que los canales de reproduccion hayan sido abiertos previamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes que queremos reproducir \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_ab32c5c00416d29c7b60bc91e53cef43a}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!play\-Thread@{play\-Thread}}
+\index{play\-Thread@{play\-Thread}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{play\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ play\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_ab32c5c00416d29c7b60bc91e53cef43a}
+
+
+rutina que maneja el hilo que reproduce el audio el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya algo escrito antes de empezar a intentar a reproducir. de la misma manera, si por algun motivo este hilo alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & los argumentos que el hilo requiere para detectar cuando debe terminar de reproducir audio\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a197e00439b5ca776c65aba209872f76a}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!write\-Buffer@{write\-Buffer}}
+\index{write\-Buffer@{write\-Buffer}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{write\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void write\-Buffer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-audio_8c_a197e00439b5ca776c65aba209872f76a}
+
+
+escribe, si es posible, en el buffer a partir de la posición de escritura. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & los bytes a escribir en el buffer \\
+\hline
+{\em len} & la cantidad de bytes a escribir en el buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g-2301-05-_p2-audio_8c_a5910b24e625d530fb8ff50b0dcef805a}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!audio\-Buffer@{audio\-Buffer}}
+\index{audio\-Buffer@{audio\-Buffer}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{audio\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char audio\-Buffer\mbox{[}{\bf A\-U\-D\-I\-O\-\_\-\-B\-U\-F\-L\-E\-N}\mbox{]}}}\label{_g-2301-05-_p2-audio_8c_a5910b24e625d530fb8ff50b0dcef805a}
+
+
+Definition at line 5 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a991a654ebc130040f9ca67c7a4c1956d}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!grabando\-Audio@{grabando\-Audio}}
+\index{grabando\-Audio@{grabando\-Audio}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{grabando\-Audio}]{\setlength{\rightskip}{0pt plus 5cm}boolean grabando\-Audio}}\label{_g-2301-05-_p2-audio_8c_a991a654ebc130040f9ca67c7a4c1956d}
+
+
+Definition at line 3 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_ae80c1a9f4c0091ea6d461132b9457a4c}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!read\-Pos@{read\-Pos}}
+\index{read\-Pos@{read\-Pos}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{read\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Pos}}\label{_g-2301-05-_p2-audio_8c_ae80c1a9f4c0091ea6d461132b9457a4c}
+
+
+Definition at line 7 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+
+\hypertarget{_g-2301-05-_p2-audio_8c_a8693afd6c4562264a3cb24736198e435}{\index{G-\/2301-\/05-\/\-P2-\/audio.\-c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}!write\-Pos@{write\-Pos}}
+\index{write\-Pos@{write\-Pos}!G-2301-05-P2-audio.c@{G-\/2301-\/05-\/\-P2-\/audio.\-c}}
+\subsubsection[{write\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}int write\-Pos}}\label{_g-2301-05-_p2-audio_8c_a8693afd6c4562264a3cb24736198e435}
+
+
+Definition at line 6 of file G-\/2301-\/05-\/\-P2-\/audio.\-c.
+

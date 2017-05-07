@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_inicializar_nivel_SSL" kind="page">
+    <compoundname>inicializar_nivel_SSL</compoundname>
+    <title>inicializar_nivel_SSL</title>
+    <detaileddescription>
+<para>Esta función se encargará de realizar todas las llamadas necesarias para que la apli- cación pueda usar la capa segura SSL.</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

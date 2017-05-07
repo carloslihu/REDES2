@@ -1,0 +1,494 @@
+.TH "G-2301-05-P1-commands.h" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+G-2301-05-P1-commands.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'G-2301-05-P1-socket\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "long int \fBcommandDefault\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido \fP"
+.ti -1c
+.RI "long int \fBcommandNick\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando nick permite al usuario cambiar de nickname \fP"
+.ti -1c
+.RI "long int \fBcommandMode\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando mode permite al usuario cambiar el modo un canal especificado \fP"
+.ti -1c
+.RI "long int \fBcommandQuit\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando quit permite al usuario abandonar el servidor \fP"
+.ti -1c
+.RI "long int \fBcommandJoin\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando join permite al usuario unirse a un canal\&. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el RFC\&. Tratar de unirse a un canal inexistente, creará dicho canal \fP"
+.ti -1c
+.RI "long int \fBcommandPart\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando part permite al usuario abandonar el canal indicado\&. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente \fP"
+.ti -1c
+.RI "long int \fBcommandTopic\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo \fP"
+.ti -1c
+.RI "long int \fBcommandNames\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal \fP"
+.ti -1c
+.RI "long int \fBcommandList\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular \fP"
+.ti -1c
+.RI "long int \fBcommandKick\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal) \fP"
+.ti -1c
+.RI "long int \fBcommandPrivmsg\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal \fP"
+.ti -1c
+.RI "long int \fBcommandMotd\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando Message of the Day permite al usuario consultar el mensaje del día \fP"
+.ti -1c
+.RI "long int \fBcommandWhois\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando Whois permite al usuario obtener información de cierto usuario en el servidor \fP"
+.ti -1c
+.RI "long int \fBcommandPing\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa \fP"
+.ti -1c
+.RI "long int \fBcommandAway\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando Away permite al usuario marcarse como ausente \fP"
+.ti -1c
+.RI "long int \fBcommandWho\fP (int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+.br
+.RI "\fIcommando who aporta datos al usuario \fP"
+.ti -1c
+.RI "long int \fBmegaSend\fP (char *command, char **nicks, long int num)"
+.br
+.RI "\fIenvia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "long int commandAway (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando Away permite al usuario marcarse como ausente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1461 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandDefault (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 231 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandJoin (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando join permite al usuario unirse a un canal\&. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el RFC\&. Tratar de unirse a un canal inexistente, creará dicho canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 581 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandKick (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1039 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandList (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 910 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandMode (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando mode permite al usuario cambiar el modo un canal especificado 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 417 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandMotd (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando Message of the Day permite al usuario consultar el mensaje del día 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1234 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandNames (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 844 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandNick (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando nick permite al usuario cambiar de nickname 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 364 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandPart (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando part permite al usuario abandonar el canal indicado\&. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 684 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandPing (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1428 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandPrivmsg (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1111 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandQuit (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando quit permite al usuario abandonar el servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 496 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandTopic (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 756 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandWho (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando who aporta datos al usuario ) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int commandWhois (intsocket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)"
+
+.PP
+commando Whois permite al usuario obtener información de cierto usuario en el servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket del usuario a ver 
+.br
+\fIclient\fP los datos del dispositivo cliente 
+.br
+\fIclient\fP los datos del dispositivo servidor 
+.br
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 1283 of file G-2301-05-P1-commands\&.c\&.
+.SS "long int megaSend (char *command, char **nicks, long intnum)"
+
+.PP
+envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommand\fP el comando a enviar en masa 
+.br
+\fInicks\fP la lista con los nicks a quienes hemos de enviar el comando 
+.br
+\fInum\fP la longitud de la lista de nicks
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file G-2301-05-P1-commands\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

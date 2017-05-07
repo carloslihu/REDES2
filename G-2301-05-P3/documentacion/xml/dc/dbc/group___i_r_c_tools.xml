@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dc/dbc/group___i_r_c_tools" kind="group">
+    <compoundname>IRCTools</compoundname>
+    <title>tools</title>
+    <innergroup refid="d2/d08/group___i_r_c_sockets">sockets</innergroup>
+    <innergroup refid="d1/d75/group___i_r_c_server_tools">serverTools</innergroup>
+    <innergroup refid="d2/d99/group___i_r_c_user_tools">userTools</innergroup>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

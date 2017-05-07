@@ -1,0 +1,85 @@
+\hypertarget{group___i_r_c_audio}{\section{audio}
+\label{group___i_r_c_audio}\index{audio@{audio}}
+}
+Funciones que se encargan del envio de audio entre clientes I\-R\-C
+
+
+
+ \hypertarget{initiateReciever}{}\subsubsection{initiate\-Reciever}\label{initiateReciever}
+rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer
+
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L
+\end{DoxyReturn}
+
+
+ \hypertarget{initiateSender}{}\subsubsection{initiate\-Sender}\label{initiateSender}
+rutina que se encarga del envio de audio
+
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L
+\end{DoxyReturn}
+
+
+ \hypertarget{canIRead}{}\subsubsection{can\-I\-Read}\label{canIRead}
+funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes de distancia a comprobar si podemos o no leer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si no es posible leer len bytes del buffer. !0 si lo es
+\end{DoxyReturn}
+
+
+ \hypertarget{canIWrite}{}\subsubsection{can\-I\-Write}\label{canIWrite}
+funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin \char`\"{}pasar\char`\"{} la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes de distancia a comprobar si podemos o no escribir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si no es posible escribir len bytes del buffer. !0 si lo es
+\end{DoxyReturn}
+
+
+ \hypertarget{writeBuffer}{}\subsubsection{write\-Buffer}\label{writeBuffer}
+escribe, si es posible, en el buffer a partir de la posición de escritura. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & los bytes a escribir en el buffer \\
+\hline
+{\em len} & la cantidad de bytes a escribir en el buffer\\
+\hline
+\end{DoxyParams}
+
+
+ \hypertarget{playBuffer}{}\subsubsection{play\-Buffer}\label{playBuffer}
+reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer. es necesario que los canales de reproduccion hayan sido abiertos previamente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & el numero de bytes que queremos reproducir\\
+\hline
+\end{DoxyParams}
+
+
+ \hypertarget{alreadyRecordingQuery}{}\subsubsection{already\-Recording\-Query}\label{alreadyRecordingQuery}
+funcion que devuelve si este cliente ya esta grabando audio o no
+
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E si este cliente ya esta grabando audio. F\-A\-L\-S\-E si no lo esta
+\end{DoxyReturn}
+
+
+ \hypertarget{endAudioTransmission}{}\subsubsection{end\-Audio\-Transmission}\label{endAudioTransmission}
+funcion que termina la transmision por parte del cliente que envia audio
+
+
+
+ 

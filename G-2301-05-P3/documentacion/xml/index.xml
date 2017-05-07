@@ -1,0 +1,654 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="d3/df7/structthread_args" kind="struct"><name>threadArgs</name>
+    <member refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kind="variable"><name>socket</name></member>
+    <member refid="d3/df7/structthread_args_1a00c4b9e068a2d36291a8410badf19e85" kind="variable"><name>client</name></member>
+    <member refid="d3/df7/structthread_args_1a174501e91471cbe22c45a3a89a932d62" kind="variable"><name>server</name></member>
+    <member refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kind="variable"><name>ssl</name></member>
+    <member refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kind="variable"><name>ctx</name></member>
+  </compound>
+  <compound refid="d1/d22/structthread_audio_args" kind="struct"><name>threadAudioArgs</name>
+    <member refid="d1/d22/structthread_audio_args_1a63c89c04d1feae07ca35558055155ffb" kind="variable"><name>port</name></member>
+    <member refid="d1/d22/structthread_audio_args_1af203df082d5c6dcaa0c88b07cf86466d" kind="variable"><name>hostname</name></member>
+    <member refid="d1/d22/structthread_audio_args_1ab092ba1f84e458809eb91a5786b281de" kind="variable"><name>sender</name></member>
+  </compound>
+  <compound refid="d4/d4e/structthread_recv_args" kind="struct"><name>threadRecvArgs</name>
+    <member refid="d4/d4e/structthread_recv_args_1af203df082d5c6dcaa0c88b07cf86466d" kind="variable"><name>hostname</name></member>
+    <member refid="d4/d4e/structthread_recv_args_1a63c89c04d1feae07ca35558055155ffb" kind="variable"><name>port</name></member>
+    <member refid="d4/d4e/structthread_recv_args_1aeac90097f29f7529968697163cea5c18" kind="variable"><name>filename</name></member>
+    <member refid="d4/d4e/structthread_recv_args_1a9ee64c7b918513891b3834b93ad0e501" kind="variable"><name>length</name></member>
+    <member refid="d4/d4e/structthread_recv_args_1abe5ba910d6dc4c312cb722de3ab377f2" kind="variable"><name>sender</name></member>
+  </compound>
+  <compound refid="d7/d51/structthread_send_args" kind="struct"><name>threadSendArgs</name>
+    <member refid="d7/d51/structthread_send_args_1aeac90097f29f7529968697163cea5c18" kind="variable"><name>filename</name></member>
+    <member refid="d7/d51/structthread_send_args_1a89f27568c92a418413e6b37b41f07e21" kind="variable"><name>nick</name></member>
+    <member refid="d7/d51/structthread_send_args_1a91a70b77df95bd8b0830b49a094c2acb" kind="variable"><name>data</name></member>
+    <member refid="d7/d51/structthread_send_args_1a90bf0058c728d7cea7de336a1251f387" kind="variable"><name>length</name></member>
+  </compound>
+  <compound refid="d4/db1/_g-2301-05-_p1-commands_8h" kind="file"><name>G-2301-05-P1-commands.h</name>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kind="function"><name>commandDefault</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a6c14bedc2ca0c1a7748fd188966f0699" kind="function"><name>commandNick</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1aaa0cd83abb127533a58a9824d766302d" kind="function"><name>commandMode</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a8c61e34c067a94ff808b75f1b5346685" kind="function"><name>commandQuit</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a520a20b8ad5887dd2b600682bb3ea36e" kind="function"><name>commandJoin</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1adadde8a5b5af849c55509d9e9aef8dc1" kind="function"><name>commandPart</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a2c3f4be0a8d40030d1e249075f96f4fe" kind="function"><name>commandTopic</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1ab3b8ab89b3ae99edea8af60322538c1f" kind="function"><name>commandNames</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0ef7f97ab64eb311827dbe3509b071bb" kind="function"><name>commandList</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a1a1a0b84710fb5d6735e672b17fba549" kind="function"><name>commandKick</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0a4c40bf7931be7bd3f56586abf64357" kind="function"><name>commandPrivmsg</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1af2e41d9c9e7f057a6f139528d75c8e87" kind="function"><name>commandMotd</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a5e1f1b69c0a63183b62225298d9ea0b6" kind="function"><name>commandWhois</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a4a1c3256c2cd2bbaf8c04b641de8e89b" kind="function"><name>commandPing</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1acbe69f5fe4b81b494a330cf4e5ccc05d" kind="function"><name>commandAway</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1af65ecbf1de189abeaf7b329159afd032" kind="function"><name>commandWho</name></member>
+    <member refid="d4/db1/_g-2301-05-_p1-commands_8h_1a5844fb12c3cab624c83fc0ccff9946db" kind="function"><name>megaSend</name></member>
+  </compound>
+  <compound refid="dd/dce/_g-2301-05-_p1-socket_8h" kind="file"><name>G-2301-05-P1-socket.h</name>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1a6cd6cae86cd5361650f9672609970907" kind="define"><name>SERVERINFO</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1aab4f68861c2e03b2a78c37c2213cb350" kind="define"><name>SERVERNAME</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1ac0a294efde364937332533e4ecd8d121" kind="function"><name>openSocket_TCP</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" kind="function"><name>bindSocket_TCP</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1ae610867398c76f4226d89666d2e2646e" kind="function"><name>acceptConnection</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1a688c9a3a3e37e99d810e8ad63984272d" kind="function"><name>connectTo</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1a073081b694c616f3485110ff67b6cc5a" kind="function"><name>connectToIP</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1abbf23148d1fb659c277f1c4cf3726f54" kind="function"><name>openSocket_UDP</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1aed488b731e5ab644507ef7acf6376f8b" kind="function"><name>bindSocket_UDP</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1acf6e7bb836ff2442df28511544abf966" kind="function"><name>getSocketPort</name></member>
+    <member refid="dd/dce/_g-2301-05-_p1-socket_8h_1aac80c67421f8d89f4d5614187dc9cb43" kind="function"><name>iniAddrUDP</name></member>
+  </compound>
+  <compound refid="d5/df9/_g-2301-05-_p1-tools_8h" kind="file"><name>G-2301-05-P1-tools.h</name>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a79f6ea5350079c571138b0a00af1f5a4" kind="function"><name>daemonizar</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kind="function"><name>logIntError</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a192fd5bf4f47fe63d449f291f92732a9" kind="function"><name>logPointerError</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a5b92fdc34c0427eb5cf8360e68aa9287" kind="function"><name>logVoidError</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a2850885f03b7654d239b361940416bef" kind="function"><name>getIP</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a3101bc13b5c20c8b430348441050ae9d" kind="function"><name>getHostName</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1af3b23798269ccab05560708cc1a22a92" kind="function"><name>getNickFromSocket</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a100eca1a277dd50fc2e289763dad8464" kind="function"><name>getSocketFromNick</name></member>
+    <member refid="d5/df9/_g-2301-05-_p1-tools_8h_1a2aa2c8c4d6f3b48dd3c195beff08eb0b" kind="function"><name>getAwayFromSocket</name></member>
+  </compound>
+  <compound refid="da/d26/_g-2301-05-_p1-types_8h" kind="file"><name>G-2301-05-P1-types.h</name>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1adcbfe6360d17dafe707c6e9c28ed93e8" kind="define"><name>CLIENTNAME</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1a8fe83ac76edc595f6b98cd4a4127aed5" kind="define"><name>ERROR</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1ab8fafef46c1444f11a84a7d2fdeef171" kind="define"><name>ERROR_SEND</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1a22a59fb7c80bce4f0cc84db66d59c0b6" kind="define"><name>ERROR_RECV</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1a1d14efe4782914b2a1825af2608490f9" kind="define"><name>ERROR_MALLOC</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1aac15417c9e9b175879f9621525227de1" kind="define"><name>ERROR_CONTINUE</name></member>
+    <member refid="da/d26/_g-2301-05-_p1-types_8h_1a7b3b976361d315b1cfa56d14dc5c0a5c" kind="define"><name>MACRO_QUIT</name></member>
+  </compound>
+  <compound refid="d9/dbb/_g-2301-05-_p2-audio_8h" kind="file"><name>G-2301-05-P2-audio.h</name>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1ad974fe981249f5e84fbf1683b012c9f8" kind="define"><name>BUFLEN</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a614217d263be1fb1a5f76e2ff7be19a2" kind="define"><name>PORT</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a24cd3c37a165a8c4626d9e78df4574ff" kind="define"><name>SERVER</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a4d496518d4597c6f8133d109caaf988a" kind="function"><name>initiateReciever</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1aba2d08b3de022fdec5162252fe5d3dd8" kind="function"><name>initiateSender</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a70e78aa07a05a7d1d6688220b711fe0d" kind="function"><name>canIRead</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1acddb1a586a8305d216deca1d3bd07c29" kind="function"><name>canIWrite</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a197e00439b5ca776c65aba209872f76a" kind="function"><name>writeBuffer</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a46e32d8c31f4e0bed7c4a3dd7665ba73" kind="function"><name>playBuffer</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a23e6ef186ace7452878618e453a12d6f" kind="function"><name>alreadyRecordingQuery</name></member>
+    <member refid="d9/dbb/_g-2301-05-_p2-audio_8h_1a2140fd94315d561f0df0972d18f144cc" kind="function"><name>endAudioTransmission</name></member>
+  </compound>
+  <compound refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h" kind="file"><name>G-2301-05-P2-basicCommandsFromServer.h</name>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab68ac40eace3f4d79f5354453773c583" kind="define"><name>MSG_DEFAULT</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac932c0071ffab6330f621400e10a80ec" kind="define"><name>MSG_PASS</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ace2a2cde4cc9515d035aae9167158356" kind="define"><name>MSG_NICK</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9fd0f43f293031d18a7b06276db6d664" kind="define"><name>MSG_MODE</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a33c33bfecad983d967ebd9e9a7935f88" kind="define"><name>MSG_SERVICE</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8273a5a7d3c4a158db1130c30e61958" kind="define"><name>MSG_QUIT</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a524e3778261581851bbf385356b16ad5" kind="define"><name>MSG_JOIN</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ad1fd0ad922d78d93e43488a0ad403cbd" kind="define"><name>MSG_PART</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a39ddc5879d91229533bb1d6c95d4c693" kind="define"><name>MSG_TOPIC</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abe6497a57f23834ebda49482f49295dd" kind="define"><name>MSG_NAMES</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abcd825cc371e203e229b62802482ae47" kind="define"><name>MSG_KICK</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a492be57857c06cfc1aa45679f9073b69" kind="define"><name>MSG_PRIVMSG</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1afce61f740800dad1de4c850b5be89186" kind="define"><name>MSG_WHO</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abf11f9669d8a109b5f1de49ee2a15403" kind="define"><name>MSG_WHOIS</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a009739def9ef4526ecd7b0f33baaec0c" kind="define"><name>MSG_PING</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1de1cfc897f26ebaa88740d1d17c823e" kind="define"><name>MSG_SETNAME</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab4280385e15a48712d64d651acb2648d" kind="define"><name>FILE_BUFLEN</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4a541fbbe2af9ced94c42bd9035763e0" kind="function"><name>reactDefault</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a44650743c7ba1a6a2768d4156028e8d4" kind="function"><name>reactPrint</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8c9483ef017ea056ed519d084029cff" kind="function"><name>reactPass</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1af4a1c3e0adb16c333386f048f948a174" kind="function"><name>reactNick</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4c0608743d68b02dc2edaa0e113293df" kind="function"><name>reactMode</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a6aac8ec73a892579e8988ee16cee507c" kind="function"><name>reactService</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aac734783cf3067915cdfe1d4968cf8d1" kind="function"><name>reactJoin</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a28c3a9c34508c23d3f81c2326101e8e7" kind="function"><name>reactPart</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d86d105c8fe9b9fc6c55c5bc2406f37" kind="function"><name>reactTopic</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4f7dc613a25eb6eda89ad289feec5f16" kind="function"><name>reactKick</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aa0f0ef9fd0a3facea1983061e1648e87" kind="function"><name>reactPrivmsg</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d15466f16cbf9847a16ac4bf24b34fb" kind="function"><name>reactPing</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a7df438a44035b38ab4eacf045bbc131c" kind="function"><name>reactSetName</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a62ca3a2f7e205eecb85ae220ac5c3c7b" kind="function"><name>reactNames</name></member>
+    <member refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9261ac4f3ef8326c2954ac381b176016" kind="function"><name>reactQuit</name></member>
+  </compound>
+  <compound refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h" kind="file"><name>G-2301-05-P2-repliesFromServer.h</name>
+    <member refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a2ecfb7128199b664a1232e6adaa13b1d" kind="function"><name>reactModeQuery</name></member>
+    <member refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a0fab1e2795c83c39f5e728b150a73195" kind="function"><name>reactNoTopic</name></member>
+    <member refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a46cb9b388176d279b37de41cef5a0d40" kind="function"><name>reactTopicQuery</name></member>
+    <member refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a76b90dab2968c81d3006f5c05978fb39" kind="function"><name>reactWhoReply</name></member>
+  </compound>
+  <compound refid="d8/dad/_g-2301-05-_p2-user_commands_8h" kind="file"><name>G-2301-05-P2-userCommands.h</name>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a8298aa0faf55aaec114edcb8d908c25e" kind="function"><name>isCommand</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ac0f28bc6174a23bc74895136febcc3d9" kind="function"><name>userDefault</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ad4918963d95cb113d1880341f5f6d35d" kind="function"><name>userAway</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1c5dfac34cc7c7e9f4f4ae92d480c860" kind="function"><name>userJoin</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1160187ecb124da41bd62d3987f493ec" kind="function"><name>userKick</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a5f1403750b505dd46e42b4ee15f746da" kind="function"><name>userList</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a97047be2e2e4c4de7a0b50bf5dbab322" kind="function"><name>userMode</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa5e23ebf9d8d7f2212750a7d0b25cb15" kind="function"><name>userMotd</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a15f6b4ed406c22d7cedebf968c431a38" kind="function"><name>userNames</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1abbde12342143708da5cbbe02b42c6269" kind="function"><name>userNick</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a4bd2ce0bd04f220d817a5fdc05ce02c9" kind="function"><name>userPart</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1abf18bb836181af4b31693795692475b6" kind="function"><name>userPriv</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a9be44d33843127f69f9f10616c00e8a1" kind="function"><name>userQuit</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ab94f0c41cd0db8a444f83be537a25a27" kind="function"><name>userTopic</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa09b497c8e02a85ce7b5c55847ea0e6e" kind="function"><name>userWhois</name></member>
+    <member refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a3f3e5e80766b57227cb712a5746238a8" kind="function"><name>userWho</name></member>
+  </compound>
+  <compound refid="d4/d1f/_g-2301-05-_p2-user_tools_8h" kind="file"><name>G-2301-05-P2-userTools.h</name>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a70ed59adcb4159ac551058053e649640" kind="define"><name>SIZE</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a403f3d61e6c0872cda3700219ca9ac1e" kind="define"><name>PORT_RECORD</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a40c5426015ecc21e39dfb362eb4c0c14" kind="define"><name>PORT_SEND</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kind="variable"><name>sockfd</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a3e267cdf9839a331d371dd5f980d153e" kind="function"><name>printXchat</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1afc2d4ce661d2f13fbe4b5518d778d071" kind="function"><name>getMyNick</name></member>
+    <member refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ab409491dfa3ca1ed9713df0eabdb70ed" kind="function"><name>getMyNickThread</name></member>
+  </compound>
+  <compound refid="d8/d51/_g-2301-05-_p3-ssl_8h" kind="file"><name>G-2301-05-P3-ssl.h</name>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a937108af8fd0832377b084e24172ee41" kind="function"><name>inicializar_nivel_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a84a295d51a23d2558cbf65f436011dc6" kind="function"><name>fijar_contexto_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a79add582c01289f85c0a81569ee3b73e" kind="function"><name>conectar_canal_seguro_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1aaeb9457077403f2261ca1a86e3802a1d" kind="function"><name>aceptar_canal_seguro_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a8abf144662cb4cfd12428524f425854c" kind="function"><name>evaluar_post_connectar_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a71ed04f7f38be4fd5b1abec30a9ee130" kind="function"><name>enviar_datos_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kind="function"><name>recibir_datos_SSL</name></member>
+    <member refid="d8/d51/_g-2301-05-_p3-ssl_8h_1acdbfef38bb502e732928620f71daacd2" kind="function"><name>cerrar_canal_SSL</name></member>
+  </compound>
+  <compound refid="d4/d18/cliente__echo_8c" kind="file"><name>cliente_echo.c</name>
+    <member refid="d4/d18/cliente__echo_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="de/dee/cliente___i_r_c_8c" kind="file"><name>cliente_IRC.c</name>
+    <member refid="de/dee/cliente___i_r_c_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dc/d4a/daemonizar_8c" kind="file"><name>daemonizar.c</name>
+    <member refid="dc/d4a/daemonizar_8c_1a79f6ea5350079c571138b0a00af1f5a4" kind="function"><name>daemonizar</name></member>
+  </compound>
+  <compound refid="da/de5/daemonizar_8h" kind="file"><name>daemonizar.h</name>
+    <member refid="da/de5/daemonizar_8h_1a79f6ea5350079c571138b0a00af1f5a4" kind="function"><name>daemonizar</name></member>
+  </compound>
+  <compound refid="de/df7/prueba_8c" kind="file"><name>prueba.c</name>
+    <member refid="de/df7/prueba_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="df/dcc/_g-2301-05-_p1-client_8c" kind="file"><name>G-2301-05-P1-client.c</name>
+    <member refid="df/dcc/_g-2301-05-_p1-client_8c_1a4866b2d37ffc80c5ba705d3fcd1e0ecf" kind="function"><name>error</name></member>
+    <member refid="df/dcc/_g-2301-05-_p1-client_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="df/db1/_g-2301-05-_p1-commands_8c" kind="file"><name>G-2301-05-P1-commands.c</name>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a5844fb12c3cab624c83fc0ccff9946db" kind="function"><name>megaSend</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a5e779729087524b180ae301bcd4358ed" kind="function"><name>doesChannelExist</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1af1c56216e57d9921473f3ceb1a9a7699" kind="function"><name>nickInList</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a02944755d02164cf484a4c933ed2f0c3" kind="function"><name>filterUsersInChannels</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a14fe4308f03717920b58dd81074d1fa1" kind="function"><name>parseChannelList</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1af8fd36debbc6d010faa1515aa469f36e" kind="function"><name>commandDefault</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1af65ecbf1de189abeaf7b329159afd032" kind="function"><name>commandWho</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a6c14bedc2ca0c1a7748fd188966f0699" kind="function"><name>commandNick</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1aaa0cd83abb127533a58a9824d766302d" kind="function"><name>commandMode</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a8c61e34c067a94ff808b75f1b5346685" kind="function"><name>commandQuit</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a520a20b8ad5887dd2b600682bb3ea36e" kind="function"><name>commandJoin</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1adadde8a5b5af849c55509d9e9aef8dc1" kind="function"><name>commandPart</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a2c3f4be0a8d40030d1e249075f96f4fe" kind="function"><name>commandTopic</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1ab3b8ab89b3ae99edea8af60322538c1f" kind="function"><name>commandNames</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a0ef7f97ab64eb311827dbe3509b071bb" kind="function"><name>commandList</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a1a1a0b84710fb5d6735e672b17fba549" kind="function"><name>commandKick</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a0a4c40bf7931be7bd3f56586abf64357" kind="function"><name>commandPrivmsg</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1af2e41d9c9e7f057a6f139528d75c8e87" kind="function"><name>commandMotd</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a5e1f1b69c0a63183b62225298d9ea0b6" kind="function"><name>commandWhois</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1a4a1c3256c2cd2bbaf8c04b641de8e89b" kind="function"><name>commandPing</name></member>
+    <member refid="df/db1/_g-2301-05-_p1-commands_8c_1acbe69f5fe4b81b494a330cf4e5ccc05d" kind="function"><name>commandAway</name></member>
+  </compound>
+  <compound refid="d6/d77/_g-2301-05-_p1-server_8c" kind="file"><name>G-2301-05-P1-server.c</name>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1adc5a02a0d82a5e7fd93802b082e24102" kind="define"><name>THREAD_NUMBER</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1af4fbc62d68085a32b47e88d447b77b28" kind="typedef"><name>pFuncs</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1af203df082d5c6dcaa0c88b07cf86466d" kind="variable"><name>hostname</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kind="variable"><name>mutex</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1a3b74f15bfc2af0a575608c31e269694a" kind="variable"><name>functs</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" kind="function"><name>freeThreadResources</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1ab7b31b719e6de8a7c05105d5e78e4ede" kind="function"><name>connectAndRegister</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1ae14d3432467a785bafce07c4ce2db219" kind="function"><name>retrieveMsg</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1af073aef8b7cf446e542c8ef5002b27bc" kind="function"><name>threadPing</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" kind="function"><name>threadRoutine</name></member>
+    <member refid="d6/d77/_g-2301-05-_p1-server_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d6/dbc/_g-2301-05-_p2-audio_8c" kind="file"><name>G-2301-05-P2-audio.c</name>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a88007cd1caf5537d34251bcc91704402" kind="define"><name>AUDIO_BUFLEN</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a991a654ebc130040f9ca67c7a4c1956d" kind="variable"><name>grabandoAudio</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a5910b24e625d530fb8ff50b0dcef805a" kind="variable"><name>audioBuffer</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a8693afd6c4562264a3cb24736198e435" kind="variable"><name>writePos</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ae80c1a9f4c0091ea6d461132b9457a4c" kind="variable"><name>readPos</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1ab32c5c00416d29c7b60bc91e53cef43a" kind="function"><name>playThread</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a4d496518d4597c6f8133d109caaf988a" kind="function"><name>initiateReciever</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1aba2d08b3de022fdec5162252fe5d3dd8" kind="function"><name>initiateSender</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a70e78aa07a05a7d1d6688220b711fe0d" kind="function"><name>canIRead</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1acddb1a586a8305d216deca1d3bd07c29" kind="function"><name>canIWrite</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a197e00439b5ca776c65aba209872f76a" kind="function"><name>writeBuffer</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a46e32d8c31f4e0bed7c4a3dd7665ba73" kind="function"><name>playBuffer</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a23e6ef186ace7452878618e453a12d6f" kind="function"><name>alreadyRecordingQuery</name></member>
+    <member refid="d6/dbc/_g-2301-05-_p2-audio_8c_1a2140fd94315d561f0df0972d18f144cc" kind="function"><name>endAudioTransmission</name></member>
+  </compound>
+  <compound refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c" kind="file"><name>G-2301-05-P2-basicCommandsFromServer.c</name>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a4a541fbbe2af9ced94c42bd9035763e0" kind="function"><name>reactDefault</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a44650743c7ba1a6a2768d4156028e8d4" kind="function"><name>reactPrint</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1ac8c9483ef017ea056ed519d084029cff" kind="function"><name>reactPass</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1af4a1c3e0adb16c333386f048f948a174" kind="function"><name>reactNick</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a4c0608743d68b02dc2edaa0e113293df" kind="function"><name>reactMode</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a6aac8ec73a892579e8988ee16cee507c" kind="function"><name>reactService</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1aac734783cf3067915cdfe1d4968cf8d1" kind="function"><name>reactJoin</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a28c3a9c34508c23d3f81c2326101e8e7" kind="function"><name>reactPart</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a1d86d105c8fe9b9fc6c55c5bc2406f37" kind="function"><name>reactTopic</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a4f7dc613a25eb6eda89ad289feec5f16" kind="function"><name>reactKick</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1ad2ca292b4e5365950f6ea7887abdbc37" kind="function"><name>FSend_Parse</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1ae2661acad62b7c8480ba478251b4df77" kind="function"><name>threadRecv</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a143c8c1989387af8849fb5bd1f806584" kind="function"><name>threadAudio</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1aa0f0ef9fd0a3facea1983061e1648e87" kind="function"><name>reactPrivmsg</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a1d15466f16cbf9847a16ac4bf24b34fb" kind="function"><name>reactPing</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a7df438a44035b38ab4eacf045bbc131c" kind="function"><name>reactSetName</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a62ca3a2f7e205eecb85ae220ac5c3c7b" kind="function"><name>reactNames</name></member>
+    <member refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c_1a9261ac4f3ef8326c2954ac381b176016" kind="function"><name>reactQuit</name></member>
+  </compound>
+  <compound refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c" kind="file"><name>G-2301-05-P2-repliesFromServer.c</name>
+    <member refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c_1a2ecfb7128199b664a1232e6adaa13b1d" kind="function"><name>reactModeQuery</name></member>
+    <member refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c_1a0fab1e2795c83c39f5e728b150a73195" kind="function"><name>reactNoTopic</name></member>
+    <member refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c_1a46cb9b388176d279b37de41cef5a0d40" kind="function"><name>reactTopicQuery</name></member>
+    <member refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c_1a76b90dab2968c81d3006f5c05978fb39" kind="function"><name>reactWhoReply</name></member>
+  </compound>
+  <compound refid="d6/dbe/_g-2301-05-_p2-user_commands_8c" kind="file"><name>G-2301-05-P2-userCommands.c</name>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1ae0b4816fb45161ef9da5e6d6134ee28a" kind="define"><name>TAM</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1aef124ac385578c5a6c3308a917fee8ad" kind="variable"><name>nCommands</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a8298aa0faf55aaec114edcb8d908c25e" kind="function"><name>isCommand</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1ac0f28bc6174a23bc74895136febcc3d9" kind="function"><name>userDefault</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1ad4918963d95cb113d1880341f5f6d35d" kind="function"><name>userAway</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a1c5dfac34cc7c7e9f4f4ae92d480c860" kind="function"><name>userJoin</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a1160187ecb124da41bd62d3987f493ec" kind="function"><name>userKick</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a5f1403750b505dd46e42b4ee15f746da" kind="function"><name>userList</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a97047be2e2e4c4de7a0b50bf5dbab322" kind="function"><name>userMode</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1aa5e23ebf9d8d7f2212750a7d0b25cb15" kind="function"><name>userMotd</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a15f6b4ed406c22d7cedebf968c431a38" kind="function"><name>userNames</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1abbde12342143708da5cbbe02b42c6269" kind="function"><name>userNick</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a4bd2ce0bd04f220d817a5fdc05ce02c9" kind="function"><name>userPart</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1abf18bb836181af4b31693795692475b6" kind="function"><name>userPriv</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a9be44d33843127f69f9f10616c00e8a1" kind="function"><name>userQuit</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1ab94f0c41cd0db8a444f83be537a25a27" kind="function"><name>userTopic</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1aa09b497c8e02a85ce7b5c55847ea0e6e" kind="function"><name>userWhois</name></member>
+    <member refid="d6/dbe/_g-2301-05-_p2-user_commands_8c_1a3f3e5e80766b57227cb712a5746238a8" kind="function"><name>userWho</name></member>
+  </compound>
+  <compound refid="d8/da8/_g-2301-05-_p2-user_tools_8c" kind="file"><name>G-2301-05-P2-userTools.c</name>
+    <member refid="d8/da8/_g-2301-05-_p2-user_tools_8c_1a3e267cdf9839a331d371dd5f980d153e" kind="function"><name>printXchat</name></member>
+    <member refid="d8/da8/_g-2301-05-_p2-user_tools_8c_1afc2d4ce661d2f13fbe4b5518d778d071" kind="function"><name>getMyNick</name></member>
+    <member refid="d8/da8/_g-2301-05-_p2-user_tools_8c_1ab409491dfa3ca1ed9713df0eabdb70ed" kind="function"><name>getMyNickThread</name></member>
+  </compound>
+  <compound refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" kind="file"><name>G-2301-05-P2-xchat2.c</name>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a4b932f95396d02e0a0c48dfab971852a" kind="typedef"><name>pFuncs</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1aa0f4db7da8ca28c8ec5521d8825a83ea" kind="typedef"><name>pUserFuncs</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a3b74f15bfc2af0a575608c31e269694a" kind="variable"><name>functs</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1abe79a286412486fd4694376263d47045" kind="variable"><name>userFuncts</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a07a8da7c5d9e4cce3c271c1907be47fe" kind="variable"><name>miNick</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a33f80a29a744e4182b29e23f13c1f05c" kind="function"><name>IRCInterface_ActivateChannelKey</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a7a439929c246e342ae525139b2c39f5d" kind="function"><name>IRCInterface_ActivateExternalMessages</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ac72762ab1e3575b421b967241db23f9c" kind="function"><name>IRCInterface_ActivateInvite</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1af83498f4058311f4562c43a9b70566b2" kind="function"><name>IRCInterface_ActivateModerated</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ab5694cc413472173bfcaa969c7d9800e" kind="function"><name>IRCInterface_ActivateNicksLimit</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ab1f09c737c7c109a97e22de6072d731d" kind="function"><name>IRCInterface_ActivatePrivate</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ac45f12d4dcacf3b5485eec6fdc51df93" kind="function"><name>IRCInterface_ActivateProtectTopic</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1aa9e9155115b834d85a4d10cb27f99093" kind="function"><name>IRCInterface_ActivateSecret</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a42773b5a840f9d0455f148d285e1e595" kind="function"><name>IRCInterface_BanNick</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a4f5f3137c3be732b92b32a2de87deb58" kind="function"><name>whoThread</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a88a0a12cb382400bbca561b8f83efe73" kind="function"><name>clientThread</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1aed072f4ce0d6e90697d4d6eb0278a2ad" kind="function"><name>IRCInterface_Connect</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a3e67ee0cd384b524d57fda14593dce8e" kind="function"><name>IRCInterface_DeactivateChannelKey</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a638b1535f4ecbc9a6affb2df2a6a946e" kind="function"><name>IRCInterface_DeactivateExternalMessages</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a9ba4e98a3729737aa63ebec54ba4e894" kind="function"><name>IRCInterface_DeactivateInvite</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ab760e8144b38f6c14bd809d157cee5d4" kind="function"><name>IRCInterface_DeactivateModerated</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a92c8cfbe2e14e19277e1c97d11719e80" kind="function"><name>IRCInterface_DeactivateNicksLimit</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a8a6141803691ba327f11ba763ad075d4" kind="function"><name>IRCInterface_DeactivatePrivate</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a5a57541a950f8c2c40b4b44c32b28ed9" kind="function"><name>IRCInterface_DeactivateProtectTopic</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a4956427664cabc7d5b2bd1589a207324" kind="function"><name>IRCInterface_DeactivateSecret</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a8bf0424ef7f845be79a056e9aed56fe2" kind="function"><name>IRCInterface_DisconnectServer</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ab431412191716f751461f94d613ffdab" kind="function"><name>IRCInterface_ExitAudioChat</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ae075029bb55e8b995f22beb0810674f4" kind="function"><name>IRCInterface_GiveOp</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ae9effb4bdaf4a2cdf2dd9edbeb90b430" kind="function"><name>IRCInterface_GiveVoice</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a7adfea400a96160585f86179bafb055f" kind="function"><name>IRCInterface_KickNick</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a214e10b19c8be028fb35d2a7abf3f798" kind="function"><name>IRCInterface_NewCommandText</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a080cf34ff506481737f6d08af60ca92b" kind="function"><name>IRCInterface_NewTopicEnter</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1ab5edba0766b7dde73e1a1d7595b9c42d" kind="function"><name>threadSend</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a100f1c87bb3b399a7284e62dd2e6172a" kind="function"><name>IRCInterface_SendFile</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1af38dd8b519a209e19f3b39aa7366bcda" kind="function"><name>threadRecord</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a5dc7a44587e609b416a783cd420a12e3" kind="function"><name>IRCInterface_StartAudioChat</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a754a3d3dd311194637c07cc701e7d507" kind="function"><name>IRCInterface_StopAudioChat</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a4e2a1ea75e59306142030a91a054b7e6" kind="function"><name>IRCInterface_TakeOp</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a2ff2e10ed1cb1a399293b6f76ac1e5ae" kind="function"><name>IRCInterface_TakeVoice</name></member>
+    <member refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d3/dbb/servidor__echo_8c" kind="file"><name>servidor_echo.c</name>
+    <member refid="d3/dbb/servidor__echo_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d6/d48/servidor___i_r_c_8c" kind="file"><name>servidor_IRC.c</name>
+    <member refid="d6/d48/servidor___i_r_c_8c_1adc5a02a0d82a5e7fd93802b082e24102" kind="define"><name>THREAD_NUMBER</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" kind="typedef"><name>pFuncs</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kind="variable"><name>ssl_active</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1af203df082d5c6dcaa0c88b07cf86466d" kind="variable"><name>hostname</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kind="variable"><name>mutex</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kind="variable"><name>functs</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" kind="function"><name>freeThreadResources</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a791c463e7015f87ec590d75a12a27b03" kind="function"><name>connectAndRegister</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a268c95a515ff89f8e975a7b03353d2be" kind="function"><name>retrieveMsg</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" kind="function"><name>threadRoutine</name></member>
+    <member refid="d6/d48/servidor___i_r_c_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dd/da3/_g-2301-05-_p1-socket_8c" kind="file"><name>G-2301-05-P1-socket.c</name>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1ac0a294efde364937332533e4ecd8d121" kind="function"><name>openSocket_TCP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1aac80c67421f8d89f4d5614187dc9cb43" kind="function"><name>iniAddrUDP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" kind="function"><name>bindSocket_TCP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1ab2765e4508bc50655fe3dd36139f33a5" kind="function"><name>acceptConnection</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1a688c9a3a3e37e99d810e8ad63984272d" kind="function"><name>connectTo</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1a073081b694c616f3485110ff67b6cc5a" kind="function"><name>connectToIP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1abbf23148d1fb659c277f1c4cf3726f54" kind="function"><name>openSocket_UDP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1aed488b731e5ab644507ef7acf6376f8b" kind="function"><name>bindSocket_UDP</name></member>
+    <member refid="dd/da3/_g-2301-05-_p1-socket_8c_1a96661287c5bdb47422cfa55ad14506aa" kind="function"><name>getSocketPort</name></member>
+  </compound>
+  <compound refid="dd/d7e/_g-2301-05-_p1-tools_8c" kind="file"><name>G-2301-05-P1-tools.c</name>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a79f6ea5350079c571138b0a00af1f5a4" kind="function"><name>daemonizar</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a6349dfcf345b8d45a1be65e3e17739fe" kind="function"><name>logIntError</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a192fd5bf4f47fe63d449f291f92732a9" kind="function"><name>logPointerError</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a5b92fdc34c0427eb5cf8360e68aa9287" kind="function"><name>logVoidError</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2850885f03b7654d239b361940416bef" kind="function"><name>getIP</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a3101bc13b5c20c8b430348441050ae9d" kind="function"><name>getHostName</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1af3b23798269ccab05560708cc1a22a92" kind="function"><name>getNickFromSocket</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a100eca1a277dd50fc2e289763dad8464" kind="function"><name>getSocketFromNick</name></member>
+    <member refid="dd/d7e/_g-2301-05-_p1-tools_8c_1a2aa2c8c4d6f3b48dd3c195beff08eb0b" kind="function"><name>getAwayFromSocket</name></member>
+  </compound>
+  <compound refid="d8/d7e/_g-2301-05-_p3-ssl_8c" kind="file"><name>G-2301-05-P3-ssl.c</name>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a937108af8fd0832377b084e24172ee41" kind="function"><name>inicializar_nivel_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a84a295d51a23d2558cbf65f436011dc6" kind="function"><name>fijar_contexto_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a79add582c01289f85c0a81569ee3b73e" kind="function"><name>conectar_canal_seguro_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1aaeb9457077403f2261ca1a86e3802a1d" kind="function"><name>aceptar_canal_seguro_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a8abf144662cb4cfd12428524f425854c" kind="function"><name>evaluar_post_connectar_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a71ed04f7f38be4fd5b1abec30a9ee130" kind="function"><name>enviar_datos_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1a1efb5af79fa6ea71c4d9ceb8f718290f" kind="function"><name>recibir_datos_SSL</name></member>
+    <member refid="d8/d7e/_g-2301-05-_p3-ssl_8c_1acdbfef38bb502e732928620f71daacd2" kind="function"><name>cerrar_canal_SSL</name></member>
+  </compound>
+  <compound refid="da/d6d/group___i_r_c_server" kind="group"><name>IRCServer</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands" kind="group"><name>IRCServerCommands</name>
+  </compound>
+  <compound refid="dc/dbc/group___i_r_c_tools" kind="group"><name>IRCTools</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets" kind="group"><name>IRCSockets</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools" kind="group"><name>IRCServerTools</name>
+  </compound>
+  <compound refid="d2/db5/group___i_r_c_client" kind="group"><name>IRCClient</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio" kind="group"><name>IRCAudio</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server" kind="group"><name>IRCCommandsFromServer</name>
+  </compound>
+  <compound refid="d7/d0c/group___i_r_creplies_from_server" kind="group"><name>IRCrepliesFromServer</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands" kind="group"><name>IRCUserCommands</name>
+  </compound>
+  <compound refid="d2/d99/group___i_r_c_user_tools" kind="group"><name>IRCUserTools</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl" kind="group"><name>IRCssl</name>
+  </compound>
+  <compound refid="df/d29/group___i_r_c_interface" kind="group"><name>IRCInterface</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks" kind="group"><name>IRCInterfaceCallbacks</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandDefault" kind="page"><name>commandDefault</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandNick" kind="page"><name>commandNick</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandMode" kind="page"><name>commandMode</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandQuit" kind="page"><name>commandQuit</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandJoin" kind="page"><name>commandJoin</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandPart" kind="page"><name>commandPart</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandTopic" kind="page"><name>commandTopic</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandNames" kind="page"><name>commandNames</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandList" kind="page"><name>commandList</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandKick" kind="page"><name>commandKick</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandPrivmsg" kind="page"><name>commandPrivmsg</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandMotd" kind="page"><name>commandMotd</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandWhois" kind="page"><name>commandWhois</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandPing" kind="page"><name>commandPing</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandAway" kind="page"><name>commandAway</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_commandWho" kind="page"><name>commandWho</name>
+  </compound>
+  <compound refid="d4/d9b/group___i_r_c_server_commands_megaSend" kind="page"><name>megaSend</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_openSocket_TCP" kind="page"><name>openSocket_TCP</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_bindSocket_TCP" kind="page"><name>bindSocket_TCP</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_acceptConnection" kind="page"><name>acceptConnection</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_connectTo" kind="page"><name>connectTo</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_connectToIP" kind="page"><name>connectToIP</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_openSocket_UDP" kind="page"><name>openSocket_UDP</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_bindSocket_UDP" kind="page"><name>bindSocket_UDP</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_getSocketPort" kind="page"><name>getSocketPort</name>
+  </compound>
+  <compound refid="d2/d08/group___i_r_c_sockets_iniAddrUDP" kind="page"><name>iniAddrUDP</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_daemonizar" kind="page"><name>daemonizar</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_logIntError" kind="page"><name>logIntError</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_logPointerError" kind="page"><name>logPointerError</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_logVoidError" kind="page"><name>logVoidError</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_getIP" kind="page"><name>getIP</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_getHostName" kind="page"><name>getHostName</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_getNickFromSocket" kind="page"><name>getNickFromSocket</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_getSocketFromNick" kind="page"><name>getSocketFromNick</name>
+  </compound>
+  <compound refid="d1/d75/group___i_r_c_server_tools_getAwayFromSocket" kind="page"><name>getAwayFromSocket</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_initiateReciever" kind="page"><name>initiateReciever</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_initiateSender" kind="page"><name>initiateSender</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_canIRead" kind="page"><name>canIRead</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_canIWrite" kind="page"><name>canIWrite</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_writeBuffer" kind="page"><name>writeBuffer</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_playBuffer" kind="page"><name>playBuffer</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_alreadyRecordingQuery" kind="page"><name>alreadyRecordingQuery</name>
+  </compound>
+  <compound refid="d2/dc8/group___i_r_c_audio_endAudioTransmission" kind="page"><name>endAudioTransmission</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactDefault" kind="page"><name>reactDefault</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactPrint" kind="page"><name>reactPrint</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactPass" kind="page"><name>reactPass</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactNick" kind="page"><name>reactNick</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactMode" kind="page"><name>reactMode</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactService" kind="page"><name>reactService</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactJoin" kind="page"><name>reactJoin</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactPart" kind="page"><name>reactPart</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactTopic" kind="page"><name>reactTopic</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactKick" kind="page"><name>reactKick</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactPrivmsg" kind="page"><name>reactPrivmsg</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactPing" kind="page"><name>reactPing</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactSetName" kind="page"><name>reactSetName</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactNames" kind="page"><name>reactNames</name>
+  </compound>
+  <compound refid="d5/df5/group___i_r_c_commands_from_server_reactQuit" kind="page"><name>reactQuit</name>
+  </compound>
+  <compound refid="d7/d0c/group___i_r_creplies_from_server_reactModeQuery" kind="page"><name>reactModeQuery</name>
+  </compound>
+  <compound refid="d7/d0c/group___i_r_creplies_from_server_reactNoTopic" kind="page"><name>reactNoTopic</name>
+  </compound>
+  <compound refid="d7/d0c/group___i_r_creplies_from_server_reactTopicQuery" kind="page"><name>reactTopicQuery</name>
+  </compound>
+  <compound refid="d7/d0c/group___i_r_creplies_from_server_reactWhoReply" kind="page"><name>reactWhoReply</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_isCommand" kind="page"><name>isCommand</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userDefault" kind="page"><name>userDefault</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userAway" kind="page"><name>userAway</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userJoin" kind="page"><name>userJoin</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userKick" kind="page"><name>userKick</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userList" kind="page"><name>userList</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userMode" kind="page"><name>userMode</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userMotd" kind="page"><name>userMotd</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userNames" kind="page"><name>userNames</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userNick" kind="page"><name>userNick</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userPart" kind="page"><name>userPart</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userPriv" kind="page"><name>userPriv</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userQuit" kind="page"><name>userQuit</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userTopic" kind="page"><name>userTopic</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userWhois" kind="page"><name>userWhois</name>
+  </compound>
+  <compound refid="d7/d37/group___i_r_c_user_commands_userWho" kind="page"><name>userWho</name>
+  </compound>
+  <compound refid="d2/d99/group___i_r_c_user_tools_printXchat" kind="page"><name>printXchat</name>
+  </compound>
+  <compound refid="d2/d99/group___i_r_c_user_tools_getMyNick" kind="page"><name>getMyNick</name>
+  </compound>
+  <compound refid="d2/d99/group___i_r_c_user_tools_getMyNickThread" kind="page"><name>getMyNickThread</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_inicializar_nivel_SSL" kind="page"><name>inicializar_nivel_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_fijar_contexto_SSL" kind="page"><name>fijar_contexto_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_conectar_canal_seguro_SSL" kind="page"><name>conectar_canal_seguro_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_aceptar_canal_seguro_SSL" kind="page"><name>aceptar_canal_seguro_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_evaluar_post_connectar_SSL" kind="page"><name>evaluar_post_connectar_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_enviar_datos_SSL" kind="page"><name>enviar_datos_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_recibir_datos_SSL" kind="page"><name>recibir_datos_SSL</name>
+  </compound>
+  <compound refid="d8/db1/group___i_r_cssl_cerrar_canal_SSL" kind="page"><name>cerrar_canal_SSL</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateChannelKey" kind="page"><name>IRCInterface_ActivateChannelKey</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateExternalMessages" kind="page"><name>IRCInterface_ActivateExternalMessages</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateInvite" kind="page"><name>IRCInterface_ActivateInvite</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateModerated" kind="page"><name>IRCInterface_ActivateModerated</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateNicksLimit" kind="page"><name>IRCInterface_ActivateNicksLimit</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivatePrivate" kind="page"><name>IRCInterface_ActivatePrivate</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateProtectTopic" kind="page"><name>IRCInterface_ActivateProtectTopic</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ActivateSecret" kind="page"><name>IRCInterface_ActivateSecret</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_BanNick" kind="page"><name>IRCInterface_BanNick</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_Connect" kind="page"><name>IRCInterface_Connect</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateChannelKey" kind="page"><name>IRCInterface_DeactivateChannelKey</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateExternalMessages" kind="page"><name>IRCInterface_DeactivateExternalMessages</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateInvite" kind="page"><name>IRCInterface_DeactivateInvite</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateModerated" kind="page"><name>IRCInterface_DeactivateModerated</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateNicksLimit" kind="page"><name>IRCInterface_DeactivateNicksLimit</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivatePrivate" kind="page"><name>IRCInterface_DeactivatePrivate</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateProtectTopic" kind="page"><name>IRCInterface_DeactivateProtectTopic</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DeactivateSecret" kind="page"><name>IRCInterface_DeactivateSecret</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_DisconnectServer" kind="page"><name>IRCInterface_DisconnectServer</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_ExitAudioChat" kind="page"><name>IRCInterface_ExitAudioChat</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_GiveOp" kind="page"><name>IRCInterface_GiveOp</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_GiveVoice" kind="page"><name>IRCInterface_GiveVoice</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_KickNick" kind="page"><name>IRCInterface_KickNick</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_NewCommandText" kind="page"><name>IRCInterface_NewCommandText</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_NewTopicEnter" kind="page"><name>IRCInterface_NewTopicEnter</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_SendFile" kind="page"><name>IRCInterface_SendFile</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_StartAudioChat" kind="page"><name>IRCInterface_StartAudioChat</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_StopAudioChat" kind="page"><name>IRCInterface_StopAudioChat</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_TakeOp" kind="page"><name>IRCInterface_TakeOp</name>
+  </compound>
+  <compound refid="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_TakeVoice" kind="page"><name>IRCInterface_TakeVoice</name>
+  </compound>
+  <compound refid="dir_c75cb953fb6f1a05ae328961a93499aa" kind="dir"><name>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/javier/Escritorio/Redes/G-2301-05-P3/src</name>
+  </compound>
+  <compound refid="dir_055525a30e828dc7e51b22601599d317" kind="dir"><name>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib</name>
+  </compound>
+</doxygenindex>

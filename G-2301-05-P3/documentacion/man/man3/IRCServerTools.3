@@ -1,0 +1,145 @@
+.TH "serverTools" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+serverTools \- 
+Funciones auxiliares
+.PP
+.PP
+ daemonizar
+daemoniza el proceso el proceso queda en segundo plano como proceso de init
+.PP
+.PP
+ 
+.SS "logIntError"
+identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreturnValue\fP el error a registrar y devolver 
+.br
+\fImsg\fP el mensaje de error previo al nombre del error
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el error registrado en returnValue
+.RE
+.PP
+.PP
+ 
+.SS "logPointerError"
+identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreturnValue\fP el error a devolver 
+.br
+\fImsg\fP el mensaje de error
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el error registrado en returnValue
+.RE
+.PP
+.PP
+ 
+.SS "logVoidError"
+registra un mensaje de error
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP el mensaje de error a registrar
+.RE
+.PP
+.PP
+ 
+.SS "getIP"
+reserva memoria para una String que contiene le dirección IP de un cliente en formato estandar: xxx\&.xxx\&.xxx\&.xxx
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP la estructura que contiene la IP a encontrar 
+.br
+\fIip\fP la dirección de una String donde guardaremos el resultado
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+el puntero a la String resultado
+.RE
+.PP
+.PP
+ 
+.SS "getHostName"
+guarda en hostname el nombre del dispositivo dev
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev\fP el dispositivo cuyo nombre deseamos encontrar 
+.br
+\fIhostname\fP la dirección de la String donde escribir el nombre del dispositivo
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si todo va bien
+.RE
+.PP
+.PP
+ 
+.SS "getNickFromSocket"
+guarda en nick el nickname del usuario asociado con el socket
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket que identifica la conexión con el usuario 
+.br
+\fInick\fP la dirección de la String donde guardar
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si todo fue bien\&. El error si no
+.RE
+.PP
+.PP
+ 
+.SS "getSocketFromNick"
+obtiene el socket del nick
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket a obtener 
+.br
+\fInick\fP nick a comprobar
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no
+.RE
+.PP
+.PP
+ 
+.SS "getAwayFromSocket"
+obtiene el away del socket
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP el socket a obtener 
+.br
+\fIaway\fP cadena away
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no
+.RE
+.PP
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

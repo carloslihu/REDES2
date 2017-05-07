@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="de/df3/group___i_r_c_user_comands_isCommand" kind="page">
+    <compoundname>isCommand</compoundname>
+    <title>isCommand</title>
+    <detaileddescription>
+<para>funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ncommand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el entero largo que representa un comando</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE si ese comando es soportado por este cliente, FALSE de lo contrario <hruler/>
+ </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

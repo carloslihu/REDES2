@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d75/group___i_r_c_server_tools_logPointerError" kind="page">
+    <compoundname>logPointerError</compoundname>
+    <title>logPointerError</title>
+    <detaileddescription>
+<para>identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>returnValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el error a devolver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje de error</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el error registrado en returnValue</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d5/df5/group___i_r_c_commands_from_server_reactKick" kind="page">
+    <compoundname>reactKick</compoundname>
+    <title>reactKick</title>
+    <detaileddescription>
+<para>rutina que maneja la llegada de un comando KICK Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

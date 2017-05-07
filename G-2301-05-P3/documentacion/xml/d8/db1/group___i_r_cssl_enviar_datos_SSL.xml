@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_enviar_datos_SSL" kind="page">
+    <compoundname>enviar_datos_SSL</compoundname>
+    <title>enviar_datos_SSL</title>
+    <detaileddescription>
+<para>Esta función será el equivalente a la función de envío de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a enviar. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>datos a enviar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tamaño de los datos</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>numero &gt;0 si ha ido bien &lt;=0 si no</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,230 @@
+.TH "/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2301-05-P2-audio\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBAUDIO_BUFLEN\fP   4096"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBplayThread\fP (void *args)"
+.br
+.RI "\fIrutina que maneja el hilo que reproduce el audio el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya algo escrito antes de empezar a intentar a reproducir\&. de la misma manera, si por algun motivo este hilo alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante \fP"
+.ti -1c
+.RI "long int \fBinitiateReciever\fP ()"
+.br
+.RI "\fIrutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer \fP"
+.ti -1c
+.RI "long int \fBinitiateSender\fP ()"
+.br
+.RI "\fIrutina que se encarga del envio de audio \fP"
+.ti -1c
+.RI "int \fBcanIRead\fP (int len)"
+.br
+.RI "\fIfuncion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin 'pasar' la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito \fP"
+.ti -1c
+.RI "int \fBcanIWrite\fP (int len)"
+.br
+.RI "\fIfuncion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin 'pasar' la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida \fP"
+.ti -1c
+.RI "void \fBwriteBuffer\fP (char *buf, int len)"
+.br
+.RI "\fIescribe, si es posible, en el buffer a partir de la posición de escritura\&. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer \fP"
+.ti -1c
+.RI "void \fBplayBuffer\fP (int len)"
+.br
+.RI "\fIreproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura\&. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer\&. es necesario que los canales de reproduccion hayan sido abiertos previamente\&. \fP"
+.ti -1c
+.RI "boolean \fBalreadyRecordingQuery\fP ()"
+.br
+.RI "\fIfuncion que devuelve si este cliente ya esta grabando audio o no \fP"
+.ti -1c
+.RI "void \fBendAudioTransmission\fP ()"
+.br
+.RI "\fIfuncion que termina la transmision por parte del cliente que envia audio \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "boolean \fBgrabandoAudio\fP"
+.br
+.ti -1c
+.RI "char \fBaudioBuffer\fP [\fBAUDIO_BUFLEN\fP]"
+.br
+.ti -1c
+.RI "int \fBwritePos\fP"
+.br
+.ti -1c
+.RI "int \fBreadPos\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AUDIO_BUFLEN   4096"
+
+.PP
+Definition at line 4 of file G-2301-05-P2-audio\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "boolean alreadyRecordingQuery ()"
+
+.PP
+funcion que devuelve si este cliente ya esta grabando audio o no 
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE si este cliente ya esta grabando audio\&. FALSE si no lo esta 
+.RE
+.PP
+
+.PP
+Definition at line 223 of file G-2301-05-P2-audio\&.c\&.
+.SS "int canIRead (intlen)"
+
+.PP
+funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin 'pasar' la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlen\fP el numero de bytes de distancia a comprobar si podemos o no leer
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 si no es posible leer len bytes del buffer\&. !0 si lo es 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file G-2301-05-P2-audio\&.c\&.
+.SS "int canIWrite (intlen)"
+
+.PP
+funcion que se encarga de comprobar si es posible escribir len bytes en el buffer de audio sin 'pasar' la posicion de lectura es decir, evalua si, al escribir len bytes, sobreescribiriamos memoria que aun no ha sido leida 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlen\fP el numero de bytes de distancia a comprobar si podemos o no escribir
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 si no es posible escribir len bytes del buffer\&. !0 si lo es 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file G-2301-05-P2-audio\&.c\&.
+.SS "void endAudioTransmission ()"
+
+.PP
+funcion que termina la transmision por parte del cliente que envia audio 
+.PP
+Definition at line 230 of file G-2301-05-P2-audio\&.c\&.
+.SS "long int initiateReciever ()"
+
+.PP
+rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer 
+.PP
+\fBReturns:\fP
+.RS 4
+NULL 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file G-2301-05-P2-audio\&.c\&.
+.SS "long int initiateSender ()"
+
+.PP
+rutina que se encarga del envio de audio 
+.PP
+\fBReturns:\fP
+.RS 4
+NULL 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file G-2301-05-P2-audio\&.c\&.
+.SS "void playBuffer (intlen)"
+
+.PP
+reproduce, si es posible, len bytes de audio almacenados en el buffer a partir de la posicion de lectura\&. Ademas, si se logro reproducir correctamente el audio, se actualiza la posicion de lectura del buffer\&. es necesario que los canales de reproduccion hayan sido abiertos previamente\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlen\fP el numero de bytes que queremos reproducir 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file G-2301-05-P2-audio\&.c\&.
+.SS "void* playThread (void *args)"
+
+.PP
+rutina que maneja el hilo que reproduce el audio el hilo empezara a reproducir el audio almacenado en el buffer con cierto retardo para permitir que haya algo escrito antes de empezar a intentar a reproducir\&. de la misma manera, si por algun motivo este hilo alcanza al que escribe en el buffer, esperara cierto tiempo para dejar que el que escribe le adelante 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargs\fP los argumentos que el hilo requiere para detectar cuando debe terminar de reproducir audio
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NULL 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file G-2301-05-P2-audio\&.c\&.
+.SS "void writeBuffer (char *buf, intlen)"
+
+.PP
+escribe, si es posible, en el buffer a partir de la posición de escritura\&. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP los bytes a escribir en el buffer 
+.br
+\fIlen\fP la cantidad de bytes a escribir en el buffer 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file G-2301-05-P2-audio\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "char audioBuffer[\fBAUDIO_BUFLEN\fP]"
+
+.PP
+Definition at line 5 of file G-2301-05-P2-audio\&.c\&.
+.SS "boolean grabandoAudio"
+
+.PP
+Definition at line 3 of file G-2301-05-P2-audio\&.c\&.
+.SS "int readPos"
+
+.PP
+Definition at line 7 of file G-2301-05-P2-audio\&.c\&.
+.SS "int writePos"
+
+.PP
+Definition at line 6 of file G-2301-05-P2-audio\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

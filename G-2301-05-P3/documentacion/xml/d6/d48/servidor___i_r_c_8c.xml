@@ -1,0 +1,734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d6/d48/servidor___i_r_c_8c" kind="file">
+    <compoundname>servidor_IRC.c</compoundname>
+    <includes refid="dd/dce/_g-2301-05-_p1-socket_8h" local="yes">../includes/G-2301-05-P1-socket.h</includes>
+    <includes refid="d4/db1/_g-2301-05-_p1-commands_8h" local="yes">../includes/G-2301-05-P1-commands.h</includes>
+    <includes refid="d5/df9/_g-2301-05-_p1-tools_8h" local="yes">../includes/G-2301-05-P1-tools.h</includes>
+    <includes refid="d4/d1f/_g-2301-05-_p2-user_tools_8h" local="yes">../includes/G-2301-05-P2-userTools.h</includes>
+    <includes refid="da/d26/_g-2301-05-_p1-types_8h" local="yes">../includes/G-2301-05-P1-types.h</includes>
+    <includes refid="d8/d51/_g-2301-05-_p3-ssl_8h" local="yes">../includes/G-2301-05-P3-ssl.h</includes>
+    <incdepgraph>
+      <node id="683">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="685">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="689">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="695">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="d8/dad/_g-2301-05-_p2-user_commands_8h"/>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+      </node>
+      <node id="677">
+        <label>stdint.h</label>
+      </node>
+      <node id="672">
+        <label>stdlib.h</label>
+      </node>
+      <node id="691">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="670" relation="include">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>errno.h</label>
+      </node>
+      <node id="668">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</label>
+        <link refid="servidor_IRC.c"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+      </node>
+      <node id="669">
+        <label>../includes/G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>netdb.h</label>
+      </node>
+      <node id="671">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>syslog.h</label>
+      </node>
+      <node id="694">
+        <label>openssl/err.h</label>
+      </node>
+      <node id="670">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>pthread.h</label>
+      </node>
+      <node id="681">
+        <label>sys/types.h</label>
+      </node>
+      <node id="674">
+        <label>string.h</label>
+      </node>
+      <node id="686">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="675">
+        <label>unistd.h</label>
+      </node>
+      <node id="687">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="684">
+        <label>sys/time.h</label>
+      </node>
+      <node id="682">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="692">
+        <label>../includes/G-2301-05-P3-ssl.h</label>
+        <link refid="d8/d51/_g-2301-05-_p3-ssl_8h"/>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+      </node>
+      <node id="690">
+        <label>../includes/G-2301-05-P1-commands.h</label>
+        <link refid="d4/db1/_g-2301-05-_p1-commands_8h"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="688">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="673">
+        <label>stdio.h</label>
+      </node>
+      <node id="693">
+        <label>openssl/ssl.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="d3/df7/structthread_args" prot="public">threadArgs</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d6/d48/servidor___i_r_c_8c_1adc5a02a0d82a5e7fd93802b082e24102" prot="public" static="no">
+        <name>THREAD_NUMBER</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="7" column="15" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" prot="public" static="no">
+        <type>long int(*</type>
+        <definition>typedef long int(* pFuncs)(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</definition>
+        <argsstring>)(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>pFuncs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="21" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean ssl_active</definition>
+        <argsstring></argsstring>
+        <name>ssl_active</name>
+        <initializer>=TRUE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="9" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d48/servidor___i_r_c_8c_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* hostname</definition>
+        <argsstring></argsstring>
+        <name>hostname</name>
+        <initializer>= &quot;JohnTitor&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="10" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="11" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" prot="public" static="no" mutable="no">
+        <type><ref refid="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" kindref="member">pFuncs</ref></type>
+        <definition>pFuncs functs[100]</definition>
+        <argsstring>[100]</argsstring>
+        <name>functs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="22" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d6/d48/servidor___i_r_c_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void freeThreadResources</definition>
+        <argsstring>(int socket)</argsstring>
+        <name>freeThreadResources</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <briefdescription>
+<para>libera los recursos de usuario asociados al hilo </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que es manejado por el hilo </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="29" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="29" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d48/servidor___i_r_c_8c_1a791c463e7015f87ec590d75a12a27b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int connectAndRegister</definition>
+        <argsstring>(int sockfd, struct sockaddr_in *client, struct sockaddr_in *server, SSL *ssl)</argsstring>
+        <name>connectAndRegister</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <briefdescription>
+<para>maneja el inicio de sesión del cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a enlazar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="50" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="50" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d48/servidor___i_r_c_8c_1a268c95a515ff89f8e975a7b03353d2be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int retrieveMsg</definition>
+        <argsstring>(int sockfd, struct sockaddr_in *server, struct sockaddr_in *client, SSL *ssl)</argsstring>
+        <name>retrieveMsg</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <briefdescription>
+<para>se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a enlazar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="151" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="151" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d48/servidor___i_r_c_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* threadRoutine</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>threadRoutine</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>el comportamiento del hilo tras ser creado. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>deberá ser un puntero a la estructura <ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL al acabar la sesión del hilo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="194" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="194" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d48/servidor___i_r_c_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" line="226" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c" bodystart="226" bodyend="311"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-socket.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-commands.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-tools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P2-userTools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-types.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P3-ssl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="d6/d48/servidor___i_r_c_8c_1adc5a02a0d82a5e7fd93802b082e24102" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>THREAD_NUMBER<sp/>10</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref>=TRUE;</highlight></codeline>
+<codeline lineno="10" refid="d6/d48/servidor___i_r_c_8c_1af203df082d5c6dcaa0c88b07cf86466d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d6/d48/servidor___i_r_c_8c_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;JohnTitor&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11" refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" refkind="member"><highlight class="normal">pthread_mutex_t<sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kindref="member">socket</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*<ref refid="d3/df7/structthread_args_1a00c4b9e068a2d36291a8410badf19e85" kindref="member">client</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*<ref refid="d3/df7/structthread_args_1a174501e91471cbe22c45a3a89a932d62" kindref="member">server</ref>;</highlight></codeline>
+<codeline lineno="17" refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL*<ref refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kindref="member">ssl</ref>;</highlight></codeline>
+<codeline lineno="18" refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL_CTX*<sp/><ref refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kindref="member">ctx</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>int<sp/>(*<ref refid="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" kindref="member">pFuncs</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="22" refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" refkind="member"><highlight class="normal"><ref refid="d6/d48/servidor___i_r_c_8c_1af4fbc62d68085a32b47e88d447b77b28" kindref="member">pFuncs</ref><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[100];</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="d6/d48/servidor___i_r_c_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" kindref="member">freeThreadResources</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>retVal;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1af3b23798269ccab05560708cc1a22a92" kindref="member">getNickFromSocket</ref>(socket,<sp/>&amp;nick))<sp/>!=<sp/>IRC_OK)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>freeThreadResources<sp/>-&gt;<sp/>getNickFromSocket&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCTADUser_Delete(0,<sp/>NULL,<sp/>nick,<sp/>NULL);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>free(nick);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d6/d48/servidor___i_r_c_8c_1a791c463e7015f87ec590d75a12a27b03" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a791c463e7015f87ec590d75a12a27b03" kindref="member">connectAndRegister</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/>SSL*ssl)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state<sp/>=<sp/>0,<sp/>oSocket;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*command<sp/>=<sp/>NULL,<sp/>*nickname<sp/>=<sp/>NULL,<sp/>*username<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*modeHost<sp/>=<sp/>NULL,<sp/>*serverOther<sp/>=<sp/>NULL,<sp/>*realname<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strPos,<sp/>*myIP,<sp/>*otherIP,<sp/>*rpl;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[256];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>retVal;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a2850885f03b7654d239b361940416bef" kindref="member">getIP</ref>(server,<sp/>&amp;myIP);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a2850885f03b7654d239b361940416bef" kindref="member">getIP</ref>(client,<sp/>&amp;otherIP);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>256);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>0)<sp/>{</highlight><highlight class="comment">//state<sp/>0<sp/>implica<sp/>esperar<sp/>a<sp/>recibir<sp/>un<sp/>par<sp/>de<sp/>comandos<sp/>NICK<sp/>USER<sp/>validos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nickname<sp/>==<sp/>NULL)<sp/>{</highlight><highlight class="comment">//en<sp/>este<sp/>bucle<sp/>esperaremos<sp/>a<sp/>que<sp/>nos<sp/>llegue<sp/>un<sp/>NICK<sp/>bien<sp/>formado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>256);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(recv(sockfd,<sp/>buffer,<sp/>255,<sp/>0)<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>recv<sp/>NICK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kindref="member">recibir_datos_SSL</ref>(ssl,<sp/>buffer,<sp/>255)<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;el<sp/>dato<sp/>recibido<sp/>es<sp/>mal\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;*****************************\n%s\n*****************************\n&quot;,<sp/>buffer);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>IRC_UnPipelineCommands(strPos,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRC_CommandQuery(command)<sp/>==<sp/>2)<sp/>{</highlight><highlight class="comment">//hemos<sp/>recibido<sp/>un<sp/>NICK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRCParse_Nick(command,<sp/>&amp;prefix,<sp/>&amp;nickname,<sp/>&amp;msg)<sp/>!=<sp/>IRC_OK)<sp/>{</highlight><highlight class="comment">//en<sp/>caso<sp/>de<sp/>que<sp/>no<sp/>se<sp/>pueda<sp/>parsear<sp/>bien<sp/>el<sp/>comando</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a5b92fdc34c0427eb5cf8360e68aa9287" kindref="member">logVoidError</ref>(</highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectAndRegister<sp/>-&gt;<sp/>IRCParse_Nick&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(2,<sp/>&amp;nickname,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a5b92fdc34c0427eb5cf8360e68aa9287" kindref="member">logVoidError</ref>(</highlight><highlight class="stringliteral">&quot;no<sp/>es<sp/>un<sp/>mensaje<sp/>NICK&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(2,<sp/>&amp;prefix,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(username<sp/>==<sp/>NULL)<sp/>{</highlight><highlight class="comment">//en<sp/>este<sp/>bucle<sp/>esperaremos<sp/>a<sp/>que<sp/>nos<sp/>llegue<sp/>un<sp/>USER<sp/>bien<sp/>formado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strPos<sp/>==<sp/>NULL)<sp/>{</highlight><highlight class="comment">//quiere<sp/>decir<sp/>que<sp/>el<sp/>mensaje<sp/>anterior<sp/>no<sp/>tenia<sp/>los<sp/>dos<sp/>comandos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>256);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(recv(sockfd,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>buffer,<sp/>255,<sp/>0)<sp/>&lt;=<sp/>0)</highlight><highlight class="comment">//asi<sp/>que<sp/>esperamos<sp/>hasta<sp/>recibir<sp/>otro<sp/>mensaje<sp/>con<sp/>otro<sp/>comando</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>recv<sp/>USER&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kindref="member">recibir_datos_SSL</ref>(ssl,<sp/>buffer,<sp/>255)<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;el<sp/>dato<sp/>recibido<sp/>es<sp/>mal\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;*****************************\n%s\n*****************************\n&quot;,<sp/>buffer);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>IRC_UnPipelineCommands(strPos,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRC_CommandQuery(command)<sp/>==<sp/>3)<sp/>{</highlight><highlight class="comment">//hemos<sp/>recibido<sp/>un<sp/>USER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//en<sp/>caso<sp/>de<sp/>que<sp/>no<sp/>se<sp/>pueda<sp/>parsear<sp/>bien<sp/>el<sp/>comando<sp/>USER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRCParse_User(command,<sp/>&amp;prefix,<sp/>&amp;username,<sp/>&amp;modeHost,<sp/>&amp;serverOther,<sp/>&amp;realname)<sp/>!=<sp/>IRC_OK)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a5b92fdc34c0427eb5cf8360e68aa9287" kindref="member">logVoidError</ref>(</highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectAndRegister<sp/>-&gt;<sp/>IRCParse_User&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(username);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>username<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(0,<sp/></highlight><highlight class="stringliteral">&quot;no<sp/>es<sp/>un<sp/>mensaje<sp/>USER&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(4,<sp/>&amp;command,<sp/>&amp;prefix,<sp/>&amp;modeHost,<sp/>&amp;serverOther);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ahora<sp/>que<sp/>hemos<sp/>recibido<sp/>tanto<sp/>un<sp/>comando<sp/>NICK<sp/>como<sp/>un<sp/>comando<sp/>USER,<sp/>vamos<sp/>a<sp/>ver<sp/>si<sp/>los<sp/>NICK<sp/>y<sp/>USER<sp/>introducidos<sp/>son<sp/>válidos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight><highlight class="comment">//TODO:<sp/>poner<sp/>en<sp/>esta<sp/>condición<sp/>la<sp/>función<sp/>que<sp/>comprueba<sp/>que<sp/>el<sp/>NICK<sp/>y<sp/>el<sp/>USER<sp/>no<sp/>están<sp/>ya<sp/>usados.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/>IRCTADUser_New(username,<sp/>nickname,<sp/>realname,<sp/>NULL,<sp/><ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1aab4f68861c2e03b2a78c37c2213cb350" kindref="member">SERVERNAME</ref>,<sp/>otherIP,<sp/>sockfd))<sp/>!=<sp/>IRC_OK)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(retVal<sp/>==<sp/>IRCERR_NICKUSED)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a100eca1a277dd50fc2e289763dad8464" kindref="member">getSocketFromNick</ref>(&amp;oSocket,<sp/>nickname))<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectAndRegister<sp/>-&gt;<sp/>getSocketFromNick&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((retVal<sp/>=<sp/>IRCTADUser_Delete(0,<sp/>username,<sp/>nickname,<sp/>realname))<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectAndRegister<sp/>-&gt;<sp/>IRCTADUser_Delete&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//close(oSocket);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/>IRCTADUser_New(username,<sp/>nickname,<sp/>realname,<sp/>NULL,<sp/><ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1aab4f68861c2e03b2a78c37c2213cb350" kindref="member">SERVERNAME</ref>,<sp/>otherIP,<sp/>sockfd);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(retVal,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectAndRegister<sp/>-&gt;<sp/>IRCTADUser_New\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCMsg_RplWelcome(&amp;rpl,<sp/>myIP,<sp/>nickname,<sp/></highlight><highlight class="stringliteral">&quot;msg&quot;</highlight><highlight class="normal">,<sp/>username,<sp/>otherIP);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(sockfd,<sp/>rpl,<sp/>strlen(rpl)<sp/>+<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a71ed04f7f38be4fd5b1abec30a9ee130" kindref="member">enviar_datos_SSL</ref>(ssl,<sp/>rpl,<sp/>strlen(rpl)<sp/>+<sp/>1)<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;el<sp/>dato<sp/>recibido<sp/>es<sp/>mal\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(7,<sp/>&amp;nickname,<sp/>&amp;username,<sp/>&amp;msg,<sp/>&amp;realname,<sp/>&amp;rpl,<sp/>&amp;myIP,<sp/>&amp;otherIP);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="d6/d48/servidor___i_r_c_8c_1a268c95a515ff89f8e975a7b03353d2be" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a268c95a515ff89f8e975a7b03353d2be" kindref="member">retrieveMsg</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/>SSL*ssl)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[512];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*command<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strPos;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>byteCount;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>commandNumber;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;se<sp/>ingresa<sp/>en<sp/>el<sp/>bucle<sp/>de<sp/>retrieveMsg\n&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(buffer,<sp/>0,<sp/>512);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>FALSE)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byteCount<sp/>=<sp/>recv(sockfd,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>buffer,<sp/>511,<sp/>0);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>byteCount<sp/>=<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a1efb5af79fa6ea71c4d9ceb8f718290f" kindref="member">recibir_datos_SSL</ref>(ssl,<sp/>buffer,<sp/>255);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(byteCount<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(0,<sp/></highlight><highlight class="stringliteral">&quot;retrieveMsg<sp/>exited&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(byteCount<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>retrieveMsg<sp/>-&gt;<sp/>recv&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;*****************************\n%s\n*****************************\n&quot;,<sp/>buffer);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(strPos<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strPos<sp/>=<sp/>IRC_UnPipelineCommands(strPos,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(command<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>commandNumber<sp/>=<sp/>IRC_CommandQuery(command);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(commandNumber<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>(sockfd,<sp/>server,<sp/>client,<sp/>command)<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>retrieveMsg<sp/>-&gt;<sp/>commandUnknown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[commandNumber](sockfd,<sp/>server,<sp/>client,<sp/>command)<sp/>!=<sp/>IRC_OK)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>retrieveMsg<sp/>-&gt;<sp/>pFuncs&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;command);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="d6/d48/servidor___i_r_c_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="d6/d48/servidor___i_r_c_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" kindref="member">threadRoutine</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_detach(pthread_self());</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(args<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a192fd5bf4f47fe63d449f291f92732a9" kindref="member">logPointerError</ref>(NULL,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>threadRoutine:<sp/>NULL<sp/>pointer<sp/>argument&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref>*<sp/>aux<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref>*)<sp/>args;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kindref="member">socket</ref><sp/>=<sp/>aux-&gt;<ref refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kindref="member">socket</ref>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>server;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>client;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL*ssl<sp/>=<sp/>aux-&gt;<ref refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kindref="member">ssl</ref>;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL_CTX<sp/>*ctx<sp/>=<sp/>aux-&gt;<ref refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kindref="member">ctx</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;server,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;client,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(&amp;server,<sp/>aux-&gt;<ref refid="d3/df7/structthread_args_1a174501e91471cbe22c45a3a89a932d62" kindref="member">server</ref>,<sp/>sizeof<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(&amp;client,<sp/>aux-&gt;<ref refid="d3/df7/structthread_args_1a00c4b9e068a2d36291a8410badf19e85" kindref="member">client</ref>,<sp/>sizeof<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a791c463e7015f87ec590d75a12a27b03" kindref="member">connectAndRegister</ref>(socket,<sp/>&amp;client,<sp/>&amp;server,<sp/>ssl);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a268c95a515ff89f8e975a7b03353d2be" kindref="member">retrieveMsg</ref>(socket,<sp/>&amp;server,<sp/>&amp;client,<sp/>ssl)<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a492f3eb1b5fd2db5f809828bcaeb8759" kindref="member">freeThreadResources</ref>(socket);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>TRUE)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1acdbfef38bb502e732928620f71daacd2" kindref="member">cerrar_canal_SSL</ref>(ssl,<sp/>ctx,<sp/>socket)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a192fd5bf4f47fe63d449f291f92732a9" kindref="member">logPointerError</ref>(NULL,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>threadRoutine:<sp/>cerrar_canal_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>free(args);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="d6/d48/servidor___i_r_c_8c_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/>newsockfd,<sp/>portno;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>serv_addr,<sp/>cli_addr;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_t<sp/>th;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref>*<sp/>args;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL_CTX*<sp/><ref refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kindref="member">ctx</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>SSL*<sp/><ref refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kindref="member">ssl</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//daemonizamos.<sp/>perderemos<sp/>el<sp/>rastro<sp/>del<sp/>proceso<sp/>en<sp/>la<sp/>terminal.<sp/>todos<sp/>los<sp/>errores<sp/>se<sp/>escribiran<sp/>en<sp/>el<sp/>syslog</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//daemonizar();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[0]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[1]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[2]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a6c14bedc2ca0c1a7748fd188966f0699" kindref="member">commandNick</ref>;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[3]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[4]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[5]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1aaa0cd83abb127533a58a9824d766302d" kindref="member">commandMode</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[6]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[7]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a8c61e34c067a94ff808b75f1b5346685" kindref="member">commandQuit</ref>;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[8]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[9]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a520a20b8ad5887dd2b600682bb3ea36e" kindref="member">commandJoin</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[10]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1adadde8a5b5af849c55509d9e9aef8dc1" kindref="member">commandPart</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[11]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a2c3f4be0a8d40030d1e249075f96f4fe" kindref="member">commandTopic</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[12]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1ab3b8ab89b3ae99edea8af60322538c1f" kindref="member">commandNames</ref>;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[13]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0ef7f97ab64eb311827dbe3509b071bb" kindref="member">commandList</ref>;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[14]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[15]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a1a1a0b84710fb5d6735e672b17fba549" kindref="member">commandKick</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[16]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0a4c40bf7931be7bd3f56586abf64357" kindref="member">commandPrivmsg</ref>;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[18]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af2e41d9c9e7f057a6f139528d75c8e87" kindref="member">commandMotd</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[31]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a5e1f1b69c0a63183b62225298d9ea0b6" kindref="member">commandWhois</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[34]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a4a1c3256c2cd2bbaf8c04b641de8e89b" kindref="member">commandPing</ref>;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1aeb1032d8268ea693782bef5c39d10e94" kindref="member">functs</ref>[37]<sp/>=<sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1acbe69f5fe4b81b494a330cf4e5ccc05d" kindref="member">commandAway</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>&lt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>portno<sp/>=<sp/>6667;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>=<sp/>FALSE;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(</highlight><highlight class="stringliteral">&quot;--port&quot;</highlight><highlight class="normal">,<sp/>argv[1])<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>portno<sp/>=<sp/>atoi(argv[2]);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pthread_mutex_init(&amp;<ref refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>,<sp/>NULL))<sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a5b92fdc34c0427eb5cf8360e68aa9287" kindref="member">logVoidError</ref>(</highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>pthread_mutex_init&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>sockfd<sp/>=<sp/><ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1ac0a294efde364937332533e4ecd8d121" kindref="member">openSocket_TCP</ref>();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" kindref="member">bindSocket_TCP</ref>(sockfd,<sp/>portno,<sp/>&amp;serv_addr)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(sockfd);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listen(sockfd,<sp/>50)<sp/>!=<sp/>0)</highlight><highlight class="comment">//mark<sp/>sockfd<sp/>as<sp/>a<sp/>socket<sp/>that<sp/>will<sp/>be<sp/>used<sp/>to<sp/>accept<sp/>incoming<sp/>connection<sp/>requests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>listen&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>TRUE)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a937108af8fd0832377b084e24172ee41" kindref="member">inicializar_nivel_SSL</ref>();</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctx<sp/>=<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a84a295d51a23d2558cbf65f436011dc6" kindref="member">fijar_contexto_SSL</ref>(</highlight><highlight class="stringliteral">&quot;certs/ca.pem&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;certs/servidor.pem&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;certs/servidor.pem&quot;</highlight><highlight class="normal">,<sp/>NULL);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ctx<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>fijar_contexto_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="d3/df7/structthread_args" kindref="compound">threadArgs</ref>));</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(args<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>malloc&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="d6/d48/servidor___i_r_c_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newsockfd<sp/>=<sp/><ref refid="dd/dce/_g-2301-05-_p1-socket_8h_1ae610867398c76f4226d89666d2e2646e" kindref="member">acceptConnection</ref>(sockfd,<sp/>&amp;cli_addr);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newsockfd<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>acceptConnection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d6/d48/servidor___i_r_c_8c_1a65183b3bbe4d9d8e2e47ea5eee7b4cce" kindref="member">ssl_active</ref><sp/>==<sp/>TRUE)<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ssl<sp/>=<sp/><ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1aaeb9457077403f2261ca1a86e3802a1d" kindref="member">aceptar_canal_seguro_SSL</ref>(ctx,<sp/>newsockfd);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ssl<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>aceptar_canal_seguro_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d8/d51/_g-2301-05-_p3-ssl_8h_1a8abf144662cb4cfd12428524f425854c" kindref="member">evaluar_post_connectar_SSL</ref>(ssl)<sp/>==<sp/>FALSE)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>main<sp/>-&gt;<sp/>evaluar_post_connectar_SSL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args-&gt;<ref refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kindref="member">socket</ref><sp/>=<sp/>newsockfd;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args-&gt;<ref refid="d3/df7/structthread_args_1a174501e91471cbe22c45a3a89a932d62" kindref="member">server</ref><sp/>=<sp/>&amp;serv_addr;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args-&gt;<ref refid="d3/df7/structthread_args_1a00c4b9e068a2d36291a8410badf19e85" kindref="member">client</ref><sp/>=<sp/>&amp;cli_addr;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args-&gt;<ref refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kindref="member">ssl</ref><sp/>=<sp/><ref refid="d3/df7/structthread_args_1ae7c0417fa2881f3546920311fee80311" kindref="member">ssl</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args-&gt;<ref refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kindref="member">ctx</ref><sp/>=<sp/><ref refid="d3/df7/structthread_args_1ad5433bcc8a463fb4df3ce5912bb11fe3" kindref="member">ctx</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_create(&amp;th,<sp/>NULL,<sp/>&amp;<ref refid="d6/d48/servidor___i_r_c_8c_1ac4e891ecfd0442a988ac4b2e1b88b796" kindref="member">threadRoutine</ref>,<sp/>args);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sockfd);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c"/>
+  </compounddef>
+</doxygen>

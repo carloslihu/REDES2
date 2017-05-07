@@ -1,0 +1,579 @@
+\hypertarget{_g-2301-05-_p2-xchat2_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/xchat2.c File Reference}
+\label{_g-2301-05-_p2-xchat2_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+}
+{\ttfamily \#include $<$redes2/ircxchat.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/audio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/commands.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Commands.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/basic\-Commands\-From\-Server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/replies\-From\-Server.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structthread_send_args}{thread\-Send\-Args}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long int($\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_a4b932f95396d02e0a0c48dfab971852a}{p\-Funcs} )(char $\ast$strin)
+\item 
+typedef long int($\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_aa0f4db7da8ca28c8ec5521d8825a83ea}{p\-User\-Funcs} )(int socket, char $\ast$strin)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a33f80a29a744e4182b29e23f13c1f05c}{I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key} (char $\ast$channel, char $\ast$key)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a7a439929c246e342ae525139b2c39f5d}{I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ac72762ab1e3575b421b967241db23f9c}{I\-R\-C\-Interface\-\_\-\-Activate\-Invite} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_af83498f4058311f4562c43a9b70566b2}{I\-R\-C\-Interface\-\_\-\-Activate\-Moderated} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ab5694cc413472173bfcaa969c7d9800e}{I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit} (char $\ast$channel, int limit)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ab1f09c737c7c109a97e22de6072d731d}{I\-R\-C\-Interface\-\_\-\-Activate\-Private} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ac45f12d4dcacf3b5485eec6fdc51df93}{I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_aa9e9155115b834d85a4d10cb27f99093}{I\-R\-C\-Interface\-\_\-\-Activate\-Secret} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a42773b5a840f9d0455f148d285e1e595}{I\-R\-C\-Interface\-\_\-\-Ban\-Nick} (char $\ast$channel, char $\ast$nick)
+\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_a4f5f3137c3be732b92b32a2de87deb58}{who\-Thread} (void $\ast$args)
+\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_a88a0a12cb382400bbca561b8f83efe73}{client\-Thread} (void $\ast$args)
+\item 
+long \hyperlink{_g-2301-05-_p2-xchat2_8c_aed072f4ce0d6e90697d4d6eb0278a2ad}{I\-R\-C\-Interface\-\_\-\-Connect} (char $\ast$nick, char $\ast$user, char $\ast$realname, char $\ast$password, char $\ast$server, int port, boolean ssl)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a3e67ee0cd384b524d57fda14593dce8e}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a638b1535f4ecbc9a6affb2df2a6a946e}{I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a9ba4e98a3729737aa63ebec54ba4e894}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ab760e8144b38f6c14bd809d157cee5d4}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a92c8cfbe2e14e19277e1c97d11719e80}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a8a6141803691ba327f11ba763ad075d4}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Private} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a5a57541a950f8c2c40b4b44c32b28ed9}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic} (char $\ast$channel)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a4956427664cabc7d5b2bd1589a207324}{I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret} (char $\ast$channel)
+\item 
+boolean \hyperlink{_g-2301-05-_p2-xchat2_8c_a8bf0424ef7f845be79a056e9aed56fe2}{I\-R\-C\-Interface\-\_\-\-Disconnect\-Server} (char $\ast$server, int port)
+\item 
+boolean \hyperlink{_g-2301-05-_p2-xchat2_8c_ab431412191716f751461f94d613ffdab}{I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat} (char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ae075029bb55e8b995f22beb0810674f4}{I\-R\-C\-Interface\-\_\-\-Give\-Op} (char $\ast$channel, char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_ae9effb4bdaf4a2cdf2dd9edbeb90b430}{I\-R\-C\-Interface\-\_\-\-Give\-Voice} (char $\ast$channel, char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a7adfea400a96160585f86179bafb055f}{I\-R\-C\-Interface\-\_\-\-Kick\-Nick} (char $\ast$channel, char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a214e10b19c8be028fb35d2a7abf3f798}{I\-R\-C\-Interface\-\_\-\-New\-Command\-Text} (char $\ast$command)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a080cf34ff506481737f6d08af60ca92b}{I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter} (char $\ast$topicdata)
+\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_ab5edba0766b7dde73e1a1d7595b9c42d}{thread\-Send} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em rutina que se encarga del envio de ficheros siguiendo un \char`\"{}protocolo\char`\"{} particular de este cliente este protocolo funciona de la siguiente manera\-: primero se envia un privmsg a quien deseemos enviar un fichero (en adelante, el receptor) este privmsg tendra la siguiente forma\-: \textbackslash{}002\-F\-S\-E\-N\-D \textbackslash{}001$<$$<$filename$>$$>$\textbackslash{}001 $<$$<$hostname$>$$>$ $<$$<$port$>$$>$ $<$$<$length$>$$>$ -\/donde \textbackslash{}002 es un caracter no imprimible que indica que es un privmsg especial que declara que se desea enviar un fichero -\/los \textbackslash{}001 son tambien caracteres no imprimibles que indican el comienzo y final del nombre del fichero a enviar -\/$<$$<$filename$>$$>$ es el nombre del fichero a enviar (puede contener espacios) -\/$<$$<$hostname$>$$>$ es el nombre dns de quien desea enviar el fichero (en adelante, el emisor) -\/$<$$<$port$>$$>$ es un entero donde se indica el puerto al que el receptor debera conectarse para recibir el fichero -\/$<$$<$length$>$$>$ es la longitud del fichero una vez que el receptor haya recibido este mensaje, obtendra los datos del mismo y mediante un prompt, el usuario receptor decidira si quiere o no recibir este fichero. La respuesta a este prompt se enviara a traves de la conexion declarada en el privmsg (hostname + port) en caso de respuesta negativa, esta conexion se acaba para ambas partes. en caso de respuesta afirmativa, el emisor procede a enviar todos los datos del fichero mediante la conexcion declarada por su parte, el receptor reconstruira el fichero con los datos que el emisor envie una vez acabada la transmision, ambas partes cierran la conexion \end{DoxyCompactList}\item 
+boolean \hyperlink{_g-2301-05-_p2-xchat2_8c_a100f1c87bb3b399a7284e62dd2e6172a}{I\-R\-C\-Interface\-\_\-\-Send\-File} (char $\ast$filename, char $\ast$nick, char $\ast$data, long unsigned int length)
+\item 
+void $\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_af38dd8b519a209e19f3b39aa7366bcda}{thread\-Record} (void $\ast$aux)
+\begin{DoxyCompactList}\small\item\em rutina que maneja el hilo que graba la voz del emisor en un envio de audio \end{DoxyCompactList}\item 
+boolean \hyperlink{_g-2301-05-_p2-xchat2_8c_a5dc7a44587e609b416a783cd420a12e3}{I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat} (char $\ast$nick)
+\item 
+boolean \hyperlink{_g-2301-05-_p2-xchat2_8c_a754a3d3dd311194637c07cc701e7d507}{I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat} (char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a4e2a1ea75e59306142030a91a054b7e6}{I\-R\-C\-Interface\-\_\-\-Take\-Op} (char $\ast$channel, char $\ast$nick)
+\item 
+void \hyperlink{_g-2301-05-_p2-xchat2_8c_a2ff2e10ed1cb1a399293b6f76ac1e5ae}{I\-R\-C\-Interface\-\_\-\-Take\-Voice} (char $\ast$channel, char $\ast$nick)
+\item 
+int \hyperlink{_g-2301-05-_p2-xchat2_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}{p\-Funcs} \hyperlink{_g-2301-05-_p2-xchat2_8c_a3b74f15bfc2af0a575608c31e269694a}{functs} \mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}
+\item 
+\hyperlink{_g-2301-05-_p2-xchat2_8c_aa0f4db7da8ca28c8ec5521d8825a83ea}{p\-User\-Funcs} \hyperlink{_g-2301-05-_p2-xchat2_8c_abe79a286412486fd4694376263d47045}{user\-Functs} \mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-U\-S\-E\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}
+\item 
+char $\ast$ \hyperlink{_g-2301-05-_p2-xchat2_8c_a07a8da7c5d9e4cce3c271c1907be47fe}{mi\-Nick}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a4b932f95396d02e0a0c48dfab971852a}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!p\-Funcs@{p\-Funcs}}
+\index{p\-Funcs@{p\-Funcs}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{p\-Funcs}]{\setlength{\rightskip}{0pt plus 5cm}typedef long int($\ast$ p\-Funcs)(char $\ast$strin)}}\label{_g-2301-05-_p2-xchat2_8c_a4b932f95396d02e0a0c48dfab971852a}
+
+
+Definition at line 18 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_aa0f4db7da8ca28c8ec5521d8825a83ea}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!p\-User\-Funcs@{p\-User\-Funcs}}
+\index{p\-User\-Funcs@{p\-User\-Funcs}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{p\-User\-Funcs}]{\setlength{\rightskip}{0pt plus 5cm}typedef long int($\ast$ p\-User\-Funcs)(int socket, char $\ast$strin)}}\label{_g-2301-05-_p2-xchat2_8c_aa0f4db7da8ca28c8ec5521d8825a83ea}
+
+
+Definition at line 19 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a88a0a12cb382400bbca561b8f83efe73}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!client\-Thread@{client\-Thread}}
+\index{client\-Thread@{client\-Thread}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{client\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ client\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a88a0a12cb382400bbca561b8f83efe73}
+
+
+Definition at line 445 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a33f80a29a744e4182b29e23f13c1f05c}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key@{I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key@{I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Channel\-Key (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a33f80a29a744e4182b29e23f13c1f05c}
+
+
+Definition at line 76 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a7a439929c246e342ae525139b2c39f5d}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages@{I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages@{I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-External\-Messages (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a7a439929c246e342ae525139b2c39f5d}
+
+
+Definition at line 118 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ac72762ab1e3575b421b967241db23f9c}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Invite@{I\-R\-C\-Interface\-\_\-\-Activate\-Invite}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Invite@{I\-R\-C\-Interface\-\_\-\-Activate\-Invite}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Invite}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Invite (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ac72762ab1e3575b421b967241db23f9c}
+
+
+Definition at line 158 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_af83498f4058311f4562c43a9b70566b2}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Moderated@{I\-R\-C\-Interface\-\_\-\-Activate\-Moderated}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Moderated@{I\-R\-C\-Interface\-\_\-\-Activate\-Moderated}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Moderated}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Moderated (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_af83498f4058311f4562c43a9b70566b2}
+
+
+Definition at line 198 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ab5694cc413472173bfcaa969c7d9800e}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit@{I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit@{I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Nicks\-Limit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{int}]{limit}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ab5694cc413472173bfcaa969c7d9800e}
+
+
+Definition at line 241 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ab1f09c737c7c109a97e22de6072d731d}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Private@{I\-R\-C\-Interface\-\_\-\-Activate\-Private}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Private@{I\-R\-C\-Interface\-\_\-\-Activate\-Private}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Private}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Private (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ab1f09c737c7c109a97e22de6072d731d}
+
+
+Definition at line 284 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ac45f12d4dcacf3b5485eec6fdc51df93}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic@{I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic@{I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Protect\-Topic (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ac45f12d4dcacf3b5485eec6fdc51df93}
+
+
+Definition at line 324 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_aa9e9155115b834d85a4d10cb27f99093}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Activate\-Secret@{I\-R\-C\-Interface\-\_\-\-Activate\-Secret}}
+\index{I\-R\-C\-Interface\-\_\-\-Activate\-Secret@{I\-R\-C\-Interface\-\_\-\-Activate\-Secret}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Activate\-Secret}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Activate\-Secret (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_aa9e9155115b834d85a4d10cb27f99093}
+
+
+Definition at line 365 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a42773b5a840f9d0455f148d285e1e595}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Ban\-Nick@{I\-R\-C\-Interface\-\_\-\-Ban\-Nick}}
+\index{I\-R\-C\-Interface\-\_\-\-Ban\-Nick@{I\-R\-C\-Interface\-\_\-\-Ban\-Nick}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Ban\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Ban\-Nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a42773b5a840f9d0455f148d285e1e595}
+
+
+Definition at line 408 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_aed072f4ce0d6e90697d4d6eb0278a2ad}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Connect@{I\-R\-C\-Interface\-\_\-\-Connect}}
+\index{I\-R\-C\-Interface\-\_\-\-Connect@{I\-R\-C\-Interface\-\_\-\-Connect}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}long I\-R\-C\-Interface\-\_\-\-Connect (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick, }
+\item[{char $\ast$}]{user, }
+\item[{char $\ast$}]{realname, }
+\item[{char $\ast$}]{password, }
+\item[{char $\ast$}]{server, }
+\item[{int}]{port, }
+\item[{boolean}]{ssl}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_aed072f4ce0d6e90697d4d6eb0278a2ad}
+
+
+Definition at line 527 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a3e67ee0cd384b524d57fda14593dce8e}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Channel\-Key (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a3e67ee0cd384b524d57fda14593dce8e}
+
+
+Definition at line 615 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a638b1535f4ecbc9a6affb2df2a6a946e}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages@{I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages@{I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-External\-Messages (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a638b1535f4ecbc9a6affb2df2a6a946e}
+
+
+Definition at line 656 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a9ba4e98a3729737aa63ebec54ba4e894}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Invite (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a9ba4e98a3729737aa63ebec54ba4e894}
+
+
+Definition at line 696 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ab760e8144b38f6c14bd809d157cee5d4}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Moderated (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ab760e8144b38f6c14bd809d157cee5d4}
+
+
+Definition at line 736 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a92c8cfbe2e14e19277e1c97d11719e80}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Nicks\-Limit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a92c8cfbe2e14e19277e1c97d11719e80}
+
+
+Definition at line 776 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a8a6141803691ba327f11ba763ad075d4}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Private@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Private}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Private@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Private}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Private}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Private (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a8a6141803691ba327f11ba763ad075d4}
+
+
+Definition at line 818 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a5a57541a950f8c2c40b4b44c32b28ed9}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Protect\-Topic (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a5a57541a950f8c2c40b4b44c32b28ed9}
+
+
+Definition at line 858 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a4956427664cabc7d5b2bd1589a207324}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret}}
+\index{I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret@{I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Deactivate\-Secret (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a4956427664cabc7d5b2bd1589a207324}
+
+
+Definition at line 898 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a8bf0424ef7f845be79a056e9aed56fe2}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Disconnect\-Server@{I\-R\-C\-Interface\-\_\-\-Disconnect\-Server}}
+\index{I\-R\-C\-Interface\-\_\-\-Disconnect\-Server@{I\-R\-C\-Interface\-\_\-\-Disconnect\-Server}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Disconnect\-Server}]{\setlength{\rightskip}{0pt plus 5cm}boolean I\-R\-C\-Interface\-\_\-\-Disconnect\-Server (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{server, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a8bf0424ef7f845be79a056e9aed56fe2}
+
+
+Definition at line 942 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ab431412191716f751461f94d613ffdab}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat}}
+\index{I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}boolean I\-R\-C\-Interface\-\_\-\-Exit\-Audio\-Chat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ab431412191716f751461f94d613ffdab}
+
+
+Definition at line 982 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ae075029bb55e8b995f22beb0810674f4}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Give\-Op@{I\-R\-C\-Interface\-\_\-\-Give\-Op}}
+\index{I\-R\-C\-Interface\-\_\-\-Give\-Op@{I\-R\-C\-Interface\-\_\-\-Give\-Op}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Give\-Op}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Give\-Op (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ae075029bb55e8b995f22beb0810674f4}
+
+
+Definition at line 1020 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ae9effb4bdaf4a2cdf2dd9edbeb90b430}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Give\-Voice@{I\-R\-C\-Interface\-\_\-\-Give\-Voice}}
+\index{I\-R\-C\-Interface\-\_\-\-Give\-Voice@{I\-R\-C\-Interface\-\_\-\-Give\-Voice}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Give\-Voice}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Give\-Voice (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ae9effb4bdaf4a2cdf2dd9edbeb90b430}
+
+
+Definition at line 1062 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a7adfea400a96160585f86179bafb055f}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Kick\-Nick@{I\-R\-C\-Interface\-\_\-\-Kick\-Nick}}
+\index{I\-R\-C\-Interface\-\_\-\-Kick\-Nick@{I\-R\-C\-Interface\-\_\-\-Kick\-Nick}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Kick\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Kick\-Nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a7adfea400a96160585f86179bafb055f}
+
+
+Definition at line 1103 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a214e10b19c8be028fb35d2a7abf3f798}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-New\-Command\-Text@{I\-R\-C\-Interface\-\_\-\-New\-Command\-Text}}
+\index{I\-R\-C\-Interface\-\_\-\-New\-Command\-Text@{I\-R\-C\-Interface\-\_\-\-New\-Command\-Text}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-New\-Command\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-New\-Command\-Text (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a214e10b19c8be028fb35d2a7abf3f798}
+
+
+Definition at line 1146 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a080cf34ff506481737f6d08af60ca92b}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter@{I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter}}
+\index{I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter@{I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-New\-Topic\-Enter (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{topicdata}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a080cf34ff506481737f6d08af60ca92b}
+
+
+Definition at line 1197 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a100f1c87bb3b399a7284e62dd2e6172a}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Send\-File@{I\-R\-C\-Interface\-\_\-\-Send\-File}}
+\index{I\-R\-C\-Interface\-\_\-\-Send\-File@{I\-R\-C\-Interface\-\_\-\-Send\-File}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Send\-File}]{\setlength{\rightskip}{0pt plus 5cm}boolean I\-R\-C\-Interface\-\_\-\-Send\-File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename, }
+\item[{char $\ast$}]{nick, }
+\item[{char $\ast$}]{data, }
+\item[{long unsigned int}]{length}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a100f1c87bb3b399a7284e62dd2e6172a}
+
+
+Definition at line 1338 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a5dc7a44587e609b416a783cd420a12e3}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat}}
+\index{I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}boolean I\-R\-C\-Interface\-\_\-\-Start\-Audio\-Chat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a5dc7a44587e609b416a783cd420a12e3}
+
+
+Definition at line 1448 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a754a3d3dd311194637c07cc701e7d507}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat}}
+\index{I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat@{I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}boolean I\-R\-C\-Interface\-\_\-\-Stop\-Audio\-Chat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a754a3d3dd311194637c07cc701e7d507}
+
+
+Definition at line 1489 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a4e2a1ea75e59306142030a91a054b7e6}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Take\-Op@{I\-R\-C\-Interface\-\_\-\-Take\-Op}}
+\index{I\-R\-C\-Interface\-\_\-\-Take\-Op@{I\-R\-C\-Interface\-\_\-\-Take\-Op}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Take\-Op}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Take\-Op (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a4e2a1ea75e59306142030a91a054b7e6}
+
+
+Definition at line 1527 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a2ff2e10ed1cb1a399293b6f76ac1e5ae}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!I\-R\-C\-Interface\-\_\-\-Take\-Voice@{I\-R\-C\-Interface\-\_\-\-Take\-Voice}}
+\index{I\-R\-C\-Interface\-\_\-\-Take\-Voice@{I\-R\-C\-Interface\-\_\-\-Take\-Voice}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{I\-R\-C\-Interface\-\_\-\-Take\-Voice}]{\setlength{\rightskip}{0pt plus 5cm}void I\-R\-C\-Interface\-\_\-\-Take\-Voice (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a2ff2e10ed1cb1a399293b6f76ac1e5ae}
+
+
+Definition at line 1568 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!main@{main}}
+\index{main@{main}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a0ddf1224851353fc92bfbff6f499fa97}
+M\-M\-M\-M\-M\-M\-M\-M\-M\-M M\-M\-M\-M\-M A\-A\-A\-A\-A\-A\-A I\-I\-I\-I\-I\-I\-I N\-N\-N\-N\-N\-N\-N\-N\-N\-N N\-N\-N\-N\-N\-N M\-M\-M\-M\-M\-M\-M\-M\-M\-M M\-M\-M\-M\-M A\-A\-A\-A\-A\-A\-A\-A I\-I\-I\-I\-I N\-N\-N\-N\-N\-N\-N\-N\-N\-N N\-N\-N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M M\-M M\-M A\-A\-A\-A\-A\-A\-A\-A\-A\-A\-A\-A\-A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M\-M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M M\-M A\-A\-A\-A\-A A\-A I\-I\-I N\-N\-N\-N\-N N\-N\-N\-N N\-N M\-M\-M\-M\-M\-M\-M M\-M\-M\-M A\-A\-A\-A\-A\-A A\-A\-A\-A I\-I\-I\-I\-I N\-N\-N\-N\-N\-N N\-N\-N\-N\-N\-N\-N M\-M\-M\-M\-M\-M\-M\-M\-M M\-M\-M\-M\-M\-M A\-A\-A\-A\-A\-A\-A\-A A\-A\-A\-A\-A\-A I\-I\-I\-I\-I\-I\-I N\-N\-N\-N\-N\-N\-N N\-N\-N\-N\-N\-N\-N 
+
+Definition at line 1602 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_af38dd8b519a209e19f3b39aa7366bcda}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!thread\-Record@{thread\-Record}}
+\index{thread\-Record@{thread\-Record}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{thread\-Record}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Record (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{aux}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_af38dd8b519a209e19f3b39aa7366bcda}
+
+
+rutina que maneja el hilo que graba la voz del emisor en un envio de audio 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & los argumentos que el hilo requiere. Como no requiere ninguno, este parametro puede ser N\-U\-L\-L\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 1360 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_ab5edba0766b7dde73e1a1d7595b9c42d}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!thread\-Send@{thread\-Send}}
+\index{thread\-Send@{thread\-Send}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{thread\-Send}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Send (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_ab5edba0766b7dde73e1a1d7595b9c42d}
+
+
+rutina que se encarga del envio de ficheros siguiendo un \char`\"{}protocolo\char`\"{} particular de este cliente este protocolo funciona de la siguiente manera\-: primero se envia un privmsg a quien deseemos enviar un fichero (en adelante, el receptor) este privmsg tendra la siguiente forma\-: \textbackslash{}002\-F\-S\-E\-N\-D \textbackslash{}001$<$$<$filename$>$$>$\textbackslash{}001 $<$$<$hostname$>$$>$ $<$$<$port$>$$>$ $<$$<$length$>$$>$ -\/donde \textbackslash{}002 es un caracter no imprimible que indica que es un privmsg especial que declara que se desea enviar un fichero -\/los \textbackslash{}001 son tambien caracteres no imprimibles que indican el comienzo y final del nombre del fichero a enviar -\/$<$$<$filename$>$$>$ es el nombre del fichero a enviar (puede contener espacios) -\/$<$$<$hostname$>$$>$ es el nombre dns de quien desea enviar el fichero (en adelante, el emisor) -\/$<$$<$port$>$$>$ es un entero donde se indica el puerto al que el receptor debera conectarse para recibir el fichero -\/$<$$<$length$>$$>$ es la longitud del fichero una vez que el receptor haya recibido este mensaje, obtendra los datos del mismo y mediante un prompt, el usuario receptor decidira si quiere o no recibir este fichero. La respuesta a este prompt se enviara a traves de la conexion declarada en el privmsg (hostname + port) en caso de respuesta negativa, esta conexion se acaba para ambas partes. en caso de respuesta afirmativa, el emisor procede a enviar todos los datos del fichero mediante la conexcion declarada por su parte, el receptor reconstruira el fichero con los datos que el emisor envie una vez acabada la transmision, ambas partes cierran la conexion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & los argumentos necesarios para que el hilo lleve a cabo el envio del fichero. son del tipo \char`\"{}struct thread\-Send\-Args\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 1235 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a4f5f3137c3be732b92b32a2de87deb58}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!who\-Thread@{who\-Thread}}
+\index{who\-Thread@{who\-Thread}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{who\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ who\-Thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-xchat2_8c_a4f5f3137c3be732b92b32a2de87deb58}
+
+
+Definition at line 419 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a3b74f15bfc2af0a575608c31e269694a}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!functs@{functs}}
+\index{functs@{functs}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{functs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-Funcs} functs\mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}}}\label{_g-2301-05-_p2-xchat2_8c_a3b74f15bfc2af0a575608c31e269694a}
+
+
+Definition at line 20 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_a07a8da7c5d9e4cce3c271c1907be47fe}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!mi\-Nick@{mi\-Nick}}
+\index{mi\-Nick@{mi\-Nick}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{mi\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mi\-Nick}}\label{_g-2301-05-_p2-xchat2_8c_a07a8da7c5d9e4cce3c271c1907be47fe}
+
+
+Definition at line 22 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+
+\hypertarget{_g-2301-05-_p2-xchat2_8c_abe79a286412486fd4694376263d47045}{\index{G-\/2301-\/05-\/\-P2-\/xchat2.\-c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}!user\-Functs@{user\-Functs}}
+\index{user\-Functs@{user\-Functs}!G-2301-05-P2-xchat2.c@{G-\/2301-\/05-\/\-P2-\/xchat2.\-c}}
+\subsubsection[{user\-Functs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-User\-Funcs} user\-Functs\mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-U\-S\-E\-R\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}}}\label{_g-2301-05-_p2-xchat2_8c_abe79a286412486fd4694376263d47045}
+
+
+Definition at line 21 of file G-\/2301-\/05-\/\-P2-\/xchat2.\-c.
+

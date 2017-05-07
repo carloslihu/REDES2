@@ -1,0 +1,457 @@
+\hypertarget{_g-2301-05-_p2-user_commands_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Commands.c File Reference}
+\label{_g-2301-05-_p2-user_commands_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Commands.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g-2301-05-_p2-user_commands_8c_ae0b4816fb45161ef9da5e6d6134ee28a}{T\-A\-M}~14
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{_g-2301-05-_p2-user_commands_8c_a8298aa0faf55aaec114edcb8d908c25e}{is\-Command} (long ncommand)
+\begin{DoxyCompactList}\small\item\em funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_ac0f28bc6174a23bc74895136febcc3d9}{user\-Default} (int socket, char $\ast$strin)
+\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_ad4918963d95cb113d1880341f5f6d35d}{user\-Away} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando A\-W\-A\-Y bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a1c5dfac34cc7c7e9f4f4ae92d480c860}{user\-Join} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando J\-O\-I\-N bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a1160187ecb124da41bd62d3987f493ec}{user\-Kick} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando K\-I\-C\-K bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a5f1403750b505dd46e42b4ee15f746da}{user\-List} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando L\-I\-S\-T bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a97047be2e2e4c4de7a0b50bf5dbab322}{user\-Mode} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando M\-O\-D\-E bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_aa5e23ebf9d8d7f2212750a7d0b25cb15}{user\-Motd} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando M\-O\-T\-D bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a15f6b4ed406c22d7cedebf968c431a38}{user\-Names} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando N\-A\-M\-E\-S bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_abbde12342143708da5cbbe02b42c6269}{user\-Nick} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando N\-I\-C\-K bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a4bd2ce0bd04f220d817a5fdc05ce02c9}{user\-Part} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando P\-A\-R\-T bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_abf18bb836181af4b31693795692475b6}{user\-Priv} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando P\-R\-I\-V\-M\-S\-G bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a9be44d33843127f69f9f10616c00e8a1}{user\-Quit} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando Q\-U\-I\-T bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_ab94f0c41cd0db8a444f83be537a25a27}{user\-Topic} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando T\-O\-P\-I\-C bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_aa09b497c8e02a85ce7b5c55847ea0e6e}{user\-Whois} (int socket, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em funcion que envia un comando W\-H\-O\-I\-S bien formado al servidor \end{DoxyCompactList}\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_a3f3e5e80766b57227cb712a5746238a8}{user\-Who} (int socket, char $\ast$strin)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{_g-2301-05-_p2-user_commands_8c_aef124ac385578c5a6c3308a917fee8ad}{n\-Commands} \mbox{[}\hyperlink{_g-2301-05-_p2-user_commands_8c_ae0b4816fb45161ef9da5e6d6134ee28a}{T\-A\-M}\mbox{]} = \{U\-A\-W\-A\-Y, U\-J\-O\-I\-N, U\-M\-S\-G, U\-K\-I\-C\-K, U\-L\-I\-S\-T, U\-M\-O\-D\-E, U\-M\-O\-T\-D, U\-N\-A\-M\-E\-S, U\-N\-I\-C\-K, U\-P\-A\-R\-T, U\-Q\-U\-I\-T, U\-T\-O\-P\-I\-C, U\-W\-H\-O\-I\-S, U\-W\-H\-O\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g-2301-05-_p2-user_commands_8c_ae0b4816fb45161ef9da5e6d6134ee28a}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!T\-A\-M@{T\-A\-M}}
+\index{T\-A\-M@{T\-A\-M}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{T\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-M~14}}\label{_g-2301-05-_p2-user_commands_8c_ae0b4816fb45161ef9da5e6d6134ee28a}
+
+
+Definition at line 2 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a8298aa0faf55aaec114edcb8d908c25e}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!is\-Command@{is\-Command}}
+\index{is\-Command@{is\-Command}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{is\-Command}]{\setlength{\rightskip}{0pt plus 5cm}boolean is\-Command (
+\begin{DoxyParamCaption}
+\item[{long}]{ncommand}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a8298aa0faf55aaec114edcb8d908c25e}
+
+
+funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncommand} & el entero largo que representa un comando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E si ese comando es soportado por este cliente, F\-A\-L\-S\-E de lo contrario 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_ad4918963d95cb113d1880341f5f6d35d}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Away@{user\-Away}}
+\index{user\-Away@{user\-Away}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Away}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Away (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_ad4918963d95cb113d1880341f5f6d35d}
+
+
+funcion que envia un comando A\-W\-A\-Y bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_ac0f28bc6174a23bc74895136febcc3d9}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Default@{user\-Default}}
+\index{user\-Default@{user\-Default}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Default}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Default (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_ac0f28bc6174a23bc74895136febcc3d9}
+
+
+Definition at line 20 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a1c5dfac34cc7c7e9f4f4ae92d480c860}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Join@{user\-Join}}
+\index{user\-Join@{user\-Join}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Join}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Join (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a1c5dfac34cc7c7e9f4f4ae92d480c860}
+
+
+funcion que envia un comando J\-O\-I\-N bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a1160187ecb124da41bd62d3987f493ec}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Kick@{user\-Kick}}
+\index{user\-Kick@{user\-Kick}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Kick}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Kick (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a1160187ecb124da41bd62d3987f493ec}
+
+
+funcion que envia un comando K\-I\-C\-K bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a5f1403750b505dd46e42b4ee15f746da}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-List@{user\-List}}
+\index{user\-List@{user\-List}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-List}]{\setlength{\rightskip}{0pt plus 5cm}long user\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a5f1403750b505dd46e42b4ee15f746da}
+
+
+funcion que envia un comando L\-I\-S\-T bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a97047be2e2e4c4de7a0b50bf5dbab322}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Mode@{user\-Mode}}
+\index{user\-Mode@{user\-Mode}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a97047be2e2e4c4de7a0b50bf5dbab322}
+
+
+funcion que envia un comando M\-O\-D\-E bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_aa5e23ebf9d8d7f2212750a7d0b25cb15}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Motd@{user\-Motd}}
+\index{user\-Motd@{user\-Motd}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Motd}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Motd (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_aa5e23ebf9d8d7f2212750a7d0b25cb15}
+
+
+funcion que envia un comando M\-O\-T\-D bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a15f6b4ed406c22d7cedebf968c431a38}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Names@{user\-Names}}
+\index{user\-Names@{user\-Names}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Names}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Names (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a15f6b4ed406c22d7cedebf968c431a38}
+
+
+funcion que envia un comando N\-A\-M\-E\-S bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_abbde12342143708da5cbbe02b42c6269}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Nick@{user\-Nick}}
+\index{user\-Nick@{user\-Nick}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Nick (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_abbde12342143708da5cbbe02b42c6269}
+
+
+funcion que envia un comando N\-I\-C\-K bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a4bd2ce0bd04f220d817a5fdc05ce02c9}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Part@{user\-Part}}
+\index{user\-Part@{user\-Part}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Part}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Part (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a4bd2ce0bd04f220d817a5fdc05ce02c9}
+
+
+funcion que envia un comando P\-A\-R\-T bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_abf18bb836181af4b31693795692475b6}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Priv@{user\-Priv}}
+\index{user\-Priv@{user\-Priv}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Priv}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Priv (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_abf18bb836181af4b31693795692475b6}
+
+
+funcion que envia un comando P\-R\-I\-V\-M\-S\-G bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a9be44d33843127f69f9f10616c00e8a1}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Quit@{user\-Quit}}
+\index{user\-Quit@{user\-Quit}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Quit}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Quit (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a9be44d33843127f69f9f10616c00e8a1}
+
+
+funcion que envia un comando Q\-U\-I\-T bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 335 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_ab94f0c41cd0db8a444f83be537a25a27}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Topic@{user\-Topic}}
+\index{user\-Topic@{user\-Topic}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Topic (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_ab94f0c41cd0db8a444f83be537a25a27}
+
+
+funcion que envia un comando T\-O\-P\-I\-C bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_a3f3e5e80766b57227cb712a5746238a8}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Who@{user\-Who}}
+\index{user\-Who@{user\-Who}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Who}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Who (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_a3f3e5e80766b57227cb712a5746238a8}
+
+
+Definition at line 410 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_commands_8c_aa09b497c8e02a85ce7b5c55847ea0e6e}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!user\-Whois@{user\-Whois}}
+\index{user\-Whois@{user\-Whois}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{user\-Whois}]{\setlength{\rightskip}{0pt plus 5cm}long user\-Whois (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_commands_8c_aa09b497c8e02a85ce7b5c55847ea0e6e}
+
+
+funcion que envia un comando W\-H\-O\-I\-S bien formado al servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el comando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g-2301-05-_p2-user_commands_8c_aef124ac385578c5a6c3308a917fee8ad}{\index{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}!n\-Commands@{n\-Commands}}
+\index{n\-Commands@{n\-Commands}!G-2301-05-P2-userCommands.c@{G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c}}
+\subsubsection[{n\-Commands}]{\setlength{\rightskip}{0pt plus 5cm}long n\-Commands\mbox{[}{\bf T\-A\-M}\mbox{]} = \{U\-A\-W\-A\-Y, U\-J\-O\-I\-N, U\-M\-S\-G, U\-K\-I\-C\-K, U\-L\-I\-S\-T, U\-M\-O\-D\-E, U\-M\-O\-T\-D, U\-N\-A\-M\-E\-S, U\-N\-I\-C\-K, U\-P\-A\-R\-T, U\-Q\-U\-I\-T, U\-T\-O\-P\-I\-C, U\-W\-H\-O\-I\-S, U\-W\-H\-O\}}}\label{_g-2301-05-_p2-user_commands_8c_aef124ac385578c5a6c3308a917fee8ad}
+
+
+Definition at line 3 of file G-\/2301-\/05-\/\-P2-\/user\-Commands.\-c.
+

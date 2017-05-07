@@ -1,0 +1,475 @@
+.TH "G-2301-05-P2-basicCommandsFromServer.h" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+G-2301-05-P2-basicCommandsFromServer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2301-05-P2-userTools\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMSG_DEFAULT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMSG_PASS\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMSG_NICK\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMSG_MODE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBMSG_SERVICE\fP   6"
+.br
+.ti -1c
+.RI "#define \fBMSG_QUIT\fP   7"
+.br
+.ti -1c
+.RI "#define \fBMSG_JOIN\fP   9"
+.br
+.ti -1c
+.RI "#define \fBMSG_PART\fP   10"
+.br
+.ti -1c
+.RI "#define \fBMSG_TOPIC\fP   11"
+.br
+.ti -1c
+.RI "#define \fBMSG_NAMES\fP   12"
+.br
+.ti -1c
+.RI "#define \fBMSG_KICK\fP   15"
+.br
+.ti -1c
+.RI "#define \fBMSG_PRIVMSG\fP   16"
+.br
+.ti -1c
+.RI "#define \fBMSG_WHO\fP   30"
+.br
+.ti -1c
+.RI "#define \fBMSG_WHOIS\fP   31"
+.br
+.ti -1c
+.RI "#define \fBMSG_PING\fP   34"
+.br
+.ti -1c
+.RI "#define \fBMSG_SETNAME\fP   58"
+.br
+.ti -1c
+.RI "#define \fBFILE_BUFLEN\fP   1024"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBreactDefault\fP (char *strin)"
+.br
+.RI "\fIrutina por defecto ante un mensaje no reconocido por este cliente \fP"
+.ti -1c
+.RI "long \fBreactPrint\fP (char *strin)"
+.br
+.RI "\fImaneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin \fP"
+.ti -1c
+.RI "long \fBreactPass\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando PASS \fP"
+.ti -1c
+.RI "long \fBreactNick\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando NICK\&. Esta rutina cambia el nick del usuario \fP"
+.ti -1c
+.RI "long \fBreactMode\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando MODE\&. Este comando cambia los modos del canal \fP"
+.ti -1c
+.RI "long \fBreactService\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando SERVICE \fP"
+.ti -1c
+.RI "long \fBreactJoin\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando JOIN\&. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario \fP"
+.ti -1c
+.RI "long \fBreactPart\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando PART\&. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal \fP"
+.ti -1c
+.RI "long \fBreactTopic\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando TOPIC\&. Cambia el topico del canal \fP"
+.ti -1c
+.RI "long \fBreactKick\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando KICK Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal \fP"
+.ti -1c
+.RI "long \fBreactPrivmsg\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando PRIVMSG\&. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta\&. tambien maneja un caso particular de PrivMsg que sirve para identificar una peticion de envio de ficheros \fP"
+.ti -1c
+.RI "long \fBreactPing\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando PING \fP"
+.ti -1c
+.RI "long \fBreactSetName\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando SETNAME \fP"
+.ti -1c
+.RI "long \fBreactNames\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando NAMES \fP"
+.ti -1c
+.RI "long \fBreactQuit\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de un comando QUIT\&. Se asume que solo se recibirá un quit de otro cliente \fP"
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FILE_BUFLEN   1024"
+
+.PP
+Definition at line 22 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_DEFAULT   0"
+
+.PP
+Definition at line 5 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_JOIN   9"
+
+.PP
+Definition at line 11 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_KICK   15"
+
+.PP
+Definition at line 15 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_MODE   5"
+
+.PP
+Definition at line 8 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_NAMES   12"
+
+.PP
+Definition at line 14 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_NICK   2"
+
+.PP
+Definition at line 7 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_PART   10"
+
+.PP
+Definition at line 12 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_PASS   1"
+
+.PP
+Definition at line 6 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_PING   34"
+
+.PP
+Definition at line 19 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_PRIVMSG   16"
+
+.PP
+Definition at line 16 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_QUIT   7"
+
+.PP
+Definition at line 10 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_SERVICE   6"
+
+.PP
+Definition at line 9 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_SETNAME   58"
+
+.PP
+Definition at line 20 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_TOPIC   11"
+
+.PP
+Definition at line 13 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_WHO   30"
+
+.PP
+Definition at line 17 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SS "#define MSG_WHOIS   31"
+
+.PP
+Definition at line 18 of file G-2301-05-P2-basicCommandsFromServer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "long reactDefault (char *strin)"
+
+.PP
+rutina por defecto ante un mensaje no reconocido por este cliente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactJoin (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando JOIN\&. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactKick (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando KICK Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 273 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactMode (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando MODE\&. Este comando cambia los modos del canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactNames (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando NAMES 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 628 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactNick (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando NICK\&. Esta rutina cambia el nick del usuario 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactPart (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando PART\&. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 216 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactPass (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando PASS 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactPing (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando PING 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 596 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactPrint (char *strin)"
+
+.PP
+maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el commando recibido
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK si fue bien, otra cosa si no 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactPrivmsg (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando PRIVMSG\&. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta\&. tambien maneja un caso particular de PrivMsg que sirve para identificar una peticion de envio de ficheros 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 506 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactQuit (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando QUIT\&. Se asume que solo se recibirá un quit de otro cliente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 653 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactService (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando SERVICE 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 143 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactSetName (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando SETNAME 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 617 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SS "long reactTopic (char *strin)"
+
+.PP
+rutina que maneja la llegada de un comando TOPIC\&. Cambia el topico del canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 244 of file G-2301-05-P2-basicCommandsFromServer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

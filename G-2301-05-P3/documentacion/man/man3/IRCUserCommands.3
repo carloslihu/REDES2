@@ -1,0 +1,281 @@
+.TH "userCommands" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+userCommands \- 
+Funciones que se encargan del envio de Commandos al servidor
+.PP
+.PP
+ isCommand
+funcion que comprueba si el entero largo es un Commando de usuario implementado por este cliente
+.PP
+\fBParameters:\fP
+.RS 4
+\fIncommand\fP el entero largo que representa un Commando
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE si ese Commando es soportado por este cliente, FALSE de lo contrario
+.RE
+.PP
+.PP
+ 
+.SS "userDefault"
+funcion por defecto para valores de Commandos no implementados
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userAway"
+funcion que envia un Commando AWAY bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userJoin"
+funcion que envia un Commando JOIN bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userKick"
+funcion que envia un Commando KICK bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userList"
+funcion que envia un Commando LIST bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userMode"
+funcion que envia un Commando MODE bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userMotd"
+funcion que envia un Commando MOTD bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userNames"
+funcion que envia un Commando NAMES bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userNick"
+funcion que envia un Commando NICK bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userPart"
+funcion que envia un Commando PART bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userPriv"
+funcion que envia un Commando PRIVMSG bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userQuit"
+funcion que envia un Commando QUIT bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userTopic"
+funcion que envia un Commando TOPIC bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userWhois"
+funcion que envia un Commando WHOIS bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "userWho"
+funcion que envia un Commando WHO bien formado al servidor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el Commando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

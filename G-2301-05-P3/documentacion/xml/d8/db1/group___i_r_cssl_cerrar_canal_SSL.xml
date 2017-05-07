@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_cerrar_canal_SSL" kind="page">
+    <compoundname>cerrar_canal_SSL</compoundname>
+    <title>cerrar_canal_SSL</title>
+    <detaileddescription>
+<para>Esta función liberará todos los recursos y cerrará el canal de comunicación seguro creado previamente. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contexto de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket de la conexión segura</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 si ha ido bien, -1 si ha habido un fallo</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>
