@@ -26,12 +26,10 @@ CLIENT
 	-para ver la lista de todas las macros de comandos de usuario, visitar:
 	 http://metis.ii.uam.es/irc_8h.html#adf764cbdea00d65edcd07bb9953ad2b7abf3301180fc6801518448ea0af772c17
 	 bajando un rato se llegan a los de usuario. Revisar por si hay alguno que habría que implementar
-	-si nos da tiempo, sustituir las variables globales del fichero G-2301-05-P2-userCommands.c por variables locales en cada una de las funciones
-	 (por tema de estilo mas que nada, no vaya a ser que nos quiten nota por cosas tontas como esa)
 	-he hecho cambios en la funcion de clientThread y en el archivo de comandos de usuario para que (en teoria) ya no sea necesaria la función isCommand.
 	 Asegurar que no lo es
 
 
 SSL
-	-conseguir que pase la prueba 3 de c3po (ahora mismo falla, así que está algo aparcado)
+	-integrar ssl al xchat
 	-finiquitar la memoria
