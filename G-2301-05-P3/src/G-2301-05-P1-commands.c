@@ -39,6 +39,24 @@ long int megaSend(char* command, char** nicks, long int num) {
     return IRC_OK;
 }
 
+boolean doesChannelExist(char* chan){
+    char **list, *mask;
+    long int i, nList, retVal;
+    if(chan == NULL)
+        return logIntError(FALSE, "error @ doesChannelExist -> invalid arguments");
+    mask = NULL;
+    if((retVal = IRCTADChan_GetList(&list, &nList, mask)) != IRC_OK)
+        return logIntError(FALSE, "error @ doesChannelExist -> longIRCTADChan_GetList");
+    for(i=0; i<nList; i++){
+        if(strcmp(chan, list[i]) == 0){
+            IRCTADChan_FreeList(list, nList);
+            return TRUE;
+        }
+    }
+    IRCTADChan_FreeList(list, nList);
+    return FALSE;
+}
+
 /**
  * @brief comprueba si un nick pertenece a una lista de nicks
  * recorre la lista de manera lineal para determinar si el nick existe o no dentro de dicha lista
@@ -302,7 +320,7 @@ long int commandWho(int socket, struct sockaddr_in *client, struct sockaddr_in *
         }
     } else//caso en el que debemos enviar la informacion de un usuario en concreto
     {
-        /*if (oppar != NULL /*&& oppar[0] != 'o')
+        /*if (oppar != NULL) //&& oppar[0] != 'o')
         {
             IRCTADUser_GetData(&id, &user, &mask, &realname, &host, &IP, &sock, &creationTS, &actionTS, &away);
             IRCMsg_RplWhoReply(&command, prefix, myNick, "*", user, host, SERVERNAME, mask, "H", 0, realname);
@@ -570,7 +588,7 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
 {
     long int id = 0, nNicks;
     long int retVal;
-    char *prefix = NULL, *channel = NULL, *key = NULL, *msg = NULL;
+    char *prefix = NULL, *channel = NULL, *key = NULL, *msg = NULL, *uMode = NULL;
     char *userOr = NULL, *nickOr = NULL, *realOr = NULL;
     char *host = NULL, *IP = NULL, *away = NULL, *command = NULL;
     char **listNicks;
@@ -608,21 +626,22 @@ long int commandJoin(int socket, struct sockaddr_in *client, struct sockaddr_in 
     }
     IRC_ComplexUser(&prefix, nickOr, userOr, host, NULL);
     //intentamos unirnos al canal
+    if(doesChannelExist(channel) == FALSE)
+        uMode = "o";
     retVal = IRCTADChan_GetModeInt(channel);
     //en caso de que el canal no requiera contraseña o que la contraseña sea la correcta
-    if (((retVal & IRCMODE_CHANNELPASSWORD) != IRCMODE_CHANNELPASSWORD) ||
-            (key != NULL && (IRCTADChan_TestPassword(channel, key) == IRC_OK))) {
-        retVal = IRCTAD_Join(channel, nickOr, "o", key);
-        if (retVal != IRC_OK) {
-            IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
-            return logIntError(retVal, "error @ commandJoin -> IRCTAD_Join");
-        }
-        //en caso de unirnos correctamente, preparamos un mensaje de respuesta al cliente
-        //if ((retVal = IRCMsg_Join(&command, nickOr, NULL, NULL, channel)) != IRC_OK) {
+    if (((retVal & IRCMODE_CHANNELPASSWORD) != IRCMODE_CHANNELPASSWORD) || (key != NULL && (IRCTADChan_TestPassword(channel, key) == IRC_OK))) {
         if ((retVal = IRCMsg_Join(&command, prefix, NULL, NULL, channel)) != IRC_OK) {
             IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
             return logIntError(retVal, "error @ commandJoin -> IRCMsg_Join");
         }
+        retVal = IRCTAD_Join(channel, nickOr, uMode, key);
+        if (retVal != IRC_OK) {
+            IRC_MFree(11, &command, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);
+            return logIntError(retVal, "error @ commandJoin -> IRCTAD_Join");
+        }
+        //en caso de unirnos correctamente, preparamos un mensaje de respuesta al cliente
+        //if ((retVal = IRCMsg_Join(&command, nickOr, NULL, NULL, channel)) != IRC_OK) {
     } else {
         if ((retVal = IRCMsg_ErrBadChannelKey(&command, prefix, nickOr, channel)) != IRC_OK) {
             IRC_MFree(10, &userOr, &nickOr, &realOr, &host, &IP, &away, &channel, &key, &msg, &nickp);

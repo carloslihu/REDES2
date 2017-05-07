@@ -161,12 +161,12 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
 void* threadPing(void* args) {
     char **nicks;
     char *user, *nick, *real, *host, *IP, *away;
-    char[10]="PING"
+    //char[10]="PING"
     int socket, i;
     long num, id, creationTS, actionTS;
     nicks = NULL;
     user = nick = real = host = IP = away = NULL;
-    socket = num = id = creationTS = NULL;
+    socket = num = id = creationTS = 0;
 
     while (1) {
         if (IRCTADUser_GetNickList(&nicks, &num) != IRC_OK)
