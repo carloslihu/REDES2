@@ -113,7 +113,6 @@ long reactMode(char* strin) {
 
     //si los modos se refieren a los modos de un canal
     if (user == NULL) {
-
         iMode = IRCInterface_ModeToIntModeThread(mode);
         if (mode[0] == '-')
             IRCInterface_DeleteModeChannelThread(channeluser, iMode);
@@ -133,12 +132,14 @@ long reactMode(char* strin) {
             IRCInterface_ChangeNickStateChannelThread(channeluser, user, NONE);
     }
     //Who tras cambiar el mode para actualizar interfaz
+    free(prefix);
+    prefix = NULL;
     IRCMsg_Who(&command, prefix, channeluser, NULL);
     if (send(sockfd, command, strlen(command), 0) <= 0) {
-        IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
+        IRC_MFree(7, &prefix, &channeluser, &nick, &user, &host, &server, &command);
         return logIntError(-1, "error @ reactMode -> send");
     }
-    IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
+    IRC_MFree(7, &prefix, &channeluser, &nick, &user, &host, &server, &command);
     return IRC_OK;
 }
 
