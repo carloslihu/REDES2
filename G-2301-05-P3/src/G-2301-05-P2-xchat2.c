@@ -439,7 +439,7 @@ void* whoThread(void * args) {
 			free(command);
 		}
 		IRCInterface_FreeListAllChannelsThread(channels, num);
-		sleep(10);
+		sleep(30);
 	}
 	free(args);
 	return NULL;
