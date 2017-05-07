@@ -64,7 +64,6 @@ long userJoin(int socket, char* strin) {
 	IRCInterface_WriteSystem(NULL, command);
 	if (send(socket, command, strlen(command), 0) == -1)
 		return logIntError(-1, "error @ userJoin -> send");
-	printf("send: %s\n", command);
 	IRC_MFree(3, &command, &channel, &password);
 	return IRC_OK;
 }
@@ -333,8 +332,9 @@ long userPriv(int socket, char* strin) {
  * @return IRC_OK
  */
 long userQuit(int socket, char* strin) {
-	char*command, *msg;
+	char*command, *msg, **channels;
 	long ret = 0;
+	int num, i;
 	command = msg = NULL;
 	if ((ret = IRCUserParse_Quit(strin, &msg)) != IRC_OK)
 		return logIntError(ret, "error @ userQuit -> IRCUserParse_Quit");
@@ -348,10 +348,17 @@ long userQuit(int socket, char* strin) {
 	if (send(socket, command, strlen(command), 0) == -1)
 		return logIntError(-1, "error @ userQuit -> send");
 
+	IRCInterface_ListAllChannels(&channels, &num);
+    for (i = num - 1; i >= 0; i--) {
+        IRCInterface_RemoveChannel(channels[i]);
+        free(channels[i]);
+        channels[i] = NULL;
+    }
+
 	close(sockfd);
 	sockfd = -1;
 
-	IRC_MFree(2, &command, &msg);
+	IRC_MFree(2, &command, &msg, &channels);
 	return IRC_OK;
 
 }
@@ -377,7 +384,6 @@ long userTopic(int socket, char* strin) {
 	IRCInterface_WriteSystem(NULL, command);
 	if (send(socket, command, strlen(command), 0) == -1)
 		return logIntError(-1, "error @ userTopic -> send");
-	printf("send: %s\n", command);
 	IRC_MFree(2, &command, &msg);
 
 	return IRC_OK;

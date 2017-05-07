@@ -18,7 +18,6 @@ long reactModeQuery(char* strin) {
     if ((ret = IRCParse_RplChannelModeIs(strin, &prefix, &nick, &channel, &modetxt)) != IRC_OK)//rpl 324
         return logIntError(ret, "error @ reactModeQuery -> IRCParse_RplChannelModeIs");
     sprintf(info, "canal %s modos: %s", channel, modetxt);
-    printf("channel: %s\n", channel);
     info[511] = 0;
     printXchat(channel, NULL, info, TRUE);
     IRCInterface_AddModeChannelThread (channel, IRCInterface_ModeToIntModeThread(modetxt));

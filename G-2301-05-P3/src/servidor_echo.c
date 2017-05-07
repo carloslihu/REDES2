@@ -50,6 +50,7 @@ int main(int argc, char *argv[]) {
 	} while (strcmp(buf, "exit"));
 
 	cerrar_canal_SSL(ssl, ctx, newsockfd);
+	return 0;
 }
 
 

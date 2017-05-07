@@ -41,7 +41,6 @@ char* getMyNick(){
 	int port, ssl;
 
 	IRCInterface_GetMyUserInfo(&nick, &user, &realname, &password, &server, &port, &ssl);
-	printf("nick: %s\nuser: %s\nrealname: %s\npassword: %s\nserver: %s\n",nick, user, realname, password, server);
 	IRC_MFree(4, &user, &realname, &password, &server);
 	return nick;
 }
@@ -56,7 +55,6 @@ char* getMyNickThread(){
 	int port, ssl;
 
 	IRCInterface_GetMyUserInfoThread(&nick, &user, &realname, &password, &server, &port, &ssl);
-	printf("nick: %s\nuser: %s\nrealname: %s\npassword: %s\nserver: %s\n",nick, user, realname, password, server);
 	IRC_MFree(4, &user, &realname, &password, &server);
 	return nick;
 }

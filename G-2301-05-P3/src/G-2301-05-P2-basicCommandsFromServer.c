@@ -64,7 +64,7 @@ long reactPass(char* strin) {
  * @return IRC_OK
  */
 long reactNick(char *strin) {
-    char *prefix, *nick, *msg, *nickold, *userold, *host, *server, info[512];
+    char *prefix, *nick, *msg, *nickold, *userold, *host, *server, info[512], *command;
     long int ret;
 
     prefix = nick = msg = nickold = userold = host = server = NULL;
@@ -79,7 +79,15 @@ long reactNick(char *strin) {
     sprintf(info, "%s es ahora conocido como %s", nickold, msg);
     info[511] = 0;
     IRCInterface_WriteSystemThread(NULL, info);
-    IRC_MFree(7, &prefix, &nick, &msg, &nickold, &userold, &host, &server);
+    IRCInterface_DeleteNickChannelThread (msg, nickold);
+    IRCInterface_AddNickChannelThread (msg, nick, userold, userold, host, NONE);
+
+    IRCMsg_Who(&command, prefix, msg, NULL);
+    if (send(sockfd, command, strlen(command), 0) <= 0) {
+        IRC_MFree(7, &prefix, &nick, &msg, &nickold, &userold, &host, &server);
+        return logIntError(-1, "error @ reactMode -> send");
+    }
+    IRC_MFree(8, &command, &prefix, &nick, &msg, &nickold, &userold, &host, &server);
     return IRC_OK;
 }
 
@@ -668,15 +676,21 @@ long reactQuit(char* strin) {
         return logIntError(ret, "error @ reactQuit -> IRCParse_ComplexUser");
     }
     myNick = getMyNickThread();
-    if (strcmp(nick, myNick) != 0) {
+    if (strcmp(nick, myNick) != 0){
         IRCInterface_ListAllChannelsThread(&channels, &num);
         for (i = num - 1; i >= 0; i--) {
             IRCInterface_DeleteNickChannelThread(channels[i], nick);
             free(channels[i]);
             channels[i] = NULL;
         }
-    } else 
-        IRCInterface_RemoveAllChannelsThread();
+    } else {
+        IRCInterface_ListAllChannelsThread (&channels, &num);
+        for (i = num - 1; i >= 0; i--) {
+            IRCInterface_RemoveChannelThread(channels[i]);
+            free(channels[i]);
+            channels[i] = NULL;
+        }
+    }
     IRC_MFree(8, &prefix, &msg, &nick, &user, &host, &server, &myNick, &channels);
     return IRC_OK;
 }
