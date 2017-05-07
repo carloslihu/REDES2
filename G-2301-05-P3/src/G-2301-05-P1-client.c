@@ -9,6 +9,13 @@
 #include <redes2/irc.h>
 #include "../includes/G-2301-05-P1-socket.h"
 
+
+/*
+ * importante: este fichero fue creado con proposito de probar el servidor en un principio y practicar sockets TCP
+ * aparte de eso, no tiene ningun uso
+*/
+
+
 void error(const char *msg)
 {
     perror(msg);
