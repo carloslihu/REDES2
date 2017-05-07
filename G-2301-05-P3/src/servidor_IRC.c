@@ -6,7 +6,7 @@
 #include "../includes/G-2301-05-P3-ssl.h"
 #define THREAD_NUMBER 10
 
-boolean ssl_active=TRUE;
+boolean ssl_active = TRUE;
 char* hostname = "JohnTitor";
 pthread_mutex_t mutex;
 
@@ -230,8 +230,6 @@ int main(int argc, char *argv[]) {
     struct threadArgs* args;
     SSL_CTX* ctx = NULL;
     SSL* ssl = NULL;
-    //daemonizamos. perderemos el rastro del proceso en la terminal. todos los errores se escribiran en el syslog
-    //daemonizar();
 
     functs[0] = commandDefault;
     functs[1] = commandDefault;

@@ -10,10 +10,10 @@
 #include "../includes/G-2301-05-P2-repliesFromServer.h"
 #include "../includes/G-2301-05-P3-ssl.h"
 struct threadSendArgs {
-    char* filename;
-    char* nick;
-    char* data;
-    long unsigned int length;
+	char* filename;
+	char* nick;
+	char* data;
+	long unsigned int length;
 };
 typedef long int (*pFuncs)(char* strin);
 typedef long int (*pUserFuncs)(int socket, char* strin);
@@ -74,15 +74,15 @@ char* miNick;
  */
 
 void IRCInterface_ActivateChannelKey(char *channel, char *key) {
-    char* command = NULL;
-    if (key) {
-        if (IRCMsg_Mode(&command, NULL, channel, "+k", key) != IRC_OK)
-            logVoidError("IRCInterface_ActivateChannelKey -> IRCMsg_Mode");
-        if (send(sockfd, command, strlen(command), 0) == -1)
-            logVoidError("IRCInterface_ActivateChannelKey -> send");
-        IRCInterface_DeleteModeChannel(channel, IRCMODE_CHANNELPASSWORD);
-        free(command);
-    }
+	char* command = NULL;
+	if (key) {
+		if (IRCMsg_Mode(&command, NULL, channel, "+k", key) != IRC_OK)
+			logVoidError("IRCInterface_ActivateChannelKey -> IRCMsg_Mode");
+		if (send(sockfd, command, strlen(command), 0) == -1)
+			logVoidError("IRCInterface_ActivateChannelKey -> send");
+		IRCInterface_DeleteModeChannel(channel, IRCMODE_CHANNELPASSWORD);
+		free(command);
+	}
 }
 
 /**
@@ -116,13 +116,13 @@ void IRCInterface_ActivateChannelKey(char *channel, char *key) {
  */
 
 void IRCInterface_ActivateExternalMessages(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+n", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateExternalMessages -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateExternalMessages -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_NOEXTERNALMESSAGES);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+n", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateExternalMessages -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateExternalMessages -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_NOEXTERNALMESSAGES);
+	free(command);
 }
 
 /**
@@ -156,13 +156,13 @@ void IRCInterface_ActivateExternalMessages(char *channel) {
  */
 
 void IRCInterface_ActivateInvite(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+i", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateInvite -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateInvite -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_INVITEONLY);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+i", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateInvite -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateInvite -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_INVITEONLY);
+	free(command);
 }
 
 /**
@@ -196,13 +196,13 @@ void IRCInterface_ActivateInvite(char *channel) {
  */
 
 void IRCInterface_ActivateModerated(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+m", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateModerated -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateModerated -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_MODERATED);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+m", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateModerated -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateModerated -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_MODERATED);
+	free(command);
 }
 
 /**
@@ -239,16 +239,16 @@ void IRCInterface_ActivateModerated(char *channel) {
  */
 
 void IRCInterface_ActivateNicksLimit(char *channel, int limit) {
-    char* command = NULL;
-    char limite[20];
+	char* command = NULL;
+	char limite[20];
 
-    snprintf(limite, 20, "%d", limit);
-    if (IRCMsg_Mode(&command, NULL, channel, "+l", limite) != IRC_OK)
-        logVoidError("IRCInterface_ActivateNicksLimit -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateNicksLimit -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_USERSLIMIT);
-    free(command);
+	snprintf(limite, 20, "%d", limit);
+	if (IRCMsg_Mode(&command, NULL, channel, "+l", limite) != IRC_OK)
+		logVoidError("IRCInterface_ActivateNicksLimit -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateNicksLimit -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_USERSLIMIT);
+	free(command);
 }
 
 /**
@@ -282,13 +282,13 @@ void IRCInterface_ActivateNicksLimit(char *channel, int limit) {
  */
 
 void IRCInterface_ActivatePrivate(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+p", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivatePrivate -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivatePrivate -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_PRIVATE);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+p", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivatePrivate -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivatePrivate -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_PRIVATE);
+	free(command);
 }
 
 /**
@@ -322,14 +322,14 @@ void IRCInterface_ActivatePrivate(char *channel) {
  */
 
 void IRCInterface_ActivateProtectTopic(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+t", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateProtectTopic -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateProtectTopic -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_TOPICOP);
-    //IRCInterface_UnsetProtectTopic();
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+t", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateProtectTopic -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateProtectTopic -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_TOPICOP);
+	//IRCInterface_UnsetProtectTopic();
+	free(command);
 }
 
 /**
@@ -363,14 +363,14 @@ void IRCInterface_ActivateProtectTopic(char *channel) {
  */
 
 void IRCInterface_ActivateSecret(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+s", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateSecret -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateSecret -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_SECRET);
-    //IRCInterface_RefreshModeButtons();
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+s", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateSecret -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateSecret -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_SECRET);
+	//IRCInterface_RefreshModeButtons();
+	free(command);
 }
 
 /**
@@ -406,79 +406,79 @@ void IRCInterface_ActivateSecret(char *channel) {
  */
 
 void IRCInterface_BanNick(char *channel, char *nick) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+b", nick) != IRC_OK)
-        logVoidError("IRCInterface_BanNick -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_BanNick -> send");
-    IRCInterface_DeleteModeChannel(channel, IRCMODE_BANMASK);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+b", nick) != IRC_OK)
+		logVoidError("IRCInterface_BanNick -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_BanNick -> send");
+	IRCInterface_DeleteModeChannel(channel, IRCMODE_BANMASK);
+	free(command);
 
 }
 
 void* whoThread(void * args) {
-    int socket, num, i;
-    char**channels, *command;
-    if (args == NULL)
-        return NULL;
-    socket = *((int*) args);
-    pthread_detach(pthread_self());
-    while (1) {
-        IRCInterface_ListAllChannelsThread(&channels, &num);
-        for (i = 0; i < num; i++) {
-            IRCMsg_Who(&command, NULL, channels[i], NULL);
-            if (send(socket, command, strlen(command), 0) < 0) {
-                IRCInterface_FreeListAllChannelsThread(channels, num);
-                free(command);
-                free(args);
-                return logPointerError(NULL, "error @ whoThread -> send");
-            }
-            free(command);
-        }
-        IRCInterface_FreeListAllChannelsThread(channels, num);
-        sleep(10);
-    }
-    free(args);
-    return NULL;
+	int socket, num, i;
+	char**channels, *command;
+	if (args == NULL)
+		return NULL;
+	socket = *((int*) args);
+	pthread_detach(pthread_self());
+	while (1) {
+		IRCInterface_ListAllChannelsThread(&channels, &num);
+		for (i = 0; i < num; i++) {
+			IRCMsg_Who(&command, NULL, channels[i], NULL);
+			if (send(socket, command, strlen(command), 0) < 0) {
+				IRCInterface_FreeListAllChannelsThread(channels, num);
+				free(command);
+				free(args);
+				return logPointerError(NULL, "error @ whoThread -> send");
+			}
+			free(command);
+		}
+		IRCInterface_FreeListAllChannelsThread(channels, num);
+		sleep(10);
+	}
+	free(args);
+	return NULL;
 }
 
 void* clientThread(void* args) {
-    int byteCount, sockfd, *aux;
-    char* command = NULL;
-    char buffer[10000];
-    char *strPos;
-    long int commandNumber;
+	int byteCount, sockfd, *aux;
+	char* command = NULL;
+	char buffer[10000];
+	char *strPos;
+	long int commandNumber;
 
-    pthread_detach(pthread_self());
+	pthread_detach(pthread_self());
 
-    if (args == NULL)
-        return logPointerError(NULL, "error @ clientRoutine: NULL pointer argument");
-    aux = (int*) args;
-    sockfd = *aux;
-    free(aux);
+	if (args == NULL)
+		return logPointerError(NULL, "error @ clientRoutine: NULL pointer argument");
+	aux = (int*) args;
+	sockfd = *aux;
+	free(aux);
 
-    while (1) {
-        bzero(buffer, 10000);
-        byteCount = recv(sockfd, buffer, 10000, 0);
-        if (byteCount == 0)
-            return logPointerError(NULL, "retrieveMsg exited");
-        else if (byteCount == -1)
-            return logPointerError(NULL, "error @ retrieveMsg -> recv");
+	while (1) {
+		bzero(buffer, 10000);
+		byteCount = recv(sockfd, buffer, 10000, 0);
+		if (byteCount == 0)
+			return logPointerError(NULL, "retrieveMsg exited");
+		else if (byteCount == -1)
+			return logPointerError(NULL, "error @ retrieveMsg -> recv");
 
-        strPos = buffer;
-        while (strPos != NULL) {
-            strPos = IRC_UnPipelineCommands(strPos, &command);
-            IRCInterface_WriteSystemThread(NULL, command);
-            if (command != NULL) {
-                commandNumber = IRC_CommandQuery(command);
-                IRCInterface_PlaneRegisterOutMessageThread(command);
-                if (commandNumber >= 0 && functs[commandNumber](command) != IRC_OK)//funcion que reacciona al mensaje de un servidor
-                    logPointerError(NULL, "error @ retrieveMsg -> pFuncs");
-            }
-            IRC_MFree(1, &command);
-        }
-    }
-    return NULL;
+		strPos = buffer;
+		while (strPos != NULL) {
+			strPos = IRC_UnPipelineCommands(strPos, &command);
+			IRCInterface_WriteSystemThread(NULL, command);
+			if (command != NULL) {
+				commandNumber = IRC_CommandQuery(command);
+				IRCInterface_PlaneRegisterOutMessageThread(command);
+				if (commandNumber >= 0 && functs[commandNumber](command) != IRC_OK)//funcion que reacciona al mensaje de un servidor
+					logPointerError(NULL, "error @ retrieveMsg -> pFuncs");
+			}
+			IRC_MFree(1, &command);
+		}
+	}
+	return NULL;
 }
 
 /**
@@ -525,61 +525,61 @@ void* clientThread(void* args) {
  *<hr>
  */
 long IRCInterface_Connect(char *nick, char *user, char *realname, char *password, char *server, int port, boolean ssl) {
-    pthread_t th, thWho;
-    int *args;
-    long ret = 0;
-    char* command, *prefix, commandIn[255];
+	pthread_t th, thWho;
+	int *args;
+	long ret = 0;
+	char* command, *prefix, commandIn[255];
 
 
-    /*Creo socket*/
-    //CONEXION DEL SOCKET
-    sockfd = openSocket_TCP();
-    if (connectTo(sockfd, server, port) == -1)
-        return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
+	/*Creo socket*/
+	//CONEXION DEL SOCKET
+	sockfd = openSocket_TCP();
+	if (connectTo(sockfd, server, port) == -1)
+		return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
 
-    prefix = CLIENTNAME;
-    //mando pass, nick y user
-    //PASS
-    if (password != NULL && *password != 0) {
-        //README al introducir cualquier contraseña, el servidor nos devuelve Bad Password ?
-        if ((ret = IRCMsg_Pass(&command, prefix, password)) != IRC_OK)
-            return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
-        if (send(sockfd, command, strlen(command), 0) == -1)
-            return logIntError(-1, "Error @ IRCInterface_Connect -> send");
-        free(command);
-    }
+	prefix = CLIENTNAME;
+	//mando pass, nick y user
+	//PASS
+	if (password != NULL && *password != 0) {
+		//README al introducir cualquier contraseña, el servidor nos devuelve Bad Password ?
+		if ((ret = IRCMsg_Pass(&command, prefix, password)) != IRC_OK)
+			return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
+		if (send(sockfd, command, strlen(command), 0) == -1)
+			return logIntError(-1, "Error @ IRCInterface_Connect -> send");
+		free(command);
+	}
 
-    //NICK
-    if ((ret = IRCMsg_Nick(&command, prefix, nick, NULL)) != IRC_OK)
-        return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        return logIntError(-1, "Error @ IRCInterface_Connect -> send");
-    free(command);
+	//NICK
+	if ((ret = IRCMsg_Nick(&command, prefix, nick, NULL)) != IRC_OK)
+		return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		return logIntError(-1, "Error @ IRCInterface_Connect -> send");
+	free(command);
 
-    //USER
-    if ((ret = IRCMsg_User(&command, prefix, user, "o", realname)) != IRC_OK)
-        return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_User");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        return logIntError(-1, "Error @ IRCInterface_Connect -> send");
-    free(command);
+	//USER
+	if ((ret = IRCMsg_User(&command, prefix, user, "o", realname)) != IRC_OK)
+		return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_User");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		return logIntError(-1, "Error @ IRCInterface_Connect -> send");
+	free(command);
 
-    do {
-        if (recv(sockfd, commandIn, 255, 0) <= 0)
-            return logIntError(-1, "Error @ IRCInterface_Connect -> recv");
-    } while (IRC_CommandQuery(commandIn) == 17);
+	do {
+		if (recv(sockfd, commandIn, 255, 0) <= 0)
+			return logIntError(-1, "Error @ IRCInterface_Connect -> recv");
+	} while (IRC_CommandQuery(commandIn) == 17);
 
-    if (IRC_CommandQuery(commandIn) != 183) {
-        IRCInterface_ErrorDialog(commandIn);
-        return -1;
-    }
+	if (IRC_CommandQuery(commandIn) != 183) {
+		IRCInterface_ErrorDialog(commandIn);
+		return -1;
+	}
 
-    args = (int*) malloc(sizeof (int));
-    *args = sockfd;
-    pthread_create(&th, NULL, &clientThread, args); //este hilo se encargará de recibir los mensajes posteriores del servidor
-    args = (int*) malloc(sizeof (int));
-    *args = sockfd;
-    pthread_create(&thWho, NULL, &whoThread, args); //este hilo se encargará de ir enviando comandos WHO al servidor
-    return IRC_OK;
+	args = (int*) malloc(sizeof (int));
+	*args = sockfd;
+	pthread_create(&th, NULL, &clientThread, args); //este hilo se encargará de recibir los mensajes posteriores del servidor
+	args = (int*) malloc(sizeof (int));
+	*args = sockfd;
+	pthread_create(&thWho, NULL, &whoThread, args); //este hilo se encargará de ir enviando comandos WHO al servidor
+	return IRC_OK;
 }
 
 /**
@@ -613,13 +613,13 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
  */
 
 void IRCInterface_DeactivateChannelKey(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-k", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateChannelKey -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateChannelKey -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_CHANNELPASSWORD);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-k", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateChannelKey -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateChannelKey -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_CHANNELPASSWORD);
+	free(command);
 
 }
 
@@ -654,13 +654,13 @@ void IRCInterface_DeactivateChannelKey(char *channel) {
  */
 
 void IRCInterface_DeactivateExternalMessages(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-n", NULL) != IRC_OK)
-        logVoidError("IRCInterface_ActivateExternalMessages -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_ActivateExternalMessages -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_NOEXTERNALMESSAGES);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-n", NULL) != IRC_OK)
+		logVoidError("IRCInterface_ActivateExternalMessages -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_ActivateExternalMessages -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_NOEXTERNALMESSAGES);
+	free(command);
 }
 
 /**
@@ -694,13 +694,13 @@ void IRCInterface_DeactivateExternalMessages(char *channel) {
  */
 
 void IRCInterface_DeactivateInvite(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-i", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateInvite -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateInvite -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_INVITEONLY);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-i", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateInvite -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateInvite -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_INVITEONLY);
+	free(command);
 }
 
 /**
@@ -734,13 +734,13 @@ void IRCInterface_DeactivateInvite(char *channel) {
  */
 
 void IRCInterface_DeactivateModerated(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-m", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateModerated -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateModerated -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_MODERATED);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-m", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateModerated -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateModerated -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_MODERATED);
+	free(command);
 }
 
 /**
@@ -774,13 +774,13 @@ void IRCInterface_DeactivateModerated(char *channel) {
  */
 
 void IRCInterface_DeactivateNicksLimit(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-l", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateNicksLimit -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateNicksLimit -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_USERSLIMIT);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-l", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateNicksLimit -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateNicksLimit -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_USERSLIMIT);
+	free(command);
 }
 
 /**
@@ -816,13 +816,13 @@ void IRCInterface_DeactivateNicksLimit(char *channel) {
  */
 
 void IRCInterface_DeactivatePrivate(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-p", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivatePrivate -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivatePrivate -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_PRIVATE);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-p", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivatePrivate -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivatePrivate -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_PRIVATE);
+	free(command);
 }
 
 /**
@@ -856,13 +856,13 @@ void IRCInterface_DeactivatePrivate(char *channel) {
  */
 
 void IRCInterface_DeactivateProtectTopic(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-t", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateProtectTopic -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateProtectTopic -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_TOPICOP);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-t", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateProtectTopic -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateProtectTopic -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_TOPICOP);
+	free(command);
 }
 
 /**
@@ -896,13 +896,13 @@ void IRCInterface_DeactivateProtectTopic(char *channel) {
  */
 
 void IRCInterface_DeactivateSecret(char *channel) {
-    char* command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-s", NULL) != IRC_OK)
-        logVoidError("IRCInterface_DeactivateSecret -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_DeactivateSecret -> send");
-    IRCInterface_AddModeChannel(channel, IRCMODE_SECRET);
-    free(command);
+	char* command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-s", NULL) != IRC_OK)
+		logVoidError("IRCInterface_DeactivateSecret -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_DeactivateSecret -> send");
+	IRCInterface_AddModeChannel(channel, IRCMODE_SECRET);
+	free(command);
 }
 
 /**
@@ -940,8 +940,8 @@ void IRCInterface_DeactivateSecret(char *channel) {
  */
 
 boolean IRCInterface_DisconnectServer(char *server, int port) {
-    userQuit(sockfd, "/quit");
-    return TRUE;
+	userQuit(sockfd, "/quit");
+	return TRUE;
 }
 
 /**
@@ -980,9 +980,9 @@ boolean IRCInterface_DisconnectServer(char *server, int port) {
  */
 
 boolean IRCInterface_ExitAudioChat(char *nick) {
-    if (alreadyRecordingQuery() == TRUE)
-        endAudioTransmission();
-    return TRUE;
+	if (alreadyRecordingQuery() == TRUE)
+		endAudioTransmission();
+	return TRUE;
 }
 
 /**
@@ -1018,12 +1018,12 @@ boolean IRCInterface_ExitAudioChat(char *nick) {
  */
 
 void IRCInterface_GiveOp(char *channel, char *nick) {
-    char*command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+o", nick) != IRC_OK)
-        logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_GiveOp -> send");
-    free(command);
+	char*command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+o", nick) != IRC_OK)
+		logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_GiveOp -> send");
+	free(command);
 
 }
 
@@ -1060,12 +1060,12 @@ void IRCInterface_GiveOp(char *channel, char *nick) {
  */
 
 void IRCInterface_GiveVoice(char *channel, char *nick) {
-    char*command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "+v", nick) != IRC_OK)
-        logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_GiveOp -> send");
-    free(command);
+	char*command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "+v", nick) != IRC_OK)
+		logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_GiveOp -> send");
+	free(command);
 }
 
 /**
@@ -1101,14 +1101,14 @@ void IRCInterface_GiveVoice(char *channel, char *nick) {
  */
 
 void IRCInterface_KickNick(char *channel, char *nick) {
-    char *command;
-    if (channel == NULL || nick == NULL) return;
-    if (IRCMsg_Kick(&command, NULL, channel, nick, "has sido kickeado!") != IRC_OK) {
-        logVoidError("error @ IRCInterface_KickNick -> IRCMsg_kick");
-        return;
-    }
-    if (send(sockfd, command, strlen(command), 0) < 0)
-        logVoidError("error @ IRCInterface_KickNick -> send");
+	char *command;
+	if (channel == NULL || nick == NULL) return;
+	if (IRCMsg_Kick(&command, NULL, channel, nick, "has sido kickeado!") != IRC_OK) {
+		logVoidError("error @ IRCInterface_KickNick -> IRCMsg_kick");
+		return;
+	}
+	if (send(sockfd, command, strlen(command), 0) < 0)
+		logVoidError("error @ IRCInterface_KickNick -> send");
 }
 
 /**
@@ -1144,23 +1144,23 @@ void IRCInterface_KickNick(char *channel, char *nick) {
  */
 
 void IRCInterface_NewCommandText(char *command) {
-    char* target; //punteros que no hay que liberar
-    long ret;
-    char *Xcom, *msg, *myNick; //punteros que si hay que liberar
-    Xcom = msg = NULL;
+	char* target; //punteros que no hay que liberar
+	long ret;
+	char *Xcom, *msg, *myNick; //punteros que si hay que liberar
+	Xcom = msg = NULL;
 
-    if (command[0] != '/') {//significa que el usuario queria enviar un privmsg
-        target = IRCInterface_ActiveChannelName();
-        if ((ret = IRCMsg_Privmsg(&Xcom, NULL, target, command)) != IRC_OK)
-            return logVoidError("error @ IRCInterface_NewCommandText -> IRCMsg_Privmsg");
-        send(sockfd, Xcom, strlen(Xcom), 0);
-        myNick = getMyNick();
-        IRCInterface_WriteChannel(target, myNick, command);
-    } else { //significa que el usuario quería enviar un comando
-        IRCInterface_WriteSystem(NULL, command);
-        if ((ret = IRCUser_CommandQuery(command)) >= 0)
-            userFuncts[ret](sockfd, command);
-    }
+	if (command[0] != '/') {//significa que el usuario queria enviar un privmsg
+		target = IRCInterface_ActiveChannelName();
+		if ((ret = IRCMsg_Privmsg(&Xcom, NULL, target, command)) != IRC_OK)
+			return logVoidError("error @ IRCInterface_NewCommandText -> IRCMsg_Privmsg");
+		send(sockfd, Xcom, strlen(Xcom), 0);
+		myNick = getMyNick();
+		IRCInterface_WriteChannel(target, myNick, command);
+	} else { //significa que el usuario quería enviar un comando
+		IRCInterface_WriteSystem(NULL, command);
+		if ((ret = IRCUser_CommandQuery(command)) >= 0)
+			userFuncts[ret](sockfd, command);
+	}
 }
 
 /**
@@ -1195,19 +1195,19 @@ void IRCInterface_NewCommandText(char *command) {
  */
 
 void IRCInterface_NewTopicEnter(char *topicdata) {
-    char *command, *channel;
-    if (topicdata == NULL) return;
-    channel = IRCInterface_ActiveChannelName();
-    if (channel == NULL) {
-        logVoidError("error @ IRCInterface_NewTopicEnter -> IRCInterface_ActiveChannelName");
-        return;
-    }
-    if (IRCMsg_Topic(&command, NULL, channel, topicdata) != IRC_OK) {
-        logVoidError("error @ IRCInterface_NewTopicEnter -> IRCMsg_Topic");
-        return;
-    }
-    if (send(sockfd, command, strlen(command), 0) < 0)
-        logVoidError("error @ IRCInterface_NewTopicEnter -> send");
+	char *command, *channel;
+	if (topicdata == NULL) return;
+	channel = IRCInterface_ActiveChannelName();
+	if (channel == NULL) {
+		logVoidError("error @ IRCInterface_NewTopicEnter -> IRCInterface_ActiveChannelName");
+		return;
+	}
+	if (IRCMsg_Topic(&command, NULL, channel, topicdata) != IRC_OK) {
+		logVoidError("error @ IRCInterface_NewTopicEnter -> IRCMsg_Topic");
+		return;
+	}
+	if (send(sockfd, command, strlen(command), 0) < 0)
+		logVoidError("error @ IRCInterface_NewTopicEnter -> send");
 }
 
 /**
@@ -1233,66 +1233,66 @@ void IRCInterface_NewTopicEnter(char *topicdata) {
  * @return NULL
  */
 void* threadSend(void* args) {
-    char *data, buffer[512], *command, *nick, *filename, *myHost;
-    int port, socket, newSockfd;
-    socklen_t slen;
-    unsigned long length, index = 0;
-    struct threadSendArgs * aux = (struct threadSendArgs *) args;
-    struct sockaddr_in serv, client;
-    boolean answer;
+	char *data, buffer[512], *command, *nick, *filename, *myHost;
+	int port, socket, newSockfd;
+	socklen_t slen;
+	unsigned long length, index = 0;
+	struct threadSendArgs * aux = (struct threadSendArgs *) args;
+	struct sockaddr_in serv, client;
+	boolean answer;
 
-    pthread_detach(pthread_self());
-    if (aux == NULL)
-        return NULL;
-    data = aux->data;
-    length = aux->length;
-    nick = aux->nick;
-    filename = aux->filename;
-    //TODO: cambiar la siguiente linea para hacerla mas general (?)
-    myHost = "localhost";
-    socket = openSocket_TCP();
-    if (socket < 0) {
-        IRC_MFree(2, &data, &args);
-        return NULL;
-    }
-    listen(socket, 1);
-    slen = sizeof (serv);
-    getsockname(socket, (struct sockaddr*) &serv, &slen);
-    port = ntohs(serv.sin_port);
+	pthread_detach(pthread_self());
+	if (aux == NULL)
+		return NULL;
+	data = aux->data;
+	length = aux->length;
+	nick = aux->nick;
+	filename = aux->filename;
+	//TODO: cambiar la siguiente linea para hacerla mas general (?)
+	myHost = "localhost";
+	socket = openSocket_TCP();
+	if (socket < 0) {
+		IRC_MFree(2, &data, &args);
+		return NULL;
+	}
+	listen(socket, 1);
+	slen = sizeof (serv);
+	getsockname(socket, (struct sockaddr*) &serv, &slen);
+	port = ntohs(serv.sin_port);
 
-    sprintf(buffer, "\002FSEND \001%s\001 %s %d %lu", filename, myHost, port, length);
-    IRCMsg_Privmsg(&command, NULL, nick, buffer);
-    if (send(sockfd, command, strlen(command), 0) < 0) {
-        IRC_MFree(3, &data, &args, &command);
-        close(socket);
-        return NULL;
-    }
-    newSockfd = acceptConnection(socket, &client);
-    if (newSockfd < 0) {
-        logVoidError("error @ threadSend -> acceptConnection");
-        IRC_MFree(3, &data, &args, &command);
-        close(socket);
-        return NULL;
-    }
-    if (recv(newSockfd, &answer, sizeof (answer), 0) <= 0) {
-        IRC_MFree(3, &data, &args, &command);
-        close(socket);
-        return NULL;
-    }
-    if (answer == FALSE) {
-        IRC_MFree(3, &data, &args, &command);
-        close(socket);
-        return NULL;
-    }
-    while (length - index >= FILE_BUFLEN) {
-        send(newSockfd, data + index, FILE_BUFLEN, 0);
-        index += FILE_BUFLEN;
-    }
-    if (length > index)
-        send(newSockfd, data + index, length - index, 0);
-    IRC_MFree(3, &data, &args, &command);
-    close(socket);
-    return NULL;
+	sprintf(buffer, "\002FSEND \001%s\001 %s %d %lu", filename, myHost, port, length);
+	IRCMsg_Privmsg(&command, NULL, nick, buffer);
+	if (send(sockfd, command, strlen(command), 0) < 0) {
+		IRC_MFree(3, &data, &args, &command);
+		close(socket);
+		return NULL;
+	}
+	newSockfd = acceptConnection(socket, &client);
+	if (newSockfd < 0) {
+		logVoidError("error @ threadSend -> acceptConnection");
+		IRC_MFree(3, &data, &args, &command);
+		close(socket);
+		return NULL;
+	}
+	if (recv(newSockfd, &answer, sizeof (answer), 0) <= 0) {
+		IRC_MFree(3, &data, &args, &command);
+		close(socket);
+		return NULL;
+	}
+	if (answer == FALSE) {
+		IRC_MFree(3, &data, &args, &command);
+		close(socket);
+		return NULL;
+	}
+	while (length - index >= FILE_BUFLEN) {
+		send(newSockfd, data + index, FILE_BUFLEN, 0);
+		index += FILE_BUFLEN;
+	}
+	if (length > index)
+		send(newSockfd, data + index, length - index, 0);
+	IRC_MFree(3, &data, &args, &command);
+	close(socket);
+	return NULL;
 }
 
 /**
@@ -1335,18 +1335,18 @@ void* threadSend(void* args) {
  */
 
 boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length) {
-    struct threadSendArgs *args;
-    pthread_t th;
+	struct threadSendArgs *args;
+	pthread_t th;
 
-    args = (struct threadSendArgs*) malloc(sizeof (struct threadSendArgs));
-    if (args == NULL) return FALSE;
+	args = (struct threadSendArgs*) malloc(sizeof (struct threadSendArgs));
+	if (args == NULL) return FALSE;
 
-    args->data = data;
-    args->length = length;
-    args->filename = filename;
-    args->nick = nick;
-    pthread_create(&th, NULL, threadSend, args);
-    return TRUE;
+	args->data = data;
+	args->length = length;
+	args->filename = filename;
+	args->nick = nick;
+	pthread_create(&th, NULL, threadSend, args);
+	return TRUE;
 }
 
 /**
@@ -1357,56 +1357,56 @@ boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsig
  * @return NULL
  */
 void * threadRecord(void * aux) {
-    int socket, port, newSockfd;
-    socklen_t slen;
-    struct sockaddr_in serv, client;
-    boolean answer;
-    char *nick, buffer[512], *command;
+	int socket, port, newSockfd;
+	socklen_t slen;
+	struct sockaddr_in serv, client;
+	boolean answer;
+	char *nick, buffer[512], *command;
 
-    pthread_detach(pthread_self());
-    if (aux == NULL)
-        return NULL;
-    if (alreadyRecordingQuery() == TRUE)
-        return NULL;
+	pthread_detach(pthread_self());
+	if (aux == NULL)
+		return NULL;
+	if (alreadyRecordingQuery() == TRUE)
+		return NULL;
 
-    socket = openSocket_TCP();
-    if (socket < 0) {
-        IRC_MFree(1, &aux);
-        return NULL;
-    }
-    listen(socket, 1);
-    slen = sizeof (serv);
-    getsockname(socket, (struct sockaddr*) &serv, &slen);
-    port = ntohs(serv.sin_port);
+	socket = openSocket_TCP();
+	if (socket < 0) {
+		IRC_MFree(1, &aux);
+		return NULL;
+	}
+	listen(socket, 1);
+	slen = sizeof (serv);
+	getsockname(socket, (struct sockaddr*) &serv, &slen);
+	port = ntohs(serv.sin_port);
 
-    nick = (char*) aux;
-    sprintf(buffer, "\001FAUDIO %s %d", "localhost", port);
-    IRCMsg_Privmsg(&command, NULL, nick, buffer);
-    //enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
-    if (send(sockfd, command, strlen(command), 0) < 0) {
-        close(socket);
-        return NULL;
-    }
-    newSockfd = acceptConnection(socket, &client);
-    if (newSockfd < 0) {
-        logVoidError("error @ threadRecord -> acceptConnection");
-        close(socket);
-        return NULL;
-    }
-    if (recv(newSockfd, &answer, sizeof (boolean), 0) <= 0) {
-        close(socket);
-        close(newSockfd);
-        return NULL;
-    }
-    if (ntohs(answer) == FALSE) {
-        close(socket);
-        close(newSockfd);
-        return NULL;
-    }
-    close(socket);
-    close(newSockfd);
-    initiateSender();
-    return NULL;
+	nick = (char*) aux;
+	sprintf(buffer, "\001FAUDIO %s %d", "localhost", port);
+	IRCMsg_Privmsg(&command, NULL, nick, buffer);
+	//enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
+	if (send(sockfd, command, strlen(command), 0) < 0) {
+		close(socket);
+		return NULL;
+	}
+	newSockfd = acceptConnection(socket, &client);
+	if (newSockfd < 0) {
+		logVoidError("error @ threadRecord -> acceptConnection");
+		close(socket);
+		return NULL;
+	}
+	if (recv(newSockfd, &answer, sizeof (boolean), 0) <= 0) {
+		close(socket);
+		close(newSockfd);
+		return NULL;
+	}
+	if (ntohs(answer) == FALSE) {
+		close(socket);
+		close(newSockfd);
+		return NULL;
+	}
+	close(socket);
+	close(newSockfd);
+	initiateSender();
+	return NULL;
 }
 
 /**
@@ -1446,9 +1446,9 @@ void * threadRecord(void * aux) {
  */
 
 boolean IRCInterface_StartAudioChat(char *nick) {
-    pthread_t th;
-    pthread_create(&th, NULL, threadRecord, nick);
-    return TRUE;
+	pthread_t th;
+	pthread_create(&th, NULL, threadRecord, nick);
+	return TRUE;
 }
 
 /**
@@ -1487,9 +1487,9 @@ boolean IRCInterface_StartAudioChat(char *nick) {
  */
 
 boolean IRCInterface_StopAudioChat(char *nick) {
-    if (alreadyRecordingQuery())
-        endAudioTransmission();
-    return TRUE;
+	if (alreadyRecordingQuery())
+		endAudioTransmission();
+	return TRUE;
 }
 
 /**
@@ -1525,12 +1525,12 @@ boolean IRCInterface_StopAudioChat(char *nick) {
  */
 
 void IRCInterface_TakeOp(char *channel, char *nick) {
-    char*command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-o", nick) != IRC_OK)
-        logVoidError("IRCInterface_TakeOp -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_TakeOp -> send");
-    free(command);
+	char*command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-o", nick) != IRC_OK)
+		logVoidError("IRCInterface_TakeOp -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_TakeOp -> send");
+	free(command);
 }
 
 /**
@@ -1566,12 +1566,12 @@ void IRCInterface_TakeOp(char *channel, char *nick) {
  */
 
 void IRCInterface_TakeVoice(char *channel, char *nick) {
-    char*command = NULL;
-    if (IRCMsg_Mode(&command, NULL, channel, "-v", nick) != IRC_OK)
-        logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
-    if (send(sockfd, command, strlen(command), 0) == -1)
-        logVoidError("IRCInterface_GiveOp -> send");
-    free(command);
+	char*command = NULL;
+	if (IRCMsg_Mode(&command, NULL, channel, "-v", nick) != IRC_OK)
+		logVoidError("IRCInterface_GiveOp -> IRCMsg_Mode");
+	if (send(sockfd, command, strlen(command), 0) == -1)
+		logVoidError("IRCInterface_GiveOp -> send");
+	free(command);
 }
 
 
@@ -1600,116 +1600,115 @@ void IRCInterface_TakeVoice(char *channel, char *nick) {
 
 
 int main(int argc, char *argv[]) {
-    /* La función IRCInterface_Run debe ser llamada al final      */
-    /* del main y es la que activa el interfaz gráfico quedándose */
-    /* en esta función hasta que se pulsa alguna salida del       */
-    /* interfaz gráfico.
-     *                                          */
-    SSL_CTX*ctx;
-    SSL*ssl;
-    int sockfd, port;
-    int num = 512, i = 0;
-    char buf[num];
-    if (argc < 2) {
-        //por default imprime en el rawlog y ya
-        for (i = 0; i < IRC_MAX_COMMANDS; i++)
-            functs[i] = reactDefault;
-        //basic
-        functs[MSG_PASS] = reactPass;
-        functs[MSG_NICK] = reactNick;
-        functs[MSG_MODE] = reactMode;
-        functs[MSG_SERVICE] = reactService;
-        functs[MSG_QUIT] = reactQuit;
-        functs[MSG_JOIN] = reactJoin;
-        functs[MSG_PART] = reactPart;
-        functs[MSG_TOPIC] = reactTopic;
-        functs[MSG_NAMES] = reactNames;
-        functs[MSG_KICK] = reactKick;
-        functs[MSG_PRIVMSG] = reactPrivmsg;
-        functs[MSG_PING] = reactPing;
-        functs[MSG_SETNAME] = reactSetName;
+	/* La función IRCInterface_Run debe ser llamada al final      */
+	/* del main y es la que activa el interfaz gráfico quedándose */
+	/* en esta función hasta que se pulsa alguna salida del       */
+	/* interfaz gráfico.
+	 *                                          */
+	SSL_CTX*ctx;
+	SSL*ssl;
+	int sockfd, port;
+	int num = 512, i = 0;
+	char buf[num];
+	if (argc < 2) {
+		//por default imprime en el rawlog y ya
+		for (i = 0; i < IRC_MAX_COMMANDS; i++)
+			functs[i] = reactDefault;
+		//basic
+		functs[MSG_PASS] = reactPass;
+		functs[MSG_NICK] = reactNick;
+		functs[MSG_MODE] = reactMode;
+		functs[MSG_SERVICE] = reactService;
+		functs[MSG_QUIT] = reactQuit;
+		functs[MSG_JOIN] = reactJoin;
+		functs[MSG_PART] = reactPart;
+		functs[MSG_TOPIC] = reactTopic;
+		functs[MSG_NAMES] = reactNames;
+		functs[MSG_KICK] = reactKick;
+		functs[MSG_PRIVMSG] = reactPrivmsg;
+		functs[MSG_PING] = reactPing;
+		functs[MSG_SETNAME] = reactSetName;
 
-        //replies
+		//replies
 
-        functs[RPL_CHANNELMODEIS] = reactModeQuery;
-        functs[RPL_NOTOPIC] = reactNoTopic;
-        functs[RPL_TOPIC] = reactTopicQuery;
-        functs[RPL_WHOREPLY] = reactWhoReply;
+		functs[RPL_CHANNELMODEIS] = reactModeQuery;
+		functs[RPL_NOTOPIC] = reactNoTopic;
+		functs[RPL_TOPIC] = reactTopicQuery;
+		functs[RPL_WHOREPLY] = reactWhoReply;
 
-        functs[RPL_YOURHOST] = reactPrint;
-        functs[RPL_YOURESERVICE ] = reactPrint;
-        functs[RPL_MOTD] = reactPrint;
-        functs[RPL_CREATED] = reactPrint;
-        functs[RPL_WELCOME] = reactPrint;
+		functs[RPL_YOURHOST] = reactPrint;
+		functs[RPL_YOURESERVICE ] = reactPrint;
+		functs[RPL_MOTD] = reactPrint;
+		functs[RPL_CREATED] = reactPrint;
+		functs[RPL_WELCOME] = reactPrint;
 
-        //RPL_MYINFO    RPL_INFO    RPL_ENDOFINFO
-        //LUSER??
+		//RPL_MYINFO    RPL_INFO    RPL_ENDOFINFO
+		//LUSER??
 
-        functs[RPL_WHOISUSER] = reactPrint;
-        functs[RPL_WHOISCHANNELS] = reactPrint;
-        functs[RPL_WHOISOPERATOR] = reactPrint;
-        functs[RPL_WHOISSERVER] = reactPrint;
-        functs[RPL_WHOISIDLE] = reactPrint;
+		functs[RPL_WHOISUSER] = reactPrint;
+		functs[RPL_WHOISCHANNELS] = reactPrint;
+		functs[RPL_WHOISOPERATOR] = reactPrint;
+		functs[RPL_WHOISSERVER] = reactPrint;
+		functs[RPL_WHOISIDLE] = reactPrint;
 
-        functs[RPL_LISTSTART ] = reactPrint;
-        functs[RPL_MOTDSTART] = reactPrint;
+		functs[RPL_LISTSTART ] = reactPrint;
+		functs[RPL_MOTDSTART] = reactPrint;
 
-        functs[RPL_ENDOFMOTD] = reactPrint;
-        functs[RPL_ENDOFWHO] = reactPrint;
-        functs[RPL_ENDOFWHOIS ] = reactPrint;
-        functs[RPL_ENDOFNAMES ] = reactPrint;
-        functs[RPL_LISTEND] = reactPrint;
-        for (i = 0; i < IRC_MAX_USER_COMMANDS; i++)
-            userFuncts[i] = userDefault;
+		functs[RPL_ENDOFMOTD] = reactPrint;
+		functs[RPL_ENDOFWHO] = reactPrint;
+		functs[RPL_ENDOFWHOIS ] = reactPrint;
+		functs[RPL_ENDOFNAMES ] = reactPrint;
+		functs[RPL_LISTEND] = reactPrint;
+		for (i = 0; i < IRC_MAX_USER_COMMANDS; i++)
+			userFuncts[i] = userDefault;
 
-        userFuncts[UJOIN] = userJoin;
-        userFuncts[UMSG] = userPriv;
-        userFuncts[UAWAY] = userAway;
-        userFuncts[UKICK] = userKick;
-        userFuncts[ULIST] = userList;
-        userFuncts[UMODE] = userMode;
-        userFuncts[UMOTD] = userMotd;
-        userFuncts[UNAMES] = userNames;
-        userFuncts[UNICK] = userNick;
-        userFuncts[UPART] = userPart;
-        userFuncts[UQUIT] = userQuit;
-        userFuncts[UTOPIC] = userTopic;
-        userFuncts[UWHOIS] = userWhois;
-        userFuncts[UWHO] = userWho;
+		userFuncts[UJOIN] = userJoin;
+		userFuncts[UMSG] = userPriv;
+		userFuncts[UAWAY] = userAway;
+		userFuncts[UKICK] = userKick;
+		userFuncts[ULIST] = userList;
+		userFuncts[UMODE] = userMode;
+		userFuncts[UMOTD] = userMotd;
+		userFuncts[UNAMES] = userNames;
+		userFuncts[UNICK] = userNick;
+		userFuncts[UPART] = userPart;
+		userFuncts[UQUIT] = userQuit;
+		userFuncts[UTOPIC] = userTopic;
+		userFuncts[UWHOIS] = userWhois;
+		userFuncts[UWHO] = userWho;
 
-        IRCInterface_Run(argc, argv);
+		IRCInterface_Run(argc, argv);
 
 
-    } else {
-        if (argv[1][0] == '-') {
-            memset(buf, 0, num);
-            for (i = 2; /*strcmp(argv[i], "port") &&*/ i < argc; i++) {
-                strcat(buf, argv[i]);
-                strcat(buf, " ");
+	} else {
+		if (argv[1][0] == '-') {
+			memset(buf, 0, num);
+			for (i = 2; i < argc; i++) {
+				strcat(buf, argv[i]);
+				strcat(buf, " ");
+			}
+			strcat(buf, "\r\n");
+		}
+		port = 6669;
+		inicializar_nivel_SSL();
+		ctx = fijar_contexto_SSL("certs/ca.pem", "certs/cliente.pem", "certs/cliente.pem", NULL);
+		if (ctx == NULL)
+			return logIntError(-1, "error @ main -> fijar_contexto_SSL");
+		sockfd = openSocket_TCP();
+		if (connectTo(sockfd, "localhost", port) == -1)
+			return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
 
-            }
-            strcat(buf, "\r\n");
-        }
-        port = 6669;
-        inicializar_nivel_SSL();
-        ctx = fijar_contexto_SSL("certs/ca.pem", "certs/cliente.pem", "certs/cliente.pem", NULL);
-        if (ctx == NULL)
-            return logIntError(-1, "error @ main -> fijar_contexto_SSL");
-        sockfd = openSocket_TCP();
-        if (connectTo(sockfd, "localhost", port) == -1)
-            return logIntError(-1, "Error @ IRCInterface_Connect -> connectTo");
+		ssl = conectar_canal_seguro_SSL(ctx, sockfd);
+		if (ssl == NULL) {
+			return logIntError(-1, "error @ main -> conectar_canal_seguro_SSL");
+		}
 
-        ssl = conectar_canal_seguro_SSL(ctx, sockfd);
-        if (ssl == NULL) {
-            return logIntError(-1, "error @ main -> conectar_canal_seguro_SSL");
-        }
-
-        if (evaluar_post_connectar_SSL(ssl) == FALSE)
-            return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-        if (enviar_datos_SSL(ssl, buf, strlen(buf)) <= 0) {
-            return logIntError(-1, "error @ main -> enviar_datos_SSL");
-        }
-        cerrar_canal_SSL(ssl, ctx, sockfd);
-    }
-    return 0;
+		if (evaluar_post_connectar_SSL(ssl) == FALSE)
+			return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
+		if (enviar_datos_SSL(ssl, buf, strlen(buf)) <= 0) {
+			return logIntError(-1, "error @ main -> enviar_datos_SSL");
+		}
+		cerrar_canal_SSL(ssl, ctx, sockfd);
+	}
+	return 0;
 }

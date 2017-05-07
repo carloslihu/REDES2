@@ -141,7 +141,7 @@ pueda ser utilizada independientemente de los datos que se vayan a recibir.
  */
 int recibir_datos_SSL(SSL* ssl, void* buf, int num) {
     return SSL_read(ssl, buf, num);
-    
+
 }
 
 /**
@@ -150,21 +150,14 @@ previamente.
  * @param  ssl    estructura SSL de la conexión segura
  * @param  ctx    contexto de la conexión segura
  * @param  sockfd socket de la conexión segura
- * @return        1 si ha ido bien, -1 si ha habido un fallo 
+ * @return        1 si ha ido bien, -1 si ha habido un fallo
  */
 int cerrar_canal_SSL(SSL* ssl, SSL_CTX* ctx, int sockfd) {
     if (ssl) {
-        /*if (SSL_shutdown(ssl) != 1) {
-            ERR_print_errors_fp(stdout);
-            return -1;
-        }*/
         SSL_shutdown(ssl);
         SSL_free(ssl);
     }
     if (ctx)
         SSL_CTX_free(ctx);
-    /*if (close(sockfd) == -1)
-        return -1;
-     */
     return 1;
 }
