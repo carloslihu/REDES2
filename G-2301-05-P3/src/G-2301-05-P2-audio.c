@@ -2,7 +2,7 @@
 
 boolean grabandoAudio;
 #define AUDIO_BUFLEN 4096
-char audioBuffer[AUDIO_BUFLEN];//almacena hasta 600 trozos de 160 bytes
+char audioBuffer[AUDIO_BUFLEN];
 int writePos;
 int readPos;
 
@@ -18,7 +18,6 @@ int readPos;
  */
 void* playThread(void * args){
     boolean *stillRunning;
-    //useconds_t time = 20;
 
     if(args == NULL)
         return NULL;
@@ -181,11 +180,6 @@ int canIWrite(int len){
  */
 void writeBuffer(char* buf, int len){
     int topper;
-    /*
-    if(canIWrite(len) == 0)
-        return;
-    */
-    //memcpy(audioBuffer, buf, len);
     if(writePos + len < AUDIO_BUFLEN){
         memcpy(audioBuffer + writePos, buf, len);
         writePos += len;

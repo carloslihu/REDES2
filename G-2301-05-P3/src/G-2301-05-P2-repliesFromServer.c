@@ -5,73 +5,6 @@
 //##############################################################################################
 //##############################################################################################
 
-// esto hace algo??
-
-/*long reactAway(char* strin) {
-    
-    IRCInterface_PlaneRegisterOutMessageThread(strin);
-    return IRC_OK;
-}*/
-
-/*long reactCreated(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-
-long reactEndOfMotd(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-
-long reactEndOfNames(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-
-long reactEndOfWhois(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactInfo(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactLUserChannels(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactLUserClient(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactLUserMe(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactLUserOp(char* strin) {
-    return IRC_OK;
-}
-
-long reactList(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-
-long reactListEnd(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}*/
-
 /**
  * @brief rutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal
  *
@@ -92,23 +25,6 @@ long reactModeQuery(char* strin) {
     IRC_MFree(4, &prefix, &nick, &channel, &modetxt);
     return IRC_OK;
 }
-/*
-long reactMotd(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-
-long reactMotdStart(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactMyInfo(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-*/
 /**
  * @brief rutina que maneja la llegada de la respuesta 331 correspondiente a notificar que no hay topic en un canal
  *
@@ -146,52 +62,6 @@ long reactTopicQuery(char* strin) {
     return IRC_OK;
 }
 
-
-/*long reactWelcome(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactWhoIsChannels(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactWhoIsIdle(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}*/
-//not sure
-
-/*long reactWhoIsOperator(char* strin) {
-    
-    long ret;
-    if ((ret = IRCParse_RplWhoIsOperator(strin, &prefix, &nick, &nick2, &msg)) != IRC_OK)
-        return logIntError(ret, "error @ reactWhoIsOperator -> IRCParse_RplWhoIsOperator");
-    IRCInterface_ChangeNickStateChannelThread (char *channel, char *nick, nickstate ns);
-    IRC_MFree(4, &prefix, &nick, &nick2, &msg);
-    return IRC_OK;
-}*/
-//not sure
-
-/*long reactWhoIsServer(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactWhoIsUser(char* strin) {
-
-    //if ((ret = IRCParse_RplWhoIsUser(strin, &prefix, &nick, &nick2, &name, &host, &realname)) != IRC_OK)
-    //    return logIntError(ret, "error @ reactWhoIsUser -> IRCParse_RplWhoIsUser");
-     
-//    printXchat(NULL, NULL, strin, TRUE);
-
-    return IRC_OK;
-}*/
-
 /**
  * @brief rutina que maneja la llegada de la respuesta 352 correspondiente a una solicitud de WHO
  *
@@ -218,33 +88,3 @@ long reactWhoReply(char* strin) {
     IRC_MFree(10, &prefix, &nick, &channel, &user, &host, &server, &nick2, &type, &msg, &realname);
     return IRC_OK;
 }
-/*
-//not sure
-
-long reactYourHost(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}
-//not sure
-
-long reactYourService(char* strin) {
-    printXchat(NULL, NULL, strin, TRUE);
-    return IRC_OK;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

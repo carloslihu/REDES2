@@ -111,8 +111,6 @@ long reactMode(char* strin) {
             IRCInterface_DeleteModeChannelThread(channeluser, iMode);
         else if (mode[0] == '+')
             IRCInterface_AddModeChannelThread(channeluser, iMode);
-        //IRCInterface_ClearModeChannelThread (channeluser);
-        //IRCInterface_RefreshModeButtonsThread();
         sprintf(info, "%s establece modo %s %s", nick, mode, channeluser);
         info[511] = 0;
         IRCInterface_WriteChannelThread(channeluser, NULL, info);
@@ -132,8 +130,6 @@ long reactMode(char* strin) {
         IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
         return logIntError(-1, "error @ reactMode -> send");
     }
-    //IRC_MFree(8, &prefix, &channeluser, &mode, &user, &nick, &oUser, &host, &server);
-    //IRCInterface_RefreshModeButtonsThread();
     return IRC_OK;
 }
 
@@ -145,7 +141,6 @@ long reactMode(char* strin) {
  * @return IRC_OK
  */
 long reactService(char* strin) {
-    //TODO
     return IRC_OK;
 }
 
@@ -179,7 +174,6 @@ long reactJoin(char *strin) {
     if (strcmp(myNick, nick) == 0)//quiere decir que yo me uni al canal
     {
         IRCInterface_AddNewChannelThread(channel, 0);
-        //README el 4 argumento lo he puesto a "" porque no se como sacar el realname
         //README el 5 argumento he puesto server en lugar de host. Esto es probable que sea por un fallo de las librerias. Si falla aqui, revisar
         IRCInterface_AddNickChannelThread(channel, nick, user, "", server, NONE);
         sprintf(info, "te has unido a %s", channel);
@@ -202,7 +196,6 @@ long reactJoin(char *strin) {
         }
         IRCInterface_PlaneRegisterInMessageThread(command);
     } else if (IRCInterface_QueryChannelExistThread(channel) == TRUE) {
-        //README el 4 argumento lo he puesto a user porque no se como sacar el realname
         //README el 5 argumento he puesto server en lugar de host. Esto es probable que sea por un fallo de las librerias. Si falla aqui, revisar
         IRCInterface_AddNickChannelThread(channel, nick, user, "", server, NONE);
     }
@@ -321,8 +314,6 @@ int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned l
     *length = 0;
     if (strin == NULL || strin[0] != '\002' || filename == NULL || hostname == NULL || port == NULL || length == NULL)
         return logIntError(-1, "error @ FSend_Parse -> arguments not valid");
-    /*if(sscanf(strin, "\002FSEND \001%s\001 %s %d %lu",fn, hn, port, length) <= 0 || fn[0] == 0 || hn[0] == 0 || *port == 0 || *length == 0)
-        return logIntError(-1, "error @ FSend_Parse -> sscanf");*/
     while (*i != '\001') {
         if (*i == 0)
             return logIntError(-1, "error @ FSend_Parse -> loop while");
@@ -335,10 +326,8 @@ int FSend_Parse(char*strin, char**filename, char**hostname, int*port, unsigned l
             return logIntError(-1, "error @ FSend_Parse -> loop while");
         i++;
     }//cuando acabemos el bucle estaremos en el \001 del final del nombre del fichero
-    //i--;//nos colocamos en la ultima letra del nombre del fichero
     memset(fn, 0, 255);
     memcpy(fn, iniFile, i - iniFile);//con esto deberíamos tener en fn el nombre del fichero (aceptando espacios entre medias)
-    //i++;//nos colocamos en el \001 que indica el comienzo del resto del mensaje
     sscanf(i, "\001 %s %d %lu", hn, port, length); //ahora leeremos strin PERO desde i
     if (hn[0] == 0 || *port == 0 || *length == 0)
         return logIntError(-1, "error @ FSend_Parse -> sscanf");
@@ -375,7 +364,6 @@ void* threadRecv(void* args) {
     unsigned long length, index = 0;
     boolean answer;
     FILE* fp;
-    //TODO liberar toda la memoria. Si hermano, TOOOOOODOS los jodidos frees :')
 
     //primero nos detacheamos, para acabar por nuestra cuenta sin que le tenga que importar al hilo principal
     pthread_detach(pthread_self());
@@ -417,9 +405,7 @@ void* threadRecv(void* args) {
         logIntError(-1, "error @ threadRecv -> malloc");
         return NULL;
     }
-    //TODO fragmentar este proceso para no tener un char* de un tamaño virtualmente infinito. (e.d. para que no nos peten la memoria)
-    //reservamos memoria para todos los datos que nos envian
-    data = (char*)malloc(sizeof(char) * length);
+    data = (char*)malloc(sizeof(char) * FILE_BUFLEN);
     if (data == NULL) { //si da error el malloc, no podemos continuar
         IRC_MFree(3, &filename, &hostname, &aux);
         close(sock);
@@ -456,15 +442,13 @@ void* threadRecv(void* args) {
     return NULL;
 }
 
-
-
-
-
-
-
-
-
-
+/**
+ * @brief rutina que se encarga de la recepción de audio siguiendo el "protocolo" implementado por este cliente
+ *
+ * @param args los argumentos que el hilo requiere para realizar la recepción y reproduccion de audio. son del tipo "struct threadAudioArgs"
+ *
+ * @return NULL
+ */
 void *threadAudio(void* args){
     char* sender, *hostname;
     int port;
@@ -631,7 +615,6 @@ long reactPing(char* strin) {
  * @return IRC_OK
  */
 long reactSetName(char* strin) {
-    //TODO
     return IRC_OK;
 }
 

@@ -88,5 +88,14 @@ int bindSocket_UDP(int sockfd, int portno, struct sockaddr_in* serv_addr);
  */
 int getSocketPort(int sockfd, struct sockaddr_in* serv_addr);
 
+/**
+ * @brief inicializa correctamente la estructura con datos para una conexion UDP
+ *
+ * @param si_other la estructura que se inicializara
+ * @param port el puerto del otro sistema con el que se desea comunicar
+ * @param hostname el hostname del otro sistema con el que se desea comunicar
+ *
+ * @return -1 si hubo un error, IRC_OK si todo fue bien
+ */
 int iniAddrUDP(struct sockaddr_in *si_other, int port, char* hostname);
 #endif

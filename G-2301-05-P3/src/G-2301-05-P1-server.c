@@ -15,7 +15,7 @@ struct threadArgs {
 };
 
 typedef long int (*pFuncs)(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char* strin);
-pFuncs functs[100];
+pFuncs functs[IRC_MAX_COMMANDS];
 
 /**
  * @brief libera los recursos de usuario asociados al hilo
@@ -93,24 +93,22 @@ int connectAndRegister(int sockfd, struct sockaddr_in *client, struct sockaddr_i
             IRC_MFree(4, &command, &prefix, &modeHost, &serverOther);
         }
         //ahora que hemos recibido tanto un comando NICK como un comando USER, vamos a ver si los NICK y USER introducidos son válidos
-        if (1) {//TODO: poner en esta condición la función que comprueba que el NICK y el USER no están ya usados.
-            if ((retVal = IRCTADUser_New(username, nickname, realname, NULL, SERVERNAME, otherIP, sockfd)) != IRC_OK) {
-                if (retVal == IRCERR_NICKUSED) {
-                    if ((retVal = getSocketFromNick(&oSocket, nickname)) != IRC_OK)
-                        return logIntError(retVal, "error @ connectAndRegister -> getSocketFromNick");
-                    if ((retVal = IRCTADUser_Delete(0, username, nickname, realname)) != IRC_OK)
-                        return logIntError(retVal, "error @ connectAndRegister -> IRCTADUser_Delete");
-                    //close(oSocket);
-                    retVal = IRCTADUser_New(username, nickname, realname, NULL, SERVERNAME, otherIP, sockfd);
-                } else
-                    return logIntError(retVal, "error @ connectAndRegister -> IRCTADUser_New\n");
-            }
-            IRCMsg_RplWelcome(&rpl, myIP, nickname, "msg", username, otherIP);
-            send(sockfd, rpl, strlen(rpl) + 1, 0);
-            state = 1;
-        } else {
-            state = 0;
+ 
+        if ((retVal = IRCTADUser_New(username, nickname, realname, NULL, SERVERNAME, otherIP, sockfd)) != IRC_OK) {
+            if (retVal == IRCERR_NICKUSED) {
+                if ((retVal = getSocketFromNick(&oSocket, nickname)) != IRC_OK)
+                    return logIntError(retVal, "error @ connectAndRegister -> getSocketFromNick");
+                if ((retVal = IRCTADUser_Delete(0, username, nickname, realname)) != IRC_OK)
+                    return logIntError(retVal, "error @ connectAndRegister -> IRCTADUser_Delete");
+                //close(oSocket);
+                retVal = IRCTADUser_New(username, nickname, realname, NULL, SERVERNAME, otherIP, sockfd);
+            } else
+                return logIntError(retVal, "error @ connectAndRegister -> IRCTADUser_New\n");
         }
+        IRCMsg_RplWelcome(&rpl, myIP, nickname, "msg", username, otherIP);
+        send(sockfd, rpl, strlen(rpl) + 1, 0);
+        state = 1;
+
         IRC_MFree(7, &nickname, &username, &msg, &realname, &rpl, &myIP, &otherIP);
     }
     return IRC_OK;
@@ -132,7 +130,6 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
     int byteCount;
     long int commandNumber, retVal;
     while (1) {
-        //printf("se ingresa en el bucle de retrieveMsg\n");
         memset(buffer, 0, 512);
         byteCount = recv(sockfd, (char*) buffer, 511, 0);
         if (byteCount == 0) {
@@ -140,13 +137,12 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
             return logIntError(0, "retrieveMsg exited");
         } else if (byteCount == -1)
             return logIntError(-1, "error @ retrieveMsg -> recv");
-        //printf("*****************************\n%s\n*****************************\n", buffer);
         strPos = buffer;
         while (strPos != NULL) {
             strPos = IRC_UnPipelineCommands(strPos, &command);
             if (command != NULL) {
                 commandNumber = IRC_CommandQuery(command);
-                if (commandNumber < 0) {
+                if (commandNumber < 0 || commandNumber >= IRC_MAX_COMMANDS) {
                     if (commandDefault(sockfd, server, client, command) != IRC_OK)
                         return logIntError(-1, "error @ retrieveMsg -> commandUnknown");
                 } else if ((retVal = functs[commandNumber](sockfd, server, client, command)) != IRC_OK)
@@ -158,34 +154,46 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
     return IRC_OK;
 }
 
+/**
+ * @brief maneja el hilo que se encargara de mandar pings a todos los usuarios
+ *
+ * @param args no son utilizados. Pueden ser NULL
+ * 
+ *
+ * @return NULL
+ */
 void* threadPing(void* args) {
     char **nicks;
     char *user, *nick, *real, *host, *IP, *away;
-    char buf[10] = "PING";
+    char *buf = "PING\r\n";
     int socket, i;
     long num, id, creationTS, actionTS;
     nicks = NULL;
     user = nick = real = host = IP = away = NULL;
-    socket = num = id = creationTS = 0;
+    num = id = creationTS = socket =  0;
 
     while (1) {
         if (IRCTADUser_GetNickList(&nicks, &num) != IRC_OK)
             return logPointerError(NULL, "error @ threadPing: IRCTADUser_GetNickList");
         for (i = 0; i < num; i++) {
-            if (IRCTADUser_GetData(&id, &user, &nicks[i], &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
-                return logPointerError(NULL, "error @ threadPing: IRCTADUser_GetData");
-            if ((time(NULL) - actionTS) > 30) {
+            if (IRCTADUser_GetData(&id, &user, &nicks[i], &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK){
+                logPointerError(NULL, "error @ threadPing: IRCTADUser_GetData");
+                continue;
+            }
+            if ((time(NULL) - actionTS) > 601) {
                 close(socket);
             }
-            if (send(socket, buf, strlen(buf), 0) == -1)
-                return logPointerError(NULL, "error @ threadPing: send");
-
+            if (send(socket, buf, strlen(buf), 0) == -1){
+                logPointerError(NULL, "error @ threadPing -> send");
+                continue;
+            }
             IRC_MFree(6, &user, &nicks[i], &real, &host, &IP, &away);
             id = socket = creationTS = actionTS = 0;
         }
         IRC_MFree(1, &nicks);
-        sleep(20);
+        sleep(300);
     }
+    return NULL;
 }
 
 /**
@@ -223,14 +231,16 @@ void* threadRoutine(void* args) {
 }
 
 int main(int argc, char *argv[]) {
-    int sockfd, newsockfd, portno;
+    int sockfd, newsockfd, portno, i;
     struct sockaddr_in serv_addr, cli_addr;
     pthread_t th;
     struct threadArgs* args;
 
     //daemonizamos. perderemos el rastro del proceso en la terminal. todos los errores se escribiran en el syslog
-    //daemonizar();
+    daemonizar();
 
+    for(i = 0; i < IRC_MAX_COMMANDS; i++)
+        functs[i] = commandDefault;
     functs[0] = commandDefault;
     functs[1] = commandDefault;
     functs[2] = commandNick;
@@ -266,7 +276,7 @@ int main(int argc, char *argv[]) {
         close(sockfd);
         exit(1);
     }
-    if (listen(sockfd, 50) != 0)//mark sockfd as a socket that will be used to accept incoming connection requests
+    if (listen(sockfd, 50) != 0)
         return logIntError(1, "error @ main -> listen");
 
     pthread_create(&th, NULL, &threadPing, NULL);

@@ -11,7 +11,6 @@
  */
 void printXchat(char* channel, char* nick, char* msg, boolean thread) {
     char msg2[SIZE], extra[SIZE], write[SIZE];
-    //bzero(write,SIZE);
     memset(write, 0, SIZE);
     memset(msg2, 0, SIZE);
     sscanf(msg, ":%[^:] :%[^\r\n]", extra, msg2);
