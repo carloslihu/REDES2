@@ -7,27 +7,28 @@ int main(int argc, char *argv[]) {
     int num = 512, i = 0;
     char buf[num];
     if (argc < 2) {
-        port = 6667;
+        port = 6669;
     } else {
         /*FILE*f = fopen("/home/carlos/Escritorio/Redes/prueba.txt", "w+");
         for (i = 0; i < argc; i++)
             fprintf(f, "%s\n", argv[i]);
-        fclose(f);
+        fclose(f);*/
         if (strcmp(argv[1], "--ssldata") == 0) {
             memset(buf, 0, num);
             strncat(buf, argv[2], 20);
-            for (i = 3; strcmp(argv[i], "port"); i++) {
+            for (i = 3; strcmp(argv[i], "port") && i<argc; i++) {
                 strncat(buf, " ", 20);
                 strncat(buf, argv[i], 20);
-                printf("%s ", argv[i]);
+                //printf("%s ", argv[i]);
 
             }
         }
-        if (strcmp(argv[i], "port") == 0)
-            port = atoi(argv[i + 1]);
-*/
-        strcpy(buf,"NICK yoda\r\nUSER yoda 0 * :miservidor.com\r\n");
-        port = 6669;
+        //if (strcmp(argv[i], "port") == 0)
+        //    port = atoi(argv[i + 1]);
+        //else{
+        	port=6669;
+        //}
+        //strcpy(buf,"NICK yoda\r\nUSER yoda 0 * :miservidor.com\r\n");
 
     }
     inicializar_nivel_SSL();

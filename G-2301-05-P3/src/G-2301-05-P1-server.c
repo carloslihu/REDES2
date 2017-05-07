@@ -161,12 +161,12 @@ long int retrieveMsg(int sockfd, struct sockaddr_in *server, struct sockaddr_in 
 void* threadPing(void* args) {
     char **nicks;
     char *user, *nick, *real, *host, *IP, *away;
-    char[10]="PING"
+    char buf[10] = "PING";
     int socket, i;
     long num, id, creationTS, actionTS;
     nicks = NULL;
     user = nick = real = host = IP = away = NULL;
-    socket = num = id = creationTS = NULL;
+    socket = num = id = creationTS = 0;
 
     while (1) {
         if (IRCTADUser_GetNickList(&nicks, &num) != IRC_OK)
@@ -175,17 +175,17 @@ void* threadPing(void* args) {
             if (IRCTADUser_GetData(&id, &user, &nicks[i], &real, &host, &IP, &socket, &creationTS, &actionTS, &away) != IRC_OK)
                 return logPointerError(NULL, "error @ threadPing: IRCTADUser_GetData");
             if ((time(NULL) - actionTS) > 30) {
-                //matar cliente
+                close(socket);
             }
-            if (send(socket,buf,strlen(buf),0) == -1)
+            if (send(socket, buf, strlen(buf), 0) == -1)
                 return logPointerError(NULL, "error @ threadPing: send");
-            
+
             IRC_MFree(6, &user, &nicks[i], &real, &host, &IP, &away);
             id = socket = creationTS = actionTS = 0;
         }
+        IRC_MFree(1, &nicks);
         sleep(20);
     }
-    megaSend(command, nicks, num);
 }
 
 /**
@@ -269,7 +269,7 @@ int main(int argc, char *argv[]) {
     if (listen(sockfd, 50) != 0)//mark sockfd as a socket that will be used to accept incoming connection requests
         return logIntError(1, "error @ main -> listen");
 
-    pthread_create(&th, NULL, &threadPing, args);
+    pthread_create(&th, NULL, &threadPing, NULL);
     while (1) {
         args = (struct threadArgs*) malloc(sizeof (struct threadArgs));
         if (args == NULL)
