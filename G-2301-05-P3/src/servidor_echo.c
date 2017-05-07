@@ -35,8 +35,6 @@ int main(int argc, char *argv[]) {
 	}
 	if (evaluar_post_connectar_SSL(ssl) == FALSE)
 		return logIntError(-1, "error @ main -> evaluar_post_connectar_SSL");
-
-
 	do {
 		bzero(buf, num);
 		if (recibir_datos_SSL(ssl, buf, num) <= 0) {
