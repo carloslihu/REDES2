@@ -425,6 +425,32 @@ void IRCInterface_BanNick(char *channel, char *nick) {
 
 }
 
+void* whoThread(void * args){
+    int socket, num, i;
+    char**channels, *command;
+    if(args == NULL)
+        return NULL;
+    socket = *((int*)args);
+    pthread_detach(pthread_self());
+    while(1){
+        IRCInterface_ListAllChannelsThread (&channels, &num);
+        for(i=0; i<num; i++){
+            IRCMsg_Who(&command, NULL, channels[i], NULL);
+            if(send(socket, command, strlen(command), 0) < 0){
+                IRCInterface_FreeListAllChannelsThread (channels, num);
+                free(command);
+                free(args);
+                return logPointerError(NULL, "error @ whoThread -> send");
+            }
+            free(command);
+        }
+        IRCInterface_FreeListAllChannelsThread (channels, num);
+        sleep(10);
+    }
+    free(args);
+    return NULL;
+}
+
 void* clientThread(void* args) {
     //struct clientArgs* aux;
     int byteCount, sockfd, *aux;
@@ -509,7 +535,7 @@ void* clientThread(void* args) {
  *<hr>
  */
 long IRCInterface_Connect(char *nick, char *user, char *realname, char *password, char *server, int port, boolean ssl) {
-    pthread_t th;
+    pthread_t th, thWho;
     //struct clientArgs *args = NULL;
     int *args;
     long ret = 0;
@@ -562,6 +588,9 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     args = (int*)malloc(sizeof(int));
     *args = sockfd;
     pthread_create(&th, NULL, &clientThread, args); //este hilo se encargará de recibir los mensajes posteriores del servidor
+    args = (int*)malloc(sizeof(int));
+    *args = sockfd;
+    pthread_create(&thWho, NULL, &whoThread, args);//este hilo se encargará de ir enviando comandos WHO al servidor
     return IRC_OK;
 }
 
