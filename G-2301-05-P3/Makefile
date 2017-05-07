@@ -60,7 +60,7 @@ $(EDIR)/cliente_echo: $(OBJ) $(ODIR)/cliente_echo.o
 $(SSLDIR)/servidor_IRC: $(OBJ) $(ODIR)/servidor_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-$(SSLDIR)/cliente_IRC: $(OBJ) $(ODIR)/cliente_IRC.o
+$(SSLDIR)/cliente_IRC: $(OBJ) $(OBJ2) $(ODIR)/cliente_IRC.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 #getCommandList: src/G-2301-05-P1-getCommandList.c

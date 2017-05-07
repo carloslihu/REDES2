@@ -416,26 +416,26 @@ void IRCInterface_BanNick(char *channel, char *nick) {
 
 }
 
-void* whoThread(void * args){
+void* whoThread(void * args) {
     int socket, num, i;
     char**channels, *command;
-    if(args == NULL)
+    if (args == NULL)
         return NULL;
-    socket = *((int*)args);
+    socket = *((int*) args);
     pthread_detach(pthread_self());
-    while(1){
-        IRCInterface_ListAllChannelsThread (&channels, &num);
-        for(i=0; i<num; i++){
+    while (1) {
+        IRCInterface_ListAllChannelsThread(&channels, &num);
+        for (i = 0; i < num; i++) {
             IRCMsg_Who(&command, NULL, channels[i], NULL);
-            if(send(socket, command, strlen(command), 0) < 0){
-                IRCInterface_FreeListAllChannelsThread (channels, num);
+            if (send(socket, command, strlen(command), 0) < 0) {
+                IRCInterface_FreeListAllChannelsThread(channels, num);
                 free(command);
                 free(args);
                 return logPointerError(NULL, "error @ whoThread -> send");
             }
             free(command);
         }
-        IRCInterface_FreeListAllChannelsThread (channels, num);
+        IRCInterface_FreeListAllChannelsThread(channels, num);
         sleep(10);
     }
     free(args);
@@ -540,7 +540,7 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     prefix = CLIENTNAME;
     //mando pass, nick y user
     //PASS
-    if(password != NULL && *password != 0){
+    if (password != NULL && *password != 0) {
         //README al introducir cualquier contraseña, el servidor nos devuelve Bad Password ?
         if ((ret = IRCMsg_Pass(&command, prefix, password)) != IRC_OK)
             return logIntError(ret, "Error @ IRCInterface_Connect -> IRCMsg_Nick");
@@ -563,22 +563,22 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
         return logIntError(-1, "Error @ IRCInterface_Connect -> send");
     free(command);
 
-    do{
-        if(recv(sockfd, commandIn, 255, 0) <= 0)
+    do {
+        if (recv(sockfd, commandIn, 255, 0) <= 0)
             return logIntError(-1, "Error @ IRCInterface_Connect -> recv");
-    }while(IRC_CommandQuery(commandIn) == 17);
+    } while (IRC_CommandQuery(commandIn) == 17);
 
-    if(IRC_CommandQuery(commandIn) != 183){
+    if (IRC_CommandQuery(commandIn) != 183) {
         IRCInterface_ErrorDialog(commandIn);
         return -1;
     }
 
-    args = (int*)malloc(sizeof(int));
+    args = (int*) malloc(sizeof (int));
     *args = sockfd;
     pthread_create(&th, NULL, &clientThread, args); //este hilo se encargará de recibir los mensajes posteriores del servidor
-    args = (int*)malloc(sizeof(int));
+    args = (int*) malloc(sizeof (int));
     *args = sockfd;
-    pthread_create(&thWho, NULL, &whoThread, args);//este hilo se encargará de ir enviando comandos WHO al servidor
+    pthread_create(&thWho, NULL, &whoThread, args); //este hilo se encargará de ir enviando comandos WHO al servidor
     return IRC_OK;
 }
 
@@ -980,7 +980,7 @@ boolean IRCInterface_DisconnectServer(char *server, int port) {
  */
 
 boolean IRCInterface_ExitAudioChat(char *nick) {
-    if(alreadyRecordingQuery() == TRUE)
+    if (alreadyRecordingQuery() == TRUE)
         endAudioTransmission();
     return TRUE;
 }
@@ -1232,17 +1232,17 @@ void IRCInterface_NewTopicEnter(char *topicdata) {
  *
  * @return NULL
  */
-void* threadSend(void* args){
+void* threadSend(void* args) {
     char *data, buffer[512], *command, *nick, *filename, *myHost;
     int port, socket, newSockfd;
     socklen_t slen;
     unsigned long length, index = 0;
-    struct threadSendArgs * aux = (struct threadSendArgs *)args;
+    struct threadSendArgs * aux = (struct threadSendArgs *) args;
     struct sockaddr_in serv, client;
     boolean answer;
 
     pthread_detach(pthread_self());
-    if(aux == NULL)
+    if (aux == NULL)
         return NULL;
     data = aux->data;
     length = aux->length;
@@ -1251,50 +1251,49 @@ void* threadSend(void* args){
     //TODO: cambiar la siguiente linea para hacerla mas general (?)
     myHost = "localhost";
     socket = openSocket_TCP();
-    if(socket < 0){
+    if (socket < 0) {
         IRC_MFree(2, &data, &args);
         return NULL;
     }
     listen(socket, 1);
-    slen = sizeof(serv);
-    getsockname(socket, (struct sockaddr*)&serv, &slen);
+    slen = sizeof (serv);
+    getsockname(socket, (struct sockaddr*) &serv, &slen);
     port = ntohs(serv.sin_port);
 
     sprintf(buffer, "\002FSEND \001%s\001 %s %d %lu", filename, myHost, port, length);
     IRCMsg_Privmsg(&command, NULL, nick, buffer);
-    if(send(sockfd, command, strlen(command), 0) < 0){
+    if (send(sockfd, command, strlen(command), 0) < 0) {
         IRC_MFree(3, &data, &args, &command);
         close(socket);
         return NULL;
     }
     newSockfd = acceptConnection(socket, &client);
-    if(newSockfd < 0){
+    if (newSockfd < 0) {
         logVoidError("error @ threadSend -> acceptConnection");
         IRC_MFree(3, &data, &args, &command);
         close(socket);
         return NULL;
     }
-    if(recv(newSockfd, &answer, sizeof(answer), 0) <= 0){
+    if (recv(newSockfd, &answer, sizeof (answer), 0) <= 0) {
         IRC_MFree(3, &data, &args, &command);
         close(socket);
         return NULL;
     }
-    if(answer == FALSE){
+    if (answer == FALSE) {
         IRC_MFree(3, &data, &args, &command);
         close(socket);
         return NULL;
     }
-    while(length - index >= FILE_BUFLEN){
+    while (length - index >= FILE_BUFLEN) {
         send(newSockfd, data + index, FILE_BUFLEN, 0);
         index += FILE_BUFLEN;
     }
-    if(length > index)
+    if (length > index)
         send(newSockfd, data + index, length - index, 0);
     IRC_MFree(3, &data, &args, &command);
     close(socket);
     return NULL;
 }
-
 
 /**
  * @ingroup IRCInterfaceCallbacks
@@ -1335,12 +1334,12 @@ void* threadSend(void* args){
  *<hr>
  */
 
-boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length){
+boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length) {
     struct threadSendArgs *args;
     pthread_t th;
 
-    args = (struct threadSendArgs*)malloc(sizeof(struct threadSendArgs));
-    if(args == NULL) return FALSE;
+    args = (struct threadSendArgs*) malloc(sizeof (struct threadSendArgs));
+    if (args == NULL) return FALSE;
 
     args->data = data;
     args->length = length;
@@ -1357,7 +1356,7 @@ boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsig
  *
  * @return NULL
  */
-void * threadRecord(void * aux){
+void * threadRecord(void * aux) {
     int socket, port, newSockfd;
     socklen_t slen;
     struct sockaddr_in serv, client;
@@ -1365,41 +1364,41 @@ void * threadRecord(void * aux){
     char *nick, buffer[512], *command;
 
     pthread_detach(pthread_self());
-    if(aux == NULL)
+    if (aux == NULL)
         return NULL;
-    if(alreadyRecordingQuery() == TRUE)
+    if (alreadyRecordingQuery() == TRUE)
         return NULL;
 
     socket = openSocket_TCP();
-    if(socket < 0){
+    if (socket < 0) {
         IRC_MFree(1, &aux);
         return NULL;
     }
     listen(socket, 1);
-    slen = sizeof(serv);
-    getsockname(socket, (struct sockaddr*)&serv, &slen);
+    slen = sizeof (serv);
+    getsockname(socket, (struct sockaddr*) &serv, &slen);
     port = ntohs(serv.sin_port);
 
     nick = (char*) aux;
     sprintf(buffer, "\001FAUDIO %s %d", "localhost", port);
     IRCMsg_Privmsg(&command, NULL, nick, buffer);
     //enviamos el privmsg al servidor para que lo reenvie al otro cliente. Si falla el send, no podemos continuar
-    if(send(sockfd, command, strlen(command), 0) < 0){
+    if (send(sockfd, command, strlen(command), 0) < 0) {
         close(socket);
         return NULL;
     }
     newSockfd = acceptConnection(socket, &client);
-    if(newSockfd < 0){
+    if (newSockfd < 0) {
         logVoidError("error @ threadRecord -> acceptConnection");
         close(socket);
         return NULL;
     }
-    if(recv(newSockfd, &answer, sizeof(boolean), 0) <= 0){
+    if (recv(newSockfd, &answer, sizeof (boolean), 0) <= 0) {
         close(socket);
         close(newSockfd);
         return NULL;
     }
-    if(ntohs(answer) == FALSE){
+    if (ntohs(answer) == FALSE) {
         close(socket);
         close(newSockfd);
         return NULL;
@@ -1409,6 +1408,7 @@ void * threadRecord(void * aux){
     initiateSender();
     return NULL;
 }
+
 /**
  * @ingroup IRCInterfaceCallbacks
  *
@@ -1487,7 +1487,7 @@ boolean IRCInterface_StartAudioChat(char *nick) {
  */
 
 boolean IRCInterface_StopAudioChat(char *nick) {
-    if(alreadyRecordingQuery())
+    if (alreadyRecordingQuery())
         endAudioTransmission();
     return TRUE;
 }
@@ -1654,9 +1654,9 @@ int main(int argc, char *argv[]) {
     functs[RPL_ENDOFWHOIS ] = reactPrint;
     functs[RPL_ENDOFNAMES ] = reactPrint;
     functs[RPL_LISTEND] = reactPrint;
-    //UAWAY, UJOIN, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS
-    for(i=0; i<IRC_MAX_USER_COMMANDS ;i++)
+    for (i = 0; i < IRC_MAX_USER_COMMANDS; i++)
         userFuncts[i] = userDefault;
+    
     userFuncts[UJOIN] = userJoin;
     userFuncts[UMSG] = userPriv;
     userFuncts[UAWAY] = userAway;

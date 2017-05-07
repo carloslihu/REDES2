@@ -24,10 +24,12 @@ CLIENT
 	-para ver la lista de todas las macros de comandos de usuario, visitar:
 	 http://metis.ii.uam.es/irc_8h.html#adf764cbdea00d65edcd07bb9953ad2b7abf3301180fc6801518448ea0af772c17
 	 bajando un rato se llegan a los de usuario. Revisar por si hay alguno que habría que implementar
+	 	(NOTA: esta comprobación ya la hice al principio, y creo que tenemos los más importantes, puesto que ahora el FAQ está mazo de mal diciendo qué NO hacer)
+	 	Si quieres compruébalo tú a mano, pero por mí esto está hecho.
+
 	-he hecho cambios en la funcion de clientThread y en el archivo de comandos de usuario para que (en teoria) ya no sea necesaria la función isCommand.
 	 Asegurar que no lo es
 
 
 SSL
-	-integrar ssl al xchat
 	-finiquitar la memoria
