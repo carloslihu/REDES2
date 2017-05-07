@@ -91,7 +91,7 @@ long reactNick(char *strin) {
  * @return IRC_OK
  */
 long reactMode(char* strin) {
-    char *prefix, *channeluser, *mode, *user, *nick,/* *myNick,*/ *oUser, *host, *server, info[512], *command;
+    char *prefix, *channeluser, *mode, *user, *nick, *oUser, *host, *server, info[512], *command;
     long ret, iMode;
 
     prefix = channeluser = mode = user = nick = oUser = host = server = command = NULL;
@@ -130,6 +130,7 @@ long reactMode(char* strin) {
         IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
         return logIntError(-1, "error @ reactMode -> send");
     }
+    IRC_MFree(8, &prefix, &channeluser, &nick, &user, &host, &server, &command);
     return IRC_OK;
 }
 
@@ -490,6 +491,7 @@ void *threadAudio(void* args){
     }
     close(sock);
     initiateReciever();
+    IRC_MFree(3, &sender, &hostname, &aux);
     return NULL;
 }
 
@@ -673,7 +675,8 @@ long reactQuit(char* strin) {
             free(channels[i]);
             channels[i] = NULL;
         }
-    }
+    } else 
+        IRCInterface_RemoveAllChannelsThread();
     IRC_MFree(8, &prefix, &msg, &nick, &user, &host, &server, &myNick, &channels);
     return IRC_OK;
 }

@@ -85,6 +85,7 @@ long int initiateReciever(){
             close(s);
             stillRunning = FALSE;
             pthread_join(player, &threadReturn);
+            free(stillRunning);
             return logIntError(-1, "error @ initiateReciever -> recvFrom");
         }
     	if(canIWrite(BUFLEN) != 0){
