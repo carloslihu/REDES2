@@ -46,7 +46,11 @@ long int initiateReciever(){
     struct sockaddr_in si_me, si_other;
     pthread_t player;
     void *threadReturn;
-    boolean stillRunning = TRUE;
+    boolean *stillRunning = (boolean*)malloc(sizeof(boolean));
+    if(stillRunning == NULL){
+        return logIntError(-1, "error @ initiateReciever -> malloc");
+    }
+    *stillRunning = TRUE;
     int s;
     char buf[BUFLEN+1];
     memset(audioBuffer, 0, AUDIO_BUFLEN);
@@ -73,7 +77,7 @@ long int initiateReciever(){
     }
     writePos = 0;
     readPos = 0;
-    pthread_create(&player, NULL, &playThread, &stillRunning);
+    pthread_create(&player, NULL, &playThread, stillRunning);
     while(1)
     {
         memset(buf, 0, BUFLEN);
