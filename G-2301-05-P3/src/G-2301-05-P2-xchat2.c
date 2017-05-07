@@ -8,7 +8,6 @@
 #include "../includes/G-2301-05-P2-userTools.h"
 #include "../includes/G-2301-05-P2-basicCommandsFromServer.h"
 #include "../includes/G-2301-05-P2-repliesFromServer.h"
-#include "../includes/G-2301-05-P2-errorsFromServer.h"
 
 struct threadSendArgs {
     char* filename;
