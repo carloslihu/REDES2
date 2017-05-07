@@ -413,7 +413,12 @@ void IRCInterface_BanNick(char *channel, char *nick) {
 	free(command);
 
 }
-
+/**
+ * Este hilo se encarga de mandar un who a todos los canales cada 10s 
+ * para poder tener actualizados correctamente
+ * 
+ * @param args el puntero al socket del cliente
+ */
 void* whoThread(void * args) {
 	int socket, num, i;
 	char**channels, *command;
@@ -439,7 +444,11 @@ void* whoThread(void * args) {
 	free(args);
 	return NULL;
 }
-
+/**
+ * Este es el hilo que asignamos al cliente para recibir los mensajes del servidor y
+ * reaccionar acorde a él y hacer los cambios oportunos en la interfaz
+ * @param args direccion del socket del cliente
+ */
 void* clientThread(void* args) {
 	int byteCount, sockfd, *aux;
 	char* command = NULL;
@@ -618,7 +627,6 @@ void IRCInterface_DeactivateChannelKey(char *channel) {
 		logVoidError("IRCInterface_DeactivateChannelKey -> send");
 	IRCInterface_AddModeChannel(channel, IRCMODE_CHANNELPASSWORD);
 	free(command);
-
 }
 
 /**
@@ -1107,6 +1115,7 @@ void IRCInterface_KickNick(char *channel, char *nick) {
 	}
 	if (send(sockfd, command, strlen(command), 0) < 0)
 		logVoidError("error @ IRCInterface_KickNick -> send");
+	free(command);
 }
 
 /**
