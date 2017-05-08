@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/d80/group___i_r_c_interface_callbacks_IRCInterface_NewTopicEnter" kind="page">
+    <compoundname>IRCInterface_NewTopicEnter</compoundname>
+    <title>IRCInterface_NewTopicEnter</title>
+    <detaileddescription>
+<para>Llamada cuando se pulsa la tecla ENTER en el campo de tópico.</para><para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/dbf/_g-2301-05-_p2-xchat2_8c_1a080cf34ff506481737f6d08af60ca92b" kindref="member">IRCInterface_NewTopicEnter</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>topicdata)</highlight></codeline>
+</programlisting></para><para>Llamada cuando se pulsa la tecla ENTER en el campo de tópico. Deberá intentarse cambiar el tópico del canal.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.</para><para>param[in] topicdata string con el tópico que se desea poner en el canal.</para><para><simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

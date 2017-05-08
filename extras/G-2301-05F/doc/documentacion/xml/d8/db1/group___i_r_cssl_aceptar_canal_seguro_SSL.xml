@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_aceptar_canal_seguro_SSL" kind="page">
+    <compoundname>aceptar_canal_seguro_SSL</compoundname>
+    <title>aceptar_canal_seguro_SSL</title>
+    <detaileddescription>
+<para>Dado un contexto SSL y un descriptor de socket esta función se encargará de bloquear la aplicación, que se quedará esperando hasta recibir un handshake por parte del cliente. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contexto de la conexión segura </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>socket de la conexión segura</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>estructura SSL de la conexión segura</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

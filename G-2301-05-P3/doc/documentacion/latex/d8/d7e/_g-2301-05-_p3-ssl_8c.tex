@@ -1,0 +1,204 @@
+\hypertarget{_g-2301-05-_p3-ssl_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P3-\/ssl.c File Reference}
+\label{_g-2301-05-_p3-ssl_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P3-\/ssl.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P3-\/ssl.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$err.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p3-ssl_8c_a937108af8fd0832377b084e24172ee41}{inicializar\-\_\-nivel\-\_\-\-S\-S\-L} ()
+\item 
+S\-S\-L\-\_\-\-C\-T\-X $\ast$ \hyperlink{_g-2301-05-_p3-ssl_8c_a84a295d51a23d2558cbf65f436011dc6}{fijar\-\_\-contexto\-\_\-\-S\-S\-L} (char $\ast$C\-Afile, char $\ast$S\-Cfile, char $\ast$Pfile, char $\ast$C\-Apath)
+\item 
+S\-S\-L $\ast$ \hyperlink{_g-2301-05-_p3-ssl_8c_a79add582c01289f85c0a81569ee3b73e}{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L} (S\-S\-L\-\_\-\-C\-T\-X $\ast$ctx, int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd})
+\item 
+S\-S\-L $\ast$ \hyperlink{_g-2301-05-_p3-ssl_8c_aaeb9457077403f2261ca1a86e3802a1d}{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L} (S\-S\-L\-\_\-\-C\-T\-X $\ast$ctx, int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd})
+\item 
+boolean \hyperlink{_g-2301-05-_p3-ssl_8c_a8abf144662cb4cfd12428524f425854c}{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L} (S\-S\-L $\ast$ssl)
+\item 
+int \hyperlink{_g-2301-05-_p3-ssl_8c_a71ed04f7f38be4fd5b1abec30a9ee130}{enviar\-\_\-datos\-\_\-\-S\-S\-L} (S\-S\-L $\ast$ssl, void $\ast$buf, int num)
+\item 
+int \hyperlink{_g-2301-05-_p3-ssl_8c_a1efb5af79fa6ea71c4d9ceb8f718290f}{recibir\-\_\-datos\-\_\-\-S\-S\-L} (S\-S\-L $\ast$ssl, void $\ast$buf, int num)
+\item 
+int \hyperlink{_g-2301-05-_p3-ssl_8c_acdbfef38bb502e732928620f71daacd2}{cerrar\-\_\-canal\-\_\-\-S\-S\-L} (S\-S\-L $\ast$ssl, S\-S\-L\-\_\-\-C\-T\-X $\ast$ctx, int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p3-ssl_8c_aaeb9457077403f2261ca1a86e3802a1d}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L@{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}}
+\index{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L@{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}S\-S\-L$\ast$ aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L\-\_\-\-C\-T\-X $\ast$}]{ctx, }
+\item[{int}]{sockfd}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_aaeb9457077403f2261ca1a86e3802a1d}
+Dado un contexto S\-S\-L y un descriptor de socket esta función se encargará de bloquear la aplicación, que se quedará esperando hasta recibir un handshake por parte del cliente. 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estructura S\-S\-L de la conexión segura 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_acdbfef38bb502e732928620f71daacd2}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!cerrar\-\_\-canal\-\_\-\-S\-S\-L@{cerrar\-\_\-canal\-\_\-\-S\-S\-L}}
+\index{cerrar\-\_\-canal\-\_\-\-S\-S\-L@{cerrar\-\_\-canal\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{cerrar\-\_\-canal\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}int cerrar\-\_\-canal\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L $\ast$}]{ssl, }
+\item[{S\-S\-L\-\_\-\-C\-T\-X $\ast$}]{ctx, }
+\item[{int}]{sockfd}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_acdbfef38bb502e732928620f71daacd2}
+Esta función liberará todos los recursos y cerrará el canal de comunicación seguro creado previamente. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si ha ido bien, -\/1 si ha habido un fallo 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a79add582c01289f85c0a81569ee3b73e}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L@{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}}
+\index{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L@{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}S\-S\-L$\ast$ conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L\-\_\-\-C\-T\-X $\ast$}]{ctx, }
+\item[{int}]{sockfd}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a79add582c01289f85c0a81569ee3b73e}
+Dado un contexto S\-S\-L y un descriptor de socket esta función se encargará de obtener un canal seguro S\-S\-L iniciando el proceso de handshake con el otro extremo. 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estructura S\-S\-L de la conexión segura 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a71ed04f7f38be4fd5b1abec30a9ee130}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!enviar\-\_\-datos\-\_\-\-S\-S\-L@{enviar\-\_\-datos\-\_\-\-S\-S\-L}}
+\index{enviar\-\_\-datos\-\_\-\-S\-S\-L@{enviar\-\_\-datos\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{enviar\-\_\-datos\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}int enviar\-\_\-datos\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L $\ast$}]{ssl, }
+\item[{void $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a71ed04f7f38be4fd5b1abec30a9ee130}
+Esta función será el equivalente a la función de envío de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a enviar. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em buf} & datos a enviar \\
+\hline
+{\em num} & tamaño de los datos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero $>$0 si ha ido bien $<$=0 si no 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a8abf144662cb4cfd12428524f425854c}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L@{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L}}
+\index{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L@{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}boolean evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L $\ast$}]{ssl}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a8abf144662cb4cfd12428524f425854c}
+Esta función comprobará una vez realizado el handshake que el canal de co-\/ municación se puede considerar seguro. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si es seguro, false si no 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a84a295d51a23d2558cbf65f436011dc6}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!fijar\-\_\-contexto\-\_\-\-S\-S\-L@{fijar\-\_\-contexto\-\_\-\-S\-S\-L}}
+\index{fijar\-\_\-contexto\-\_\-\-S\-S\-L@{fijar\-\_\-contexto\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{fijar\-\_\-contexto\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}S\-S\-L\-\_\-\-C\-T\-X$\ast$ fijar\-\_\-contexto\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{C\-Afile, }
+\item[{char $\ast$}]{S\-Cfile, }
+\item[{char $\ast$}]{Pfile, }
+\item[{char $\ast$}]{C\-Apath}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a84a295d51a23d2558cbf65f436011dc6}
+Esta función se encargará de inicializar correctamente el contexto que será utilizado para la creación de canales seguros mediante S\-S\-L. Deberá recibir información sobre las rutas a los certificados y claves con los que vaya a trabajar la aplicación. 
+\begin{DoxyParams}{Parameters}
+{\em C\-Afile} & certificado de la C\-A \\
+\hline
+{\em S\-Cfile} & certificado del servidor/cliente \\
+\hline
+{\em Pfile} & clave privada del servidor/cliente \\
+\hline
+{\em C\-Apath} & ruta del certificado de la C\-A \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+contexto de la conexión segura 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a937108af8fd0832377b084e24172ee41}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!inicializar\-\_\-nivel\-\_\-\-S\-S\-L@{inicializar\-\_\-nivel\-\_\-\-S\-S\-L}}
+\index{inicializar\-\_\-nivel\-\_\-\-S\-S\-L@{inicializar\-\_\-nivel\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{inicializar\-\_\-nivel\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}void inicializar\-\_\-nivel\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a937108af8fd0832377b084e24172ee41}
+Esta función se encargará de realizar todas las llamadas necesarias para que la apli-\/ cación pueda usar la capa segura S\-S\-L. 
+
+Definition at line 8 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+
+\hypertarget{_g-2301-05-_p3-ssl_8c_a1efb5af79fa6ea71c4d9ceb8f718290f}{\index{G-\/2301-\/05-\/\-P3-\/ssl.\-c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}!recibir\-\_\-datos\-\_\-\-S\-S\-L@{recibir\-\_\-datos\-\_\-\-S\-S\-L}}
+\index{recibir\-\_\-datos\-\_\-\-S\-S\-L@{recibir\-\_\-datos\-\_\-\-S\-S\-L}!G-2301-05-P3-ssl.c@{G-\/2301-\/05-\/\-P3-\/ssl.\-c}}
+\subsubsection[{recibir\-\_\-datos\-\_\-\-S\-S\-L}]{\setlength{\rightskip}{0pt plus 5cm}int recibir\-\_\-datos\-\_\-\-S\-S\-L (
+\begin{DoxyParamCaption}
+\item[{S\-S\-L $\ast$}]{ssl, }
+\item[{void $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p3-ssl_8c_a1efb5af79fa6ea71c4d9ceb8f718290f}
+Esta función será el equivalente a la función de lectura de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a recibir. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em buf} & datos a recibir \\
+\hline
+{\em num} & tamaño de los datos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero $>$0 si ha ido bien $<$=0 si no 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file G-\/2301-\/05-\/\-P3-\/ssl.\-c.
+

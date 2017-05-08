@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d75/group___i_r_c_server_tools" kind="group">
+    <compoundname>IRCServerTools</compoundname>
+    <title>serverTools</title>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_daemonizar">daemonizar</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_logIntError">logIntError</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_logPointerError">logPointerError</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_logVoidError">logVoidError</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_getIP">getIP</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_getHostName">getHostName</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_getNickFromSocket">getNickFromSocket</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_getSocketFromNick">getSocketFromNick</innerpage>
+    <innerpage refid="d1/d75/group___i_r_c_server_tools_getAwayFromSocket">getAwayFromSocket</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones auxiliares</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

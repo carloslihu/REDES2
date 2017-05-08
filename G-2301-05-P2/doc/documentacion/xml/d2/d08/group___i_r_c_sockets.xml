@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets" kind="group">
+    <compoundname>IRCSockets</compoundname>
+    <title>sockets</title>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_openSocket_TCP">openSocket_TCP</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_bindSocket_TCP">bindSocket_TCP</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_acceptConnection">acceptConnection</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_connectTo">connectTo</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_connectToIP">connectToIP</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_openSocket_UDP">openSocket_UDP</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_bindSocket_UDP">bindSocket_UDP</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_getSocketPort">getSocketPort</innerpage>
+    <innerpage refid="d2/d08/group___i_r_c_sockets_iniAddrUDP">iniAddrUDP</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que se encargan de manejar sockets</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

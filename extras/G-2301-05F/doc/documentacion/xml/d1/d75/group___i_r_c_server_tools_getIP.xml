@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d75/group___i_r_c_server_tools_getIP" kind="page">
+    <compoundname>getIP</compoundname>
+    <title>getIP</title>
+    <detaileddescription>
+<para>reserva memoria para una String que contiene le dirección IP de un cliente en formato estandar: xxx.xxx.xxx.xxx</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura que contiene la IP a encontrar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una String donde guardaremos el resultado</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el puntero a la String resultado</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

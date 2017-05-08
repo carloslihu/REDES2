@@ -1,0 +1,128 @@
+\hypertarget{group___i_r_c_server_tools}{\section{server\-Tools}
+\label{group___i_r_c_server_tools}\index{server\-Tools@{server\-Tools}}
+}
+Funciones auxiliares
+
+
+
+ \hypertarget{daemonizar}{}\subsubsection{daemonizar}\label{daemonizar}
+daemoniza el proceso el proceso queda en segundo plano como proceso de init
+
+
+
+ \hypertarget{logIntError}{}\subsubsection{log\-Int\-Error}\label{logIntError}
+identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\-Value} & el error a registrar y devolver \\
+\hline
+{\em msg} & el mensaje de error previo al nombre del error\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el error registrado en return\-Value
+\end{DoxyReturn}
+
+
+ \hypertarget{logPointerError}{}\subsubsection{log\-Pointer\-Error}\label{logPointerError}
+identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\-Value} & el error a devolver \\
+\hline
+{\em msg} & el mensaje de error\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el error registrado en return\-Value
+\end{DoxyReturn}
+
+
+ \hypertarget{logVoidError}{}\subsubsection{log\-Void\-Error}\label{logVoidError}
+registra un mensaje de error
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & el mensaje de error a registrar\\
+\hline
+\end{DoxyParams}
+
+
+ \hypertarget{getIP}{}\subsubsection{get\-I\-P}\label{getIP}
+reserva memoria para una String que contiene le dirección I\-P de un cliente en formato estandar\-: xxx.\-xxx.\-xxx.\-xxx
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & la estructura que contiene la I\-P a encontrar \\
+\hline
+{\em ip} & la dirección de una String donde guardaremos el resultado\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el puntero a la String resultado
+\end{DoxyReturn}
+
+
+ \hypertarget{getHostName}{}\subsubsection{get\-Host\-Name}\label{getHostName}
+guarda en hostname el nombre del dispositivo dev
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & el dispositivo cuyo nombre deseamos encontrar \\
+\hline
+{\em hostname} & la dirección de la String donde escribir el nombre del dispositivo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si todo va bien
+\end{DoxyReturn}
+
+
+ \hypertarget{getNickFromSocket}{}\subsubsection{get\-Nick\-From\-Socket}\label{getNickFromSocket}
+guarda en nick el nickname del usuario asociado con el socket
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket que identifica la conexión con el usuario \\
+\hline
+{\em nick} & la dirección de la String donde guardar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si todo fue bien. El error si no
+\end{DoxyReturn}
+
+
+ \hypertarget{getSocketFromNick}{}\subsubsection{get\-Socket\-From\-Nick}\label{getSocketFromNick}
+obtiene el socket del nick
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket a obtener \\
+\hline
+{\em nick} & nick a comprobar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{getAwayFromSocket}{}\subsubsection{get\-Away\-From\-Socket}\label{getAwayFromSocket}
+obtiene el away del socket
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket a obtener \\
+\hline
+{\em away} & cadena away\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ 

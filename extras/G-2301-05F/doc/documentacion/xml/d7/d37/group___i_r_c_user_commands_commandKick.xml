@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d7/d37/group___i_r_c_user_commands_commandKick" kind="page">
+    <compoundname>commandKick</compoundname>
+    <title>commandKick</title>
+    <detaileddescription>
+<para>commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

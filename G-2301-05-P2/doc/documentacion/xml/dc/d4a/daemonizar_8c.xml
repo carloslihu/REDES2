@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dc/d4a/daemonizar_8c" kind="file">
+    <compoundname>daemonizar.c</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">syslog.h</includes>
+    <includes local="no">stdio.h</includes>
+    <incdepgraph>
+      <node id="403">
+        <label>stdint.h</label>
+      </node>
+      <node id="404">
+        <label>stdlib.h</label>
+      </node>
+      <node id="406">
+        <label>syslog.h</label>
+      </node>
+      <node id="405">
+        <label>unistd.h</label>
+      </node>
+      <node id="402">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.c</label>
+        <link refid="daemonizar.c"/>
+        <childnode refid="403" relation="include">
+        </childnode>
+        <childnode refid="404" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+        <childnode refid="407" relation="include">
+        </childnode>
+      </node>
+      <node id="407">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dc/d4a/daemonizar_8c_1a79f6ea5350079c571138b0a00af1f5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void daemonizar</definition>
+        <argsstring>()</argsstring>
+        <name>daemonizar</name>
+        <briefdescription>
+<para>daemoniza el proceso el proceso queda en segundo plano como proceso de init </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.c" line="7" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.c" bodystart="7" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;syslog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="dc/d4a/daemonizar_8c_1a79f6ea5350079c571138b0a00af1f5a4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dc/d4a/daemonizar_8c_1a79f6ea5350079c571138b0a00af1f5a4" kindref="member">daemonizar</ref>(){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fatherPid<sp/>=<sp/>getpid();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pid;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//FILE*<sp/>fp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>child<sp/>process</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//pid<sp/>=<sp/>fork();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indication<sp/>of<sp/>fork()<sp/>failure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(pid<sp/>==<sp/>-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//exit(1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PARENT<sp/>PROCESS.<sp/>Need<sp/>to<sp/>kill<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//else<sp/>if(pid<sp/>!=<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//exit(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//child<sp/>process<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//else<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//unmask<sp/>the<sp/>file<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//umask(0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>new<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sid<sp/>=<sp/>setsid();</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(sid<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Return<sp/>failure</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;Puta<sp/>vida<sp/>tt\n&quot;);</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Change<sp/>the<sp/>current<sp/>working<sp/>directory<sp/>to<sp/>root.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//chdir(&quot;/&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Close<sp/>stdin.<sp/>stdout<sp/>and<sp/>stderr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*close(STDIN_FILENO);</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(STDOUT_FILENO);</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(STDERR_FILENO);</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//openlog(&quot;servidor:<sp/>&quot;,<sp/>LOG_CONS<sp/>,<sp/>LOG_USER);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO<sp/>|<sp/>LOG_USER,<sp/></highlight><highlight class="stringliteral">&quot;Hola<sp/>Mundo&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//closelog();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d99/group___i_r_c_user_tools" kind="group">
+    <compoundname>IRCUserTools</compoundname>
+    <title>userTools</title>
+    <innerpage refid="d2/d99/group___i_r_c_user_tools_printXchat">printXchat</innerpage>
+    <innerpage refid="d2/d99/group___i_r_c_user_tools_getMyNick">getMyNick</innerpage>
+    <innerpage refid="d2/d99/group___i_r_c_user_tools_getMyNickThread">getMyNickThread</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones auxiliares para el cliente</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

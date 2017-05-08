@@ -1,0 +1,71 @@
+.TH "repliesFromServer" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+repliesFromServer \- 
+Funciones que manejan las respuestas numericas del servidor
+.PP
+.PP
+ reactModeQuery
+rutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactNoTopic"
+rutina que maneja la llegada de la respuesta 331 correspondiente a notificar que no hay topic en un canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactTopicQuery"
+rutina que maneja la llegada de la respuesta 332 correspondiente a una solicitud del topic de un canal
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SS "reactWhoReply"
+rutina que maneja la llegada de la respuesta 352 correspondiente a una solicitud de WHO
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK
+.RE
+.PP
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

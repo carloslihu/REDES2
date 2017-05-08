@@ -1,0 +1,108 @@
+.TH "G-2301-05-P2-repliesFromServer.h" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+G-2301-05-P2-repliesFromServer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2301-05-P2-userTools\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBreactModeQuery\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal \fP"
+.ti -1c
+.RI "long \fBreactNoTopic\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de la respuesta 331 correspondiente a notificar que no hay topic en un canal \fP"
+.ti -1c
+.RI "long \fBreactTopicQuery\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de la respuesta 332 correspondiente a una solicitud del topic de un canal \fP"
+.ti -1c
+.RI "long \fBreactWhoReply\fP (char *strin)"
+.br
+.RI "\fIrutina que maneja la llegada de la respuesta 352 correspondiente a una solicitud de WHO \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "long reactModeQuery (char *strin)"
+
+.PP
+rutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file G-2301-05-P2-repliesFromServer\&.c\&.
+.SS "long reactNoTopic (char *strin)"
+
+.PP
+rutina que maneja la llegada de la respuesta 331 correspondiente a notificar que no hay topic en un canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file G-2301-05-P2-repliesFromServer\&.c\&.
+.SS "long reactTopicQuery (char *strin)"
+
+.PP
+rutina que maneja la llegada de la respuesta 332 correspondiente a una solicitud del topic de un canal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file G-2301-05-P2-repliesFromServer\&.c\&.
+.SS "long reactWhoReply (char *strin)"
+
+.PP
+rutina que maneja la llegada de la respuesta 352 correspondiente a una solicitud de WHO 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el mensaje que envia el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file G-2301-05-P2-repliesFromServer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

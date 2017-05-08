@@ -1,0 +1,795 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h" kind="file">
+    <compoundname>G-2301-05-P2-basicCommandsFromServer.h</compoundname>
+    <includes refid="d4/d1f/_g-2301-05-_p2-user_tools_8h" local="yes">../includes/G-2301-05-P2-userTools.h</includes>
+    <includedby refid="d9/dbb/_g-2301-05-_p2-audio_8h" local="yes">G-2301-05-P2-audio.h</includedby>
+    <includedby refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c</includedby>
+    <includedby refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</includedby>
+    <incdepgraph>
+      <node id="205">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="207">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="199">
+        <label>stdint.h</label>
+      </node>
+      <node id="194">
+        <label>stdlib.h</label>
+      </node>
+      <node id="191">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>errno.h</label>
+      </node>
+      <node id="198">
+        <label>netdb.h</label>
+      </node>
+      <node id="193">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>syslog.h</label>
+      </node>
+      <node id="192">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="193" relation="include">
+        </childnode>
+      </node>
+      <node id="202">
+        <label>pthread.h</label>
+      </node>
+      <node id="203">
+        <label>sys/types.h</label>
+      </node>
+      <node id="196">
+        <label>string.h</label>
+      </node>
+      <node id="208">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="197">
+        <label>unistd.h</label>
+      </node>
+      <node id="209">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="206">
+        <label>sys/time.h</label>
+      </node>
+      <node id="204">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="210">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="195">
+        <label>stdio.h</label>
+      </node>
+      <node id="190">
+        <label>G-2301-05-P2-basicCommandsFromServer.h</label>
+        <link refid="G-2301-05-P2-basicCommandsFromServer.h"/>
+        <childnode refid="191" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="214">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c</label>
+        <link refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c"/>
+      </node>
+      <node id="212">
+        <label>G-2301-05-P2-audio.h</label>
+        <link refid="d9/dbb/_g-2301-05-_p2-audio_8h"/>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+      </node>
+      <node id="215">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</label>
+        <link refid="dd/dbf/_g-2301-05-_p2-xchat2_8c"/>
+      </node>
+      <node id="213">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c</label>
+        <link refid="d6/dbc/_g-2301-05-_p2-audio_8c"/>
+      </node>
+      <node id="211">
+        <label>G-2301-05-P2-basicCommandsFromServer.h</label>
+        <link refid="G-2301-05-P2-basicCommandsFromServer.h"/>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab68ac40eace3f4d79f5354453773c583" prot="public" static="no">
+        <name>MSG_DEFAULT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="5" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac932c0071ffab6330f621400e10a80ec" prot="public" static="no">
+        <name>MSG_PASS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="6" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ace2a2cde4cc9515d035aae9167158356" prot="public" static="no">
+        <name>MSG_NICK</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="7" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9fd0f43f293031d18a7b06276db6d664" prot="public" static="no">
+        <name>MSG_MODE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="8" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a33c33bfecad983d967ebd9e9a7935f88" prot="public" static="no">
+        <name>MSG_SERVICE</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="9" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8273a5a7d3c4a158db1130c30e61958" prot="public" static="no">
+        <name>MSG_QUIT</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="10" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a524e3778261581851bbf385356b16ad5" prot="public" static="no">
+        <name>MSG_JOIN</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="11" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ad1fd0ad922d78d93e43488a0ad403cbd" prot="public" static="no">
+        <name>MSG_PART</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="12" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a39ddc5879d91229533bb1d6c95d4c693" prot="public" static="no">
+        <name>MSG_TOPIC</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="13" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abe6497a57f23834ebda49482f49295dd" prot="public" static="no">
+        <name>MSG_NAMES</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="14" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abcd825cc371e203e229b62802482ae47" prot="public" static="no">
+        <name>MSG_KICK</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="15" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a492be57857c06cfc1aa45679f9073b69" prot="public" static="no">
+        <name>MSG_PRIVMSG</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="16" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1afce61f740800dad1de4c850b5be89186" prot="public" static="no">
+        <name>MSG_WHO</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="17" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abf11f9669d8a109b5f1de49ee2a15403" prot="public" static="no">
+        <name>MSG_WHOIS</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="18" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a009739def9ef4526ecd7b0f33baaec0c" prot="public" static="no">
+        <name>MSG_PING</name>
+        <initializer>34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="19" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1de1cfc897f26ebaa88740d1d17c823e" prot="public" static="no">
+        <name>MSG_SETNAME</name>
+        <initializer>58</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="20" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab4280385e15a48712d64d651acb2648d" prot="public" static="no">
+        <name>FILE_BUFLEN</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="22" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4a541fbbe2af9ced94c42bd9035763e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactDefault</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactDefault</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina por defecto ante un mensaje no reconocido por este cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="55" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a44650743c7ba1a6a2768d4156028e8d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactPrint</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactPrint</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="70" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8c9483ef017ea056ed519d084029cff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactPass</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactPass</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando PASS </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="85" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1af4a1c3e0adb16c333386f048f948a174" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactNick</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactNick</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando NICK. Esta rutina cambia el nick del usuario </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="100" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="66" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4c0608743d68b02dc2edaa0e113293df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactMode</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactMode</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando MODE. Este comando cambia los modos del canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="115" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="93" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a6aac8ec73a892579e8988ee16cee507c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactService</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactService</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando SERVICE </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="130" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="143" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aac734783cf3067915cdfe1d4968cf8d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactJoin</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactJoin</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando JOIN. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="149" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="158" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a28c3a9c34508c23d3f81c2326101e8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactPart</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactPart</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando PART. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="166" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="216" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d86d105c8fe9b9fc6c55c5bc2406f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactTopic</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactTopic</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando TOPIC. Cambia el topico del canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="181" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="244" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4f7dc613a25eb6eda89ad289feec5f16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactKick</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactKick</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando KICK Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="198" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="273" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aa0f0ef9fd0a3facea1983061e1648e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactPrivmsg</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactPrivmsg</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando PRIVMSG. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta. tambien maneja un caso particular de PrivMsg que sirve para identificar una peticion de envio de ficheros </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="215" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="506" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d15466f16cbf9847a16ac4bf24b34fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactPing</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactPing</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando PING </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="230" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="596" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a7df438a44035b38ab4eacf045bbc131c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactSetName</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactSetName</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando SETNAME </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="245" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="617" bodyend="619"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a62ca3a2f7e205eecb85ae220ac5c3c7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactNames</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactNames</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando NAMES </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="260" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="628" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9261ac4f3ef8326c2954ac381b176016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactQuit</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactQuit</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de un comando QUIT. Se asume que solo se recibirá un quit de otro cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h" line="275" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="653" bodyend="679"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_BASICCOMMANDSFROMSERVER_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_BASICCOMMANDSFROMSERVER_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P2-userTools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab68ac40eace3f4d79f5354453773c583" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSG_DEFAULT<sp/>0</highlight></codeline>
+<codeline lineno="6" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac932c0071ffab6330f621400e10a80ec" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_PASS<sp/>1</highlight></codeline>
+<codeline lineno="7" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ace2a2cde4cc9515d035aae9167158356" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_NICK<sp/>2</highlight></codeline>
+<codeline lineno="8" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9fd0f43f293031d18a7b06276db6d664" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_MODE<sp/>5</highlight></codeline>
+<codeline lineno="9" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a33c33bfecad983d967ebd9e9a7935f88" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_SERVICE<sp/>6</highlight></codeline>
+<codeline lineno="10" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8273a5a7d3c4a158db1130c30e61958" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_QUIT<sp/>7</highlight></codeline>
+<codeline lineno="11" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a524e3778261581851bbf385356b16ad5" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_JOIN<sp/>9</highlight></codeline>
+<codeline lineno="12" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ad1fd0ad922d78d93e43488a0ad403cbd" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_PART<sp/>10</highlight></codeline>
+<codeline lineno="13" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a39ddc5879d91229533bb1d6c95d4c693" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_TOPIC<sp/>11</highlight></codeline>
+<codeline lineno="14" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abe6497a57f23834ebda49482f49295dd" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_NAMES<sp/>12</highlight></codeline>
+<codeline lineno="15" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abcd825cc371e203e229b62802482ae47" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_KICK<sp/>15</highlight></codeline>
+<codeline lineno="16" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a492be57857c06cfc1aa45679f9073b69" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_PRIVMSG<sp/>16</highlight></codeline>
+<codeline lineno="17" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1afce61f740800dad1de4c850b5be89186" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_WHO<sp/>30</highlight></codeline>
+<codeline lineno="18" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1abf11f9669d8a109b5f1de49ee2a15403" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_WHOIS<sp/>31</highlight></codeline>
+<codeline lineno="19" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a009739def9ef4526ecd7b0f33baaec0c" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_PING<sp/>34</highlight></codeline>
+<codeline lineno="20" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1de1cfc897f26ebaa88740d1d17c823e" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MSG_SETNAME<sp/>58</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ab4280385e15a48712d64d651acb2648d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_BUFLEN<sp/>1024</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="55"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4a541fbbe2af9ced94c42bd9035763e0" kindref="member">reactDefault</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*strin);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a44650743c7ba1a6a2768d4156028e8d4" kindref="member">reactPrint</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*strin);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1ac8c9483ef017ea056ed519d084029cff" kindref="member">reactPass</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1af4a1c3e0adb16c333386f048f948a174" kindref="member">reactNick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strin);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4c0608743d68b02dc2edaa0e113293df" kindref="member">reactMode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a6aac8ec73a892579e8988ee16cee507c" kindref="member">reactService</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aac734783cf3067915cdfe1d4968cf8d1" kindref="member">reactJoin</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strin);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a28c3a9c34508c23d3f81c2326101e8e7" kindref="member">reactPart</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d86d105c8fe9b9fc6c55c5bc2406f37" kindref="member">reactTopic</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a4f7dc613a25eb6eda89ad289feec5f16" kindref="member">reactKick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1aa0f0ef9fd0a3facea1983061e1648e87" kindref="member">reactPrivmsg</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a1d15466f16cbf9847a16ac4bf24b34fb" kindref="member">reactPing</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a7df438a44035b38ab4eacf045bbc131c" kindref="member">reactSetName</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a62ca3a2f7e205eecb85ae220ac5c3c7b" kindref="member">reactNames</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h_1a9261ac4f3ef8326c2954ac381b176016" kindref="member">reactQuit</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-basicCommandsFromServer.h"/>
+  </compounddef>
+</doxygen>

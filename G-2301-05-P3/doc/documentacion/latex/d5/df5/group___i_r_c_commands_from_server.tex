@@ -1,0 +1,203 @@
+\hypertarget{group___i_r_c_commands_from_server}{\section{commands\-From\-Server}
+\label{group___i_r_c_commands_from_server}\index{commands\-From\-Server@{commands\-From\-Server}}
+}
+Funciones que manejan los comandos del servidor
+
+
+
+ \hypertarget{reactDefault}{}\subsubsection{react\-Default}\label{reactDefault}
+rutina por defecto ante un mensaje no reconocido por este cliente
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactPrint}{}\subsubsection{react\-Print}\label{reactPrint}
+maneja cualquier mensaje en general que envie el servidor, imprimiendo en xchat strin
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no
+\end{DoxyReturn}
+
+
+ \hypertarget{reactPass}{}\subsubsection{react\-Pass}\label{reactPass}
+rutina que maneja la llegada de un comando P\-A\-S\-S
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactNick}{}\subsubsection{react\-Nick}\label{reactNick}
+rutina que maneja la llegada de un comando N\-I\-C\-K. Esta rutina cambia el nick del usuario
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactMode}{}\subsubsection{react\-Mode}\label{reactMode}
+rutina que maneja la llegada de un comando M\-O\-D\-E. Este comando cambia los modos del canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactService}{}\subsubsection{react\-Service}\label{reactService}
+rutina que maneja la llegada de un comando S\-E\-R\-V\-I\-C\-E
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactJoin}{}\subsubsection{react\-Join}\label{reactJoin}
+rutina que maneja la llegada de un comando J\-O\-I\-N. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactPart}{}\subsubsection{react\-Part}\label{reactPart}
+rutina que maneja la llegada de un comando P\-A\-R\-T. Si este cliente ha solicitado salir del canal, la pestaña correspondiente a este canal desaparecerá Si ha sido otro cliente el que ha hecho el part, se le elimina de la lista de usuarios en el canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactTopic}{}\subsubsection{react\-Topic}\label{reactTopic}
+rutina que maneja la llegada de un comando T\-O\-P\-I\-C. Cambia el topico del canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactKick}{}\subsubsection{react\-Kick}\label{reactKick}
+rutina que maneja la llegada de un comando K\-I\-C\-K Si el objetivo del kick es este cliente, entonces se elimina la pestana del canal del cual le han expulsado de lo contrario, se elimina al usuario expulsado de la lista de usuarios del canal
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactPrivmsg}{}\subsubsection{react\-Privmsg}\label{reactPrivmsg}
+rutina que maneja la llegada de un comando P\-R\-I\-V\-M\-S\-G. maneja envio de mensajes tanto a canales como a usuarios si en la interfaz no existe la conversacion en la que se participa, se crea una nueva pestana con esta. tambien maneja un caso particular de Priv\-Msg que sirve para identificar una peticion de envio de ficheros
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactPing}{}\subsubsection{react\-Ping}\label{reactPing}
+rutina que maneja la llegada de un comando P\-I\-N\-G
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactSetName}{}\subsubsection{react\-Set\-Name}\label{reactSetName}
+rutina que maneja la llegada de un comando S\-E\-T\-N\-A\-M\-E
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactNames}{}\subsubsection{react\-Names}\label{reactNames}
+rutina que maneja la llegada de un comando N\-A\-M\-E\-S
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{reactQuit}{}\subsubsection{react\-Quit}\label{reactQuit}
+rutina que maneja la llegada de un comando Q\-U\-I\-T. Se asume que solo se recibirá un quit de otro cliente
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el mensaje que envia el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ 

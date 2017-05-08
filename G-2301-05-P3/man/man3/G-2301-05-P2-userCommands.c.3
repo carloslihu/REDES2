@@ -1,0 +1,394 @@
+.TH "/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" 3 "Sun May 7 2017" "Redes2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2301-05-P2-userCommands\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTAM\fP   14"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "boolean \fBisCommand\fP (long ncommand)"
+.br
+.RI "\fIfuncion que comprueba si el entero largo es un comando de usuario implementado por este cliente \fP"
+.ti -1c
+.RI "long \fBuserDefault\fP (int socket, char *strin)"
+.br
+.ti -1c
+.RI "long \fBuserAway\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando AWAY bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserJoin\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando JOIN bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserKick\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando KICK bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserList\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando LIST bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserMode\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando MODE bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserMotd\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando MOTD bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserNames\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando NAMES bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserNick\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando NICK bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserPart\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando PART bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserPriv\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando PRIVMSG bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserQuit\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando QUIT bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserTopic\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando TOPIC bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserWhois\fP (int socket, char *strin)"
+.br
+.RI "\fIfuncion que envia un comando WHOIS bien formado al servidor \fP"
+.ti -1c
+.RI "long \fBuserWho\fP (int socket, char *strin)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "long \fBnCommands\fP [\fBTAM\fP] = {UAWAY, UJOIN, UMSG, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS, UWHO}"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define TAM   14"
+
+.PP
+Definition at line 2 of file G-2301-05-P2-userCommands\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "boolean isCommand (longncommand)"
+
+.PP
+funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIncommand\fP el entero largo que representa un comando
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE si ese comando es soportado por este cliente, FALSE de lo contrario 
+.RE
+.PP
+
+.PP
+Definition at line 12 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userAway (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando AWAY bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userDefault (intsocket, char *strin)"
+
+.PP
+Definition at line 20 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userJoin (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando JOIN bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userKick (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando KICK bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userList (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando LIST bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 112 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userMode (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando MODE bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 144 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userMotd (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando MOTD bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userNames (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando NAMES bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userNick (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando NICK bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 241 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userPart (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando PART bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 266 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userPriv (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando PRIVMSG bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 298 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userQuit (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando QUIT bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 335 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userTopic (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando TOPIC bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 367 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userWho (intsocket, char *strin)"
+
+.PP
+Definition at line 410 of file G-2301-05-P2-userCommands\&.c\&.
+.SS "long userWhois (intsocket, char *strin)"
+
+.PP
+funcion que envia un comando WHOIS bien formado al servidor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrin\fP el comando escrito por el usuario 
+.br
+\fIsocket\fP el socket de conexion con el servidor
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+IRC_OK 
+.RE
+.PP
+
+.PP
+Definition at line 394 of file G-2301-05-P2-userCommands\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "long nCommands[\fBTAM\fP] = {UAWAY, UJOIN, UMSG, UKICK, ULIST, UMODE, UMOTD, UNAMES, UNICK, UPART, UQUIT, UTOPIC, UWHOIS, UWHO}"
+
+.PP
+Definition at line 3 of file G-2301-05-P2-userCommands\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Redes2 from the source code\&.

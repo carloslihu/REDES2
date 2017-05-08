@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_evaluar_post_connectar_SSL" kind="page">
+    <compoundname>evaluar_post_connectar_SSL</compoundname>
+    <title>evaluar_post_connectar_SSL</title>
+    <detaileddescription>
+<para>Esta función comprobará una vez realizado el handshake que el canal de co- municación se puede considerar seguro. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>estructura SSL de la conexión segura</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true si es seguro, false si no</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,585 @@
+\hypertarget{_g-2301-05-_p1-commands_8h}{\section{G-\/2301-\/05-\/\-P1-\/commands.h File Reference}
+\label{_g-2301-05-_p1-commands_8h}\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+}
+{\ttfamily \#include \char`\"{}G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_af8fd36debbc6d010faa1515aa469f36e}{command\-Default} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a6c14bedc2ca0c1a7748fd188966f0699}{command\-Nick} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando nick permite al usuario cambiar de nickname \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_aaa0cd83abb127533a58a9824d766302d}{command\-Mode} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando mode permite al usuario cambiar el modo un canal especificado \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a8c61e34c067a94ff808b75f1b5346685}{command\-Quit} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando quit permite al usuario abandonar el servidor \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a520a20b8ad5887dd2b600682bb3ea36e}{command\-Join} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando join permite al usuario unirse a un canal. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el R\-F\-C. Tratar de unirse a un canal inexistente, creará dicho canal \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_adadde8a5b5af849c55509d9e9aef8dc1}{command\-Part} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando part permite al usuario abandonar el canal indicado. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a2c3f4be0a8d40030d1e249075f96f4fe}{command\-Topic} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_ab3b8ab89b3ae99edea8af60322538c1f}{command\-Names} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a0ef7f97ab64eb311827dbe3509b071bb}{command\-List} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a1a1a0b84710fb5d6735e672b17fba549}{command\-Kick} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal) \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a0a4c40bf7931be7bd3f56586abf64357}{command\-Privmsg} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_af2e41d9c9e7f057a6f139528d75c8e87}{command\-Motd} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando Message of the Day permite al usuario consultar el mensaje del día \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a5e1f1b69c0a63183b62225298d9ea0b6}{command\-Whois} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando Whois permite al usuario obtener información de cierto usuario en el servidor \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a4a1c3256c2cd2bbaf8c04b641de8e89b}{command\-Ping} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_acbe69f5fe4b81b494a330cf4e5ccc05d}{command\-Away} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando Away permite al usuario marcarse como ausente \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_af65ecbf1de189abeaf7b329159afd032}{command\-Who} (int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\begin{DoxyCompactList}\small\item\em commando who aporta datos al usuario \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-commands_8h_a5844fb12c3cab624c83fc0ccff9946db}{mega\-Send} (char $\ast$command, char $\ast$$\ast$nicks, long int num)
+\begin{DoxyCompactList}\small\item\em envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p1-commands_8h_acbe69f5fe4b81b494a330cf4e5ccc05d}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Away@{command\-Away}}
+\index{command\-Away@{command\-Away}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Away}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Away (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_acbe69f5fe4b81b494a330cf4e5ccc05d}
+
+
+commando Away permite al usuario marcarse como ausente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1461 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_af8fd36debbc6d010faa1515aa469f36e}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Default@{command\-Default}}
+\index{command\-Default@{command\-Default}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Default}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Default (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_af8fd36debbc6d010faa1515aa469f36e}
+
+
+commando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a520a20b8ad5887dd2b600682bb3ea36e}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Join@{command\-Join}}
+\index{command\-Join@{command\-Join}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Join}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Join (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a520a20b8ad5887dd2b600682bb3ea36e}
+
+
+commando join permite al usuario unirse a un canal. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el R\-F\-C. Tratar de unirse a un canal inexistente, creará dicho canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 581 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a1a1a0b84710fb5d6735e672b17fba549}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Kick@{command\-Kick}}
+\index{command\-Kick@{command\-Kick}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Kick}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Kick (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a1a1a0b84710fb5d6735e672b17fba549}
+
+
+commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1039 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a0ef7f97ab64eb311827dbe3509b071bb}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-List@{command\-List}}
+\index{command\-List@{command\-List}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-List}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a0ef7f97ab64eb311827dbe3509b071bb}
+
+
+commando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 910 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_aaa0cd83abb127533a58a9824d766302d}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Mode@{command\-Mode}}
+\index{command\-Mode@{command\-Mode}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_aaa0cd83abb127533a58a9824d766302d}
+
+
+commando mode permite al usuario cambiar el modo un canal especificado 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 417 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_af2e41d9c9e7f057a6f139528d75c8e87}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Motd@{command\-Motd}}
+\index{command\-Motd@{command\-Motd}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Motd}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Motd (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_af2e41d9c9e7f057a6f139528d75c8e87}
+
+
+commando Message of the Day permite al usuario consultar el mensaje del día 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1234 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_ab3b8ab89b3ae99edea8af60322538c1f}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Names@{command\-Names}}
+\index{command\-Names@{command\-Names}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Names}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Names (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_ab3b8ab89b3ae99edea8af60322538c1f}
+
+
+commando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 844 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a6c14bedc2ca0c1a7748fd188966f0699}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Nick@{command\-Nick}}
+\index{command\-Nick@{command\-Nick}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Nick (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a6c14bedc2ca0c1a7748fd188966f0699}
+
+
+commando nick permite al usuario cambiar de nickname 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 364 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_adadde8a5b5af849c55509d9e9aef8dc1}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Part@{command\-Part}}
+\index{command\-Part@{command\-Part}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Part}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Part (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_adadde8a5b5af849c55509d9e9aef8dc1}
+
+
+commando part permite al usuario abandonar el canal indicado. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 684 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a4a1c3256c2cd2bbaf8c04b641de8e89b}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Ping@{command\-Ping}}
+\index{command\-Ping@{command\-Ping}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Ping (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a4a1c3256c2cd2bbaf8c04b641de8e89b}
+
+
+commando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1428 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a0a4c40bf7931be7bd3f56586abf64357}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Privmsg@{command\-Privmsg}}
+\index{command\-Privmsg@{command\-Privmsg}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Privmsg}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Privmsg (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a0a4c40bf7931be7bd3f56586abf64357}
+
+
+commando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1111 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a8c61e34c067a94ff808b75f1b5346685}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Quit@{command\-Quit}}
+\index{command\-Quit@{command\-Quit}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Quit}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Quit (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a8c61e34c067a94ff808b75f1b5346685}
+
+
+commando quit permite al usuario abandonar el servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 496 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a2c3f4be0a8d40030d1e249075f96f4fe}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Topic@{command\-Topic}}
+\index{command\-Topic@{command\-Topic}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Topic (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a2c3f4be0a8d40030d1e249075f96f4fe}
+
+
+commando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 756 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_af65ecbf1de189abeaf7b329159afd032}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Who@{command\-Who}}
+\index{command\-Who@{command\-Who}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Who}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Who (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_af65ecbf1de189abeaf7b329159afd032}
+
+
+commando who aporta datos al usuario 
+
+) 
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a5e1f1b69c0a63183b62225298d9ea0b6}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!command\-Whois@{command\-Whois}}
+\index{command\-Whois@{command\-Whois}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{command\-Whois}]{\setlength{\rightskip}{0pt plus 5cm}long int command\-Whois (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{char $\ast$}]{strin}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a5e1f1b69c0a63183b62225298d9ea0b6}
+
+
+commando Whois permite al usuario obtener información de cierto usuario en el servidor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket del usuario a ver \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 1283 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+
+\hypertarget{_g-2301-05-_p1-commands_8h_a5844fb12c3cab624c83fc0ccff9946db}{\index{G-\/2301-\/05-\/\-P1-\/commands.\-h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}!mega\-Send@{mega\-Send}}
+\index{mega\-Send@{mega\-Send}!G-2301-05-P1-commands.h@{G-\/2301-\/05-\/\-P1-\/commands.\-h}}
+\subsubsection[{mega\-Send}]{\setlength{\rightskip}{0pt plus 5cm}long int mega\-Send (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{char $\ast$$\ast$}]{nicks, }
+\item[{long int}]{num}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-commands_8h_a5844fb12c3cab624c83fc0ccff9946db}
+
+
+envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & el comando a enviar en masa \\
+\hline
+{\em nicks} & la lista con los nicks a quienes hemos de enviar el comando \\
+\hline
+{\em num} & la longitud de la lista de nicks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file G-\/2301-\/05-\/\-P1-\/commands.\-c.
+

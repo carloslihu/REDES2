@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/d1f/_g-2301-05-_p2-user_tools_8h" kind="file">
+    <compoundname>G-2301-05-P2-userTools.h</compoundname>
+    <includes refid="d5/df9/_g-2301-05-_p1-tools_8h" local="yes">G-2301-05-P1-tools.h</includes>
+    <includedby refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h" local="yes">G-2301-05-P2-basicCommandsFromServer.h</includedby>
+    <includedby refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h" local="yes">G-2301-05-P2-repliesFromServer.h</includedby>
+    <includedby refid="d8/dad/_g-2301-05-_p2-user_commands_8h" local="yes">G-2301-05-P2-userCommands.h</includedby>
+    <includedby refid="d6/d77/_g-2301-05-_p1-server_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-server.c</includedby>
+    <includedby refid="d8/da8/_g-2301-05-_p2-user_tools_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userTools.c</includedby>
+    <includedby refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</includedby>
+    <includedby refid="d6/d48/servidor___i_r_c_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</includedby>
+    <incdepgraph>
+      <node id="287">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="289">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="281">
+        <label>stdint.h</label>
+      </node>
+      <node id="276">
+        <label>stdlib.h</label>
+      </node>
+      <node id="273">
+        <label>G-2301-05-P2-userTools.h</label>
+        <link refid="G-2301-05-P2-userTools.h"/>
+        <childnode refid="274" relation="include">
+        </childnode>
+      </node>
+      <node id="283">
+        <label>errno.h</label>
+      </node>
+      <node id="280">
+        <label>netdb.h</label>
+      </node>
+      <node id="275">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="282">
+        <label>syslog.h</label>
+      </node>
+      <node id="274">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="275" relation="include">
+        </childnode>
+      </node>
+      <node id="284">
+        <label>pthread.h</label>
+      </node>
+      <node id="285">
+        <label>sys/types.h</label>
+      </node>
+      <node id="278">
+        <label>string.h</label>
+      </node>
+      <node id="290">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="279">
+        <label>unistd.h</label>
+      </node>
+      <node id="291">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="288">
+        <label>sys/time.h</label>
+      </node>
+      <node id="286">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="292">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="277">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="297">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c</label>
+        <link refid="d9/d8f/_g-2301-05-_p2-basic_commands_from_server_8c"/>
+      </node>
+      <node id="301">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="d8/dad/_g-2301-05-_p2-user_commands_8h"/>
+        <childnode refid="302" relation="include">
+        </childnode>
+        <childnode refid="308" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="310">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userTools.c</label>
+        <link refid="d8/da8/_g-2301-05-_p2-user_tools_8c"/>
+      </node>
+      <node id="305">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_echo.c</label>
+        <link refid="d3/dbb/servidor__echo_8c"/>
+      </node>
+      <node id="309">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-server.c</label>
+        <link refid="d6/d77/_g-2301-05-_p1-server_8c"/>
+      </node>
+      <node id="293">
+        <label>G-2301-05-P2-userTools.h</label>
+        <link refid="G-2301-05-P2-userTools.h"/>
+        <childnode refid="294" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="301" relation="include">
+        </childnode>
+        <childnode refid="309" relation="include">
+        </childnode>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+      </node>
+      <node id="304">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_IRC.c</label>
+        <link refid="de/dee/cliente___i_r_c_8c"/>
+      </node>
+      <node id="306">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</label>
+        <link refid="d6/d48/servidor___i_r_c_8c"/>
+      </node>
+      <node id="295">
+        <label>G-2301-05-P2-audio.h</label>
+        <link refid="d9/dbb/_g-2301-05-_p2-audio_8h"/>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="307">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c</label>
+        <link refid="d8/d7e/_g-2301-05-_p3-ssl_8c"/>
+      </node>
+      <node id="298">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</label>
+        <link refid="dd/dbf/_g-2301-05-_p2-xchat2_8c"/>
+      </node>
+      <node id="296">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-audio.c</label>
+        <link refid="d6/dbc/_g-2301-05-_p2-audio_8c"/>
+      </node>
+      <node id="303">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</label>
+        <link refid="d4/d18/cliente__echo_8c"/>
+      </node>
+      <node id="299">
+        <label>G-2301-05-P2-repliesFromServer.h</label>
+        <link refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h"/>
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>G-2301-05-P3-ssl.h</label>
+        <link refid="d8/d51/_g-2301-05-_p3-ssl_8h"/>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="304" relation="include">
+        </childnode>
+        <childnode refid="305" relation="include">
+        </childnode>
+        <childnode refid="306" relation="include">
+        </childnode>
+        <childnode refid="307" relation="include">
+        </childnode>
+      </node>
+      <node id="308">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c</label>
+        <link refid="d6/dbe/_g-2301-05-_p2-user_commands_8c"/>
+      </node>
+      <node id="300">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c</label>
+        <link refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c"/>
+      </node>
+      <node id="294">
+        <label>G-2301-05-P2-basicCommandsFromServer.h</label>
+        <link refid="da/d15/_g-2301-05-_p2-basic_commands_from_server_8h"/>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a70ed59adcb4159ac551058053e649640" prot="public" static="no">
+        <name>SIZE</name>
+        <initializer>10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="3" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a403f3d61e6c0872cda3700219ca9ac1e" prot="public" static="no">
+        <name>PORT_RECORD</name>
+        <initializer>8888</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="4" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a40c5426015ecc21e39dfb362eb4c0c14" prot="public" static="no">
+        <name>PORT_SEND</name>
+        <initializer>6669</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="5" column="9" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sockfd</definition>
+        <argsstring></argsstring>
+        <name>sockfd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="6" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a3e267cdf9839a331d371dd5f980d153e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printXchat</definition>
+        <argsstring>(char *channel, char *nick, char *msg, boolean thread)</argsstring>
+        <name>printXchat</name>
+        <param>
+          <type>char *</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>thread</declname>
+        </param>
+        <briefdescription>
+<para>imprime el mensaje del final del reply por la interfaz </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>canal donde se escribe, o null si es en system </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick del usuario que lo manda </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reply de la cual imprimimos el ultimo campo </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>thread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T si es la version con threads, false, si no </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="40" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userTools.c" bodystart="12" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1afc2d4ce661d2f13fbe4b5518d778d071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* getMyNick</definition>
+        <argsstring>()</argsstring>
+        <name>getMyNick</name>
+        <briefdescription>
+<para>funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>el nick asociado a este cliente </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="53" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userTools.c" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ab409491dfa3ca1ed9713df0eabdb70ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* getMyNickThread</definition>
+        <argsstring>()</argsstring>
+        <name>getMyNickThread</name>
+        <briefdescription>
+<para>funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>el nick asociado a este cliente </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h" line="66" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userTools.c" bodystart="54" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d5/df9/_g-2301-05-_p1-tools_8h" kindref="compound">G-2301-05-P1-tools.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a70ed59adcb4159ac551058053e649640" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIZE<sp/>10000</highlight></codeline>
+<codeline lineno="4" refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a403f3d61e6c0872cda3700219ca9ac1e" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PORT_RECORD<sp/>8888</highlight></codeline>
+<codeline lineno="5" refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a40c5426015ecc21e39dfb362eb4c0c14" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PORT_SEND<sp/>6669</highlight></codeline>
+<codeline lineno="6" refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" refkind="member"><highlight class="preprocessor"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1a3e267cdf9839a331d371dd5f980d153e" kindref="member">printXchat</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>channel,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg,<sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>thread);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1afc2d4ce661d2f13fbe4b5518d778d071" kindref="member">getMyNick</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ab409491dfa3ca1ed9713df0eabdb70ed" kindref="member">getMyNickThread</ref>();</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userTools.h"/>
+  </compounddef>
+</doxygen>

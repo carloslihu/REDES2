@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets_bindSocket_UDP" kind="page">
+    <compoundname>bindSocket_UDP</compoundname>
+    <title>bindSocket_UDP</title>
+    <detaileddescription>
+<para>enlaza un socket UDP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a enlazar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que enlazar el socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serv_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una estructura sockaddr_in en donde se guardarán los valores relativos a esta conexión</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 en caso de error, un numero positivo en otro caso</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

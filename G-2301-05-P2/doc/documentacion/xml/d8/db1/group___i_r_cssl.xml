@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl" kind="group">
+    <compoundname>IRCssl</compoundname>
+    <title>ssl</title>
+    <innerpage refid="d8/db1/group___i_r_cssl_inicializar_nivel_SSL">inicializar_nivel_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_fijar_contexto_SSL">fijar_contexto_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_conectar_canal_seguro_SSL">conectar_canal_seguro_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_aceptar_canal_seguro_SSL">aceptar_canal_seguro_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_evaluar_post_connectar_SSL">evaluar_post_connectar_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_enviar_datos_SSL">enviar_datos_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_recibir_datos_SSL">recibir_datos_SSL</innerpage>
+    <innerpage refid="d8/db1/group___i_r_cssl_cerrar_canal_SSL">cerrar_canal_SSL</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones del modulo ssl</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

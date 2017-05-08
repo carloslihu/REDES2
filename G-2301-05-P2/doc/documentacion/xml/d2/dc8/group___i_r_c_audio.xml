@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio" kind="group">
+    <compoundname>IRCAudio</compoundname>
+    <title>audio</title>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_initiateReciever">initiateReciever</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_initiateSender">initiateSender</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_canIRead">canIRead</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_canIWrite">canIWrite</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_writeBuffer">writeBuffer</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_playBuffer">playBuffer</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_alreadyRecordingQuery">alreadyRecordingQuery</innerpage>
+    <innerpage refid="d2/dc8/group___i_r_c_audio_endAudioTransmission">endAudioTransmission</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que se encargan del envio de audio entre clientes IRC</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

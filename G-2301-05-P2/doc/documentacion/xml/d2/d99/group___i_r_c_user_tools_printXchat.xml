@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d99/group___i_r_c_user_tools_printXchat" kind="page">
+    <compoundname>printXchat</compoundname>
+    <title>printXchat</title>
+    <detaileddescription>
+<para>imprime el mensaje del final del reply por la interfaz</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>canal donde se escribe, o null si es en system </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick del usuario que lo manda </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reply de la cual imprimimos el ultimo campo </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>thread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T si es la version con threads, false, si no</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

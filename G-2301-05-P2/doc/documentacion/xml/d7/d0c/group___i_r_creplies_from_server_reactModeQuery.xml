@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d7/d0c/group___i_r_creplies_from_server_reactModeQuery" kind="page">
+    <compoundname>reactModeQuery</compoundname>
+    <title>reactModeQuery</title>
+    <detaileddescription>
+<para>rutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

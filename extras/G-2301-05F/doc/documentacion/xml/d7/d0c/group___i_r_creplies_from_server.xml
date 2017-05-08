@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d7/d0c/group___i_r_creplies_from_server" kind="group">
+    <compoundname>IRCrepliesFromServer</compoundname>
+    <title>repliesFromServer</title>
+    <innerpage refid="d7/d0c/group___i_r_creplies_from_server_reactModeQuery">reactModeQuery</innerpage>
+    <innerpage refid="d7/d0c/group___i_r_creplies_from_server_reactNoTopic">reactNoTopic</innerpage>
+    <innerpage refid="d7/d0c/group___i_r_creplies_from_server_reactTopicQuery">reactTopicQuery</innerpage>
+    <innerpage refid="d7/d0c/group___i_r_creplies_from_server_reactWhoReply">reactWhoReply</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que manejan las respuestas numericas del servidor</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

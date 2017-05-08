@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="de/df7/prueba_8c" kind="file">
+    <compoundname>prueba.c</compoundname>
+    <includes refid="da/de5/daemonizar_8h" local="yes">daemonizar.h</includes>
+    <incdepgraph>
+      <node id="412">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c</label>
+        <link refid="prueba.c"/>
+        <childnode refid="413" relation="include">
+        </childnode>
+      </node>
+      <node id="413">
+        <label>daemonizar.h</label>
+        <link refid="da/de5/daemonizar_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="de/df7/prueba_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c" line="2" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c" bodystart="2" bodyend="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/de5/daemonizar_8h" kindref="compound">daemonizar.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="de/df7/prueba_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="de/df7/prueba_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a79f6ea5350079c571138b0a00af1f5a4" kindref="member">daemonizar</ref>();</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c"/>
+  </compounddef>
+</doxygen>

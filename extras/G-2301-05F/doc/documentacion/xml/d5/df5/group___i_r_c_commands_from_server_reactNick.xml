@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d5/df5/group___i_r_c_commands_from_server_reactNick" kind="page">
+    <compoundname>reactNick</compoundname>
+    <title>reactNick</title>
+    <detaileddescription>
+<para>rutina que maneja la llegada de un comando NICK. Esta rutina cambia el nick del usuario</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

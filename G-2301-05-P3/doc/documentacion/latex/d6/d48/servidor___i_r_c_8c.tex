@@ -1,0 +1,219 @@
+\hypertarget{servidor___i_r_c_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/servidor\-\_\-\-I\-R\-C.c File Reference}
+\label{servidor___i_r_c_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/servidor\-\_\-\-I\-R\-C.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/servidor\-\_\-\-I\-R\-C.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/commands.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P3-\/ssl.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structthread_args}{thread\-Args}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{servidor___i_r_c_8c_adc5a02a0d82a5e7fd93802b082e24102}{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}~10
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long int($\ast$ \hyperlink{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}{p\-Funcs} )(int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{servidor___i_r_c_8c_a492f3eb1b5fd2db5f809828bcaeb8759}{free\-Thread\-Resources} (int socket)
+\begin{DoxyCompactList}\small\item\em libera los recursos de usuario asociados al hilo \end{DoxyCompactList}\item 
+int \hyperlink{servidor___i_r_c_8c_a791c463e7015f87ec590d75a12a27b03}{connect\-And\-Register} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, S\-S\-L $\ast$ssl)
+\begin{DoxyCompactList}\small\item\em maneja el inicio de sesión del cliente \end{DoxyCompactList}\item 
+int \hyperlink{servidor___i_r_c_8c_a268c95a515ff89f8e975a7b03353d2be}{retrieve\-Msg} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$server, struct sockaddr\-\_\-in $\ast$client, S\-S\-L $\ast$ssl)
+\begin{DoxyCompactList}\small\item\em se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{servidor___i_r_c_8c_ac4e891ecfd0442a988ac4b2e1b88b796}{thread\-Routine} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em el comportamiento del hilo tras ser creado. \end{DoxyCompactList}\item 
+int \hyperlink{servidor___i_r_c_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{servidor___i_r_c_8c_a65183b3bbe4d9d8e2e47ea5eee7b4cce}{ssl\-\_\-active} =T\-R\-U\-E
+\item 
+char $\ast$ \hyperlink{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname} = \char`\"{}John\-Titor\char`\"{}
+\item 
+pthread\-\_\-mutex\-\_\-t \hyperlink{servidor___i_r_c_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\item 
+\hyperlink{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}{p\-Funcs} \hyperlink{servidor___i_r_c_8c_aeb1032d8268ea693782bef5c39d10e94}{functs} \mbox{[}100\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{servidor___i_r_c_8c_adc5a02a0d82a5e7fd93802b082e24102}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R@{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R@{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R~10}}\label{servidor___i_r_c_8c_adc5a02a0d82a5e7fd93802b082e24102}
+
+
+Definition at line 7 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!p\-Funcs@{p\-Funcs}}
+\index{p\-Funcs@{p\-Funcs}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{p\-Funcs}]{\setlength{\rightskip}{0pt plus 5cm}typedef long int($\ast$ p\-Funcs)(int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)}}\label{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}
+
+
+Definition at line 21 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{servidor___i_r_c_8c_a791c463e7015f87ec590d75a12a27b03}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!connect\-And\-Register@{connect\-And\-Register}}
+\index{connect\-And\-Register@{connect\-And\-Register}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{connect\-And\-Register}]{\setlength{\rightskip}{0pt plus 5cm}int connect\-And\-Register (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{S\-S\-L $\ast$}]{ssl}
+\end{DoxyParamCaption}
+)}}\label{servidor___i_r_c_8c_a791c463e7015f87ec590d75a12a27b03}
+
+
+maneja el inicio de sesión del cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_a492f3eb1b5fd2db5f809828bcaeb8759}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!free\-Thread\-Resources@{free\-Thread\-Resources}}
+\index{free\-Thread\-Resources@{free\-Thread\-Resources}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{free\-Thread\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}void free\-Thread\-Resources (
+\begin{DoxyParamCaption}
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}}\label{servidor___i_r_c_8c_a492f3eb1b5fd2db5f809828bcaeb8759}
+
+
+libera los recursos de usuario asociados al hilo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket que es manejado por el hilo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!main@{main}}
+\index{main@{main}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{servidor___i_r_c_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 226 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_a268c95a515ff89f8e975a7b03353d2be}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!retrieve\-Msg@{retrieve\-Msg}}
+\index{retrieve\-Msg@{retrieve\-Msg}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{retrieve\-Msg}]{\setlength{\rightskip}{0pt plus 5cm}int retrieve\-Msg (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{S\-S\-L $\ast$}]{ssl}
+\end{DoxyParamCaption}
+)}}\label{servidor___i_r_c_8c_a268c95a515ff89f8e975a7b03353d2be}
+
+
+se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 151 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_ac4e891ecfd0442a988ac4b2e1b88b796}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!thread\-Routine@{thread\-Routine}}
+\index{thread\-Routine@{thread\-Routine}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{thread\-Routine}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Routine (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{servidor___i_r_c_8c_ac4e891ecfd0442a988ac4b2e1b88b796}
+
+
+el comportamiento del hilo tras ser creado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & deberá ser un puntero a la estructura \hyperlink{structthread_args}{thread\-Args}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L al acabar la sesión del hilo 
+\end{DoxyReturn}
+
+
+Definition at line 194 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{servidor___i_r_c_8c_aeb1032d8268ea693782bef5c39d10e94}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!functs@{functs}}
+\index{functs@{functs}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{functs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-Funcs} functs\mbox{[}100\mbox{]}}}\label{servidor___i_r_c_8c_aeb1032d8268ea693782bef5c39d10e94}
+
+
+Definition at line 22 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!hostname@{hostname}}
+\index{hostname@{hostname}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{hostname}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ hostname = \char`\"{}John\-Titor\char`\"{}}}\label{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}
+
+
+Definition at line 10 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!mutex@{mutex}}
+\index{mutex@{mutex}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-mutex\-\_\-t mutex}}\label{servidor___i_r_c_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}
+
+
+Definition at line 11 of file servidor\-\_\-\-I\-R\-C.\-c.
+
+\hypertarget{servidor___i_r_c_8c_a65183b3bbe4d9d8e2e47ea5eee7b4cce}{\index{servidor\-\_\-\-I\-R\-C.\-c@{servidor\-\_\-\-I\-R\-C.\-c}!ssl\-\_\-active@{ssl\-\_\-active}}
+\index{ssl\-\_\-active@{ssl\-\_\-active}!servidor_IRC.c@{servidor\-\_\-\-I\-R\-C.\-c}}
+\subsubsection[{ssl\-\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}boolean ssl\-\_\-active =T\-R\-U\-E}}\label{servidor___i_r_c_8c_a65183b3bbe4d9d8e2e47ea5eee7b4cce}
+
+
+Definition at line 9 of file servidor\-\_\-\-I\-R\-C.\-c.
+

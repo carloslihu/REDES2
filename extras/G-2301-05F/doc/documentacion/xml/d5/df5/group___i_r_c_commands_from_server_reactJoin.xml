@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d5/df5/group___i_r_c_commands_from_server_reactJoin" kind="page">
+    <compoundname>reactJoin</compoundname>
+    <title>reactJoin</title>
+    <detaileddescription>
+<para>rutina que maneja la llegada de un comando JOIN. Si este cliente es quien ha solicitado unirse a un canal, se crea una pestana con este nuevo canal en este caso, para actualizar la lista de usuarios en el canal, se envia al servidor un comando who tambien se envia un comando mode para preguntar por los modos actuales del canal Si no ha sido este cliente quien se unio, se actualiza la lista de usuarios del canal con el nuevo usuario</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

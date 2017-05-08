@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/db5/group___i_r_c_client" kind="group">
+    <compoundname>IRCClient</compoundname>
+    <title>client</title>
+    <innergroup refid="d2/dc8/group___i_r_c_audio">audio</innergroup>
+    <innergroup refid="d5/df5/group___i_r_c_commands_from_server">commandsFromServer</innergroup>
+    <innergroup refid="d7/d0c/group___i_r_creplies_from_server">repliesFromServer</innergroup>
+    <innergroup refid="d7/d37/group___i_r_c_user_commands">userCommands</innergroup>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

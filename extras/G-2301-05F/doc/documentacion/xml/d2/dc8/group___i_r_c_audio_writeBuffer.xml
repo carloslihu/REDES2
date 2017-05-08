@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_writeBuffer" kind="page">
+    <compoundname>writeBuffer</compoundname>
+    <title>writeBuffer</title>
+    <detaileddescription>
+<para>escribe, si es posible, en el buffer a partir de la posición de escritura. Si se logro escribir correctamente, se actualiza la posición de escritura del buffer</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los bytes a escribir en el buffer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la cantidad de bytes a escribir en el buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

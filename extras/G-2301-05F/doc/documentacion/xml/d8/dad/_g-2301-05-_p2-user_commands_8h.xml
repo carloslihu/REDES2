@@ -1,0 +1,793 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/dad/_g-2301-05-_p2-user_commands_8h" kind="file">
+    <compoundname>G-2301-05-P2-userCommands.h</compoundname>
+    <includes refid="d4/db1/_g-2301-05-_p1-commands_8h" local="yes">../includes/G-2301-05-P1-commands.h</includes>
+    <includes refid="d4/d1f/_g-2301-05-_p2-user_tools_8h" local="yes">../includes/G-2301-05-P2-userTools.h</includes>
+    <includedby refid="d8/d51/_g-2301-05-_p3-ssl_8h" local="yes">G-2301-05-P3-ssl.h</includedby>
+    <includedby refid="d6/dbe/_g-2301-05-_p2-user_commands_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c</includedby>
+    <includedby refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</includedby>
+    <incdepgraph>
+      <node id="256">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="258">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="262">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="240">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="G-2301-05-P2-userCommands.h"/>
+        <childnode refid="241" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+      </node>
+      <node id="250">
+        <label>stdint.h</label>
+      </node>
+      <node id="245">
+        <label>stdlib.h</label>
+      </node>
+      <node id="263">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="243" relation="include">
+        </childnode>
+      </node>
+      <node id="252">
+        <label>errno.h</label>
+      </node>
+      <node id="242">
+        <label>G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="243" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>netdb.h</label>
+      </node>
+      <node id="244">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>syslog.h</label>
+      </node>
+      <node id="243">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="244" relation="include">
+        </childnode>
+      </node>
+      <node id="253">
+        <label>pthread.h</label>
+      </node>
+      <node id="254">
+        <label>sys/types.h</label>
+      </node>
+      <node id="247">
+        <label>string.h</label>
+      </node>
+      <node id="259">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="248">
+        <label>unistd.h</label>
+      </node>
+      <node id="260">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="257">
+        <label>sys/time.h</label>
+      </node>
+      <node id="255">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="241">
+        <label>../includes/G-2301-05-P1-commands.h</label>
+        <link refid="d4/db1/_g-2301-05-_p1-commands_8h"/>
+        <childnode refid="242" relation="include">
+        </childnode>
+      </node>
+      <node id="261">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="246">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="264">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="G-2301-05-P2-userCommands.h"/>
+        <childnode refid="265" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+      </node>
+      <node id="268">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_echo.c</label>
+        <link refid="d3/dbb/servidor__echo_8c"/>
+      </node>
+      <node id="267">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_IRC.c</label>
+        <link refid="de/dee/cliente___i_r_c_8c"/>
+      </node>
+      <node id="269">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</label>
+        <link refid="d6/d48/servidor___i_r_c_8c"/>
+      </node>
+      <node id="270">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c</label>
+        <link refid="d8/d7e/_g-2301-05-_p3-ssl_8c"/>
+      </node>
+      <node id="272">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</label>
+        <link refid="dd/dbf/_g-2301-05-_p2-xchat2_8c"/>
+      </node>
+      <node id="266">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</label>
+        <link refid="d4/d18/cliente__echo_8c"/>
+      </node>
+      <node id="265">
+        <label>G-2301-05-P3-ssl.h</label>
+        <link refid="d8/d51/_g-2301-05-_p3-ssl_8h"/>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c</label>
+        <link refid="d6/dbe/_g-2301-05-_p2-user_commands_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a8298aa0faf55aaec114edcb8d908c25e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean isCommand</definition>
+        <argsstring>(long ncommand)</argsstring>
+        <name>isCommand</name>
+        <param>
+          <type>long</type>
+          <declname>ncommand</declname>
+        </param>
+        <briefdescription>
+<para>funcion que comprueba si el entero largo es un comando de usuario implementado por este cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ncommand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el entero largo que representa un comando</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE si ese comando es soportado por este cliente, FALSE de lo contrario </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="37" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="12" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1ac0f28bc6174a23bc74895136febcc3d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userDefault</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userDefault</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="53" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1ad4918963d95cb113d1880341f5f6d35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userAway</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userAway</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando AWAY bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="69" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="32" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1c5dfac34cc7c7e9f4f4ae92d480c860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userJoin</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userJoin</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando JOIN bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="86" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="55" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1160187ecb124da41bd62d3987f493ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userKick</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userKick</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando KICK bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="102" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="80" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a5f1403750b505dd46e42b4ee15f746da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userList</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userList</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando LIST bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="118" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="112" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a97047be2e2e4c4de7a0b50bf5dbab322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userMode</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userMode</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando MODE bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="134" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="144" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa5e23ebf9d8d7f2212750a7d0b25cb15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userMotd</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userMotd</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando MOTD bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="150" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="181" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a15f6b4ed406c22d7cedebf968c431a38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userNames</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userNames</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando NAMES bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="166" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="204" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1abbde12342143708da5cbbe02b42c6269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userNick</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userNick</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando NICK bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="182" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="241" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a4bd2ce0bd04f220d817a5fdc05ce02c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userPart</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userPart</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando PART bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="198" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="266" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1abf18bb836181af4b31693795692475b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userPriv</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userPriv</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando PRIVMSG bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="214" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="298" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a9be44d33843127f69f9f10616c00e8a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userQuit</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userQuit</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando QUIT bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="230" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="335" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1ab94f0c41cd0db8a444f83be537a25a27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userTopic</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userTopic</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando TOPIC bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="246" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="367" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa09b497c8e02a85ce7b5c55847ea0e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userWhois</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userWhois</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>funcion que envia un comando WHOIS bien formado al servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando escrito por el usuario </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket de conexion con el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="262" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="394" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dad/_g-2301-05-_p2-user_commands_8h_1a3f3e5e80766b57227cb712a5746238a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long userWho</definition>
+        <argsstring>(int socket, char *strin)</argsstring>
+        <name>userWho</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h" line="278" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c" bodystart="410" bodyend="432"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_USERCOMMANDS_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_USERCOMMANDS_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-commands.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P2-userTools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a8298aa0faf55aaec114edcb8d908c25e" kindref="member">isCommand</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>ncommand);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ac0f28bc6174a23bc74895136febcc3d9" kindref="member">userDefault</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*strin);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ad4918963d95cb113d1880341f5f6d35d" kindref="member">userAway</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1c5dfac34cc7c7e9f4f4ae92d480c860" kindref="member">userJoin</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a1160187ecb124da41bd62d3987f493ec" kindref="member">userKick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a5f1403750b505dd46e42b4ee15f746da" kindref="member">userList</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a97047be2e2e4c4de7a0b50bf5dbab322" kindref="member">userMode</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa5e23ebf9d8d7f2212750a7d0b25cb15" kindref="member">userMotd</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a15f6b4ed406c22d7cedebf968c431a38" kindref="member">userNames</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1abbde12342143708da5cbbe02b42c6269" kindref="member">userNick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a4bd2ce0bd04f220d817a5fdc05ce02c9" kindref="member">userPart</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1abf18bb836181af4b31693795692475b6" kindref="member">userPriv</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a9be44d33843127f69f9f10616c00e8a1" kindref="member">userQuit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1ab94f0c41cd0db8a444f83be537a25a27" kindref="member">userTopic</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1aa09b497c8e02a85ce7b5c55847ea0e6e" kindref="member">userWhois</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d8/dad/_g-2301-05-_p2-user_commands_8h_1a3f3e5e80766b57227cb712a5746238a8" kindref="member">userWho</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-userCommands.h"/>
+  </compounddef>
+</doxygen>

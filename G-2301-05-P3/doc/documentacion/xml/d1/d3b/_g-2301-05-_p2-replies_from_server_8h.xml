@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d3b/_g-2301-05-_p2-replies_from_server_8h" kind="file">
+    <compoundname>G-2301-05-P2-repliesFromServer.h</compoundname>
+    <includes refid="d4/d1f/_g-2301-05-_p2-user_tools_8h" local="yes">../includes/G-2301-05-P2-userTools.h</includes>
+    <includedby refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c</includedby>
+    <includedby refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</includedby>
+    <incdepgraph>
+      <node id="231">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="233">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="225">
+        <label>stdint.h</label>
+      </node>
+      <node id="220">
+        <label>stdlib.h</label>
+      </node>
+      <node id="217">
+        <label>../includes/G-2301-05-P2-userTools.h</label>
+        <link refid="d4/d1f/_g-2301-05-_p2-user_tools_8h"/>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>errno.h</label>
+      </node>
+      <node id="224">
+        <label>netdb.h</label>
+      </node>
+      <node id="219">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+        <childnode refid="233" relation="include">
+        </childnode>
+        <childnode refid="234" relation="include">
+        </childnode>
+        <childnode refid="235" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+      </node>
+      <node id="226">
+        <label>syslog.h</label>
+      </node>
+      <node id="218">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="228">
+        <label>pthread.h</label>
+      </node>
+      <node id="229">
+        <label>sys/types.h</label>
+      </node>
+      <node id="222">
+        <label>string.h</label>
+      </node>
+      <node id="234">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="223">
+        <label>unistd.h</label>
+      </node>
+      <node id="235">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="216">
+        <label>G-2301-05-P2-repliesFromServer.h</label>
+        <link refid="G-2301-05-P2-repliesFromServer.h"/>
+        <childnode refid="217" relation="include">
+        </childnode>
+      </node>
+      <node id="232">
+        <label>sys/time.h</label>
+      </node>
+      <node id="230">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="236">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="221">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="239">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</label>
+        <link refid="dd/dbf/_g-2301-05-_p2-xchat2_8c"/>
+      </node>
+      <node id="237">
+        <label>G-2301-05-P2-repliesFromServer.h</label>
+        <link refid="G-2301-05-P2-repliesFromServer.h"/>
+        <childnode refid="238" relation="include">
+        </childnode>
+        <childnode refid="239" relation="include">
+        </childnode>
+      </node>
+      <node id="238">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c</label>
+        <link refid="d7/de8/_g-2301-05-_p2-replies_from_server_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a2ecfb7128199b664a1232e6adaa13b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactModeQuery</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactModeQuery</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de la respuesta 332 correspondiente a solicitar los modos de un canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-repliesFromServer.h" line="36" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c" bodystart="15" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a0fab1e2795c83c39f5e728b150a73195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactNoTopic</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactNoTopic</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de la respuesta 331 correspondiente a notificar que no hay topic en un canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-repliesFromServer.h" line="51" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c" bodystart="35" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a46cb9b388176d279b37de41cef5a0d40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactTopicQuery</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactTopicQuery</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de la respuesta 332 correspondiente a una solicitud del topic de un canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-repliesFromServer.h" line="66" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c" bodystart="54" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a76b90dab2968c81d3006f5c05978fb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long reactWhoReply</definition>
+        <argsstring>(char *strin)</argsstring>
+        <name>reactWhoReply</name>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>rutina que maneja la llegada de la respuesta 352 correspondiente a una solicitud de WHO </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el mensaje que envia el servidor</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-repliesFromServer.h" line="81" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-repliesFromServer.c" bodystart="72" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_REPLIESFROMSERVER_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_REPLIESFROMSERVER_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P2-userTools.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a2ecfb7128199b664a1232e6adaa13b1d" kindref="member">reactModeQuery</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a0fab1e2795c83c39f5e728b150a73195" kindref="member">reactNoTopic</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a46cb9b388176d279b37de41cef5a0d40" kindref="member">reactTopicQuery</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="d1/d3b/_g-2301-05-_p2-replies_from_server_8h_1a76b90dab2968c81d3006f5c05978fb39" kindref="member">reactWhoReply</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P2-repliesFromServer.h"/>
+  </compounddef>
+</doxygen>

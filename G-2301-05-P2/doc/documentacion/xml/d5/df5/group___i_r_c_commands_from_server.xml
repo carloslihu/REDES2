@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d5/df5/group___i_r_c_commands_from_server" kind="group">
+    <compoundname>IRCCommandsFromServer</compoundname>
+    <title>commandsFromServer</title>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactDefault">reactDefault</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactPrint">reactPrint</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactPass">reactPass</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactNick">reactNick</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactMode">reactMode</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactService">reactService</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactJoin">reactJoin</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactPart">reactPart</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactTopic">reactTopic</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactKick">reactKick</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactPrivmsg">reactPrivmsg</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactPing">reactPing</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactSetName">reactSetName</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactNames">reactNames</innerpage>
+    <innerpage refid="d5/df5/group___i_r_c_commands_from_server_reactQuit">reactQuit</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que manejan los comandos del servidor</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

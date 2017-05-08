@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="da/de5/daemonizar_8h" kind="file">
+    <compoundname>daemonizar.h</compoundname>
+    <includedby refid="de/df7/prueba_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c</includedby>
+    <invincdepgraph>
+      <node id="411">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/prueba.c</label>
+        <link refid="de/df7/prueba_8c"/>
+      </node>
+      <node id="410">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.h</label>
+        <link refid="daemonizar.h"/>
+        <childnode refid="411" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="da/de5/daemonizar_8h_1a79f6ea5350079c571138b0a00af1f5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void daemonizar</definition>
+        <argsstring>()</argsstring>
+        <name>daemonizar</name>
+        <briefdescription>
+<para>daemoniza el proceso el proceso queda en segundo plano como proceso de init </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.h" line="3" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-tools.c" bodystart="9" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DAEMONIZAR_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DAEMONIZAR_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="da/de5/daemonizar_8h_1a79f6ea5350079c571138b0a00af1f5a4" kindref="member">daemonizar</ref>();</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/daemonizar.h"/>
+  </compounddef>
+</doxygen>

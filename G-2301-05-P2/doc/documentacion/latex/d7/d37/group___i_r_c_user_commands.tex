@@ -1,0 +1,246 @@
+\hypertarget{group___i_r_c_user_commands}{\section{user\-Commands}
+\label{group___i_r_c_user_commands}\index{user\-Commands@{user\-Commands}}
+}
+Funciones que se encargan del envio de Commandos al servidor
+
+
+
+ \hypertarget{isCommand}{}\subsubsection{is\-Command}\label{isCommand}
+funcion que comprueba si el entero largo es un Commando de usuario implementado por este cliente
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncommand} & el entero largo que representa un Commando\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E si ese Commando es soportado por este cliente, F\-A\-L\-S\-E de lo contrario
+\end{DoxyReturn}
+
+
+ \hypertarget{userDefault}{}\subsubsection{user\-Default}\label{userDefault}
+funcion por defecto para valores de Commandos no implementados
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userAway}{}\subsubsection{user\-Away}\label{userAway}
+funcion que envia un Commando A\-W\-A\-Y bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userJoin}{}\subsubsection{user\-Join}\label{userJoin}
+funcion que envia un Commando J\-O\-I\-N bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userKick}{}\subsubsection{user\-Kick}\label{userKick}
+funcion que envia un Commando K\-I\-C\-K bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userList}{}\subsubsection{user\-List}\label{userList}
+funcion que envia un Commando L\-I\-S\-T bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userMode}{}\subsubsection{user\-Mode}\label{userMode}
+funcion que envia un Commando M\-O\-D\-E bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userMotd}{}\subsubsection{user\-Motd}\label{userMotd}
+funcion que envia un Commando M\-O\-T\-D bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userNames}{}\subsubsection{user\-Names}\label{userNames}
+funcion que envia un Commando N\-A\-M\-E\-S bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userNick}{}\subsubsection{user\-Nick}\label{userNick}
+funcion que envia un Commando N\-I\-C\-K bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userPart}{}\subsubsection{user\-Part}\label{userPart}
+funcion que envia un Commando P\-A\-R\-T bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userPriv}{}\subsubsection{user\-Priv}\label{userPriv}
+funcion que envia un Commando P\-R\-I\-V\-M\-S\-G bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userQuit}{}\subsubsection{user\-Quit}\label{userQuit}
+funcion que envia un Commando Q\-U\-I\-T bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userTopic}{}\subsubsection{user\-Topic}\label{userTopic}
+funcion que envia un Commando T\-O\-P\-I\-C bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userWhois}{}\subsubsection{user\-Whois}\label{userWhois}
+funcion que envia un Commando W\-H\-O\-I\-S bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ \hypertarget{userWho}{}\subsubsection{user\-Who}\label{userWho}
+funcion que envia un Commando W\-H\-O bien formado al servidor
+
+
+\begin{DoxyParams}{Parameters}
+{\em strin} & el Commando escrito por el usuario \\
+\hline
+{\em socket} & el socket de conexion con el servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K
+\end{DoxyReturn}
+
+
+ 

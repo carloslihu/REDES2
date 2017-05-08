@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d8/db1/group___i_r_cssl_fijar_contexto_SSL" kind="page">
+    <compoundname>fijar_contexto_SSL</compoundname>
+    <title>fijar_contexto_SSL</title>
+    <detaileddescription>
+<para>Esta función se encargará de inicializar correctamente el contexto que será utilizado para la creación de canales seguros mediante SSL. Deberá recibir información sobre las rutas a los certificados y claves con los que vaya a trabajar la aplicación. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>CAfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>certificado de la CA </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SCfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>certificado del servidor/cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Pfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>clave privada del servidor/cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CApath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ruta del certificado de la CA</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>contexto de la conexión segura</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

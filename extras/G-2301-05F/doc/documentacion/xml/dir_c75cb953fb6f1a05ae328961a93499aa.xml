@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_c75cb953fb6f1a05ae328961a93499aa" kind="dir">
+    <compoundname>/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar</compoundname>
+    <innerfile refid="dc/d4a/daemonizar_8c">daemonizar.c</innerfile>
+    <innerfile refid="da/de5/daemonizar_8h">daemonizar.h</innerfile>
+    <innerfile refid="de/df7/prueba_8c">prueba.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/daemonizar/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d22/structthread_audio_args" kind="struct" prot="public">
+    <compoundname>threadAudioArgs</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/d22/structthread_audio_args_1a63c89c04d1feae07ca35558055155ffb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="14" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d22/structthread_audio_args_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* hostname</definition>
+        <argsstring></argsstring>
+        <name>hostname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="15" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d22/structthread_audio_args_1ab092ba1f84e458809eb91a5786b281de" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* sender</definition>
+        <argsstring></argsstring>
+        <name>sender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="16" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" line="13" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-basicCommandsFromServer.c" bodystart="13" bodyend="17"/>
+    <listofallmembers>
+      <member refid="d1/d22/structthread_audio_args_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" virt="non-virtual"><scope>threadAudioArgs</scope><name>hostname</name></member>
+      <member refid="d1/d22/structthread_audio_args_1a63c89c04d1feae07ca35558055155ffb" prot="public" virt="non-virtual"><scope>threadAudioArgs</scope><name>port</name></member>
+      <member refid="d1/d22/structthread_audio_args_1ab092ba1f84e458809eb91a5786b281de" prot="public" virt="non-virtual"><scope>threadAudioArgs</scope><name>sender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

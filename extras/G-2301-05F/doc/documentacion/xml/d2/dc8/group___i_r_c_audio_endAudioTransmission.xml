@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_endAudioTransmission" kind="page">
+    <compoundname>endAudioTransmission</compoundname>
+    <title>endAudioTransmission</title>
+    <detaileddescription>
+<para>funcion que termina la transmision por parte del cliente que envia audio</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

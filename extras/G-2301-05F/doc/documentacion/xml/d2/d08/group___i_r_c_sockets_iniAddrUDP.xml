@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets_iniAddrUDP" kind="page">
+    <compoundname>iniAddrUDP</compoundname>
+    <title>iniAddrUDP</title>
+    <detaileddescription>
+<para>inicializa correctamente la estructura con datos para una conexion UDP</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>si_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura que se inicializara </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto del otro sistema con el que se desea comunicar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el hostname del otro sistema con el que se desea comunicar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 si hubo un error, IRC_OK si todo fue bien</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

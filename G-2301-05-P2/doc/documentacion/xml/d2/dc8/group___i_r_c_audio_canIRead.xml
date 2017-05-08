@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_canIRead" kind="page">
+    <compoundname>canIRead</compoundname>
+    <title>canIRead</title>
+    <detaileddescription>
+<para>funcion que se encarga de comprobar si es posible leer len bytes en el buffer de audio sin &quot;pasar&quot; la posicion de escritura es decir, evalua si, al leer len bytes, leeriamos mas alla de lo que hay escrito</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el numero de bytes de distancia a comprobar si podemos o no leer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si no es posible leer len bytes del buffer. !0 si lo es</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

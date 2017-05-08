@@ -1,0 +1,129 @@
+\hypertarget{_g-2301-05-_p2-user_tools_8h}{\section{G-\/2301-\/05-\/\-P2-\/user\-Tools.h File Reference}
+\label{_g-2301-05-_p2-user_tools_8h}\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+}
+{\ttfamily \#include \char`\"{}G-\/2301-\/05-\/\-P1-\/tools.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g-2301-05-_p2-user_tools_8h_a70ed59adcb4159ac551058053e649640}{S\-I\-Z\-E}~10000
+\item 
+\#define \hyperlink{_g-2301-05-_p2-user_tools_8h_a403f3d61e6c0872cda3700219ca9ac1e}{P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D}~8888
+\item 
+\#define \hyperlink{_g-2301-05-_p2-user_tools_8h_a40c5426015ecc21e39dfb362eb4c0c14}{P\-O\-R\-T\-\_\-\-S\-E\-N\-D}~6669
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p2-user_tools_8h_a3e267cdf9839a331d371dd5f980d153e}{print\-Xchat} (char $\ast$channel, char $\ast$nick, char $\ast$msg, boolean thread)
+\begin{DoxyCompactList}\small\item\em imprime el mensaje del final del reply por la interfaz \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_g-2301-05-_p2-user_tools_8h_afc2d4ce661d2f13fbe4b5518d778d071}{get\-My\-Nick} ()
+\begin{DoxyCompactList}\small\item\em funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_g-2301-05-_p2-user_tools_8h_ab409491dfa3ca1ed9713df0eabdb70ed}{get\-My\-Nick\-Thread} ()
+\begin{DoxyCompactList}\small\item\em funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g-2301-05-_p2-user_tools_8h_a403f3d61e6c0872cda3700219ca9ac1e}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D@{P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D}}
+\index{P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D@{P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-R\-E\-C\-O\-R\-D~8888}}\label{_g-2301-05-_p2-user_tools_8h_a403f3d61e6c0872cda3700219ca9ac1e}
+
+
+Definition at line 4 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8h_a40c5426015ecc21e39dfb362eb4c0c14}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!P\-O\-R\-T\-\_\-\-S\-E\-N\-D@{P\-O\-R\-T\-\_\-\-S\-E\-N\-D}}
+\index{P\-O\-R\-T\-\_\-\-S\-E\-N\-D@{P\-O\-R\-T\-\_\-\-S\-E\-N\-D}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{P\-O\-R\-T\-\_\-\-S\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T\-\_\-\-S\-E\-N\-D~6669}}\label{_g-2301-05-_p2-user_tools_8h_a40c5426015ecc21e39dfb362eb4c0c14}
+
+
+Definition at line 5 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8h_a70ed59adcb4159ac551058053e649640}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!S\-I\-Z\-E@{S\-I\-Z\-E}}
+\index{S\-I\-Z\-E@{S\-I\-Z\-E}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-Z\-E~10000}}\label{_g-2301-05-_p2-user_tools_8h_a70ed59adcb4159ac551058053e649640}
+
+
+Definition at line 3 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p2-user_tools_8h_afc2d4ce661d2f13fbe4b5518d778d071}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!get\-My\-Nick@{get\-My\-Nick}}
+\index{get\-My\-Nick@{get\-My\-Nick}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{get\-My\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-My\-Nick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8h_afc2d4ce661d2f13fbe4b5518d778d071}
+
+
+funcion que devuelve el nick asociado a este cliente. version para ser llamada en algun callback de la interfaz 
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8h_ab409491dfa3ca1ed9713df0eabdb70ed}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!get\-My\-Nick\-Thread@{get\-My\-Nick\-Thread}}
+\index{get\-My\-Nick\-Thread@{get\-My\-Nick\-Thread}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{get\-My\-Nick\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-My\-Nick\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8h_ab409491dfa3ca1ed9713df0eabdb70ed}
+
+
+funcion que devuelve el nick asociado a este cliente. version para ser llamada por los hilos del cliente 
+
+\begin{DoxyReturn}{Returns}
+el nick asociado a este cliente 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+
+\hypertarget{_g-2301-05-_p2-user_tools_8h_a3e267cdf9839a331d371dd5f980d153e}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!print\-Xchat@{print\-Xchat}}
+\index{print\-Xchat@{print\-Xchat}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{print\-Xchat}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Xchat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel, }
+\item[{char $\ast$}]{nick, }
+\item[{char $\ast$}]{msg, }
+\item[{boolean}]{thread}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p2-user_tools_8h_a3e267cdf9839a331d371dd5f980d153e}
+
+
+imprime el mensaje del final del reply por la interfaz 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & canal donde se escribe, o null si es en system \\
+\hline
+{\em nick} & nick del usuario que lo manda \\
+\hline
+{\em msg} & reply de la cual imprimimos el ultimo campo \\
+\hline
+{\em thread} & T si es la version con threads, false, si no \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{\index{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}!sockfd@{sockfd}}
+\index{sockfd@{sockfd}!G-2301-05-P2-userTools.h@{G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h}}
+\subsubsection[{sockfd}]{\setlength{\rightskip}{0pt plus 5cm}int sockfd}}\label{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}
+
+
+Definition at line 6 of file G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h.
+

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_alreadyRecordingQuery" kind="page">
+    <compoundname>alreadyRecordingQuery</compoundname>
+    <title>alreadyRecordingQuery</title>
+    <detaileddescription>
+<para>funcion que devuelve si este cliente ya esta grabando audio o no</para><para><simplesect kind="return"><para>TRUE si este cliente ya esta grabando audio. FALSE si no lo esta</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

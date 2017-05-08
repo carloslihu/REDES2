@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d1/d75/group___i_r_c_server_tools_getHostName" kind="page">
+    <compoundname>getHostName</compoundname>
+    <title>getHostName</title>
+    <detaileddescription>
+<para>guarda en hostname el nombre del dispositivo dev</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el dispositivo cuyo nombre deseamos encontrar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de la String donde escribir el nombre del dispositivo</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si todo va bien</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

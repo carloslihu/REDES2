@@ -1,0 +1,232 @@
+\hypertarget{_g-2301-05-_p1-server_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P1-\/server.c File Reference}
+\label{_g-2301-05-_p1-server_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P1-\/server.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/src/\-G-\/2301-\/05-\/\-P1-\/server.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/commands.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P2-\/user\-Tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/types.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structthread_args}{thread\-Args}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_g-2301-05-_p1-server_8c_adc5a02a0d82a5e7fd93802b082e24102}{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}~10
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long int($\ast$ \hyperlink{_g-2301-05-_p1-server_8c_af4fbc62d68085a32b47e88d447b77b28}{p\-Funcs} )(int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p1-server_8c_a492f3eb1b5fd2db5f809828bcaeb8759}{free\-Thread\-Resources} (int socket)
+\begin{DoxyCompactList}\small\item\em libera los recursos de usuario asociados al hilo \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-server_8c_ab7b31b719e6de8a7c05105d5e78e4ede}{connect\-And\-Register} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server)
+\begin{DoxyCompactList}\small\item\em maneja el inicio de sesión del cliente \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-server_8c_ae14d3432467a785bafce07c4ce2db219}{retrieve\-Msg} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$server, struct sockaddr\-\_\-in $\ast$client)
+\begin{DoxyCompactList}\small\item\em se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_g-2301-05-_p1-server_8c_af073aef8b7cf446e542c8ef5002b27bc}{thread\-Ping} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em maneja el hilo que se encargara de mandar pings a todos los usuarios \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_g-2301-05-_p1-server_8c_ac4e891ecfd0442a988ac4b2e1b88b796}{thread\-Routine} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em el comportamiento del hilo tras ser creado. \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-server_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{_g-2301-05-_p1-server_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname} = \char`\"{}John\-Titor\char`\"{}
+\item 
+pthread\-\_\-mutex\-\_\-t \hyperlink{_g-2301-05-_p1-server_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\item 
+\hyperlink{servidor___i_r_c_8c_af4fbc62d68085a32b47e88d447b77b28}{p\-Funcs} \hyperlink{_g-2301-05-_p1-server_8c_a3b74f15bfc2af0a575608c31e269694a}{functs} \mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_g-2301-05-_p1-server_8c_adc5a02a0d82a5e7fd93802b082e24102}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R@{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R@{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-A\-D\-\_\-\-N\-U\-M\-B\-E\-R~10}}\label{_g-2301-05-_p1-server_8c_adc5a02a0d82a5e7fd93802b082e24102}
+
+
+Definition at line 6 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_g-2301-05-_p1-server_8c_af4fbc62d68085a32b47e88d447b77b28}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!p\-Funcs@{p\-Funcs}}
+\index{p\-Funcs@{p\-Funcs}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{p\-Funcs}]{\setlength{\rightskip}{0pt plus 5cm}typedef long int($\ast$ p\-Funcs)(int socket, struct sockaddr\-\_\-in $\ast$client, struct sockaddr\-\_\-in $\ast$server, char $\ast$strin)}}\label{_g-2301-05-_p1-server_8c_af4fbc62d68085a32b47e88d447b77b28}
+
+
+Definition at line 17 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p1-server_8c_ab7b31b719e6de8a7c05105d5e78e4ede}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!connect\-And\-Register@{connect\-And\-Register}}
+\index{connect\-And\-Register@{connect\-And\-Register}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{connect\-And\-Register}]{\setlength{\rightskip}{0pt plus 5cm}int connect\-And\-Register (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_ab7b31b719e6de8a7c05105d5e78e4ede}
+
+
+maneja el inicio de sesión del cliente 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor \\
+\hline
+{\em strin} & el commando recibido\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_a492f3eb1b5fd2db5f809828bcaeb8759}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!free\-Thread\-Resources@{free\-Thread\-Resources}}
+\index{free\-Thread\-Resources@{free\-Thread\-Resources}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{free\-Thread\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}void free\-Thread\-Resources (
+\begin{DoxyParamCaption}
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_a492f3eb1b5fd2db5f809828bcaeb8759}
+
+
+libera los recursos de usuario asociados al hilo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket que es manejado por el hilo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!main@{main}}
+\index{main@{main}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 233 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_ae14d3432467a785bafce07c4ce2db219}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!retrieve\-Msg@{retrieve\-Msg}}
+\index{retrieve\-Msg@{retrieve\-Msg}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{retrieve\-Msg}]{\setlength{\rightskip}{0pt plus 5cm}long int retrieve\-Msg (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{server, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_ae14d3432467a785bafce07c4ce2db219}
+
+
+se encarga de recibir mensajes, separar los comandos y llamar a la función que maneje el comando pertinente en cada caso 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em client} & los datos del dispositivo cliente \\
+\hline
+{\em client} & los datos del dispositivo servidor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_af073aef8b7cf446e542c8ef5002b27bc}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!thread\-Ping@{thread\-Ping}}
+\index{thread\-Ping@{thread\-Ping}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{thread\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Ping (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_af073aef8b7cf446e542c8ef5002b27bc}
+
+
+maneja el hilo que se encargara de mandar pings a todos los usuarios 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & no son utilizados. Pueden ser N\-U\-L\-L\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_ac4e891ecfd0442a988ac4b2e1b88b796}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!thread\-Routine@{thread\-Routine}}
+\index{thread\-Routine@{thread\-Routine}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{thread\-Routine}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ thread\-Routine (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-server_8c_ac4e891ecfd0442a988ac4b2e1b88b796}
+
+
+el comportamiento del hilo tras ser creado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & deberá ser un puntero a la estructura \hyperlink{structthread_args}{thread\-Args}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L al acabar la sesión del hilo 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_g-2301-05-_p1-server_8c_a3b74f15bfc2af0a575608c31e269694a}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!functs@{functs}}
+\index{functs@{functs}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{functs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-Funcs} functs\mbox{[}I\-R\-C\-\_\-\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-S\mbox{]}}}\label{_g-2301-05-_p1-server_8c_a3b74f15bfc2af0a575608c31e269694a}
+
+
+Definition at line 18 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_af203df082d5c6dcaa0c88b07cf86466d}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!hostname@{hostname}}
+\index{hostname@{hostname}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{hostname}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ hostname = \char`\"{}John\-Titor\char`\"{}}}\label{_g-2301-05-_p1-server_8c_af203df082d5c6dcaa0c88b07cf86466d}
+
+
+Definition at line 8 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+
+\hypertarget{_g-2301-05-_p1-server_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{\index{G-\/2301-\/05-\/\-P1-\/server.\-c@{G-\/2301-\/05-\/\-P1-\/server.\-c}!mutex@{mutex}}
+\index{mutex@{mutex}!G-2301-05-P1-server.c@{G-\/2301-\/05-\/\-P1-\/server.\-c}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-mutex\-\_\-t mutex}}\label{_g-2301-05-_p1-server_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}
+
+
+Definition at line 9 of file G-\/2301-\/05-\/\-P1-\/server.\-c.
+

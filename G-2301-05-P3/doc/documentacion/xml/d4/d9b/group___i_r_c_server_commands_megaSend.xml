@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/d9b/group___i_r_c_server_commands_megaSend" kind="page">
+    <compoundname>megaSend</compoundname>
+    <title>megaSend</title>
+    <detaileddescription>
+<para>envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando a enviar en masa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nicks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la lista con los nicks a quienes hemos de enviar el comando </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la longitud de la lista de nicks</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

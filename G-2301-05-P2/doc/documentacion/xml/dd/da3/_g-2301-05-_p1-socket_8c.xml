@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dd/da3/_g-2301-05-_p1-socket_8c" kind="file">
+    <compoundname>G-2301-05-P1-socket.c</compoundname>
+    <includes refid="dd/dce/_g-2301-05-_p1-socket_8h" local="yes">../includes/G-2301-05-P1-socket.h</includes>
+    <incdepgraph>
+      <node id="712">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="714">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="718">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="706">
+        <label>stdint.h</label>
+      </node>
+      <node id="701">
+        <label>stdlib.h</label>
+      </node>
+      <node id="708">
+        <label>errno.h</label>
+      </node>
+      <node id="698">
+        <label>../includes/G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="711" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="718" relation="include">
+        </childnode>
+      </node>
+      <node id="705">
+        <label>netdb.h</label>
+      </node>
+      <node id="700">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="701" relation="include">
+        </childnode>
+        <childnode refid="702" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="707" relation="include">
+        </childnode>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+        <childnode refid="711" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="717" relation="include">
+        </childnode>
+      </node>
+      <node id="707">
+        <label>syslog.h</label>
+      </node>
+      <node id="699">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="700" relation="include">
+        </childnode>
+      </node>
+      <node id="709">
+        <label>pthread.h</label>
+      </node>
+      <node id="710">
+        <label>sys/types.h</label>
+      </node>
+      <node id="703">
+        <label>string.h</label>
+      </node>
+      <node id="715">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="697">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c</label>
+        <link refid="G-2301-05-P1-socket.c"/>
+        <childnode refid="698" relation="include">
+        </childnode>
+      </node>
+      <node id="704">
+        <label>unistd.h</label>
+      </node>
+      <node id="716">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="713">
+        <label>sys/time.h</label>
+      </node>
+      <node id="711">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="717">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="702">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1ac0a294efde364937332533e4ecd8d121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int openSocket_TCP</definition>
+        <argsstring>()</argsstring>
+        <name>openSocket_TCP</name>
+        <briefdescription>
+<para>abre un socket TCP </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>el socket o -1 en caso de que hubiera un fallo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="8" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="8" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1aac80c67421f8d89f4d5614187dc9cb43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int iniAddrUDP</definition>
+        <argsstring>(struct sockaddr_in *si_other, int port, char *hostname)</argsstring>
+        <name>iniAddrUDP</name>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>si_other</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>hostname</declname>
+        </param>
+        <briefdescription>
+<para>inicializa correctamente la estructura con datos para una conexion UDP </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>si_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura que se inicializara </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto del otro sistema con el que se desea comunicar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el hostname del otro sistema con el que se desea comunicar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 si hubo un error, IRC_OK si todo fue bien </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="24" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="24" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int bindSocket_TCP</definition>
+        <argsstring>(int sockfd, int portno, struct sockaddr_in *serv_addr)</argsstring>
+        <name>bindSocket_TCP</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portno</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>serv_addr</declname>
+        </param>
+        <briefdescription>
+<para>enlaza un socket TCP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a enlazar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que enlazar el socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serv_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una estructura sockaddr_in en donde se guardarán los valores relativos a esta conexión</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 en caso de error, un numero positivo en otro caso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="59" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="59" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1ab2765e4508bc50655fe3dd36139f33a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int acceptConnection</definition>
+        <argsstring>(int sockfd, struct sockaddr_in *cli_addr)</argsstring>
+        <name>acceptConnection</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>cli_addr</declname>
+        </param>
+        <briefdescription>
+<para>prepara un socket para aceptar una conexión entrante </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que está escuchando conexiones entrantes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cli_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una estructura sockaddr_in donde se rellenaran los valores relativos al otro extremo de la conexión</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 en caso de error y un nuevo socket (valor mayor que 0) en el que se mantendrá la comunicación con el otro extremo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="82" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="82" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1a688c9a3a3e37e99d810e8ad63984272d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int connectTo</definition>
+        <argsstring>(int sockfd, char *hostname, int portno)</argsstring>
+        <name>connectTo</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portno</declname>
+        </param>
+        <briefdescription>
+<para>trata de conectarse a un puerto de un host </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que intentará realizar la conexión </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el nombre de la maquina a la que se desea conectarse </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que se desea conectar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="103" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="103" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1a073081b694c616f3485110ff67b6cc5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int connectToIP</definition>
+        <argsstring>(int sockfd, char *IP, int portno)</argsstring>
+        <name>connectToIP</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>IP</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portno</declname>
+        </param>
+        <briefdescription>
+<para>trata de conectarse a un puerto de una IP </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que intentará realizar la conexión </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección IP en notación estándar a la que conectarse </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que se desea conectar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="131" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="131" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1abbf23148d1fb659c277f1c4cf3726f54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int openSocket_UDP</definition>
+        <argsstring>()</argsstring>
+        <name>openSocket_UDP</name>
+        <briefdescription>
+<para>abre un socket UDP </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>el socket o -1 en caso de que hubiera un fallo </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="149" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="149" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1aed488b731e5ab644507ef7acf6376f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int bindSocket_UDP</definition>
+        <argsstring>(int sockfd, int portno, struct sockaddr_in *serv_addr)</argsstring>
+        <name>bindSocket_UDP</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>portno</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>serv_addr</declname>
+        </param>
+        <briefdescription>
+<para>enlaza un socket UDP con un puerto a la vez que rellena los campos de la estructura sockaddr_in de serv_addr </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket a enlazar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que enlazar el socket </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serv_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección de una estructura sockaddr_in en donde se guardarán los valores relativos a esta conexión</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 en caso de error, un numero positivo en otro caso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="165" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="165" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/da3/_g-2301-05-_p1-socket_8c_1a96661287c5bdb47422cfa55ad14506aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getSocketPort</definition>
+        <argsstring>(int sockfd, struct sockaddr_in *serv)</argsstring>
+        <name>getSocketPort</name>
+        <param>
+          <type>int</type>
+          <declname>sockfd</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>serv</declname>
+        </param>
+        <briefdescription>
+<para>obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket (enlazado) del que queremos sacar su puerto </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la estructura sockaddr_in en la que se guardan los datos referentes a nuestro extremo de la conexion</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>el puerto del socket. Si hubo un error, -1 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" line="188" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c" bodystart="188" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2301-05-P1-socket.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="dd/da3/_g-2301-05-_p1-socket_8c_1ac0a294efde364937332533e4ecd8d121" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1ac0a294efde364937332533e4ecd8d121" kindref="member">openSocket_TCP</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref><sp/>=<sp/><ref refid="d3/df7/structthread_args_1a3666576f6b88007cc7b8f26c7da596c8" kindref="member">socket</ref>(AF_INET,<sp/>SOCK_STREAM,<sp/>0);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sockfd<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>openSocket_TCP&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="dd/da3/_g-2301-05-_p1-socket_8c_1aac80c67421f8d89f4d5614187dc9cb43" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1aac80c67421f8d89f4d5614187dc9cb43" kindref="member">iniAddrUDP</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*si_other,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d6/d77/_g-2301-05-_p1-server_8c_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//struct<sp/>hostent<sp/>*addr<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>STRport[20];</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(si_other<sp/>==<sp/>NULL<sp/>||<sp/>hostname<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>iniAddrUDP<sp/>-&gt;<sp/>not<sp/>valid<sp/>arguments&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addrinfo<sp/>hints;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">addrinfo<sp/>*res;<sp/><sp/></highlight><highlight class="comment">//<sp/>will<sp/>point<sp/>to<sp/>the<sp/>results</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;hints,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>hints);<sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>the<sp/>struct<sp/>is<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>hints.ai_family<sp/>=<sp/>AF_UNSPEC;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>don&apos;t<sp/>care<sp/>IPv4<sp/>or<sp/>IPv6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>hints.ai_socktype<sp/>=<sp/>SOCK_DGRAM;<sp/></highlight><highlight class="comment">//<sp/>TCP<sp/>stream<sp/>sockets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>hints.ai_flags<sp/>=<sp/>AI_PASSIVE;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fill<sp/>in<sp/>my<sp/>IP<sp/>for<sp/>me</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>port<sp/>=<sp/>htons(port);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(STRport,<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>port);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((status<sp/>=<sp/>getaddrinfo(hostname,<sp/>STRport,<sp/>&amp;hints,<sp/>&amp;res))<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>iniAddrUDP<sp/>-&gt;<sp/>getaddrinfo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(si_other,<sp/>res-&gt;ai_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>si_other-&gt;sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>IRC_OK;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="dd/da3/_g-2301-05-_p1-socket_8c_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1a5ebfd6c6e35ddca1d74ca6a323cbab3e" kindref="member">bindSocket_TCP</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portno,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in*<sp/>serv_addr)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bindReturn;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>serv_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*serv_addr));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_addr.s_addr<sp/>=<sp/>INADDR_ANY;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_port<sp/>=<sp/>htons(portno);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>bindReturn<sp/>=<sp/>bind(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>serv_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*serv_addr));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bindReturn<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;bind<sp/>errno:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>@<sp/>bindSocket_TCP&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bindReturn;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="dd/da3/_g-2301-05-_p1-socket_8c_1ab2765e4508bc50655fe3dd36139f33a5" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1ab2765e4508bc50655fe3dd36139f33a5" kindref="member">acceptConnection</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*cli_addr)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newSocket;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>clilen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*cli_addr);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>newSocket<sp/>=<sp/>accept(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>cli_addr,<sp/>&amp;clilen);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newSocket<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;errno:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>@<sp/>acceptConnection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newSocket;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="dd/da3/_g-2301-05-_p1-socket_8c_1a688c9a3a3e37e99d810e8ad63984272d" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1a688c9a3a3e37e99d810e8ad63984272d" kindref="member">connectTo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="d6/d77/_g-2301-05-_p1-server_8c_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portno)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connectReturn;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hostent<sp/>*server;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>serv_addr;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>server<sp/>=<sp/>gethostbyname(hostname);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(server<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectTo<sp/>-&gt;<sp/>gethostbyname&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>&amp;serv_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(serv_addr));</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>&amp;serv_addr.sin_addr.s_addr,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>server-&gt;h_addr,<sp/>server-&gt;h_length);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr.sin_port<sp/>=<sp/>htons(portno);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>connectReturn<sp/>=<sp/>connect(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;serv_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(serv_addr));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(connectReturn<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;errno:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(errno,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectTo<sp/>-&gt;<sp/>connect&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connectReturn;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="dd/da3/_g-2301-05-_p1-socket_8c_1a073081b694c616f3485110ff67b6cc5a" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1a073081b694c616f3485110ff67b6cc5a" kindref="member">connectToIP</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>IP,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portno){</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connectReturn;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>serv_addr;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>&amp;serv_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(serv_addr));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>&amp;serv_addr.sin_addr.s_addr,<sp/>IP,<sp/>strlen(IP));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr.sin_port<sp/>=<sp/>htons(portno);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>connectReturn<sp/>=<sp/>connect(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;serv_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(serv_addr));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(connectReturn<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(errno,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>connectTo<sp/>-&gt;<sp/>connect&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>connectReturn;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="dd/da3/_g-2301-05-_p1-socket_8c_1abbf23148d1fb659c277f1c4cf3726f54" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1abbf23148d1fb659c277f1c4cf3726f54" kindref="member">openSocket_UDP</ref>(){</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref><sp/>=<sp/>socket(AF_INET,<sp/>SOCK_DGRAM,<sp/>0);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sockfd<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;error<sp/>@<sp/>openSocket_UDP&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="dd/da3/_g-2301-05-_p1-socket_8c_1aed488b731e5ab644507ef7acf6376f8b" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1aed488b731e5ab644507ef7acf6376f8b" kindref="member">bindSocket_UDP</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>portno,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in*<sp/>serv_addr)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bindReturn;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>serv_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*serv_addr));</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_addr.s_addr<sp/>=<sp/>INADDR_ANY;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>serv_addr-&gt;sin_port<sp/>=<sp/>htons(portno);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>bindReturn<sp/>=<sp/>bind(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>serv_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(*serv_addr));</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bindReturn<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;errno:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d5/df9/_g-2301-05-_p1-tools_8h_1a6349dfcf345b8d45a1be65e3e17739fe" kindref="member">logIntError</ref>(-1,<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>@<sp/>bindSocket_UDP&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bindReturn;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="dd/da3/_g-2301-05-_p1-socket_8c_1a96661287c5bdb47422cfa55ad14506aa" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="dd/da3/_g-2301-05-_p1-socket_8c_1a96661287c5bdb47422cfa55ad14506aa" kindref="member">getSocketPort</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/d1f/_g-2301-05-_p2-user_tools_8h_1ad2c8fb3df3a737e0685e902870a611d2" kindref="member">sockfd</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in*<sp/>serv){</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>socklen_t<sp/>slen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*serv);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(getsockname(sockfd,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr*)<sp/>serv,<sp/>&amp;slen)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ntohs((*serv).sin_port);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P1-socket.c"/>
+  </compounddef>
+</doxygen>

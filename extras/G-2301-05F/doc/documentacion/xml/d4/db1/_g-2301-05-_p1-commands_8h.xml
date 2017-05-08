@@ -1,0 +1,1245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/db1/_g-2301-05-_p1-commands_8h" kind="file">
+    <compoundname>G-2301-05-P1-commands.h</compoundname>
+    <includes refid="dd/dce/_g-2301-05-_p1-socket_8h" local="yes">G-2301-05-P1-socket.h</includes>
+    <includedby refid="d8/dad/_g-2301-05-_p2-user_commands_8h" local="yes">G-2301-05-P2-userCommands.h</includedby>
+    <includedby refid="df/db1/_g-2301-05-_p1-commands_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c</includedby>
+    <includedby refid="d6/d77/_g-2301-05-_p1-server_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-server.c</includedby>
+    <includedby refid="dd/dbf/_g-2301-05-_p2-xchat2_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</includedby>
+    <includedby refid="d6/d48/servidor___i_r_c_8c" local="yes">/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</includedby>
+    <incdepgraph>
+      <node id="15">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="17">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="21">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="11">
+        <label>errno.h</label>
+      </node>
+      <node id="1">
+        <label>G-2301-05-P1-socket.h</label>
+        <link refid="dd/dce/_g-2301-05-_p1-socket_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>netdb.h</label>
+      </node>
+      <node id="3">
+        <label>G-2301-05-P1-types.h</label>
+        <link refid="da/d26/_g-2301-05-_p1-types_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>syslog.h</label>
+      </node>
+      <node id="2">
+        <label>G-2301-05-P1-tools.h</label>
+        <link refid="d5/df9/_g-2301-05-_p1-tools_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>pthread.h</label>
+      </node>
+      <node id="13">
+        <label>sys/types.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="18">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="19">
+        <label>redes2/irctad.h</label>
+      </node>
+      <node id="16">
+        <label>sys/time.h</label>
+      </node>
+      <node id="14">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="0">
+        <label>G-2301-05-P1-commands.h</label>
+        <link refid="G-2301-05-P1-commands.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="32">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c</label>
+        <link refid="df/db1/_g-2301-05-_p1-commands_8c"/>
+      </node>
+      <node id="23">
+        <label>G-2301-05-P2-userCommands.h</label>
+        <link refid="d8/dad/_g-2301-05-_p2-user_commands_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_echo.c</label>
+        <link refid="d3/dbb/servidor__echo_8c"/>
+      </node>
+      <node id="33">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-server.c</label>
+        <link refid="d6/d77/_g-2301-05-_p1-server_8c"/>
+      </node>
+      <node id="26">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_IRC.c</label>
+        <link refid="de/dee/cliente___i_r_c_8c"/>
+      </node>
+      <node id="28">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/servidor_IRC.c</label>
+        <link refid="d6/d48/servidor___i_r_c_8c"/>
+      </node>
+      <node id="29">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/srclib/G-2301-05-P3-ssl.c</label>
+        <link refid="d8/d7e/_g-2301-05-_p3-ssl_8c"/>
+      </node>
+      <node id="31">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-xchat2.c</label>
+        <link refid="dd/dbf/_g-2301-05-_p2-xchat2_8c"/>
+      </node>
+      <node id="25">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/cliente_echo.c</label>
+        <link refid="d4/d18/cliente__echo_8c"/>
+      </node>
+      <node id="24">
+        <label>G-2301-05-P3-ssl.h</label>
+        <link refid="d8/d51/_g-2301-05-_p3-ssl_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P2-userCommands.c</label>
+        <link refid="d6/dbe/_g-2301-05-_p2-user_commands_8c"/>
+      </node>
+      <node id="22">
+        <label>G-2301-05-P1-commands.h</label>
+        <link refid="G-2301-05-P1-commands.h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandDefault</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandDefault</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando por defecto envía un mensaje de error al cliente, indicando que el comando introducido es invalido </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="41" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="231" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a6c14bedc2ca0c1a7748fd188966f0699" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandNick</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandNick</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando nick permite al usuario cambiar de nickname </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="60" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="364" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1aaa0cd83abb127533a58a9824d766302d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandMode</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandMode</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando mode permite al usuario cambiar el modo un canal especificado </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="79" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="417" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a8c61e34c067a94ff808b75f1b5346685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandQuit</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandQuit</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando quit permite al usuario abandonar el servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="98" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="496" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a520a20b8ad5887dd2b600682bb3ea36e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandJoin</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandJoin</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando join permite al usuario unirse a un canal. En caso de que se requiera una password para unirse, el usuario debería incluirla en el comando tal y como se indica en el RFC. Tratar de unirse a un canal inexistente, creará dicho canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="119" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="581" bodyend="670"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1adadde8a5b5af849c55509d9e9aef8dc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandPart</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandPart</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando part permite al usuario abandonar el canal indicado. Si se trata de abandonar un canal invalido se le enviará un mensaje de notificación al cliente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="139" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="684" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a2c3f4be0a8d40030d1e249075f96f4fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandTopic</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandTopic</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando topic permite al usuario consultar el topic de un canal especificado o bien cambiar el mismo </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="158" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="756" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1ab3b8ab89b3ae99edea8af60322538c1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandNames</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandNames</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando mode permite al usuario obtener la lista de nicknames de usuarios que pertenezcan a un canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="177" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="844" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a0ef7f97ab64eb311827dbe3509b071bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandList</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandList</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando list permite al usuario obtener la lista de canales del servidor o bien información sobre un canal en partiular </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="196" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="910" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a1a1a0b84710fb5d6735e672b17fba549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandKick</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandKick</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando kick permite al usuario expulsar a un usuario de un canal (siempre y cuando se sea operador del canal) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="215" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1039" bodyend="1098"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a0a4c40bf7931be7bd3f56586abf64357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandPrivmsg</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandPrivmsg</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando Privmsg permite al usuario enviar mensajes tanto a un usuario en concreto como a todos los usuarios de un canal </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="234" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1111" bodyend="1221"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1af2e41d9c9e7f057a6f139528d75c8e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandMotd</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandMotd</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando Message of the Day permite al usuario consultar el mensaje del día </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="253" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1234" bodyend="1270"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a5e1f1b69c0a63183b62225298d9ea0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandWhois</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandWhois</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando Whois permite al usuario obtener información de cierto usuario en el servidor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="272" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1283" bodyend="1415"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a4a1c3256c2cd2bbaf8c04b641de8e89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandPing</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandPing</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando Ping permite al usuario comprobar que la conexion con el servidor sigue estando activa </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="291" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1428" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1acbe69f5fe4b81b494a330cf4e5ccc05d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandAway</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandAway</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando Away permite al usuario marcarse como ausente </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="310" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="1461" bodyend="1513"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1af65ecbf1de189abeaf7b329159afd032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int commandWho</definition>
+        <argsstring>(int socket, struct sockaddr_in *client, struct sockaddr_in *server, char *strin)</argsstring>
+        <name>commandWho</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>strin</declname>
+        </param>
+        <briefdescription>
+<para>commando who aporta datos al usuario </para>        </briefdescription>
+        <detaileddescription>
+<para>) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket del usuario a ver </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo cliente </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>los datos del dispositivo servidor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el commando recibido</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="327" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="263" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/db1/_g-2301-05-_p1-commands_8h_1a5844fb12c3cab624c83fc0ccff9946db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int megaSend</definition>
+        <argsstring>(char *command, char **nicks, long int num)</argsstring>
+        <name>megaSend</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>nicks</declname>
+        </param>
+        <param>
+          <type>long int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>envia un comando en masa envia un comando a cada uno de los clientes especificados en la lista de nicks </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el comando a enviar en masa </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nicks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la lista con los nicks a quienes hemos de enviar el comando </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la longitud de la lista de nicks</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IRC_OK si fue bien, otra cosa si no </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h" line="344" column="1" bodyfile="/home/javier/Escritorio/Redes/G-2301-05-P3/src/G-2301-05-P1-commands.c" bodystart="16" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_COMMANDS_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_COMMANDS_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dd/dce/_g-2301-05-_p1-socket_8h" kindref="compound">G-2301-05-P1-socket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af8fd36debbc6d010faa1515aa469f36e" kindref="member">commandDefault</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//DEFAULT<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a6c14bedc2ca0c1a7748fd188966f0699" kindref="member">commandNick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//NICK<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1aaa0cd83abb127533a58a9824d766302d" kindref="member">commandMode</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//MODE<sp/>5<sp/>(?)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a8c61e34c067a94ff808b75f1b5346685" kindref="member">commandQuit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//QUIT<sp/>7<sp/>advanced</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a520a20b8ad5887dd2b600682bb3ea36e" kindref="member">commandJoin</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//JOIN<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1adadde8a5b5af849c55509d9e9aef8dc1" kindref="member">commandPart</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//PART<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a2c3f4be0a8d40030d1e249075f96f4fe" kindref="member">commandTopic</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//TOPIC<sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1ab3b8ab89b3ae99edea8af60322538c1f" kindref="member">commandNames</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//NAMES<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0ef7f97ab64eb311827dbe3509b071bb" kindref="member">commandList</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//LIST<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a1a1a0b84710fb5d6735e672b17fba549" kindref="member">commandKick</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//KICK<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a0a4c40bf7931be7bd3f56586abf64357" kindref="member">commandPrivmsg</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//PRIVMSG<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af2e41d9c9e7f057a6f139528d75c8e87" kindref="member">commandMotd</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//MOTD<sp/>18<sp/>advanced</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a5e1f1b69c0a63183b62225298d9ea0b6" kindref="member">commandWhois</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//WHOIS<sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a4a1c3256c2cd2bbaf8c04b641de8e89b" kindref="member">commandPing</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//PING<sp/>34</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1acbe69f5fe4b81b494a330cf4e5ccc05d" kindref="member">commandAway</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);<sp/></highlight><highlight class="comment">//AWAY<sp/>37<sp/>advanced</highlight></codeline>
+<codeline lineno="327"><highlight class="comment"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1af65ecbf1de189abeaf7b329159afd032" kindref="member">commandWho</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*client,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>*server,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>strin);</highlight></codeline>
+<codeline lineno="344"><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d4/db1/_g-2301-05-_p1-commands_8h_1a5844fb12c3cab624c83fc0ccff9946db" kindref="member">megaSend</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>nicks,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/javier/Escritorio/Redes/G-2301-05-P3/includes/G-2301-05-P1-commands.h"/>
+  </compounddef>
+</doxygen>

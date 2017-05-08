@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/d08/group___i_r_c_sockets_connectToIP" kind="page">
+    <compoundname>connectToIP</compoundname>
+    <title>connectToIP</title>
+    <detaileddescription>
+<para>trata de conectarse a un puerto de una IP</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sockfd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el socket que intentará realizar la conexión </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>la dirección IP en notación estándar a la que conectarse </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>portno</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>el puerto al que se desea conectar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

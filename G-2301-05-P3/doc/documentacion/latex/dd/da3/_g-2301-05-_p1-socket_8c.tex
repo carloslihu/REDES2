@@ -1,0 +1,261 @@
+\hypertarget{_g-2301-05-_p1-socket_8c}{\section{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P1-\/socket.c File Reference}
+\label{_g-2301-05-_p1-socket_8c}\index{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P1-\/socket.\-c@{/home/javier/\-Escritorio/\-Redes/\-G-\/2301-\/05-\/\-P3/srclib/\-G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+}
+{\ttfamily \#include \char`\"{}../includes/\-G-\/2301-\/05-\/\-P1-\/socket.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_ac0a294efde364937332533e4ecd8d121}{open\-Socket\-\_\-\-T\-C\-P} ()
+\begin{DoxyCompactList}\small\item\em abre un socket T\-C\-P \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_aac80c67421f8d89f4d5614187dc9cb43}{ini\-Addr\-U\-D\-P} (struct sockaddr\-\_\-in $\ast$si\-\_\-other, int port, char $\ast$\hyperlink{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname})
+\begin{DoxyCompactList}\small\item\em inicializa correctamente la estructura con datos para una conexion U\-D\-P \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_a5ebfd6c6e35ddca1d74ca6a323cbab3e}{bind\-Socket\-\_\-\-T\-C\-P} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, int portno, struct sockaddr\-\_\-in $\ast$serv\-\_\-addr)
+\begin{DoxyCompactList}\small\item\em enlaza un socket T\-C\-P con un puerto a la vez que rellena los campos de la estructura sockaddr\-\_\-in de serv\-\_\-addr \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_ab2765e4508bc50655fe3dd36139f33a5}{accept\-Connection} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$cli\-\_\-addr)
+\begin{DoxyCompactList}\small\item\em prepara un socket para aceptar una conexión entrante \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_a688c9a3a3e37e99d810e8ad63984272d}{connect\-To} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, char $\ast$\hyperlink{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname}, int portno)
+\begin{DoxyCompactList}\small\item\em trata de conectarse a un puerto de un host \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_a073081b694c616f3485110ff67b6cc5a}{connect\-To\-I\-P} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, char $\ast$I\-P, int portno)
+\begin{DoxyCompactList}\small\item\em trata de conectarse a un puerto de una I\-P \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_abbf23148d1fb659c277f1c4cf3726f54}{open\-Socket\-\_\-\-U\-D\-P} ()
+\begin{DoxyCompactList}\small\item\em abre un socket U\-D\-P \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_aed488b731e5ab644507ef7acf6376f8b}{bind\-Socket\-\_\-\-U\-D\-P} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, int portno, struct sockaddr\-\_\-in $\ast$serv\-\_\-addr)
+\begin{DoxyCompactList}\small\item\em enlaza un socket U\-D\-P con un puerto a la vez que rellena los campos de la estructura sockaddr\-\_\-in de serv\-\_\-addr \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-socket_8c_a96661287c5bdb47422cfa55ad14506aa}{get\-Socket\-Port} (int \hyperlink{_g-2301-05-_p2-user_tools_8h_ad2c8fb3df3a737e0685e902870a611d2}{sockfd}, struct sockaddr\-\_\-in $\ast$serv)
+\begin{DoxyCompactList}\small\item\em obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p1-socket_8c_ab2765e4508bc50655fe3dd36139f33a5}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!accept\-Connection@{accept\-Connection}}
+\index{accept\-Connection@{accept\-Connection}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{accept\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}int accept\-Connection (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{cli\-\_\-addr}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_ab2765e4508bc50655fe3dd36139f33a5}
+
+
+prepara un socket para aceptar una conexión entrante 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket que está escuchando conexiones entrantes \\
+\hline
+{\em cli\-\_\-addr} & la dirección de una estructura sockaddr\-\_\-in donde se rellenaran los valores relativos al otro extremo de la conexión\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 en caso de error y un nuevo socket (valor mayor que 0) en el que se mantendrá la comunicación con el otro extremo 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_a5ebfd6c6e35ddca1d74ca6a323cbab3e}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!bind\-Socket\-\_\-\-T\-C\-P@{bind\-Socket\-\_\-\-T\-C\-P}}
+\index{bind\-Socket\-\_\-\-T\-C\-P@{bind\-Socket\-\_\-\-T\-C\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{bind\-Socket\-\_\-\-T\-C\-P}]{\setlength{\rightskip}{0pt plus 5cm}int bind\-Socket\-\_\-\-T\-C\-P (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{int}]{portno, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{serv\-\_\-addr}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_a5ebfd6c6e35ddca1d74ca6a323cbab3e}
+
+
+enlaza un socket T\-C\-P con un puerto a la vez que rellena los campos de la estructura sockaddr\-\_\-in de serv\-\_\-addr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em portno} & el puerto al que enlazar el socket \\
+\hline
+{\em serv\-\_\-addr} & la dirección de una estructura sockaddr\-\_\-in en donde se guardarán los valores relativos a esta conexión\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 en caso de error, un numero positivo en otro caso 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_aed488b731e5ab644507ef7acf6376f8b}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!bind\-Socket\-\_\-\-U\-D\-P@{bind\-Socket\-\_\-\-U\-D\-P}}
+\index{bind\-Socket\-\_\-\-U\-D\-P@{bind\-Socket\-\_\-\-U\-D\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{bind\-Socket\-\_\-\-U\-D\-P}]{\setlength{\rightskip}{0pt plus 5cm}int bind\-Socket\-\_\-\-U\-D\-P (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{int}]{portno, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{serv\-\_\-addr}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_aed488b731e5ab644507ef7acf6376f8b}
+
+
+enlaza un socket U\-D\-P con un puerto a la vez que rellena los campos de la estructura sockaddr\-\_\-in de serv\-\_\-addr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket a enlazar \\
+\hline
+{\em portno} & el puerto al que enlazar el socket \\
+\hline
+{\em serv\-\_\-addr} & la dirección de una estructura sockaddr\-\_\-in en donde se guardarán los valores relativos a esta conexión\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 en caso de error, un numero positivo en otro caso 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_a688c9a3a3e37e99d810e8ad63984272d}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!connect\-To@{connect\-To}}
+\index{connect\-To@{connect\-To}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{connect\-To}]{\setlength{\rightskip}{0pt plus 5cm}int connect\-To (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{char $\ast$}]{hostname, }
+\item[{int}]{portno}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_a688c9a3a3e37e99d810e8ad63984272d}
+
+
+trata de conectarse a un puerto de un host 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket que intentará realizar la conexión \\
+\hline
+{\em hostname} & el nombre de la maquina a la que se desea conectarse \\
+\hline
+{\em portno} & el puerto al que se desea conectar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_a073081b694c616f3485110ff67b6cc5a}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!connect\-To\-I\-P@{connect\-To\-I\-P}}
+\index{connect\-To\-I\-P@{connect\-To\-I\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{connect\-To\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}int connect\-To\-I\-P (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{char $\ast$}]{I\-P, }
+\item[{int}]{portno}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_a073081b694c616f3485110ff67b6cc5a}
+
+
+trata de conectarse a un puerto de una I\-P 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket que intentará realizar la conexión \\
+\hline
+{\em I\-P} & la dirección I\-P en notación estándar a la que conectarse \\
+\hline
+{\em portno} & el puerto al que se desea conectar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+en caso de error, un valor negativo. De lo contrario, un nuevo socket en el que se mantendrá la comunicación con el otro extremo 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_a96661287c5bdb47422cfa55ad14506aa}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!get\-Socket\-Port@{get\-Socket\-Port}}
+\index{get\-Socket\-Port@{get\-Socket\-Port}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{get\-Socket\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Socket\-Port (
+\begin{DoxyParamCaption}
+\item[{int}]{sockfd, }
+\item[{struct sockaddr\-\_\-in $\ast$}]{serv}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_a96661287c5bdb47422cfa55ad14506aa}
+
+
+obtiene el puerto al que ha sido enlazado el socket sockfd y tambien rellena los campos de serv 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & el socket (enlazado) del que queremos sacar su puerto \\
+\hline
+{\em serv} & la estructura sockaddr\-\_\-in en la que se guardan los datos referentes a nuestro extremo de la conexion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el puerto del socket. Si hubo un error, -\/1 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_aac80c67421f8d89f4d5614187dc9cb43}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!ini\-Addr\-U\-D\-P@{ini\-Addr\-U\-D\-P}}
+\index{ini\-Addr\-U\-D\-P@{ini\-Addr\-U\-D\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{ini\-Addr\-U\-D\-P}]{\setlength{\rightskip}{0pt plus 5cm}int ini\-Addr\-U\-D\-P (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\-\_\-in $\ast$}]{si\-\_\-other, }
+\item[{int}]{port, }
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_aac80c67421f8d89f4d5614187dc9cb43}
+
+
+inicializa correctamente la estructura con datos para una conexion U\-D\-P 
+
+
+\begin{DoxyParams}{Parameters}
+{\em si\-\_\-other} & la estructura que se inicializara \\
+\hline
+{\em port} & el puerto del otro sistema con el que se desea comunicar \\
+\hline
+{\em hostname} & el hostname del otro sistema con el que se desea comunicar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 si hubo un error, I\-R\-C\-\_\-\-O\-K si todo fue bien 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_ac0a294efde364937332533e4ecd8d121}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!open\-Socket\-\_\-\-T\-C\-P@{open\-Socket\-\_\-\-T\-C\-P}}
+\index{open\-Socket\-\_\-\-T\-C\-P@{open\-Socket\-\_\-\-T\-C\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{open\-Socket\-\_\-\-T\-C\-P}]{\setlength{\rightskip}{0pt plus 5cm}int open\-Socket\-\_\-\-T\-C\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_ac0a294efde364937332533e4ecd8d121}
+
+
+abre un socket T\-C\-P 
+
+\begin{DoxyReturn}{Returns}
+el socket o -\/1 en caso de que hubiera un fallo 
+\end{DoxyReturn}
+
+
+Definition at line 8 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+
+\hypertarget{_g-2301-05-_p1-socket_8c_abbf23148d1fb659c277f1c4cf3726f54}{\index{G-\/2301-\/05-\/\-P1-\/socket.\-c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}!open\-Socket\-\_\-\-U\-D\-P@{open\-Socket\-\_\-\-U\-D\-P}}
+\index{open\-Socket\-\_\-\-U\-D\-P@{open\-Socket\-\_\-\-U\-D\-P}!G-2301-05-P1-socket.c@{G-\/2301-\/05-\/\-P1-\/socket.\-c}}
+\subsubsection[{open\-Socket\-\_\-\-U\-D\-P}]{\setlength{\rightskip}{0pt plus 5cm}int open\-Socket\-\_\-\-U\-D\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-socket_8c_abbf23148d1fb659c277f1c4cf3726f54}
+
+
+abre un socket U\-D\-P 
+
+\begin{DoxyReturn}{Returns}
+el socket o -\/1 en caso de que hubiera un fallo 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file G-\/2301-\/05-\/\-P1-\/socket.\-c.
+

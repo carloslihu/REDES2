@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d4/d9b/group___i_r_c_server_commands" kind="group">
+    <compoundname>IRCServerCommands</compoundname>
+    <title>serverCommands</title>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandDefault">commandDefault</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandNick">commandNick</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandMode">commandMode</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandQuit">commandQuit</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandJoin">commandJoin</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandPart">commandPart</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandTopic">commandTopic</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandNames">commandNames</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandList">commandList</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandKick">commandKick</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandPrivmsg">commandPrivmsg</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandMotd">commandMotd</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandWhois">commandWhois</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandPing">commandPing</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandAway">commandAway</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_commandWho">commandWho</innerpage>
+    <innerpage refid="d4/d9b/group___i_r_c_server_commands_megaSend">megaSend</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que se encargan del procesado de los comandos que llegan desde el cliente</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

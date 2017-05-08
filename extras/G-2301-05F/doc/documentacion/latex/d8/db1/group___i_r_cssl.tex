@@ -1,0 +1,112 @@
+\hypertarget{group___i_r_cssl}{\section{ssl}
+\label{group___i_r_cssl}\index{ssl@{ssl}}
+}
+Funciones del modulo ssl
+
+
+
+ \hypertarget{inicializar_nivel_SSL}{}\subsubsection{inicializar\-\_\-nivel\-\_\-\-S\-S\-L}\label{inicializar_nivel_SSL}
+Esta función se encargará de realizar todas las llamadas necesarias para que la apli-\/ cación pueda usar la capa segura S\-S\-L.
+
+
+
+ \hypertarget{fijar_contexto_SSL}{}\subsubsection{fijar\-\_\-contexto\-\_\-\-S\-S\-L}\label{fijar_contexto_SSL}
+Esta función se encargará de inicializar correctamente el contexto que será utilizado para la creación de canales seguros mediante S\-S\-L. Deberá recibir información sobre las rutas a los certificados y claves con los que vaya a trabajar la aplicación. 
+\begin{DoxyParams}{Parameters}
+{\em C\-Afile} & certificado de la C\-A \\
+\hline
+{\em S\-Cfile} & certificado del servidor/cliente \\
+\hline
+{\em Pfile} & clave privada del servidor/cliente \\
+\hline
+{\em C\-Apath} & ruta del certificado de la C\-A\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+contexto de la conexión segura
+\end{DoxyReturn}
+
+
+ \hypertarget{conectar_canal_seguro_SSL}{}\subsubsection{conectar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}\label{conectar_canal_seguro_SSL}
+Dado un contexto S\-S\-L y un descriptor de socket esta función se encargará de obtener un canal seguro S\-S\-L iniciando el proceso de handshake con el otro extremo. 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estructura S\-S\-L de la conexión segura
+\end{DoxyReturn}
+
+
+ \hypertarget{aceptar_canal_seguro_SSL}{}\subsubsection{aceptar\-\_\-canal\-\_\-seguro\-\_\-\-S\-S\-L}\label{aceptar_canal_seguro_SSL}
+Dado un contexto S\-S\-L y un descriptor de socket esta función se encargará de bloquear la aplicación, que se quedará esperando hasta recibir un handshake por parte del cliente. 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estructura S\-S\-L de la conexión segura
+\end{DoxyReturn}
+
+
+ \hypertarget{evaluar_post_connectar_SSL}{}\subsubsection{evaluar\-\_\-post\-\_\-connectar\-\_\-\-S\-S\-L}\label{evaluar_post_connectar_SSL}
+Esta función comprobará una vez realizado el handshake que el canal de co-\/ municación se puede considerar seguro. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si es seguro, false si no
+\end{DoxyReturn}
+
+
+ \hypertarget{enviar_datos_SSL}{}\subsubsection{enviar\-\_\-datos\-\_\-\-S\-S\-L}\label{enviar_datos_SSL}
+Esta función será el equivalente a la función de envío de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a enviar. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em buf} & datos a enviar \\
+\hline
+{\em num} & tamaño de los datos\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero $>$0 si ha ido bien $<$=0 si no
+\end{DoxyReturn}
+
+
+ \hypertarget{recibir_datos_SSL}{}\subsubsection{recibir\-\_\-datos\-\_\-\-S\-S\-L}\label{recibir_datos_SSL}
+Esta función será el equivalente a la función de lectura de mensajes que se realizó en la práctica 1, pero será utilizada para enviar datos a través del canal seguro. Es importante que sea genérica y pueda ser utilizada independientemente de los datos que se vayan a recibir. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em buf} & datos a recibir \\
+\hline
+{\em num} & tamaño de los datos\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero $>$0 si ha ido bien $<$=0 si no
+\end{DoxyReturn}
+
+
+ \hypertarget{cerrar_canal_SSL}{}\subsubsection{cerrar\-\_\-canal\-\_\-\-S\-S\-L}\label{cerrar_canal_SSL}
+Esta función liberará todos los recursos y cerrará el canal de comunicación seguro creado previamente. 
+\begin{DoxyParams}{Parameters}
+{\em ssl} & estructura S\-S\-L de la conexión segura \\
+\hline
+{\em ctx} & contexto de la conexión segura \\
+\hline
+{\em sockfd} & socket de la conexión segura\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si ha ido bien, -\/1 si ha habido un fallo
+\end{DoxyReturn}
+
+
+ 

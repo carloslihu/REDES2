@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="d2/dc8/group___i_r_c_audio_initiateReciever" kind="page">
+    <compoundname>initiateReciever</compoundname>
+    <title>initiateReciever</title>
+    <detaileddescription>
+<para>rutina que se encarga de escribir el audio recibido en el buffer tambien crea un hilo que se encargara de, con cierto retardo, reproducir lo que haya en dicho buffer</para><para><simplesect kind="return"><para>NULL</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

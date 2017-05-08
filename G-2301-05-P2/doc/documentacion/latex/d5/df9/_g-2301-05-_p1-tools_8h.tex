@@ -1,0 +1,245 @@
+\hypertarget{_g-2301-05-_p1-tools_8h}{\section{G-\/2301-\/05-\/\-P1-\/tools.h File Reference}
+\label{_g-2301-05-_p1-tools_8h}\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+}
+{\ttfamily \#include \char`\"{}G-\/2301-\/05-\/\-P1-\/types.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_g-2301-05-_p1-tools_8h_a79f6ea5350079c571138b0a00af1f5a4}{daemonizar} ()
+\begin{DoxyCompactList}\small\item\em daemoniza el proceso el proceso queda en segundo plano como proceso de init \end{DoxyCompactList}\item 
+long int \hyperlink{_g-2301-05-_p1-tools_8h_a6349dfcf345b8d45a1be65e3e17739fe}{log\-Int\-Error} (long int return\-Value, char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{_g-2301-05-_p1-tools_8h_a192fd5bf4f47fe63d449f291f92732a9}{log\-Pointer\-Error} (void $\ast$return\-Value, char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero \end{DoxyCompactList}\item 
+void \hyperlink{_g-2301-05-_p1-tools_8h_a5b92fdc34c0427eb5cf8360e68aa9287}{log\-Void\-Error} (char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em registra un mensaje de error \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_g-2301-05-_p1-tools_8h_a2850885f03b7654d239b361940416bef}{get\-I\-P} (struct sockaddr\-\_\-in $\ast$client, char $\ast$$\ast$ip)
+\begin{DoxyCompactList}\small\item\em reserva memoria para una String que contiene le dirección I\-P de un cliente en formato estandar\-: xxx.\-xxx.\-xxx.\-xxx \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-tools_8h_a3101bc13b5c20c8b430348441050ae9d}{get\-Host\-Name} (struct sockaddr\-\_\-in $\ast$dev, char $\ast$$\ast$\hyperlink{servidor___i_r_c_8c_af203df082d5c6dcaa0c88b07cf86466d}{hostname})
+\begin{DoxyCompactList}\small\item\em guarda en hostname el nombre del dispositivo dev \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-tools_8h_af3b23798269ccab05560708cc1a22a92}{get\-Nick\-From\-Socket} (int socket, char $\ast$$\ast$nick)
+\begin{DoxyCompactList}\small\item\em guarda en nick el nickname del usuario asociado con el socket \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-tools_8h_a100eca1a277dd50fc2e289763dad8464}{get\-Socket\-From\-Nick} (int $\ast$socket, char $\ast$nick)
+\begin{DoxyCompactList}\small\item\em obtiene el socket del nick \end{DoxyCompactList}\item 
+int \hyperlink{_g-2301-05-_p1-tools_8h_a2aa2c8c4d6f3b48dd3c195beff08eb0b}{get\-Away\-From\-Socket} (int socket, char $\ast$$\ast$away)
+\begin{DoxyCompactList}\small\item\em obtiene el away del socket \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_g-2301-05-_p1-tools_8h_a79f6ea5350079c571138b0a00af1f5a4}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!daemonizar@{daemonizar}}
+\index{daemonizar@{daemonizar}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{daemonizar}]{\setlength{\rightskip}{0pt plus 5cm}void daemonizar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a79f6ea5350079c571138b0a00af1f5a4}
+
+
+daemoniza el proceso el proceso queda en segundo plano como proceso de init 
+
+
+
+Definition at line 9 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a2aa2c8c4d6f3b48dd3c195beff08eb0b}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!get\-Away\-From\-Socket@{get\-Away\-From\-Socket}}
+\index{get\-Away\-From\-Socket@{get\-Away\-From\-Socket}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{get\-Away\-From\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Away\-From\-Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$$\ast$}]{away}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a2aa2c8c4d6f3b48dd3c195beff08eb0b}
+
+
+obtiene el away del socket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket a obtener \\
+\hline
+{\em away} & cadena away\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a3101bc13b5c20c8b430348441050ae9d}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!get\-Host\-Name@{get\-Host\-Name}}
+\index{get\-Host\-Name@{get\-Host\-Name}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{get\-Host\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Host\-Name (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\-\_\-in $\ast$}]{dev, }
+\item[{char $\ast$$\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a3101bc13b5c20c8b430348441050ae9d}
+
+
+guarda en hostname el nombre del dispositivo dev 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & el dispositivo cuyo nombre deseamos encontrar \\
+\hline
+{\em hostname} & la dirección de la String donde escribir el nombre del dispositivo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si todo va bien 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a2850885f03b7654d239b361940416bef}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!get\-I\-P@{get\-I\-P}}
+\index{get\-I\-P@{get\-I\-P}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{get\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-I\-P (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\-\_\-in $\ast$}]{client, }
+\item[{char $\ast$$\ast$}]{ip}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a2850885f03b7654d239b361940416bef}
+
+
+reserva memoria para una String que contiene le dirección I\-P de un cliente en formato estandar\-: xxx.\-xxx.\-xxx.\-xxx 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & la estructura que contiene la I\-P a encontrar \\
+\hline
+{\em ip} & la dirección de una String donde guardaremos el resultado\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el puntero a la String resultado 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_af3b23798269ccab05560708cc1a22a92}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!get\-Nick\-From\-Socket@{get\-Nick\-From\-Socket}}
+\index{get\-Nick\-From\-Socket@{get\-Nick\-From\-Socket}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{get\-Nick\-From\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Nick\-From\-Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{socket, }
+\item[{char $\ast$$\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_af3b23798269ccab05560708cc1a22a92}
+
+
+guarda en nick el nickname del usuario asociado con el socket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket que identifica la conexión con el usuario \\
+\hline
+{\em nick} & la dirección de la String donde guardar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si todo fue bien. El error si no 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a100eca1a277dd50fc2e289763dad8464}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!get\-Socket\-From\-Nick@{get\-Socket\-From\-Nick}}
+\index{get\-Socket\-From\-Nick@{get\-Socket\-From\-Nick}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{get\-Socket\-From\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Socket\-From\-Nick (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{socket, }
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a100eca1a277dd50fc2e289763dad8464}
+
+
+obtiene el socket del nick 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & el socket a obtener \\
+\hline
+{\em nick} & nick a comprobar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-R\-C\-\_\-\-O\-K si fue bien, otra cosa si no 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a6349dfcf345b8d45a1be65e3e17739fe}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!log\-Int\-Error@{log\-Int\-Error}}
+\index{log\-Int\-Error@{log\-Int\-Error}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{log\-Int\-Error}]{\setlength{\rightskip}{0pt plus 5cm}long int log\-Int\-Error (
+\begin{DoxyParamCaption}
+\item[{long int}]{return\-Value, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a6349dfcf345b8d45a1be65e3e17739fe}
+
+
+identifica y registra un error a la vez que devuelve ese mismo error esta función es específica para errores de tipo long int 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\-Value} & el error a registrar y devolver \\
+\hline
+{\em msg} & el mensaje de error previo al nombre del error\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el error registrado en return\-Value 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a192fd5bf4f47fe63d449f291f92732a9}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!log\-Pointer\-Error@{log\-Pointer\-Error}}
+\index{log\-Pointer\-Error@{log\-Pointer\-Error}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{log\-Pointer\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ log\-Pointer\-Error (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{return\-Value, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a192fd5bf4f47fe63d449f291f92732a9}
+
+
+identifica y registra un error a la vez que devuelve ese mismo error esta funcion es especifica para los errores de tipo puntero 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\-Value} & el error a devolver \\
+\hline
+{\em msg} & el mensaje de error\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el error registrado en return\-Value 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
+\hypertarget{_g-2301-05-_p1-tools_8h_a5b92fdc34c0427eb5cf8360e68aa9287}{\index{G-\/2301-\/05-\/\-P1-\/tools.\-h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}!log\-Void\-Error@{log\-Void\-Error}}
+\index{log\-Void\-Error@{log\-Void\-Error}!G-2301-05-P1-tools.h@{G-\/2301-\/05-\/\-P1-\/tools.\-h}}
+\subsubsection[{log\-Void\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void log\-Void\-Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{_g-2301-05-_p1-tools_8h_a5b92fdc34c0427eb5cf8360e68aa9287}
+
+
+registra un mensaje de error 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & el mensaje de error a registrar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file G-\/2301-\/05-\/\-P1-\/tools.\-c.
+
